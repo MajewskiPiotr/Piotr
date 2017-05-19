@@ -3,33 +3,29 @@ package PageObjects.TaskPage;
 import Elements.Task.TaskButton;
 import Elements.Task.TaskStatus;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 /**
  * Created by Piotr Majewski on 2017-05-19.
  */
-public class NegotiationTaskPage extends AbstractTaskPage {
-
-    @FindBy(id = "action_id_71")
-    private WebElement Reject;
+public class PmAgencyTaskPage extends AbstractTaskPage {
 
 
-    public NegotiationTaskPage(WebDriver driver) {
+    public PmAgencyTaskPage(WebDriver driver) {
         super(driver);
     }
 
     @Override
     public void clickOnButton(TaskButton button) {
-        switch (button){
-            case ACCEPT:{
+        switch (button) {
+            case ACCEPT: {
                 acceptButton.click();
                 wait.until(ExpectedConditions.textToBePresentInElement(status, TaskStatus.ACCEPTED));
             }
+            case TRANSLATION_TASK_REF: {
+                translationTaskRef.click();
+
+            }
         }
-
     }
-
-
 }

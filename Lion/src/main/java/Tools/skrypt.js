@@ -2,7 +2,7 @@ var $ = AJS.$;
 var baseURL = AJS.params.baseURL;
 
 
-var targetLanguages = ["LION-77"];
+var targetLanguages = ["LION-103"];
 
 
 var translationTask = {

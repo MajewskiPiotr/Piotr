@@ -1,29 +1,24 @@
 package PageObjects.TaskPage;
 
 import Elements.Task.TaskButton;
+import Elements.Task.TaskStatus;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 /**
  * Created by Piotr Majewski on 2017-05-16.
  */
-public class JobTaskPage extends AbstractTaskViewPage {
+public class JobTaskPage extends AbstractTaskPage {
     @FindBy(id = "comment-issue")
     private WebElement commentButton;
 
-    @FindBy(xpath = "//*[@id='status-val']/span")
-    private WebElement status;
 
     @FindBy(id = "action_id_61")
     private WebElement processingButton;
 
-    @FindBy(id = "action_id_31")
-    private WebElement instructionButton;
 
-
-    @FindBy(className = "jira-dialog-content")
-    private WebElement alert;
 
     @FindBy(id = "customfield_11401-val")
     private WebElement plpCount;
@@ -37,20 +32,13 @@ public class JobTaskPage extends AbstractTaskViewPage {
         switch (button) {
             case PROCESSING: {
                 processingButton.click();
+                wait.until(ExpectedConditions.textToBePresentInElement(status, TaskStatus.IN_PROCESSING));
             }
         }
-        waitForProcessing();
 
     }
 
 
-    public void waitForProcessing() {
-        try {
-            Thread.sleep(4000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
 
 
     public int plpCount() {

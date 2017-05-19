@@ -14,11 +14,17 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 /**
  * Created by Piotr Majewski on 2017-05-19.
  */
-public abstract class AbstractTaskViewPage extends PageObject {
+public abstract class AbstractTaskPage extends PageObject {
     @FindBy(xpath = "//*[@id='status-val']/span")
-    public WebElement status;
+    protected WebElement status;
 
-    public AbstractTaskViewPage(WebDriver driver) {
+   @FindBy(id = "action_id_11")
+    protected WebElement acceptButton;
+
+   @FindBy(xpath = "//*[@class='wrap']//a[@class=\"issue-link\"]")
+   protected WebElement translationTaskRef;
+
+    public AbstractTaskPage(WebDriver driver) {
         super(driver);
     }
 

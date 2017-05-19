@@ -2,12 +2,10 @@ package PageObjects.main;
 
 import Elements.KanbanHeader;
 import PageObjects.Base.PageObject;
-import PageObjects.TaskPage.TaskPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
 import java.util.ArrayList;
@@ -27,7 +25,6 @@ public class KanbanPage extends PageObject {
     List<WebElement> listofInProgress;
 
 
-
     public KanbanPage(WebDriver driver) {
         super(driver);
         driver.navigate().to(baseUrl + "/secure/RapidBoard.jspa");
@@ -40,13 +37,13 @@ public class KanbanPage extends PageObject {
         @Param fromWitchColumn - okreslamy kolumne z ktorej bedziemy wybierac Task
         @Param witch - okreslamy ktory task z listy wybrac
       */
-    public TaskPage chooseTask(KanbanHeader fromWitchColumn, int witch) {
+    public PageObject chooseTask(KanbanHeader fromWitchColumn, int witch) {
         List<WebElement> tempList = setListToSearch(fromWitchColumn);
         if (!tempList.isEmpty()) {
             WebElement element = tempList.get(witch - 1);
             element.click();
             driver.navigate().to(baseUrl + "/browse/" + element.getText());
-            return PageFactory.initElements(driver, TaskPage.class);
+            return new PageObject(driver);
         } else {
             Assert.fail("Lista jest pusta!");
         }

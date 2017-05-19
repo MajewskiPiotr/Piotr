@@ -20,6 +20,7 @@ public class DashboardPage extends PageObject {
 
     public DashboardPage(WebDriver driver) {
         super(driver);
+        driver.navigate().to(baseUrl + "/secure/Dashboard.jspa");
         wait.until(ExpectedConditions.visibilityOf(systemDashboard));
 
     }
