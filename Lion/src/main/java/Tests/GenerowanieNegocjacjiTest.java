@@ -36,7 +36,6 @@ public class GenerowanieNegocjacjiTest {
         enviromentSettings.SetTestEnviroment(TestEnviroments.STAGE1);
         driver = enviromentSettings.setUpDriver(BrowserType.CHROME);
     }
-    ///asasasas
 
     //test dziala tylko na Chromie
     //powod: skrypt generujacy Joba nie dziala na innej przegladarce
