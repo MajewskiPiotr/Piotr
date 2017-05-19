@@ -14,4 +14,6 @@ hs_err_pid*
 #IdeaFilew
 Lion/.idea
 *.html
-test*.xml
+*.xml
+Maven_*
+*.iml

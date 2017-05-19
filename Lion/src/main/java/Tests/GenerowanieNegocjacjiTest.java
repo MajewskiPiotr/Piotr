@@ -36,6 +36,7 @@ public class GenerowanieNegocjacjiTest {
         enviromentSettings.SetTestEnviroment(TestEnviroments.STAGE1);
         driver = enviromentSettings.setUpDriver(BrowserType.CHROME);
     }
+    ///asasasas
 
     //test dziala tylko na Chromie
     //powod: skrypt generujacy Joba nie dziala na innej przegladarce
@@ -107,7 +108,7 @@ public class GenerowanieNegocjacjiTest {
         LoginPage loginAsTranslator = new LoginPage(driver);
         loginAsTranslator.open();
         KanbanPage kanbanPage = loginAsTranslator.logInToJiraAndGoToKanban(negotiations.get(0).getTranslator(), "lion");
-        NegotiationTaskPage userTask = (NegotiationTaskPage) kanbanPage.goToNegotiationTask(negotiations.get(0).getKey());
+        NegotiationTaskPage userTask = kanbanPage.goToNegotiationTask(negotiations.get(0).getKey());
         userTask.clickOnButton(TaskButton.ACCEPT);
 
         Assert.assertEquals(userTask.getStatus(), TaskStatus.ACCEPTED);
@@ -123,7 +124,7 @@ public class GenerowanieNegocjacjiTest {
         LoginPage loginAsAdmin = new LoginPage(driver);
         loginAsAdmin.open();
         DashboardPage dashboardPage = loginAsAdmin.logInToJira("piotr.majewski", "piotr.majewski");
-        TaskPage jobTask = (TaskPage) dashboardPage.goToTask(jobTaskURL);
+        TaskPage jobTask = dashboardPage.goToTask(jobTaskURL);
         TranslationTabPage translationTabPage = (TranslationTabPage) jobTask.goToTab(TaskTab.TRANSLATION_TASKS);
 
         Assert.assertTrue(translationTabPage.checkIsStatusChange());
