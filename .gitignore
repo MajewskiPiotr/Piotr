@@ -18,6 +18,6 @@ Lion/.idea
 Maven_*
 *.iml
 .project
-.classpath
-Lion/bin
-/Lion/.settings
+Lion/test-output
+Lion/.class*
+Lion/.settings
