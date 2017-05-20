@@ -13,6 +13,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 /**
  * Created by Piotr Majewski on 2017-05-19.
+ * KLasa abstracyjna. Kazda Page Task powinien dziedziczyc po tej klasie.
  */
 public abstract class AbstractTaskPage extends PageObject {
     @FindBy(xpath = "//*[@id='status-val']/span")

@@ -14,6 +14,7 @@ import java.util.List;
 
 /**
  * Created by Piotr Majewski on 2017-05-17.
+ * KLasa odzwierciedla zakladke Translation_Task
  */
 public class TranslationTabPage extends JobTaskPage {
 

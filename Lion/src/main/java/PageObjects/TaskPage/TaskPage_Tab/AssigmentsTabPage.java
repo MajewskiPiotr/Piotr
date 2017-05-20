@@ -14,6 +14,7 @@ import java.util.List;
 
 /**
  * Created by Piotr Majewski on 2017-05-18.
+ * Klasa odzwierciedla zakladke ASSIGMENT
  */
 public class AssigmentsTabPage extends JobTaskPage {
     WebDriver driver;

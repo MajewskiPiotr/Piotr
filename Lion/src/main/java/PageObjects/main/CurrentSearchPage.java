@@ -14,6 +14,7 @@ import java.util.List;
 
 /**
  * Created by Piotr Majewski on 2017-05-16.
+ * KLasa odzwierciedlaj¹ca strone zaawansowanego szukania.
  */
 public class CurrentSearchPage extends PageObject {
 
@@ -35,6 +36,7 @@ public class CurrentSearchPage extends PageObject {
         wait.until(ExpectedConditions.visibilityOf(modeswither));
     }
 
+    //metoda wyszukuje najnowszego Taska (TranslationJob)
     public JobTaskPage searchForNewTransactionJOB() {
         //zmiana na wyszukiwania zaawansowane
         if (modeswither.getText().equals("Advanced")) {
@@ -45,7 +47,7 @@ public class CurrentSearchPage extends PageObject {
         advanceSearchField.sendKeys("issuetype = \"Translation Job\" ORDER BY created" + Keys.ENTER);
        //List<WebElement> lista = driver.findElements(By.xpath("//*[@class='issue-link-key']"));
         System.out.println("size "+ taskList.size());
-       WebElement element = taskList.get(0);
+        WebElement element = taskList.get(0);
 
         System.out.println(element.getText());
         setTaskNumberURL(baseUrl + "/browse/" + element.getText().trim());

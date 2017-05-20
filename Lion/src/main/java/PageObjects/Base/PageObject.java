@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  * Created by Piotr Majewski on 2017-05-16.
+ * Klasa bazowa wszystkich Page objektow jakie beda tworzone
  */
 public class PageObject {
     protected WebDriver driver;
