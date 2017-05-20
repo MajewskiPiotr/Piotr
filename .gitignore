@@ -17,3 +17,7 @@ Lion/.idea
 *.xml
 Maven_*
 *.iml
+.project
+.classpath
+Lion/bin
+/Lion/.settings
