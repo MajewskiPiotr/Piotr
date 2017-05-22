@@ -1,7 +1,5 @@
 package Tools;
 
-import org.openqa.selenium.WebElement;
-
 /**
  * Created by Piotr Majewski on 2017-05-18.
  */
