@@ -1,9 +1,9 @@
 package Web.PageObjects.TaskPage.TaskPage_Tab;
 
+import Tools.HelpersClass.Task;
 import Web.PageObjects.Elements.Task.TaskStatus;
 import Web.PageObjects.TaskPage.JobTaskPage;
 import Web.PageObjects.TaskPage.TaskPage;
-import Tools.HelpersClass.Task;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -35,9 +35,9 @@ public class TranslationTabPage extends JobTaskPage {
         List<Task> taskList = new ArrayList<>();
 
 
-        for (int i =0; i < listaTaskow.size()-1; i++) {
-            WebElement key = listaTaskow.get(i).findElement(By.xpath("//*[@id='translation-tasks-template-field']/form/table/tbody/tr[" + (i+1) + "]/td[3]/a"));
-            String status = listaTaskow.get(i).findElement(By.xpath("//*[@id='translation-tasks-template-field']/form/table/tbody/tr[" + (i+1) + "]/td[4]/span")).getText();
+        for (int i = 0; i < listaTaskow.size() - 1; i++) {
+            WebElement key = listaTaskow.get(i).findElement(By.xpath("//*[@id='translation-tasks-template-field']/form/table/tbody/tr[" + (i + 1) + "]/td[3]/a"));
+            String status = listaTaskow.get(i).findElement(By.xpath("//*[@id='translation-tasks-template-field']/form/table/tbody/tr[" + (i + 1) + "]/td[4]/span")).getText();
 
             taskList.add(new Task(key, status));
         }

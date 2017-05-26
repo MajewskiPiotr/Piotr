@@ -1,9 +1,9 @@
 package Tests;
 
-import Tools.BrowserType;
-import Tools.EnviromentSettings;
+import Tools.Configuration.BrowserType;
+import Tools.Configuration.EnviromentSettings;
+import Tools.Configuration.TestEnviroments;
 import Tools.JsScript;
-import Tools.TestEnviroments;
 import Web.PageObjects.Elements.Task.TaskButton;
 import Web.PageObjects.Elements.Task.TaskStatus;
 import Web.PageObjects.Elements.Task.TaskTab;

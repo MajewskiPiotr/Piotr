@@ -13,11 +13,12 @@ public class Assigments implements Serializable {
     private String translator;
     private String key;
     private String status;
+
     public Assigments(String key, String status, String translator, String type) {
-        this.status=status;
+        this.status = status;
         this.translator = translator;
-        this.key=key;
-        this.type=type;
+        this.key = key;
+        this.type = type;
     }
 
     @Override

@@ -2,6 +2,7 @@ package Listeners;
 
 import Reports.TestData;
 import Tests.BaseTestClass;
+import Tools.Configuration.Property;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -16,22 +17,21 @@ import java.time.format.DateTimeFormatter;
 public class Listeners implements ITestListener {
 
     private String getPath(ITestResult result) {
-        String path = "";
+        String basePath = Property.getProperty("basePath");
 
+        String path = "";
         LocalDateTime time = LocalDateTime.now(ZoneId.systemDefault());
         String currentTimeStamp = time.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME).
                 replace("T", "_").replace(":", "-").substring(0, 13);
 
         if (result.isSuccess()) {
-
-            path = "C:\\Lion_automatyzacja\\Lion\\DaneTestowe\\" +
+            path = basePath + "\\Lion\\DaneTestowe\\" +
                     result.getInstance().getClass().getSimpleName() + "\\ScreenShots" + "\\" + currentTimeStamp + "\\PASS_" + result.getMethod().getMethodName() + ".jpg";
 
         } else {
-            path = "C:\\Lion_automatyzacja\\Lion\\DaneTestowe\\" +
-                    result.getInstance().getClass().getSimpleName() + "\\ScreenShots" + "\\" + currentTimeStamp + "\\FAIL_" + result.getMethod().getMethodName() + ".jpg";
+            path = basePath + "\\Lion\\DaneTestowe\\" +
+                    result.getInstance().getClass().getSimpleName() + "\\ScreenShots" + "\\" + currentTimeStamp + "\\Fail_" + result.getMethod().getMethodName() + ".jpg";
         }
-        System.out.println(path);
         return path;
     }
 

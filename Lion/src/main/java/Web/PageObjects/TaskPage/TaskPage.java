@@ -76,7 +76,7 @@ public class TaskPage extends AbstractTaskPage {
     public void clickOnButton(TaskButton button) {
 
         switch (button) {
-            case COMPLETED_EDITOR:{
+            case COMPLETED_EDITOR: {
                 completedEditorButton.click();
                 wait.until(ExpectedConditions.textToBePresentInElement(status, TaskStatus.COMPLETED));
                 break;

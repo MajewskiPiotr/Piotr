@@ -1,7 +1,7 @@
 package Web.PageObjects.main;
 
-import Web.PageObjects.Elements.KanbanHeader;
 import Web.PageObjects.Base.PageObject;
+import Web.PageObjects.Elements.KanbanHeader;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

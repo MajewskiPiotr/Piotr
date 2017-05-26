@@ -8,7 +8,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Listeners;
 
 import java.io.File;
 import java.time.LocalDateTime;
@@ -19,24 +18,9 @@ import java.time.ZoneId;
  * klasa Bazowa dla wszystkich testow
  */
 public class BaseTestClass {
-    protected LocalDateTime time = LocalDateTime.now(ZoneId.systemDefault());
-
     protected static WebDriver driver;
     static TestData data;
-
-    @BeforeClass
-    public void setUpTestData() {
-        data = TestData.readTestData(this.getClass().getSimpleName());
-
-        if (data.isZakonczono()) {
-            TestData.flush();
-        }
-        if (data.getScenariusz() == null) {
-            data.setScenariusz(this.getClass().getSimpleName());
-        }
-        System.out.println("Scenariusz to: " + data.getScenariusz());
-
-    }
+    protected LocalDateTime time = LocalDateTime.now(ZoneId.systemDefault());
 
     public static TestData getData() {
         return data;
@@ -50,7 +34,6 @@ public class BaseTestClass {
         }
         return driver;
     }
-
 
     /**
      * This function will take screenshot
@@ -78,6 +61,20 @@ public class BaseTestClass {
 
         FileUtils.copyFile(SrcFile, DestFile);
 
+
+    }
+
+    @BeforeClass
+    public void setUpTestData() {
+        data = TestData.readTestData(this.getClass().getSimpleName());
+
+        if (data.isZakonczono()) {
+            TestData.flush();
+        }
+        if (data.getScenariusz() == null) {
+            data.setScenariusz(this.getClass().getSimpleName());
+        }
+        System.out.println("Scenariusz to: " + data.getScenariusz());
 
     }
 }

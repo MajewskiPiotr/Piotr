@@ -15,7 +15,7 @@ import org.openqa.selenium.support.FindBy;
  */
 public abstract class AbstractTaskPage extends PageObject {
 
-    @FindBy(id="assignee-val")
+    @FindBy(id = "assignee-val")
     protected WebElement assignee;
 
     @FindBy(id = "customfield_10801-val")
@@ -57,11 +57,11 @@ public abstract class AbstractTaskPage extends PageObject {
     }
 
 
-    public String getEditor(){
+    public String getEditor() {
         return editor.getText();
     }
 
-    public String getAssignee(){
+    public String getAssignee() {
         return assignee.getText();
     }
 }

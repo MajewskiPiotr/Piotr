@@ -1,5 +1,6 @@
 package Reports;
 
+import Tools.Configuration.Property;
 import Tools.HelpersClass.Assigments;
 
 import java.io.*;
@@ -18,7 +19,6 @@ public class TestData implements Serializable {
     String phnone;
 
 
-
     //FLOW
     String translator;
     String Scenariusz;
@@ -33,7 +33,9 @@ public class TestData implements Serializable {
     public static void saveTestData(TestData data) {
         ObjectOutputStream pl = null;
         try {
-            File file = new File("c:/Lion_automatyzacja/Lion/" + "DaneTestowe/" + data.getScenariusz() + "/test.data");
+            String path = Property.getProperty("basePath") + "\\Lion\\DaneTestowe\\";
+
+            File file = new File(path + data.getScenariusz() + "/test.data");
             if (!file.exists()) {
                 file.getParentFile().mkdir();
             }
@@ -60,7 +62,7 @@ public class TestData implements Serializable {
 
         ObjectInputStream pl2 = null;
         TestData data = null;
-        String path = "C:\\Lion_automatyzacja\\Lion\\DaneTestowe\\";
+        String path = Property.getProperty("basePath") + "\\Lion\\DaneTestowe\\";
         try {
             pl2 = new ObjectInputStream(new FileInputStream(path + nazwaPl + "\\test.data"));
 
@@ -96,6 +98,10 @@ public class TestData implements Serializable {
         System.out.println("dorobic czyszczenei pliku z danymi");
     }
 
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
     public boolean isZakonczono() {
         return zakonczono;
     }
@@ -111,7 +117,6 @@ public class TestData implements Serializable {
     public void setScenariusz(String scenariusz) {
         Scenariusz = scenariusz;
     }
-
 
     public String getJobTask() {
         return jobTask;
@@ -159,10 +164,6 @@ public class TestData implements Serializable {
 
     public void setTranslator(String translator) {
         this.translator = translator;
-    }
-
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
     }
 
     public String getAvailability() {

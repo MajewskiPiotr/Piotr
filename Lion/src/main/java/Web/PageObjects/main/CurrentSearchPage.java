@@ -64,8 +64,8 @@ public class CurrentSearchPage extends PageObject {
         WebElement advanceSearchField = driver.findElement(By.id("advanced-search"));
         advanceSearchField.clear();
         advanceSearchField.sendKeys("summary ~ Automaty AND issuetype = \"Translation Job\" ORDER BY created" + Keys.ENTER);
-       //List<WebElement> lista = driver.findElements(By.xpath("//*[@class='issue-link-key']"));
-        System.out.println("size "+ taskList.size());
+        //List<WebElement> lista = driver.findElements(By.xpath("//*[@class='issue-link-key']"));
+        System.out.println("size " + taskList.size());
         WebElement element = taskList.get(0);
         setTaskNumberURL(baseUrl + "/browse/" + element.getText().trim());
         driver.navigate().to(getTaskNumberURL());

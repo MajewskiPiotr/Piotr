@@ -1,7 +1,7 @@
 package Web.PageObjects.main;
 
-import Web.PageObjects.Elements.Task.TaskButton;
 import Web.PageObjects.Base.PageObject;
+import Web.PageObjects.Elements.Task.TaskButton;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

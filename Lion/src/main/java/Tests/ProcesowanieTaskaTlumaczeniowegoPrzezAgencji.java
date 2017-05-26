@@ -1,5 +1,8 @@
 package Tests;
 
+import Tools.Configuration.BrowserType;
+import Tools.Configuration.EnviromentSettings;
+import Tools.Configuration.TestEnviroments;
 import Web.PageObjects.Elements.KanbanHeader;
 import Web.PageObjects.Elements.Task.TaskButton;
 import Web.PageObjects.Elements.Task.TaskStatus;
@@ -9,9 +12,6 @@ import Web.PageObjects.TaskPage.TaskPage;
 import Web.PageObjects.main.DashboardPage;
 import Web.PageObjects.main.KanbanPage;
 import Web.PageObjects.main.LoginPage;
-import Tools.BrowserType;
-import Tools.EnviromentSettings;
-import Tools.TestEnviroments;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -75,7 +75,9 @@ public class ProcesowanieTaskaTlumaczeniowegoPrzezAgencji extends BaseTestClass 
         task.clickOnButton(TaskButton.SELF_QA);
         Assert.assertEquals(task.getStatus(), TaskStatus.SELF_QA);
         task.clickOnButton(TaskButton.COMPLETED_TRANSLATOR);
-        List<String> lista = new ArrayList<String>(); lista.add(TaskStatus.COMPLETED); lista.add(TaskStatus.READY_TO_VERIFY);
+        List<String> lista = new ArrayList<String>();
+        lista.add(TaskStatus.COMPLETED);
+        lista.add(TaskStatus.READY_TO_VERIFY);
         Assert.assertTrue(lista.contains(task.getStatus()), "Status taska nieprawidlowy !");
     }
 
