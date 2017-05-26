@@ -1,19 +1,17 @@
 package Tests;
 
-import Elements.KanbanHeader;
-import Elements.Task.TaskButton;
-import Elements.Task.TaskStatus;
-import PageObjects.TaskPage.AssignePage;
-import PageObjects.TaskPage.PmAgencyTaskPage;
-import PageObjects.TaskPage.TaskPage;
-import PageObjects.main.DashboardPage;
-import PageObjects.main.KanbanPage;
-import PageObjects.main.LoginPage;
+import Web.PageObjects.Elements.KanbanHeader;
+import Web.PageObjects.Elements.Task.TaskButton;
+import Web.PageObjects.Elements.Task.TaskStatus;
+import Web.PageObjects.TaskPage.AssignePage;
+import Web.PageObjects.TaskPage.PmAgencyTaskPage;
+import Web.PageObjects.TaskPage.TaskPage;
+import Web.PageObjects.main.DashboardPage;
+import Web.PageObjects.main.KanbanPage;
+import Web.PageObjects.main.LoginPage;
 import Tools.BrowserType;
 import Tools.EnviromentSettings;
-import Tools.Task;
 import Tools.TestEnviroments;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -25,13 +23,10 @@ import java.util.List;
 /**
  * Created by Piotr Majewski on 2017-05-19.
  */
-public class ProcesowanieTaskaTlumaczeniowegoPrzezAgencji {
+public class ProcesowanieTaskaTlumaczeniowegoPrzezAgencji extends BaseTestClass {
 
-    WebDriver driver;
     String pmAgencylogin = "001-svpmgr_66551";
     String pmAgencyhaslo = "lion";
-    String translatorLogin;
-    String taskURL;// ="https://aps.staging.lionbridge.com/browse/GO-36875";
 
 
     @BeforeMethod
@@ -42,36 +37,38 @@ public class ProcesowanieTaskaTlumaczeniowegoPrzezAgencji {
     }
 
 
-    @Test(priority = 1)
+    @Test(priority = 21)
     public void obslugaPrzezPmAgencyjnego() {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.open();
         KanbanPage kanbanPage = loginPage.logInToJiraAndGoToKanban(pmAgencylogin, pmAgencyhaslo);
         kanbanPage.chooseTask(KanbanHeader.NEW, 1);
         PmAgencyTaskPage pmAgencyTaskPage = new PmAgencyTaskPage(driver);
+        System.out.println(" link do negocjacji : " + pmAgencyTaskPage.getUrl());
+
         pmAgencyTaskPage.clickOnButton(TaskButton.ACCEPT);
 
-        System.out.println(pmAgencyTaskPage.getStatus() + "  " + pmAgencyTaskPage.getUrl());
-        taskURL = pmAgencyTaskPage.getUrl();
         Assert.assertEquals(pmAgencyTaskPage.getStatus(), TaskStatus.ACCEPTED);
 
         pmAgencyTaskPage.clickOnButton(TaskButton.TRANSLATION_TASK_REF);
 
         TaskPage task = new TaskPage(driver);
+        data.setNegociationTask(task.getUrl());
+
         task.clickOnButton(TaskButton.ASSIGN_TO_TRANSLATOR);
 
         AssignePage assignePage = new AssignePage(driver);
         //przekazuje login do kolejnego testu
-        translatorLogin = assignePage.chooseAssigne();
+        data.setTranslator(assignePage.chooseAssigne());
         Assert.assertEquals(task.getStatus(), TaskStatus.ASSIGNED_TO_TRANSLATOR);
     }
 
-    @Test(priority = 5)
+    @Test(priority = 22)
     public void obslugaPrzezTranslatora() {
         LoginPage loginAsTranslator = new LoginPage(driver);
         loginAsTranslator.open();
-        DashboardPage dashboardPage = loginAsTranslator.logInToJira(translatorLogin, "lion");
-        TaskPage task = dashboardPage.goToTask(taskURL);
+        DashboardPage dashboardPage = loginAsTranslator.logInToJira(data.getTranslator(), "lion");
+        TaskPage task = dashboardPage.goToTask(data.getNegociationTask());
         task.clickOnButton(TaskButton.IN_PROGRESS);
         Assert.assertEquals(task.getStatus(), TaskStatus.IN_PROGRESS);
 
@@ -80,9 +77,6 @@ public class ProcesowanieTaskaTlumaczeniowegoPrzezAgencji {
         task.clickOnButton(TaskButton.COMPLETED_TRANSLATOR);
         List<String> lista = new ArrayList<String>(); lista.add(TaskStatus.COMPLETED); lista.add(TaskStatus.READY_TO_VERIFY);
         Assert.assertTrue(lista.contains(task.getStatus()), "Status taska nieprawidlowy !");
-
-
-
     }
 
 
