@@ -23,14 +23,14 @@ public class EnviromentSettings {
 
     //Funckja ustawia parametry przeglądarki w zaleznosci od dokonanego wyboru.
     public WebDriver setUpDriver(BrowserType browserType) {
-        WebDriver driver=null;
+        WebDriver driver = null;
         switch (browserType) {
             case CHROME: {
                 System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
                 driver = new ChromeDriver();
                 break;
             }
-            case MOZILLA:{
+            case MOZILLA: {
                 System.setProperty("webdriver.gecko.driver", "C:\\geckodriver.exe");
                 driver = new ChromeDriver();
                 break;
@@ -38,8 +38,13 @@ public class EnviromentSettings {
 
 
         }
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         return driver;
     }
+
+
+
+
 }

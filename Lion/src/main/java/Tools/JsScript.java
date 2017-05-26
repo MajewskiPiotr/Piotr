@@ -13,14 +13,17 @@ import java.util.concurrent.TimeUnit;
  * Created by Piotr Majewski on 2017-05-16.
  */
 public class JsScript {
+    static String taskJob="";
 
 
+    private static void createJob(WebDriver driver, String file) throws Exception {
 
-    public static void createJob(WebDriver driver) throws Exception {
         if (driver instanceof JavascriptExecutor) {
             try {
                 driver.manage().timeouts().setScriptTimeout(10, TimeUnit.SECONDS);
-                ((JavascriptExecutor) driver).executeAsyncScript(readfile());
+
+                taskJob = (String) ((JavascriptExecutor) driver).executeScript(readfile(file));
+
             } catch (ScriptTimeoutException ex) {
                 if (ex.getCause() != null) {
                     throw new Exception("Problem ze scryptem tworzacym JOB");
@@ -29,12 +32,27 @@ public class JsScript {
         } else {
             throw new IllegalStateException("This driver does not support JavaScript!");
         }
+
     }
 
-    private static String readfile() {
+    public static String createTranslationJob(WebDriver driver) {
+
+        try {
+            createJob(driver, "jobGenerator.js");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println("wygenerowano job: " + taskJob);
+        return taskJob;
+    }
+
+
+
+
+    public static String readfile(String filename) {
         String scrypt = "";
         // Deklarowanie i tworzenie obiektu typu File
-        File plikDane = new File("C:\\Lionbridge\\src\\main\\java\\Tools\\skrypt.js");
+        File plikDane = new File("C:\\Lion_automatyzacja\\Lion\\src\\main\\java\\Tools\\" + filename);
         ;
         // Utworzenie obiektu typu String, który będzie
         // przechowywał odczytany tekst
