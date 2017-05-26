@@ -12,7 +12,13 @@ import java.time.format.DateTimeFormatter;
 public class TestJavaclass {
 
     public static void main(String[] args) {
+         LocalDateTime time = LocalDateTime.now(ZoneId.systemDefault());
 
-TestData.saveTestData(new TestData());
+
+
+        String currentTimeStamp = time.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME).replace("T", "_").replace(":", "-").substring(0, 19);
+        System.out.println(currentTimeStamp);
+
+
     }
 }
