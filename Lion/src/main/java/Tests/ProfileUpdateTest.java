@@ -1,8 +1,8 @@
 package Tests;
 
-import Tools.BrowserType;
-import Tools.EnviromentSettings;
-import Tools.TestEnviroments;
+import Tools.Configuration.BrowserType;
+import Tools.Configuration.EnviromentSettings;
+import Tools.Configuration.TestEnviroments;
 import Web.PageObjects.Elements.ProfilePageFields;
 import Web.PageObjects.main.LoginPage;
 import Web.PageObjects.main.ProfilePage;
@@ -56,8 +56,7 @@ public class ProfileUpdateTest extends BaseTestClass {
         loginAsTranslator.open();
         ProfilePage profilePage = loginAsTranslator.logInToJiraAndGoToProfile("001-HU_00588888", "lion");
 
-        System.out.println("tu jest to czego szukam: "+ driver.findElement(By.xpath("//*[@id='vendor-data-profile-form']/form/div[1]/input")).getText());
-
+        System.out.println("tu jest to czego szukam: " + driver.findElement(By.xpath("//*[@id='vendor-data-profile-form']/form/div[1]/input")).getText());
 
 
         Assert.assertEquals(profilePage.getTextFromFields(ProfilePageFields.AVAILABILITY), data.getAvailability());

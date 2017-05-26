@@ -1,11 +1,11 @@
 package Web.PageObjects.Base;
 
+import Tools.Configuration.EnviromentSettings;
 import Web.PageObjects.Elements.Task.TaskButton;
 import Web.PageObjects.Elements.Task.TaskLink;
 import Web.PageObjects.TaskPage.JobTaskPage;
 import Web.PageObjects.TaskPage.NegotiationTaskPage;
 import Web.PageObjects.TaskPage.TaskPage;
-import Tools.EnviromentSettings;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -33,7 +33,8 @@ public class PageObject {
         PageFactory.initElements(driver, this);
 
     }
-    public void waitForPage(){
+
+    public void waitForPage() {
         try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {

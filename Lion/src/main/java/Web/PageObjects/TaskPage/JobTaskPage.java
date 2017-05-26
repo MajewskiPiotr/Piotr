@@ -19,7 +19,6 @@ public class JobTaskPage extends AbstractTaskPage {
     private WebElement processingButton;
 
 
-
     @FindBy(id = "customfield_11401-val")
     private WebElement plpCount;
 
@@ -38,8 +37,6 @@ public class JobTaskPage extends AbstractTaskPage {
         }
 
     }
-
-
 
 
     public int plpCount() {

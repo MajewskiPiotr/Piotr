@@ -75,24 +75,24 @@ public class ProfilePage extends PageObject {
 
         switch (fields) {
             case POC: {
-                text= poc.getAttribute("value");
+                text = poc.getAttribute("value");
                 break;
             }
             case AVAILABILITY: {
-                text=availability.getAttribute("value");
+                text = availability.getAttribute("value");
                 break;
             }
             case PHONE: {
-                text=phone.getAttribute("value");
+                text = phone.getAttribute("value");
                 break;
 
             }
             case AVAILABILITY_TO_UTC: {
-                text=availabilityToUTC.getAttribute("value");
+                text = availabilityToUTC.getAttribute("value");
                 break;
             }
             case AVAILABILITY_FROM_UTC: {
-                text= availabilityFromUTC.getAttribute("value");
+                text = availabilityFromUTC.getAttribute("value");
                 break;
             }
         }

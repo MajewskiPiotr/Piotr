@@ -1,9 +1,9 @@
 package Tests;
 
-import Tools.BrowserType;
-import Tools.EnviromentSettings;
+import Tools.Configuration.BrowserType;
+import Tools.Configuration.EnviromentSettings;
+import Tools.Configuration.TestEnviroments;
 import Tools.JsScript;
-import Tools.TestEnviroments;
 import Web.PageObjects.Elements.Task.TaskButton;
 import Web.PageObjects.Elements.Task.TaskLink;
 import Web.PageObjects.Elements.Task.TaskStatus;
@@ -25,8 +25,6 @@ import org.testng.annotations.Test;
  * Created by Piotr Majewski on 2017-05-22.
  */
 public class KompletowanieIprocesowaniePaczki extends BaseTestClass {
-
-
 
 
     @BeforeMethod

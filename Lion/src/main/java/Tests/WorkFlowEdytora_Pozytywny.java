@@ -1,9 +1,9 @@
 package Tests;
 
+import Tools.Configuration.BrowserType;
+import Tools.Configuration.EnviromentSettings;
+import Tools.Configuration.TestEnviroments;
 import Tools.HelpersClass.Assigments;
-import Tools.BrowserType;
-import Tools.EnviromentSettings;
-import Tools.TestEnviroments;
 import Web.PageObjects.Elements.Task.TaskButton;
 import Web.PageObjects.Elements.Task.TaskLink;
 import Web.PageObjects.Elements.Task.TaskStatus;
@@ -18,8 +18,6 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
-import java.util.List;
 
 /**
  * Created by Piotr Majewski on 2017-05-24.
@@ -88,8 +86,6 @@ public class WorkFlowEdytora_Pozytywny extends BaseTestClass {
         Assert.assertEquals(translationTask.getEditor(), translationTask.getAssignee());
         translationTask.clickOnButton(TaskButton.COMPLETED_EDITOR);
         Assert.assertEquals(translationTask.getStatus(), TaskStatus.COMPLETED);
-
-
 
 
     }

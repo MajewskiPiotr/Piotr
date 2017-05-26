@@ -30,11 +30,13 @@ public class AssigmentsTabPage extends JobTaskPage {
         return negotiations.size();
     }
 
-    private List<Assigments> getAssigments(){
+    private List<Assigments> getAssigments() {
         List<Assigments> assigmentsList = new ArrayList<>();
         for (int i = 0; i <= negotiations.size() - 1; i++) {
             String key = driver.findElement(By.xpath("//*[@id='negotiation-tasks-template-field']/table/tbody/tr[" + (i + 1) + "]/td[1]/a")).getText();
-            if(key==""){Assert.fail("Blad w taskach negocjacyjnych");}
+            if (key == "") {
+                Assert.fail("Blad w taskach negocjacyjnych");
+            }
             String status = driver.findElement(By.xpath("//*[@id='negotiation-tasks-template-field']/table/tbody/tr[" + (i + 1) + "]/td[4]/span")).getText();
             String translator = driver.findElement(By.xpath("//*[@id='negotiation-tasks-template-field']/table/tbody/tr[" + (i + 1) + "]/td[5]")).getText();
             String type = driver.findElement(By.xpath("//*[@id='negotiation-tasks-template-field']/table/tbody/tr[" + (i + 1) + "]/td[2]")).getText();

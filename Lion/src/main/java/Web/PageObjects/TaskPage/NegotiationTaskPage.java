@@ -9,8 +9,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-import java.sql.Driver;
-
 /**
  * Created by Piotr Majewski on 2017-05-19.
  */
@@ -26,7 +24,7 @@ public class NegotiationTaskPage extends AbstractTaskPage {
 
     @Override
     public PageObject clickInLink(TaskLink link) {
-        PageObject obj=null;
+        PageObject obj = null;
         switch (link) {
             case TRANSLATION_TASK_REF: {
                 translationTaskRef.click();

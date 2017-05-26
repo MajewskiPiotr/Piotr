@@ -1,5 +1,6 @@
 package Tools;
 
+import Tools.Configuration.Property;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.ScriptTimeoutException;
 import org.openqa.selenium.WebDriver;
@@ -13,7 +14,7 @@ import java.util.concurrent.TimeUnit;
  * Created by Piotr Majewski on 2017-05-16.
  */
 public class JsScript {
-    static String taskJob="";
+    static String taskJob = "";
 
 
     private static void createJob(WebDriver driver, String file) throws Exception {
@@ -47,12 +48,11 @@ public class JsScript {
     }
 
 
-
-
     public static String readfile(String filename) {
+        String basePath = Property.getProperty("basePath");
         String scrypt = "";
         // Deklarowanie i tworzenie obiektu typu File
-        File plikDane = new File("C:\\Lion_automatyzacja\\Lion\\src\\main\\java\\Tools\\" + filename);
+        File plikDane = new File(basePath + "\\Lion\\src\\main\\java\\Tools\\" + filename);
         ;
         // Utworzenie obiektu typu String, który będzie
         // przechowywał odczytany tekst
