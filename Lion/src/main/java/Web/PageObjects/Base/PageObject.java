@@ -4,7 +4,6 @@ import Tools.Configuration.EnviromentSettings;
 import Web.PageObjects.Elements.Task.TaskButton;
 import Web.PageObjects.Elements.Task.TaskLink;
 import Web.PageObjects.TaskPage.JobTaskPage;
-import Web.PageObjects.TaskPage.NegotiationTaskPage;
 import Web.PageObjects.TaskPage.TaskPage;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -55,15 +54,7 @@ public class PageObject {
 
     }
 
-    public NegotiationTaskPage goToNegotiationTask(String url) {
-        if (url.length() == 8) {
-            driver.navigate().to(baseUrl + "/browse/" + url);
 
-        } else {
-            driver.navigate().to(url);
-        }
-        return new NegotiationTaskPage(driver);
-    }
 
     public TaskPage goToTask(String url) {
         if (url.length() == 8) {

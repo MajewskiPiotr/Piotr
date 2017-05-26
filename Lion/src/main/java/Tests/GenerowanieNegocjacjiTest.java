@@ -8,7 +8,6 @@ import Web.PageObjects.Elements.Task.TaskButton;
 import Web.PageObjects.Elements.Task.TaskStatus;
 import Web.PageObjects.Elements.Task.TaskTab;
 import Web.PageObjects.TaskPage.JobTaskPage;
-import Web.PageObjects.TaskPage.NegotiationTaskPage;
 import Web.PageObjects.TaskPage.TaskPage;
 import Web.PageObjects.TaskPage.TaskPage_Tab.AssigmentsTabPage;
 import Web.PageObjects.TaskPage.TaskPage_Tab.TranslationTabPage;
@@ -97,7 +96,7 @@ public class GenerowanieNegocjacjiTest extends BaseTestClass {
         LoginPage loginAsTranslator = new LoginPage(driver);
         loginAsTranslator.open();
         KanbanPage kanbanPage = loginAsTranslator.logInToJiraAndGoToKanban(data.getListOfAssigments().get(0).getTranslator(), "lion");
-        NegotiationTaskPage userTask = kanbanPage.goToNegotiationTask(data.getListOfAssigments().get(0).getKey());
+        TaskPage userTask = kanbanPage.goToTask(data.getListOfAssigments().get(0).getKey());
         userTask.clickOnButton(TaskButton.ACCEPT);
 
         Assert.assertEquals(userTask.getStatus(), TaskStatus.ACCEPTED);

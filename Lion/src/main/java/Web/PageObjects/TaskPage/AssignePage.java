@@ -26,6 +26,15 @@ public class AssignePage extends AbstractTaskPage {
         super(driver);
     }
 
+    @Override
+    public void clickOnButton(TaskButton button) {
+        switch (button){
+            case ASSIGN_TO_TRANSLATOR:{
+                assignToTranslatorButton.click();
+                wait.until(ExpectedConditions.textToBePresentInElement(status, TaskStatus.ASSIGNED_TO_TRANSLATOR));
+            }
+        }
+    }
 
     //Wybieram pierwsza osobe z listy
     //Zwracam login wybranego usera
@@ -49,15 +58,5 @@ public class AssignePage extends AbstractTaskPage {
         return login.substring(0, separator);
     }
 
-    @Override
-    public void clickOnButton(TaskButton button) {
-        switch (button) {
-            case ASSIGN_TO_TRANSLATOR: {
-                assignToTranslatorButton.click();
-                wait.until(ExpectedConditions.textToBePresentInElement(status, TaskStatus.ASSIGNED_TO_TRANSLATOR));
-            }
-        }
-
-    }
 
 }

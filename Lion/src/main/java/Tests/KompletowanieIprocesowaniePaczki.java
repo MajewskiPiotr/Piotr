@@ -9,7 +9,6 @@ import Web.PageObjects.Elements.Task.TaskLink;
 import Web.PageObjects.Elements.Task.TaskStatus;
 import Web.PageObjects.Elements.Task.TaskTab;
 import Web.PageObjects.TaskPage.JobTaskPage;
-import Web.PageObjects.TaskPage.NegotiationTaskPage;
 import Web.PageObjects.TaskPage.TaskPage;
 import Web.PageObjects.TaskPage.TaskPage_Tab.AssigmentsTabPage;
 import Web.PageObjects.TaskPage.TaskPage_Tab.TranslationTabPage;
@@ -77,7 +76,7 @@ public class KompletowanieIprocesowaniePaczki extends BaseTestClass {
         LoginPage loginAsTranslator = new LoginPage(driver);
         loginAsTranslator.open();
         DashboardPage dashboardPage = loginAsTranslator.logInToJira(data.getListOfAssigments().get(0).getTranslator(), "lion");
-        NegotiationTaskPage negociationTask = dashboardPage.goToNegotiationTask(data.getListOfAssigments().get(0).getKey());
+        TaskPage negociationTask = dashboardPage.goToTask(data.getListOfAssigments().get(0).getKey());
         System.out.println("Task negocjacyjny Translatora :" + negociationTask.getUrl());
         //Akceptacja taska
         negociationTask.clickOnButton(TaskButton.ACCEPT);
@@ -86,7 +85,7 @@ public class KompletowanieIprocesowaniePaczki extends BaseTestClass {
 
 
     @Test(priority = 13)
-    public void test() {
+    public void weryfikacjaZmianyStanowNegocjacji() {
         LoginPage loginAsAdmin = new LoginPage(driver);
         loginAsAdmin.open();
         DashboardPage dashboardPage = loginAsAdmin.loginAsAdmin();

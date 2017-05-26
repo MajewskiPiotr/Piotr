@@ -1,8 +1,9 @@
 package Web.PageObjects.main;
 
+import Tools.HelpersClass.Task;
 import Web.PageObjects.Base.PageObject;
 import Web.PageObjects.TaskPage.JobTaskPage;
-import Web.PageObjects.TaskPage.NegotiationTaskPage;
+import Web.PageObjects.TaskPage.TaskPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -38,7 +39,7 @@ public class CurrentSearchPage extends PageObject {
     }
 
 
-    public NegotiationTaskPage searchForNewNegociationTask() {
+    public TaskPage searchForNewNegociationTask() {
         //zmiana na wyszukiwania zaawansowane
         if (modeswither.getText().equals("Advanced")) {
             modeswither.click();
@@ -52,7 +53,7 @@ public class CurrentSearchPage extends PageObject {
         System.out.println("Task negocjacyjny: " + element.getText());
         setTaskNumberURL(baseUrl + "/browse/" + element.getText().trim());
         driver.navigate().to(getTaskNumberURL());
-        return new NegotiationTaskPage(driver);
+        return new TaskPage(driver);
     }
 
     //metoda wyszukuje najnowszego Taska (TranslationJob)

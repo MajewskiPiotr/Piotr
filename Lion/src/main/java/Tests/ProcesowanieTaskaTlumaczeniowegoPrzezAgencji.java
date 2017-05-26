@@ -3,11 +3,11 @@ package Tests;
 import Tools.Configuration.BrowserType;
 import Tools.Configuration.EnviromentSettings;
 import Tools.Configuration.TestEnviroments;
+import Tools.HelpersClass.Task;
 import Web.PageObjects.Elements.KanbanHeader;
 import Web.PageObjects.Elements.Task.TaskButton;
 import Web.PageObjects.Elements.Task.TaskStatus;
 import Web.PageObjects.TaskPage.AssignePage;
-import Web.PageObjects.TaskPage.PmAgencyTaskPage;
 import Web.PageObjects.TaskPage.TaskPage;
 import Web.PageObjects.main.DashboardPage;
 import Web.PageObjects.main.KanbanPage;
@@ -42,8 +42,7 @@ public class ProcesowanieTaskaTlumaczeniowegoPrzezAgencji extends BaseTestClass 
         LoginPage loginPage = new LoginPage(driver);
         loginPage.open();
         KanbanPage kanbanPage = loginPage.logInToJiraAndGoToKanban(pmAgencylogin, pmAgencyhaslo);
-        kanbanPage.chooseTask(KanbanHeader.NEW, 1);
-        PmAgencyTaskPage pmAgencyTaskPage = new PmAgencyTaskPage(driver);
+        TaskPage pmAgencyTaskPage = (TaskPage) kanbanPage.chooseTask(KanbanHeader.NEW, 1);
         System.out.println(" link do negocjacji : " + pmAgencyTaskPage.getUrl());
 
         pmAgencyTaskPage.clickOnButton(TaskButton.ACCEPT);

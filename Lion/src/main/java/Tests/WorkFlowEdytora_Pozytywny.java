@@ -4,11 +4,11 @@ import Tools.Configuration.BrowserType;
 import Tools.Configuration.EnviromentSettings;
 import Tools.Configuration.TestEnviroments;
 import Tools.HelpersClass.Assigments;
+import Tools.HelpersClass.Task;
 import Web.PageObjects.Elements.Task.TaskButton;
 import Web.PageObjects.Elements.Task.TaskLink;
 import Web.PageObjects.Elements.Task.TaskStatus;
 import Web.PageObjects.Elements.Task.TaskTab;
-import Web.PageObjects.TaskPage.NegotiationTaskPage;
 import Web.PageObjects.TaskPage.TaskPage;
 import Web.PageObjects.TaskPage.TaskPage_Tab.AssigmentsTabPage;
 import Web.PageObjects.main.CurrentSearchPage;
@@ -41,7 +41,7 @@ public class WorkFlowEdytora_Pozytywny extends BaseTestClass {
 
         CurrentSearchPage currentSearchPage = loginPage.logInToJiraAndGoToSearch("001-HU_00588888", "lion");
 
-        NegotiationTaskPage negotiationTask = currentSearchPage.searchForNewNegociationTask();
+        TaskPage negotiationTask = currentSearchPage.searchForNewNegociationTask();
 
 
         negotiationTask.clickOnButton(TaskButton.ACCEPT);
@@ -74,7 +74,7 @@ public class WorkFlowEdytora_Pozytywny extends BaseTestClass {
         loginAsEditor.open();
         DashboardPage dashboardPage = loginAsEditor.logInToJira(editor.getTranslator(), "lion");
         System.out.println("zalogowano sie jako: " + editor.getTranslator());
-        NegotiationTaskPage negotiationTask = dashboardPage.goToNegotiationTask(editor.getKey());
+        TaskPage negotiationTask = dashboardPage.goToTask(editor.getKey());
         negotiationTask.clickOnButton(TaskButton.ACCEPT);
         TaskPage translationTask = (TaskPage) negotiationTask.clickInLink(TaskLink.TRANSLATION_TASK_REF);
         //Assert.assertEquals(translationTask.getStatus(), TaskStatus.READY_TO_VERIFY);

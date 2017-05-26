@@ -1,7 +1,9 @@
 package Web.PageObjects.main;
 
+import Tools.HelpersClass.Task;
 import Web.PageObjects.Base.PageObject;
 import Web.PageObjects.Elements.KanbanHeader;
+import Web.PageObjects.TaskPage.TaskPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -37,13 +39,13 @@ public class KanbanPage extends PageObject {
         @Param fromWitchColumn - okreslamy kolumne z ktorej bedziemy wybierac Task
         @Param witch - okreslamy ktory task z listy wybrac
       */
-    public PageObject chooseTask(KanbanHeader fromWitchColumn, int witch) {
+    public TaskPage chooseTask(KanbanHeader fromWitchColumn, int witch) {
         List<WebElement> tempList = setListToSearch(fromWitchColumn);
         if (!tempList.isEmpty()) {
             WebElement element = tempList.get(witch - 1);
             element.click();
             driver.navigate().to(baseUrl + "/browse/" + element.getText());
-            return new PageObject(driver);
+            return new TaskPage(driver);
         } else {
             Assert.fail("Lista jest pusta!");
         }

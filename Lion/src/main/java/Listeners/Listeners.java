@@ -57,7 +57,6 @@ public class Listeners implements ITestListener {
     @Override
     public void onTestFailure(ITestResult result) {
         try {
-            System.out.println("fail");
             BaseTestClass.takeSnapShot(BaseTestClass.getDriver(), getPath(result));
             TestData.saveTestData(BaseTestClass.getData());
 

@@ -59,15 +59,13 @@ public class TestData implements Serializable {
     }
 
     public static TestData readTestData(String nazwaPl) {
-
+        System.out.println("czytany plik: " + nazwaPl);
         ObjectInputStream pl2 = null;
         TestData data = null;
-        String path = Property.getProperty("basePath") + "\\Lion\\DaneTestowe\\";
+        String path = Property.getProperty("basePath") + "/Lion/DaneTestowe/";
         try {
-            pl2 = new ObjectInputStream(new FileInputStream(path + nazwaPl + "\\test.data"));
-
+            pl2 = new ObjectInputStream(new FileInputStream(path +  nazwaPl + "/test.data"));
             data = (TestData) pl2.readObject();
-            System.out.println(data.toString());
         } catch (EOFException ex) {
             System.out.println("Koniec pliku");
         } catch (FileNotFoundException e) {
