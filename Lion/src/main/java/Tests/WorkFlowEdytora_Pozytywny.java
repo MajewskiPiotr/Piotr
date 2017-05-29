@@ -1,19 +1,19 @@
 package Tests;
 
-import Tools.Configuration.BrowserType;
-import Tools.Configuration.EnviromentSettings;
-import Tools.Configuration.TestEnviroments;
-import Tools.HelpersClass.Assigments;
-import Web.PageObjects.Elements.Task.TaskButton;
-import Web.PageObjects.Elements.Task.TaskLink;
-import Web.PageObjects.Elements.Task.TaskStatus;
-import Web.PageObjects.Elements.Task.TaskTab;
-import Web.PageObjects.TaskPage.NegotiationTaskPage;
-import Web.PageObjects.TaskPage.TaskPage;
-import Web.PageObjects.TaskPage.TaskPage_Tab.AssigmentsTabPage;
-import Web.PageObjects.main.CurrentSearchPage;
-import Web.PageObjects.main.DashboardPage;
-import Web.PageObjects.main.LoginPage;
+import core.Tools.Configuration.BrowserType;
+import core.Tools.Configuration.EnviromentSettings;
+import core.Tools.Configuration.TestEnviroments;
+import core.Tools.HelpersClass.Assigments;
+import PageObjects.Elements.Task.TaskButton;
+import PageObjects.Elements.Task.TaskLink;
+import PageObjects.Elements.Task.TaskStatus;
+import PageObjects.Elements.Task.TaskTab;
+import PageObjects.TaskPage.NegotiationTaskPage;
+import PageObjects.TaskPage.TaskPage;
+import PageObjects.TaskPage.TaskPage_Tab.AssigmentsTabPage;
+import PageObjects.main.CurrentSearchPage;
+import PageObjects.main.DashboardPage;
+import PageObjects.main.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -22,6 +22,7 @@ import org.testng.annotations.Test;
 /**
  * Created by Piotr Majewski on 2017-05-24.
  */
+
 public class WorkFlowEdytora_Pozytywny extends BaseTestClass {
 
 
@@ -81,7 +82,6 @@ public class WorkFlowEdytora_Pozytywny extends BaseTestClass {
         Assert.assertEquals(translationTask.getEditor(), translationTask.getAssignee());
         translationTask.clickOnButton(TaskButton.COMPLETED_EDITOR);
         Assert.assertEquals(translationTask.getStatus(), TaskStatus.COMPLETED);
-
 
     }
 

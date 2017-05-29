@@ -1,21 +1,21 @@
 package Tests;
 
-import Tools.Configuration.BrowserType;
-import Tools.Configuration.EnviromentSettings;
-import Tools.Configuration.TestEnviroments;
-import Tools.JsScript;
-import Web.PageObjects.Elements.Task.TaskButton;
-import Web.PageObjects.Elements.Task.TaskLink;
-import Web.PageObjects.Elements.Task.TaskStatus;
-import Web.PageObjects.Elements.Task.TaskTab;
-import Web.PageObjects.TaskPage.JobTaskPage;
-import Web.PageObjects.TaskPage.NegotiationTaskPage;
-import Web.PageObjects.TaskPage.TaskPage;
-import Web.PageObjects.TaskPage.TaskPage_Tab.AssigmentsTabPage;
-import Web.PageObjects.TaskPage.TaskPage_Tab.TranslationTabPage;
-import Web.PageObjects.main.DashboardPage;
-import Web.PageObjects.main.LoginPage;
-import Web.PageObjects.main.PackagePluginSettings;
+import core.Tools.Configuration.BrowserType;
+import core.Tools.Configuration.EnviromentSettings;
+import core.Tools.Configuration.TestEnviroments;
+import core.Tools.JsScript;
+import PageObjects.Elements.Task.TaskButton;
+import PageObjects.Elements.Task.TaskLink;
+import PageObjects.Elements.Task.TaskStatus;
+import PageObjects.Elements.Task.TaskTab;
+import PageObjects.TaskPage.JobTaskPage;
+import PageObjects.TaskPage.NegotiationTaskPage;
+import PageObjects.TaskPage.TaskPage;
+import PageObjects.TaskPage.TaskPage_Tab.AssigmentsTabPage;
+import PageObjects.TaskPage.TaskPage_Tab.TranslationTabPage;
+import PageObjects.main.DashboardPage;
+import PageObjects.main.LoginPage;
+import PageObjects.main.PackagePluginSettings;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -86,7 +86,7 @@ public class KompletowanieIprocesowaniePaczki extends BaseTestClass {
 
 
     @Test(priority = 13)
-    public void test() {
+    public void weryfikacjaZmianyStanowTaskow() {
         LoginPage loginAsAdmin = new LoginPage(driver);
         loginAsAdmin.open();
         DashboardPage dashboardPage = loginAsAdmin.loginAsAdmin();

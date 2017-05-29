@@ -1,12 +1,11 @@
 package Tests;
 
-import Tools.Configuration.BrowserType;
-import Tools.Configuration.EnviromentSettings;
-import Tools.Configuration.TestEnviroments;
-import Web.PageObjects.Elements.ProfilePageFields;
-import Web.PageObjects.main.LoginPage;
-import Web.PageObjects.main.ProfilePage;
-import org.openqa.selenium.By;
+import core.Tools.Configuration.BrowserType;
+import core.Tools.Configuration.EnviromentSettings;
+import core.Tools.Configuration.TestEnviroments;
+import PageObjects.Elements.ProfilePageFields;
+import PageObjects.main.LoginPage;
+import PageObjects.main.ProfilePage;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;

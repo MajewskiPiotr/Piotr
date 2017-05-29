@@ -1,12 +1,13 @@
 package Tests;
 
-import Reports.TestData;
+import core.Reports.TestData;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 import java.io.File;
@@ -66,16 +67,17 @@ public class BaseTestClass {
 
     @BeforeClass
     public void setUpTestData() {
-        System.out.println("before");
         data = TestData.readTestData(this.getClass().getSimpleName());
 
-        if (data.isZakonczono()) {
-            TestData.flush();
-        }
+
         if (data.getScenariusz() == null) {
             data.setScenariusz(this.getClass().getSimpleName());
         }
-        System.out.println("Scenariusz to: " + data.getScenariusz());
+
+    }
+    @AfterClass
+    public void clean(){
+        TestData.flush(this.getClass().getSimpleName());
 
     }
 }
