@@ -66,6 +66,7 @@ public class BaseTestClass {
 
     @BeforeClass
     public void setUpTestData() {
+        System.out.println("before");
         data = TestData.readTestData(this.getClass().getSimpleName());
 
         if (data.isZakonczono()) {

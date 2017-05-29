@@ -46,7 +46,7 @@ public class GenerowanieNegocjacjiTest extends BaseTestClass {
         data.setJobTask(jobTask);
         dashboardPage.goToUrl(data.getJobTask());
         JobTaskPage jobTaskPage = new JobTaskPage(driver);
-        jobTaskPage.waitForPage();
+        jobTaskPage.waitForJobProcessing();
         Assert.assertEquals(jobTaskPage.getStatus(), TaskStatus.WAITING_FOR_PACKAGING, "Status Joba nie prawidłowy");
         jobTaskPage.waitForPage();
         jobTaskPage.clickOnButton(TaskButton.PROCESSING);
@@ -121,6 +121,7 @@ public class GenerowanieNegocjacjiTest extends BaseTestClass {
 
         Assert.assertTrue(pageObject.checkIsStatusChange(), "Zmiana statusow Negocjacji");
         System.out.println("Translation Task : " + taskViewPage.getUrl());
+        data.setZakonczono(true);
     }
 
 

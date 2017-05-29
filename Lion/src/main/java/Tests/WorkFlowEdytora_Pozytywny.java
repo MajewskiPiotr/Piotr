@@ -38,15 +38,10 @@ public class WorkFlowEdytora_Pozytywny extends BaseTestClass {
     public void akceptacjaIObslugaTaskaPrzezTranslatora() {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.open();
-
         CurrentSearchPage currentSearchPage = loginPage.logInToJiraAndGoToSearch("001-HU_00588888", "lion");
-
         NegotiationTaskPage negotiationTask = currentSearchPage.searchForNewNegociationTask();
-
-
         negotiationTask.clickOnButton(TaskButton.ACCEPT);
         negotiationTask.clickOnButton(TaskButton.TRANSLATION_TASK_REF);
-
         TaskPage translatortask = new TaskPage(driver);
         translatortask.clickOnButton(TaskButton.IN_PROGRESS);
         translatortask.clickOnButton(TaskButton.SELF_QA);

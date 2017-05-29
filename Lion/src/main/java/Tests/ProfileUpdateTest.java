@@ -56,9 +56,6 @@ public class ProfileUpdateTest extends BaseTestClass {
         loginAsTranslator.open();
         ProfilePage profilePage = loginAsTranslator.logInToJiraAndGoToProfile("001-HU_00588888", "lion");
 
-        System.out.println("tu jest to czego szukam: " + driver.findElement(By.xpath("//*[@id='vendor-data-profile-form']/form/div[1]/input")).getText());
-
-
         Assert.assertEquals(profilePage.getTextFromFields(ProfilePageFields.AVAILABILITY), data.getAvailability());
         Assert.assertEquals(profilePage.getTextFromFields(ProfilePageFields.AVAILABILITY_FROM_UTC), data.getAvailabilityFromUtc());
         Assert.assertEquals(profilePage.getTextFromFields(ProfilePageFields.AVAILABILITY_TO_UTC), data.getAvailabilityToUtc());

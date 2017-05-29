@@ -43,6 +43,18 @@ public class JobTaskPage extends AbstractTaskPage {
         return Integer.parseInt(plpCount.getText());
     }
 
+    public void waitForJobProcessing() {
+        System.out.println("robimy refresh 1 ");
+        for (int i = 0; i < 10; i++) {
+            if (getStatus() == TaskStatus.NEW) {
+                System.out.println("robimy refresh");
+                driver.navigate().refresh();
+                break;
+            }
+        }
+
+    }
+
 
 }
 

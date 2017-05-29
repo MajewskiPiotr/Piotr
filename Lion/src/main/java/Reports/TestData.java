@@ -90,11 +90,14 @@ public class TestData implements Serializable {
             System.out.println("ODCZYT DANYCH Z PLIKU: " + data.toString());
             return data;
         }
+        System.out.println("dane nie odczytane, zwracam nowy obiekt");
         return new TestData();
     }
 
     //TODO do zrobienia czyszczenie pliku
     public static void flush() {
+
+
         System.out.println("dorobic czyszczenei pliku z danymi");
     }
 

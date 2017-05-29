@@ -35,6 +35,12 @@ public class CurrentSearchPage extends PageObject {
         driver.navigate().to(baseUrl + "/issues");
         PageFactory.initElements(driver, this);
         wait.until(ExpectedConditions.visibilityOf(modeswither));
+        try {
+            driver.findElement(By.xpath("//*[@id='content']//*[@title='Columns']"));
+            System.out.println("strona Wyszukiwania źle zostala załadowala");
+        } catch (Exception e) {
+
+        }
     }
 
 
