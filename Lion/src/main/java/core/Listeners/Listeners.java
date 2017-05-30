@@ -1,5 +1,6 @@
 package core.Listeners;
 
+import core.Reports.PdfCreator;
 import core.Reports.TestData;
 import Tests.BaseTestClass;
 import core.Tools.Configuration.Property;
@@ -65,6 +66,8 @@ public class Listeners implements ITestListener {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        listabledow.add(result);
+
     }
 
     @Override
@@ -85,5 +88,6 @@ public class Listeners implements ITestListener {
     @Override
     public void onFinish(ITestContext context) {
         System.out.println("Result : " +listabledow.toString());
+        PdfCreator.create(listabledow);
     }
 }

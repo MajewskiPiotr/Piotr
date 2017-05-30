@@ -1,6 +1,7 @@
 package core.Reports;
 
 import com.itextpdf.text.*;
+import com.itextpdf.text.List;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
@@ -8,7 +9,7 @@ import core.Tools.Configuration.Property;
 import org.testng.ITestResult;
 
 import java.io.FileOutputStream;
-import java.util.Date;
+import java.util.*;
 
 
 public class PdfCreator {
@@ -23,14 +24,14 @@ public class PdfCreator {
     private static Font smallBold = new Font(Font.FontFamily.TIMES_ROMAN, 12,
             Font.BOLD);
 
-    public static void main(String[] args) {
+    public static void create(java.util.List<ITestResult> result) {
         try {
             Document document = new Document();
             PdfWriter.getInstance(document, new FileOutputStream(FILE));
             document.open();
             addMetaData(document);
             addTitlePage(document);
-            addContent(document, null);
+            addContent(document, result);
             document.close();
         } catch (Exception e) {
             e.printStackTrace();
@@ -77,6 +78,7 @@ public class PdfCreator {
     }
 
     private static void addContent(Document document, java.util.List<ITestResult> resultList) throws DocumentException {
+
         Anchor anchor = new Anchor("Test Funkcjonalne", catFont);
         anchor.setName("First Chapter");
 
@@ -89,12 +91,12 @@ public class PdfCreator {
 
         for (ITestResult result : resultList) {
 //nazwa Scenariusza jako
-            subPara = new Paragraph("Subcategory 2", subFont);
+            subPara = new Paragraph(result.getInstanceName(), subFont);
             subCatPart = catPart.addSection(subPara);
             subCatPart.add(new Paragraph("Paragraph 1"));
             subCatPart.add(new Paragraph("Paragraph 2"));
             subCatPart.add(new Paragraph("Paragraph 3"));
-
+        }
             // add a list
             createList(subCatPart);
             Paragraph paragraph = new Paragraph();
@@ -106,7 +108,7 @@ public class PdfCreator {
 
             // now add all this to the document
             document.add(catPart);
-        }
+
 
 
     }

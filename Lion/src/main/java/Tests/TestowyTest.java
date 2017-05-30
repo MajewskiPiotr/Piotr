@@ -3,6 +3,7 @@ package Tests;
 import core.Tools.Configuration.BrowserType;
 import core.Tools.Configuration.EnviromentSettings;
 import core.Tools.Configuration.TestEnviroments;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -25,7 +26,13 @@ public class TestowyTest extends BaseTestClass {
 
     @Test(priority = 50)
     public void zmodyfikujProfil() throws IOException {
-        driver.navigate().to("https://docs.oracle.com/javase/tutorial/essential/environment/properties.html");
+        Assert.assertTrue(false);
+    }
+
+    @Test(priority = 51)
+    public void zmodyfikujProfi3() throws IOException {
+        Assert.assertTrue(true);
+
     }
 
 
