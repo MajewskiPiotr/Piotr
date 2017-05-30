@@ -10,11 +10,15 @@ import org.testng.ITestResult;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Piotr Majewski on 2017-05-23.
  */
 public class Listeners implements ITestListener {
+
+    List<ITestResult> listabledow = new ArrayList();
 
     private String getPath(ITestResult result) {
         String basePath = Property.getProperty("basePath");
@@ -46,10 +50,10 @@ public class Listeners implements ITestListener {
         try {
             BaseTestClass.takeSnapShot(BaseTestClass.getDriver(), getPath(result));
             TestData.saveTestData(BaseTestClass.getData());
-
         } catch (Exception e) {
             e.printStackTrace();
         }
+        listabledow.add(result);
     }
 
     @Override
@@ -80,5 +84,6 @@ public class Listeners implements ITestListener {
 
     @Override
     public void onFinish(ITestContext context) {
+        System.out.println("Result : " +listabledow.toString());
     }
 }

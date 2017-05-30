@@ -26,7 +26,6 @@ public class TestowyTest extends BaseTestClass {
     @Test(priority = 50)
     public void zmodyfikujProfil() throws IOException {
         driver.navigate().to("https://docs.oracle.com/javase/tutorial/essential/environment/properties.html");
-
     }
 
 
