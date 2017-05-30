@@ -1,8 +1,8 @@
 package PageObjects.TaskPage.TaskPage_Tab;
 
-import core.Tools.HelpersClass.Assigments;
 import PageObjects.Elements.Task.TaskStatus;
 import PageObjects.TaskPage.JobTaskPage;
+import core.Tools.HelpersClass.Assigments;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -67,6 +67,17 @@ public class AssigmentsTabPage extends JobTaskPage {
         }
         System.out.println("Lista New Editor Work : " + editorWork.toString());
         return editorWork;
+    }
+
+    public boolean checkIsTaskRejected() {
+        int rejected = 0;
+        List<Assigments> list = getNegotiations();
+        for (Assigments assigments : list) {
+            if (assigments.getStatus().equals(TaskStatus.REJECTED)) {
+                rejected++;
+            }
+        }
+        return rejected >= 0;
     }
 
     public boolean checkIsStatusChange() {

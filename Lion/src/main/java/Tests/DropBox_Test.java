@@ -1,14 +1,8 @@
 package Tests;
 
-import Tests.BaseTest.GenerowanieJoba;
-import core.Tools.Configuration.BrowserType;
-import core.Tools.Configuration.EnviromentSettings;
-import core.Tools.Configuration.TestEnviroments;
-import core.Tools.JsScript;
 import PageObjects.Elements.Task.TaskButton;
 import PageObjects.Elements.Task.TaskStatus;
 import PageObjects.Elements.Task.TaskTab;
-import PageObjects.TaskPage.JobTaskPage;
 import PageObjects.TaskPage.NegotiationTaskPage;
 import PageObjects.TaskPage.TaskPage;
 import PageObjects.TaskPage.TaskPage_Tab.AssigmentsTabPage;
@@ -16,16 +10,20 @@ import PageObjects.TaskPage.TaskPage_Tab.TranslationTabPage;
 import PageObjects.main.DashboardPage;
 import PageObjects.main.KanbanPage;
 import PageObjects.main.LoginPage;
+import Tests.BaseTest.GenerowanieJoba;
+import core.Tools.Configuration.BrowserType;
+import core.Tools.Configuration.EnviromentSettings;
+import core.Tools.Configuration.TestEnviroments;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 /**
- * Created by Piotr Majewski on 2017-05-16.
+ * Created by Piotr Majewski on 2017-05-30.
  */
-public class GenerowanieNegocjacjiTest extends BaseTestClass {
-    //zmienne do przekazywanie miedzy testami
+public class DropBox_Test extends BaseTestClass {
+
     @BeforeMethod
     public void setUp() {
         EnviromentSettings enviromentSettings = new EnviromentSettings();
@@ -33,54 +31,24 @@ public class GenerowanieNegocjacjiTest extends BaseTestClass {
         driver = enviromentSettings.setUpDriver(BrowserType.CHROME);
     }
 
-    //test dziala tylko na Chromie
-    //powod: skrypt generujacy Joba nie dziala na innej przegladarce
-    @Test(priority = 1)
-    public void generowanieJoba() throws InterruptedException {
-        GenerowanieJoba.wygenerujJoba(driver);
-
+    @Test(priority = 70)
+    public void wygenerujTaskJobForDropbox() {
+        GenerowanieJoba.wygenerujJobaDlaDropboxa(driver);
     }
 
-    @Test(priority = 2)
+    @Test(priority = 71)
     public void weryfikacjaUtworzonegoJoba() {
-        System.out.println("weryfikujemy joba :" + data.getJobTask());
-        LoginPage loginAsAdmin = new LoginPage(driver);
-        loginAsAdmin.open();
-        DashboardPage dashboardPage = loginAsAdmin.logInToJira("piotr.majewski", "piotr.majewski");
-        dashboardPage.goToTask(data.getJobTask());
-        JobTaskPage taskJobViewPage = new JobTaskPage(driver);
-        Assert.assertEquals(taskJobViewPage.getStatus(), TaskStatus.IN_PROCESSING, "JOB Nie zmienił stanu na IN PROGRESS");
-        //zmienna do porownania z iloscia Taskow negocjacyjnych
-
-        int plpCount = taskJobViewPage.plpCount();
-        TranslationTabPage translationTasksPage = (TranslationTabPage) taskJobViewPage.goToTab(TaskTab.TRANSLATION_TASKS);
-        Assert.assertEquals(plpCount, translationTasksPage.countTranslatorTask());
-        TaskPage translationTask = translationTasksPage.goToFirstTask();
-        //weryfikacja stanu Translation task
-        System.out.println("Translator Task: " + translationTask.getUrl());
-
-        Assert.assertEquals(translationTask.getStatus(), TaskStatus.WAITING_FOR_ASSIGMENT);
-        //weryfikujemy czy wygenerowaly się TranslatorsPool
-
-        Assert.assertTrue(translationTask.getTranslatorPool1Count() > 0, "Nie wygenerowano ");
-
-        //przechodzimy na zakladke Assigments
-        AssigmentsTabPage assigmentsTabPage = (AssigmentsTabPage) translationTask.goToTab(TaskTab.ASSIGMENTS);
-        //weryfikujemy czy wygenerowały sie negocjacje
-        Assert.assertTrue(assigmentsTabPage.getNegociationCount() > 0, "Nie zostały wygenerowane Negocjacje !");
-        //przekazanie listy negocjacji do dalszeych testow
-        data.setListOfAssigments(assigmentsTabPage.getNegotiations());
-
+       GenerowanieJoba.zweryfikujJoba(driver);
     }
 
-    @Test(priority = 3)
+    @Test(priority = 72)
     public void akceptacjaPrzezTranslatoraNegocjacji() {
         Assert.assertFalse(data.getListOfAssigments() == null, "Brak danych do testu. Nie zainijowano Listy z negocjacjami");
         System.out.println("Wygenerowane negocjacje :" + data.getListOfAssigments().toString());
 
         LoginPage loginAsTranslator = new LoginPage(driver);
         loginAsTranslator.open();
-        KanbanPage kanbanPage = loginAsTranslator.logInToJiraAndGoToKanban(data.getListOfAssigments().get(0).getTranslator(), "lion");
+        DashboardPage kanbanPage = loginAsTranslator.logInToJira(data.getListOfAssigments().get(0).getTranslator(), "lion");
         NegotiationTaskPage userTask = kanbanPage.goToNegotiationTask(data.getListOfAssigments().get(0).getKey());
         userTask.clickOnButton(TaskButton.ACCEPT);
 
@@ -88,7 +56,7 @@ public class GenerowanieNegocjacjiTest extends BaseTestClass {
         System.out.println("Task badany : " + userTask.getUrl());
     }
 
-    @Test(priority = 4)
+    @Test(priority = 73)
     public void weryfikacjaStanowNegocjacji() {
         Assert.assertFalse(data.getListOfAssigments() == null, "Brak danych do testu. Nie zainijowano Listy z negocjacjami");
 
@@ -108,9 +76,9 @@ public class GenerowanieNegocjacjiTest extends BaseTestClass {
         data.setZakonczono(true);
     }
 
-
     @AfterMethod
     public void tearDown() {
         driver.close();
     }
+
 }
