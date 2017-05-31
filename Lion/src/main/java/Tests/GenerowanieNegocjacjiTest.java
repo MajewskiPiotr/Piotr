@@ -16,14 +16,17 @@ import PageObjects.TaskPage.TaskPage_Tab.TranslationTabPage;
 import PageObjects.main.DashboardPage;
 import PageObjects.main.KanbanPage;
 import PageObjects.main.LoginPage;
+import org.junit.runners.Suite;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 /**
  * Created by Piotr Majewski on 2017-05-16.
  */
+@Listeners(core.Listeners.Listeners.class)
 public class GenerowanieNegocjacjiTest extends BaseTestClass {
     //zmienne do przekazywanie miedzy testami
     @BeforeMethod

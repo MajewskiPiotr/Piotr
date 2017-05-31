@@ -30,17 +30,17 @@ public class DropBox_Test_Odrzucenie extends BaseTestClass {
         driver = enviromentSettings.setUpDriver(BrowserType.CHROME);
     }
 
-    @Test(priority = 70)
+    @Test(priority = 80)
     public void wygenerujTaskJobForDropbox() {
         GenerowanieJoba.wygenerujJobaDlaDropboxa(driver);
     }
 
-    @Test(priority = 71)
+    @Test(priority = 81)
     public void weryfikacjaUtworzonegoJoba() {
        GenerowanieJoba.zweryfikujJoba(driver);
     }
 
-    @Test(priority = 72)
+    @Test(priority = 82)
     public void odrzuceniePrzezTranslatoraNegocjacji() {
         Assert.assertFalse(data.getListOfAssigments() == null, "Brak danych do testu. Nie zainijowano Listy z negocjacjami");
         System.out.println("Wygenerowane negocjacje :" + data.getListOfAssigments().toString());
@@ -55,7 +55,7 @@ public class DropBox_Test_Odrzucenie extends BaseTestClass {
         System.out.println("Task badany : " + userTask.getUrl());
     }
 
-    @Test(priority = 73)
+    @Test(priority = 83)
     public void weryfikacjaStanowNegocjacji() {
         Assert.assertFalse(data.getListOfAssigments() == null, "Brak danych do testu. Nie zainijowano Listy z negocjacjami");
 
