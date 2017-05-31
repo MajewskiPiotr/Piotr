@@ -26,12 +26,12 @@ public class TestowyTest extends BaseTestClass {
 
     @Test(priority = 50)
     public void zmodyfikujProfil() throws IOException {
-        Assert.assertTrue(false);
+        Assert.assertTrue(false, "TESt jest do dupy i nie przechodzi");
     }
 
     @Test(priority = 51)
     public void zmodyfikujProfi3() throws IOException {
-        Assert.assertTrue(true);
+        Assert.assertTrue(true, "a ten test jest wporzo");
 
     }
 

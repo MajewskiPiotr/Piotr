@@ -1,28 +1,99 @@
 package core.Reports;
 
 import com.itextpdf.text.*;
-import com.itextpdf.text.List;
+import com.itextpdf.text.pdf.PdfAction;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 import core.Tools.Configuration.Property;
 import org.testng.ITestResult;
 
+import java.io.File;
 import java.io.FileOutputStream;
-import java.util.*;
+import java.util.Date;
 
 
 public class PdfCreator {
-    private static String FILE = Property.getProperty("basePath") + "/Lion/DaneTestowe/raport.pdf";
+    private static String FILE = Property.getProperty("basePath") + "/Lion/DaneTestowe/raport" + new Date().getTime() + ".pdf";
     //     "c:\\Applications\\FirstPdf.pdf";
     private static Font catFont = new Font(Font.FontFamily.TIMES_ROMAN, 18,
             Font.BOLD);
     private static Font redFont = new Font(Font.FontFamily.TIMES_ROMAN, 12,
             Font.NORMAL, BaseColor.RED);
-    private static Font subFont = new Font(Font.FontFamily.TIMES_ROMAN, 16,
+    private static Font subFontFail = new Font(Font.FontFamily.TIMES_ROMAN, 16,
+            Font.BOLD, BaseColor.RED);
+    private static Font subFontPass = new Font(Font.FontFamily.TIMES_ROMAN, 16,
+            Font.BOLD, BaseColor.GREEN);
+    private static Font scenarioFont = new Font(Font.FontFamily.TIMES_ROMAN, 16,
             Font.BOLD);
+
     private static Font smallBold = new Font(Font.FontFamily.TIMES_ROMAN, 12,
             Font.BOLD);
+
+
+    private static void addContent(Document document, java.util.List<ITestResult> resultList) throws DocumentException {
+
+
+        Anchor anchor = new Anchor("First Chapter", catFont);
+        anchor.setName("First Chapter");
+
+        // Second parameter is the number of the chapter
+        Chapter catPart = new Chapter(new Paragraph(anchor), 1);
+        Paragraph subPara;
+        Section subCatPart;
+        for (ITestResult result : resultList) {
+            if (result.isSuccess()) {
+                System.out.println(result.toString());
+                subPara = new Paragraph(result.getName(), subFontPass);
+                subCatPart = catPart.addSection(subPara);
+                subCatPart.add(new Paragraph("Test PASS"));
+            } else {
+                subPara = new Paragraph(result.getName(), subFontFail);
+                subCatPart = catPart.addSection(subPara);
+                subCatPart.add(new Paragraph(result.getThrowable().getMessage()));
+                Chunk photo = new Chunk("Ten Screen");
+                photo.setAction(new PdfAction("file:///" + new File("C:/Lion_automatyzacja/Lion/DaneTestowe/TestowyTest/ScreenShots/2017-05-30_14/PASS_zmodyfikujProfi2.jpg")));
+                Paragraph screen = new Paragraph("nowy zrzut");
+                screen.add(photo);
+                subCatPart.add(screen);
+
+            }
+        }
+
+
+        subPara = new Paragraph("Subcategory 2", subFontPass);
+        subCatPart = catPart.addSection(subPara);
+        subCatPart.add(new Paragraph("Paragraph 1"));
+        subCatPart.add(new Paragraph("Paragraph 2"));
+        subCatPart.add(new Paragraph("Paragraph 3"));
+
+        // add a list
+        createList(subCatPart);
+        Paragraph paragraph = new Paragraph();
+        addEmptyLine(paragraph, 5);
+        subCatPart.add(paragraph);
+
+        // add a table
+        createTable(subCatPart);
+
+        // now add all this to the document
+        document.add(catPart);
+
+        // Next section
+        anchor = new Anchor("Second Chapter", catFont);
+        anchor.setName("Second Chapter");
+
+        // Second parameter is the number of the chapter
+        catPart = new Chapter(new Paragraph(anchor), 1);
+
+        subPara = new Paragraph("Subcategory", subFontPass);
+        subCatPart = catPart.addSection(subPara);
+        subCatPart.add(new Paragraph("This is a very important message"));
+
+        // now add all this to the document
+        document.add(catPart);
+
+    }
 
     public static void create(java.util.List<ITestResult> result) {
         try {
@@ -77,41 +148,6 @@ public class PdfCreator {
         document.newPage();
     }
 
-    private static void addContent(Document document, java.util.List<ITestResult> resultList) throws DocumentException {
-
-        Anchor anchor = new Anchor("Test Funkcjonalne", catFont);
-        anchor.setName("First Chapter");
-
-        // Second parameter is the number of the chapter
-        Chapter catPart = new Chapter(new Paragraph(anchor), 2);
-
-        Paragraph subPara = new Paragraph("Subcategory 1", subFont);
-        Section subCatPart = catPart.addSection(subPara);
-        subCatPart.add(new Paragraph("Hello"));
-
-        for (ITestResult result : resultList) {
-//nazwa Scenariusza jako
-            subPara = new Paragraph(result.getInstanceName(), subFont);
-            subCatPart = catPart.addSection(subPara);
-            subCatPart.add(new Paragraph("Paragraph 1"));
-            subCatPart.add(new Paragraph("Paragraph 2"));
-            subCatPart.add(new Paragraph("Paragraph 3"));
-        }
-            // add a list
-            createList(subCatPart);
-            Paragraph paragraph = new Paragraph();
-            addEmptyLine(paragraph, 5);
-            subCatPart.add(paragraph);
-
-            // add a table
-            createTable(subCatPart);
-
-            // now add all this to the document
-            document.add(catPart);
-
-
-
-    }
 
     private static void createTable(Section subCatPart)
             throws BadElementException {

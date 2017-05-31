@@ -2,6 +2,7 @@ package Tests;
 
 import core.Tools.Configuration.BrowserType;
 import core.Tools.Configuration.EnviromentSettings;
+import core.Tools.Configuration.Property;
 import core.Tools.Configuration.TestEnviroments;
 import core.Tools.JsScript;
 import PageObjects.Elements.Task.TaskButton;

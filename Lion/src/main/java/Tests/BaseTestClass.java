@@ -68,8 +68,6 @@ public class BaseTestClass {
     @BeforeClass
     public void setUpTestData() {
         data = TestData.readTestData(this.getClass().getSimpleName());
-
-
         if (data.getScenariusz() == null) {
             data.setScenariusz(this.getClass().getSimpleName());
         }
