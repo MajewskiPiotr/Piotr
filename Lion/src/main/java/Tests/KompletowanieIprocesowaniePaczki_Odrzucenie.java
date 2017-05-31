@@ -12,6 +12,7 @@ import PageObjects.TaskPage.TaskPage_Tab.TranslationTabPage;
 import PageObjects.main.DashboardPage;
 import PageObjects.main.LoginPage;
 import PageObjects.main.PackagePluginSettings;
+import Tests.BaseTest.BaseTestClass;
 import core.Tools.Configuration.BrowserType;
 import core.Tools.Configuration.EnviromentSettings;
 import core.Tools.Configuration.TestEnviroments;
@@ -64,7 +65,7 @@ public class KompletowanieIprocesowaniePaczki_Odrzucenie extends BaseTestClass {
             e.printStackTrace();
         }
         AssigmentsTabPage packagePageAssigmentTab = (AssigmentsTabPage) packageTaskPage.goToTab(TaskTab.ASSIGMENTS);
-        Assert.assertTrue(packagePageAssigmentTab.getNegociationCount() > 0);
+        Assert.assertTrue(packagePageAssigmentTab.getNegociationCount() > 0, "Nie zostały wygenerowane negocjacje");
         //przekazywanie danych do kolejnych testów
         data.setListOfAssigments(packagePageAssigmentTab.getNegotiations());
 
@@ -81,7 +82,7 @@ public class KompletowanieIprocesowaniePaczki_Odrzucenie extends BaseTestClass {
         System.out.println("Task negocjacyjny Translatora :" + negociationTask.getUrl());
         //Akceptacja taska
         negociationTask.clickOnButton(TaskButton.REJECT);
-        Assert.assertEquals(negociationTask.getStatus(), TaskStatus.REJECTED);
+        Assert.assertEquals(negociationTask.getStatus(), TaskStatus.REJECTED, "Negcjacji nie udalo sie odrzucić");
     }
 
 
@@ -94,7 +95,7 @@ public class KompletowanieIprocesowaniePaczki_Odrzucenie extends BaseTestClass {
         System.out.println(packageTaskPage.getUrl());
         AssigmentsTabPage assigmentTab = (AssigmentsTabPage) packageTaskPage.goToTab(TaskTab.ASSIGMENTS);
         //weryfikacja zmiany stanow negocjacji
-        Assert.assertTrue(assigmentTab.checkIsTaskRejected());
+        Assert.assertTrue(assigmentTab.checkIsTaskRejected(), "problem ze stanem takow po odrzuceniu");
 
 
     }

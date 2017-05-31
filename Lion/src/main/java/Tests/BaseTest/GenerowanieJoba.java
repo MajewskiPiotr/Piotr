@@ -9,7 +9,6 @@ import PageObjects.TaskPage.TaskPage_Tab.AssigmentsTabPage;
 import PageObjects.TaskPage.TaskPage_Tab.TranslationTabPage;
 import PageObjects.main.DashboardPage;
 import PageObjects.main.LoginPage;
-import Tests.BaseTestClass;
 import core.Reports.TestData;
 import core.Tools.JsScript;
 import org.openqa.selenium.WebDriver;

@@ -71,15 +71,17 @@ public class AssigmentsTabPage extends JobTaskPage {
 
     public boolean checkIsTaskRejected() {
         int rejected = 0;
-
+        int statusNew = 0;
         List<Assigments> list = getNegotiations();
         for (Assigments assigments : list) {
             if (assigments.getStatus().equals(TaskStatus.REJECTED)) {
                 rejected++;
-            } //else (assigments.getStatus().equals(TaskStatus.NEW))
-          //  )
+            } else if (assigments.getStatus().equals(TaskStatus.NEW)) {
+                statusNew++;
+            }
+
         }
-        return rejected >= 0;
+        return rejected >= 0 && rejected + statusNew == list.size();
     }
 
     public boolean checkIsStatusChange() {

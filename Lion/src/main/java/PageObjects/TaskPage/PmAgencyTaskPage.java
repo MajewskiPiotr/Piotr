@@ -21,9 +21,17 @@ public class PmAgencyTaskPage extends AbstractTaskPage {
             case ACCEPT: {
                 acceptButton.click();
                 wait.until(ExpectedConditions.textToBePresentInElement(status, TaskStatus.ACCEPTED));
+                break;
             }
             case TRANSLATION_TASK_REF: {
                 translationTaskRef.click();
+                break;
+            }
+            case REJECT: {
+
+                rejectButton.click();
+                wait.until(ExpectedConditions.textToBePresentInElement(status, TaskStatus.REJECTED));
+                break;
 
             }
         }

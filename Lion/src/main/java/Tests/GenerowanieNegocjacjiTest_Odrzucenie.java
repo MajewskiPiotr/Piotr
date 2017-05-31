@@ -11,6 +11,7 @@ import PageObjects.TaskPage.TaskPage_Tab.TranslationTabPage;
 import PageObjects.main.DashboardPage;
 import PageObjects.main.KanbanPage;
 import PageObjects.main.LoginPage;
+import Tests.BaseTest.BaseTestClass;
 import core.Tools.Configuration.BrowserType;
 import core.Tools.Configuration.EnviromentSettings;
 import core.Tools.Configuration.TestEnviroments;
@@ -76,7 +77,7 @@ public class GenerowanieNegocjacjiTest_Odrzucenie extends BaseTestClass {
         //weryfikacja stanu Translation task
         System.out.println("Translator Task: " + translationTask.getUrl());
 
-        Assert.assertEquals(translationTask.getStatus(), TaskStatus.WAITING_FOR_ASSIGMENT);
+        Assert.assertEquals(translationTask.getStatus(), TaskStatus.WAITING_FOR_ASSIGMENT, "Task nie znajduje się w odpowiednim stanie");
         //weryfikujemy czy wygenerowaly się TranslatorsPool
 
         Assert.assertTrue(translationTask.getTranslatorPool1Count() > 0, "Nie wygenerowano ");
@@ -87,7 +88,6 @@ public class GenerowanieNegocjacjiTest_Odrzucenie extends BaseTestClass {
         Assert.assertTrue(assigmentsTabPage.getNegociationCount() > 0, "Nie zostały wygenerowane Negocjacje !");
         //przekazanie listy negocjacji do dalszeych testow
         data.setListOfAssigments(assigmentsTabPage.getNegotiations());
-
     }
 
     @Test(priority = 62)

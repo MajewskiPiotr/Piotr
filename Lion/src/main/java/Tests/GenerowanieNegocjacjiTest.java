@@ -1,10 +1,10 @@
 package Tests;
 
+import Tests.BaseTest.BaseTestClass;
 import Tests.BaseTest.GenerowanieJoba;
 import core.Tools.Configuration.BrowserType;
 import core.Tools.Configuration.EnviromentSettings;
 import core.Tools.Configuration.TestEnviroments;
-import core.Tools.JsScript;
 import PageObjects.Elements.Task.TaskButton;
 import PageObjects.Elements.Task.TaskStatus;
 import PageObjects.Elements.Task.TaskTab;
@@ -16,7 +16,6 @@ import PageObjects.TaskPage.TaskPage_Tab.TranslationTabPage;
 import PageObjects.main.DashboardPage;
 import PageObjects.main.KanbanPage;
 import PageObjects.main.LoginPage;
-import org.junit.runners.Suite;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;

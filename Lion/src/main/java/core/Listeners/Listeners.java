@@ -1,7 +1,7 @@
 package core.Listeners;
 
 import core.Reports.TestData;
-import Tests.BaseTestClass;
+import Tests.BaseTest.BaseTestClass;
 import core.Tools.Configuration.Property;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
