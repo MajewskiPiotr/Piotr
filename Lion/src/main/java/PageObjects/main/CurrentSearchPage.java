@@ -52,6 +52,7 @@ public class CurrentSearchPage extends PageObject {
         WebElement advanceSearchField = driver.findElement(By.id("advanced-search"));
         advanceSearchField.clear();
         advanceSearchField.sendKeys("issuetype = \"New Work Available\" AND status = New AND cf[10009] = UI" + Keys.ENTER);
+        //TODO czekanie na wyniki
         //List<WebElement> lista = driver.findElements(By.xpath("//*[@class='issue-link-key']"));
         WebElement element = taskList.get(0);
 

@@ -31,11 +31,11 @@ public class Listeners implements ITestListener {
 
         if (result.isSuccess()) {
             path = basePath + "\\Lion\\DaneTestowe\\" +
-                    result.getInstance().getClass().getSimpleName() + "\\ScreenShots" + "\\" + currentTimeStamp + "\\PASS_" + result.getMethod().getMethodName() + ".jpg";
+                    result.getInstance().getClass().getSimpleName() + "\\ScreenShots" + "\\PASS_" + result.getMethod().getMethodName() + ".jpg";
 
         } else {
             path = basePath + "\\Lion\\DaneTestowe\\" +
-                    result.getInstance().getClass().getSimpleName() + "\\ScreenShots" + "\\" + currentTimeStamp + "\\Fail_" + result.getMethod().getMethodName() + ".jpg";
+                    result.getInstance().getClass().getSimpleName() + "\\ScreenShots" + "\\Fail_" + result.getMethod().getMethodName() + ".jpg";
         }
         return path;
     }
