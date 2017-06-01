@@ -15,11 +15,13 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 public class NegotiationTaskPage extends AbstractTaskPage {
 
     @FindBy(id = "action_id_71")
-    private WebElement Reject;
+    private WebElement rejectButton;
 
 
     public NegotiationTaskPage(WebDriver driver) {
+
         super(driver);
+        System.out.println("Task jest w Statusie: " + getStatus());
     }
 
     @Override
@@ -45,6 +47,11 @@ public class NegotiationTaskPage extends AbstractTaskPage {
             }
             case TRANSLATION_TASK_REF: {
                 translationTaskRef.click();
+                break;
+            }
+            case REJECT: {
+                rejectButton.click();
+                wait.until(ExpectedConditions.textToBePresentInElement(status, TaskStatus.REJECTED));
                 break;
             }
         }

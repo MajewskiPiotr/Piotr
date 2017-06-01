@@ -1,9 +1,10 @@
 package Tests;
 
+import Tests.BaseTest.BaseTestClass;
+import Tests.BaseTest.GenerowanieJoba;
 import core.Tools.Configuration.BrowserType;
 import core.Tools.Configuration.EnviromentSettings;
 import core.Tools.Configuration.TestEnviroments;
-import core.Tools.JsScript;
 import PageObjects.Elements.Task.TaskButton;
 import PageObjects.Elements.Task.TaskStatus;
 import PageObjects.Elements.Task.TaskTab;
@@ -18,11 +19,13 @@ import PageObjects.main.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 /**
  * Created by Piotr Majewski on 2017-05-16.
  */
+@Listeners(core.Listeners.Listeners.class)
 public class GenerowanieNegocjacjiTest extends BaseTestClass {
     //zmienne do przekazywanie miedzy testami
     @BeforeMethod
@@ -36,24 +39,7 @@ public class GenerowanieNegocjacjiTest extends BaseTestClass {
     //powod: skrypt generujacy Joba nie dziala na innej przegladarce
     @Test(priority = 1)
     public void generowanieJoba() throws InterruptedException {
-        //logujemy sie do Jiry jako Admin
-        LoginPage loginAsAdmin = new LoginPage(driver);
-        loginAsAdmin.open();
-        DashboardPage dashboardPage = loginAsAdmin.logInToJira("piotr.majewski", "piotr.majewski");
-        //tworzymy skryptem Task (JOBa) i zapisujemy w danych testowych.
-        String jobTask = JsScript.createTranslationJob(driver);
-        //wyszukuje utworzonego Taska (JOBa)
-        data.setJobTask(jobTask);
-        dashboardPage.goToUrl(data.getJobTask());
-        JobTaskPage jobTaskPage = new JobTaskPage(driver);
-        jobTaskPage.waitForJobProcessing();
-        Assert.assertEquals(jobTaskPage.getStatus(), TaskStatus.WAITING_FOR_PACKAGING, "Status Joba nie prawidłowy");
-        jobTaskPage.waitForPage();
-        jobTaskPage.clickOnButton(TaskButton.PROCESSING);
-
-        //weryfikacja stanu
-        Assert.assertEquals(jobTaskPage.getStatus(), TaskStatus.IN_PROCESSING);
-        data.setJobTask(jobTask);
+        GenerowanieJoba.wygenerujJoba(driver);
 
     }
 

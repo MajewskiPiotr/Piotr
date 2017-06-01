@@ -15,6 +15,9 @@ import org.openqa.selenium.support.FindBy;
  */
 public abstract class AbstractTaskPage extends PageObject {
 
+    @FindBy(id="action_id_71" )
+    protected WebElement rejectButton;
+
     @FindBy(id = "assignee-val")
     protected WebElement assignee;
 

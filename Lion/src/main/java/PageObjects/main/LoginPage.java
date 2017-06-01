@@ -56,7 +56,6 @@ public class LoginPage extends PageObject {
 
     public KanbanPage logInToJiraAndGoToKanban(String login, String haslo) {
         login(login, haslo);
-
         return new KanbanPage(driver);
 
     }

@@ -17,4 +17,5 @@ public class TaskStatus {
     public static final String COMPLETED = "COMPLETED";
     public static final java.lang.String READY_TO_VERIFY = "READY TO VERIFY";
     public static final String ASSIGNED_TO_EDITOR = "ASSIGNED TO EDITOR";
+    public static final String REJECTED = "REJECTED";
 }

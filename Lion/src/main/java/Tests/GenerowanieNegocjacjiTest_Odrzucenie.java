@@ -11,6 +11,7 @@ import PageObjects.TaskPage.TaskPage_Tab.TranslationTabPage;
 import PageObjects.main.DashboardPage;
 import PageObjects.main.KanbanPage;
 import PageObjects.main.LoginPage;
+import Tests.BaseTest.BaseTestClass;
 import core.Tools.Configuration.BrowserType;
 import core.Tools.Configuration.EnviromentSettings;
 import core.Tools.Configuration.TestEnviroments;
@@ -34,7 +35,7 @@ public class GenerowanieNegocjacjiTest_Odrzucenie extends BaseTestClass {
 
     //test dziala tylko na Chromie
     //powod: skrypt generujacy Joba nie dziala na innej przegladarce
-    @Test(priority = 1)
+    @Test(priority = 60)
     public void generowanieJoba() throws InterruptedException {
         //logujemy sie do Jiry jako Admin
         LoginPage loginAsAdmin = new LoginPage(driver);
@@ -50,14 +51,13 @@ public class GenerowanieNegocjacjiTest_Odrzucenie extends BaseTestClass {
         Assert.assertEquals(jobTaskPage.getStatus(), TaskStatus.WAITING_FOR_PACKAGING, "Status Joba nie prawidłowy");
         jobTaskPage.waitForPage();
         jobTaskPage.clickOnButton(TaskButton.PROCESSING);
-
         //weryfikacja stanu
         Assert.assertEquals(jobTaskPage.getStatus(), TaskStatus.IN_PROCESSING);
         data.setJobTask(jobTask);
 
     }
 
-    @Test(priority = 2)
+    @Test(priority = 61)
     public void weryfikacjaUtworzonegoJoba() {
         System.out.println("weryfikujemy joba :" + data.getJobTask());
         LoginPage loginAsAdmin = new LoginPage(driver);
@@ -72,10 +72,12 @@ public class GenerowanieNegocjacjiTest_Odrzucenie extends BaseTestClass {
         TranslationTabPage translationTasksPage = (TranslationTabPage) taskJobViewPage.goToTab(TaskTab.TRANSLATION_TASKS);
         Assert.assertEquals(plpCount, translationTasksPage.countTranslatorTask());
         TaskPage translationTask = translationTasksPage.goToFirstTask();
+        //przekazanie numeru Taska do Data
+        data.setTranslationTask(translationTask.getUrl());
         //weryfikacja stanu Translation task
         System.out.println("Translator Task: " + translationTask.getUrl());
 
-        Assert.assertEquals(translationTask.getStatus(), TaskStatus.WAITING_FOR_ASSIGMENT);
+        Assert.assertEquals(translationTask.getStatus(), TaskStatus.WAITING_FOR_ASSIGMENT, "Task nie znajduje się w odpowiednim stanie");
         //weryfikujemy czy wygenerowaly się TranslatorsPool
 
         Assert.assertTrue(translationTask.getTranslatorPool1Count() > 0, "Nie wygenerowano ");
@@ -86,11 +88,10 @@ public class GenerowanieNegocjacjiTest_Odrzucenie extends BaseTestClass {
         Assert.assertTrue(assigmentsTabPage.getNegociationCount() > 0, "Nie zostały wygenerowane Negocjacje !");
         //przekazanie listy negocjacji do dalszeych testow
         data.setListOfAssigments(assigmentsTabPage.getNegotiations());
-
     }
 
-    @Test(priority = 3)
-    public void akceptacjaPrzezTranslatoraNegocjacji() {
+    @Test(priority = 62)
+    public void odrzuceniePrzezTranslatoraNegocjacji() {
         Assert.assertFalse(data.getListOfAssigments() == null, "Brak danych do testu. Nie zainijowano Listy z negocjacjami");
         System.out.println("Wygenerowane negocjacje :" + data.getListOfAssigments().toString());
 
@@ -98,30 +99,24 @@ public class GenerowanieNegocjacjiTest_Odrzucenie extends BaseTestClass {
         loginAsTranslator.open();
         KanbanPage kanbanPage = loginAsTranslator.logInToJiraAndGoToKanban(data.getListOfAssigments().get(0).getTranslator(), "lion");
         NegotiationTaskPage userTask = kanbanPage.goToNegotiationTask(data.getListOfAssigments().get(0).getKey());
-        userTask.clickOnButton(TaskButton.ACCEPT);
+        userTask.clickOnButton(TaskButton.REJECT);
 
-        Assert.assertEquals(userTask.getStatus(), TaskStatus.ACCEPTED);
-        System.out.println("Task badany : " + userTask.getUrl());
+        Assert.assertEquals(userTask.getStatus(), TaskStatus.REJECTED);
+        data.setJobTask(userTask.getUrl());
+        System.out.println("Badany Task Negocjacyjny : " + userTask.getUrl());
     }
 
-    @Test(priority = 4)
+    @Test(priority = 63)
     public void weryfikacjaStanowNegocjacji() {
         Assert.assertFalse(data.getListOfAssigments() == null, "Brak danych do testu. Nie zainijowano Listy z negocjacjami");
 
         LoginPage loginAsAdmin = new LoginPage(driver);
         loginAsAdmin.open();
         DashboardPage dashboardPage = loginAsAdmin.logInToJira("piotr.majewski", "piotr.majewski");
-        TaskPage jobTask = dashboardPage.goToTask(data.getJobTask());
-        TranslationTabPage translationTabPage = (TranslationTabPage) jobTask.goToTab(TaskTab.TRANSLATION_TASKS);
+        TaskPage jobTask = dashboardPage.goToTask(data.getTranslationTask());
+        AssigmentsTabPage pageObject = (AssigmentsTabPage) jobTask.goToTab(TaskTab.ASSIGMENTS);
 
-        Assert.assertTrue(translationTabPage.checkIsStatusChange());
-
-        TaskPage taskViewPage = translationTabPage.goToFirstTask();
-        AssigmentsTabPage pageObject = (AssigmentsTabPage) taskViewPage.goToTab(TaskTab.ASSIGMENTS);
-
-        Assert.assertTrue(pageObject.checkIsStatusChange(), "Zmiana statusow Negocjacji");
-        System.out.println("Translation Task : " + taskViewPage.getUrl());
-        data.setZakonczono(true);
+        Assert.assertTrue(pageObject.checkIsTaskRejected(), "Task nie został odrzucony");
     }
 
 

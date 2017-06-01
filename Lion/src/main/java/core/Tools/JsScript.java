@@ -47,12 +47,23 @@ public class JsScript {
         return taskJob;
     }
 
+    public static String createTranslationJobForDropbox(WebDriver driver) {
+
+        try {
+            createJob(driver, "jobGenerator.js");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println("wygenerowano job for Dropbox : " + taskJob);
+        return taskJob;
+    }
+
 
     public static String readfile(String filename) {
         String basePath = Property.getProperty("basePath");
         String scrypt = "";
         // Deklarowanie i tworzenie obiektu typu File
-        File plikDane = new File(basePath + "\\Lion\\src\\main\\java\\core.Tools\\" + filename);
+        File plikDane = new File(basePath + "\\Lion\\src\\main\\java\\core\\Tools\\" + filename);
         ;
         // Utworzenie obiektu typu String, który będzie
         // przechowywał odczytany tekst

@@ -44,9 +44,8 @@ public class JobTaskPage extends AbstractTaskPage {
     }
 
     public void waitForJobProcessing() {
-        System.out.println("robimy refresh 1 ");
         for (int i = 0; i < 10; i++) {
-            if (getStatus() == TaskStatus.NEW) {
+            if (getStatus() != TaskStatus.WAITING_FOR_PACKAGING) {
                 System.out.println("robimy refresh");
                 driver.navigate().refresh();
                 break;

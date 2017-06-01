@@ -1,4 +1,4 @@
-package Tests;
+package Tests.BaseTest;
 
 import core.Reports.TestData;
 import org.apache.commons.io.FileUtils;
@@ -20,7 +20,7 @@ import java.time.ZoneId;
  */
 public class BaseTestClass {
     protected static WebDriver driver;
-    static TestData data;
+    protected static TestData data;
     protected LocalDateTime time = LocalDateTime.now(ZoneId.systemDefault());
 
     public static TestData getData() {

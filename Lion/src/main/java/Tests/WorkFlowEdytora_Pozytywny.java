@@ -1,5 +1,6 @@
 package Tests;
 
+import Tests.BaseTest.BaseTestClass;
 import core.Tools.Configuration.BrowserType;
 import core.Tools.Configuration.EnviromentSettings;
 import core.Tools.Configuration.TestEnviroments;
