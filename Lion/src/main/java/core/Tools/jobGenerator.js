@@ -96,7 +96,7 @@ var translationJob = {
             },
             "customfield_10015": " ",
             "customfield_10009": {
-                "value": "Glossary",
+                "value": "UI",
             },
             "customfield_10115": {
                 "value": "Other"

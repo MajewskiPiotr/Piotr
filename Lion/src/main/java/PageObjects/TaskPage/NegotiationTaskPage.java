@@ -4,10 +4,12 @@ import PageObjects.Base.PageObject;
 import PageObjects.Elements.Task.TaskButton;
 import PageObjects.Elements.Task.TaskLink;
 import PageObjects.Elements.Task.TaskStatus;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.Assert;
 
 /**
  * Created by Piotr Majewski on 2017-05-19.
@@ -39,22 +41,26 @@ public class NegotiationTaskPage extends AbstractTaskPage {
 
     @Override
     public void clickOnButton(TaskButton button) {
-        switch (button) {
-            case ACCEPT: {
-                acceptButton.click();
-                wait.until(ExpectedConditions.textToBePresentInElement(status, TaskStatus.ACCEPTED));
-                break;
+        try {
+            switch (button) {
+                case ACCEPT: {
+                    acceptButton.click();
+                    wait.until(ExpectedConditions.textToBePresentInElement(status, TaskStatus.ACCEPTED));
+                    break;
+                }
+                case TRANSLATION_TASK_REF: {
+                    translationTaskRef.click();
+                    break;
+                }
+                case REJECT: {
+                    rejectButton.click();
+                    wait.until(ExpectedConditions.textToBePresentInElement(status, TaskStatus.REJECTED));
+                    break;
+                }
             }
-            case TRANSLATION_TASK_REF: {
-                translationTaskRef.click();
-                break;
-            }
-            case REJECT: {
-                rejectButton.click();
-                wait.until(ExpectedConditions.textToBePresentInElement(status, TaskStatus.REJECTED));
-                break;
-            }
-        }
+        } catch (TimeoutException time){
+            Assert.fail("TimeOut: oczekiwanie na zmiane statusu");}
+
 
     }
 

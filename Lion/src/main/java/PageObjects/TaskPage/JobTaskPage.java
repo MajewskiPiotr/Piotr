@@ -45,11 +45,11 @@ public class JobTaskPage extends AbstractTaskPage {
 
     public void waitForJobProcessing() {
         for (int i = 0; i < 10; i++) {
-            if (getStatus() != TaskStatus.WAITING_FOR_PACKAGING) {
+            if (!getStatus().equals(TaskStatus.WAITING_FOR_PACKAGING)) {
                 System.out.println("robimy refresh");
+                System.out.println(getStatus());
                 driver.navigate().refresh();
-                break;
-            }
+            }else {break;}
         }
 
     }

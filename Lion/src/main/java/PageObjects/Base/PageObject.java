@@ -29,7 +29,7 @@ public class PageObject {
         //pobieramy adres testowanej strony
         baseUrl = EnviromentSettings.GetTestEnviroment();
         this.driver = driver;
-        wait = new WebDriverWait(driver, 30);
+        wait = new WebDriverWait(driver, 60);
         PageFactory.initElements(driver, this);
 
     }

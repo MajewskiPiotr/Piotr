@@ -43,7 +43,7 @@ public class CurrentSearchPage extends PageObject {
         }
     }
 
-
+    //Wyszukuje Taski z Value: UI
     public NegotiationTaskPage searchForNewNegociationTask() {
         //zmiana na wyszukiwania zaawansowane
         if (modeswither.getText().equals("Advanced")) {
@@ -52,6 +52,9 @@ public class CurrentSearchPage extends PageObject {
         WebElement advanceSearchField = driver.findElement(By.id("advanced-search"));
         advanceSearchField.clear();
         advanceSearchField.sendKeys("issuetype = \"New Work Available\" AND status = New AND cf[10009] = UI" + Keys.ENTER);
+        //czekam na wykonanie zapytania
+
+        wait.until(ExpectedConditions.urlContains("browse"));
         //List<WebElement> lista = driver.findElements(By.xpath("//*[@class='issue-link-key']"));
         WebElement element = taskList.get(0);
 
@@ -62,6 +65,7 @@ public class CurrentSearchPage extends PageObject {
     }
 
     //metoda wyszukuje najnowszego Taska (TranslationJob)
+    @Deprecated//Użyj funkcji generowania Job-ów
     public JobTaskPage searchForNewTransactionJOB() {
         //zmiana na wyszukiwania zaawansowane
         if (modeswither.getText().equals("Advanced")) {
@@ -71,6 +75,8 @@ public class CurrentSearchPage extends PageObject {
         advanceSearchField.clear();
         advanceSearchField.sendKeys("summary ~ Automaty AND issuetype = \"Translation Job\" ORDER BY created" + Keys.ENTER);
         //List<WebElement> lista = driver.findElements(By.xpath("//*[@class='issue-link-key']"));
+        wait.until(ExpectedConditions.urlContains("browser"));
+
         System.out.println("size " + taskList.size());
         WebElement element = taskList.get(0);
         setTaskNumberURL(baseUrl + "/browse/" + element.getText().trim());

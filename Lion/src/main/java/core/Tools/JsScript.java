@@ -21,7 +21,7 @@ public class JsScript {
 
         if (driver instanceof JavascriptExecutor) {
             try {
-                driver.manage().timeouts().setScriptTimeout(10, TimeUnit.SECONDS);
+                driver.manage().timeouts().setScriptTimeout(300, TimeUnit.SECONDS);
 
                 taskJob = (String) ((JavascriptExecutor) driver).executeScript(readfile(file));
 
@@ -50,7 +50,7 @@ public class JsScript {
     public static String createTranslationJobForDropbox(WebDriver driver) {
 
         try {
-            createJob(driver, "jobGenerator.js");
+            createJob(driver, "jobGeneratorDropbox.js");
         } catch (Exception e) {
             e.printStackTrace();
         }
