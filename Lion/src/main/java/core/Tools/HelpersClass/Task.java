@@ -36,4 +36,12 @@ public class Task implements Serializable {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    @Override
+    public String toString() {
+        return "Task{" +
+                "key=" + key.getText() +
+                ", status='" + status + '\'' +
+                '}';
+    }
 }

@@ -40,7 +40,7 @@ public class GenerowanieNegocjacjiTest_Odrzucenie extends BaseTestClass {
         //logujemy sie do Jiry jako Admin
         LoginPage loginAsAdmin = new LoginPage(driver);
         loginAsAdmin.open();
-        DashboardPage dashboardPage = loginAsAdmin.logInToJira("piotr.majewski", "piotr.majewski");
+        DashboardPage dashboardPage = loginAsAdmin.loginAsAdmin();
         //tworzymy skryptem Task (JOBa) i zapisujemy w danych testowych.
         String jobTask = JsScript.createTranslationJob(driver);
         //wyszukuje utworzonego Taska (JOBa)

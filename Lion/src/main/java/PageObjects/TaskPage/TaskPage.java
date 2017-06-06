@@ -72,13 +72,27 @@ public class TaskPage extends AbstractTaskPage {
         return obj;
     }
 
+    public void clickOnButtonAndDontWait(TaskButton button) {
+
+        switch (button) {
+            case COMPLETED_EDITOR: {
+                completedEditorButton.click();
+                break;
+            }
+
+
+        }
+
+    }
+
     @Override
     public void clickOnButton(TaskButton button) {
 
         switch (button) {
             case COMPLETED_EDITOR: {
                 completedEditorButton.click();
-                wait.until(ExpectedConditions.textToBePresentInElement(status, TaskStatus.COMPLETED));
+                wait.until(ExpectedConditions.or(ExpectedConditions.textToBePresentInElement(status, TaskStatus.COMPLETED), ExpectedConditions.textToBePresentInElement(status, TaskStatus.QA)));
+
                 break;
             }
             case ASSIGN_TO_EDITOR: {

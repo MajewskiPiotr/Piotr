@@ -14,8 +14,11 @@ public class TaskStatus {
     public static final String ASSIGNED_TO_AG = "ASSIGNED TO AG";
     public static final String IN_PROGRESS = "IN PROGRESS";
     public static final String SELF_QA = "SELF QA";
+    public static final String QA = "QA";
     public static final String COMPLETED = "COMPLETED";
     public static final java.lang.String READY_TO_VERIFY = "READY TO VERIFY";
     public static final String ASSIGNED_TO_EDITOR = "ASSIGNED TO EDITOR";
     public static final String REJECTED = "REJECTED";
+    public static final String AUTOMATICALLY_ACCEPTED = "AUTOMATICALLY ACCEPTED";
+
 }

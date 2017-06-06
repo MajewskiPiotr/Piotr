@@ -54,7 +54,7 @@ public class AssigmentsTabPage extends JobTaskPage {
                 negociationList.add(editor);
             }
         }
-        System.out.println("Lista New Editor Work : " + negociationList.toString());
+        System.out.println("Lista New Work : " + negociationList.toString());
         return negociationList;
     }
 

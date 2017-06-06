@@ -17,17 +17,15 @@ public class JsScript {
     static String taskJob = "";
 
 
-    private static void createJob(WebDriver driver, String file) throws Exception {
+    private static void runScript(WebDriver driver, String file) throws Exception {
 
         if (driver instanceof JavascriptExecutor) {
             try {
-                driver.manage().timeouts().setScriptTimeout(300, TimeUnit.SECONDS);
-
+                driver.manage().timeouts().setScriptTimeout(60, TimeUnit.SECONDS);
                 taskJob = (String) ((JavascriptExecutor) driver).executeScript(readfile(file));
-
             } catch (ScriptTimeoutException ex) {
                 if (ex.getCause() != null) {
-                    throw new Exception("Problem ze scryptem tworzacym JOB");
+                    throw new Exception("Problem ze scryptem ");
                 }
             }
         } else {
@@ -36,10 +34,49 @@ public class JsScript {
 
     }
 
-    public static String createTranslationJob(WebDriver driver) {
+    private static void runScriptWithParam(WebDriver driver, String file, String param) throws Exception {
+
+        if (driver instanceof JavascriptExecutor) {
+            try {
+                driver.manage().timeouts().setScriptTimeout(60, TimeUnit.SECONDS);
+                taskJob = (String) ((JavascriptExecutor) driver).executeScript(readfile(file), param);
+            } catch (ScriptTimeoutException ex) {
+                if (ex.getCause() != null) {
+                    throw new Exception("Problem ze scryptem ");
+                }
+            }
+        } else {
+            throw new IllegalStateException("This driver does not support JavaScript!");
+        }
+
+    }
+
+    public static String createTranslationJobWithManyTasks(WebDriver driver) {
+        //zwiekszam timeout dla skryptów
+        driver.manage().timeouts().setScriptTimeout(180, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(180, TimeUnit.SECONDS);
 
         try {
-            createJob(driver, "jobGenerator.js");
+            runScript(driver, "jobGeneratorManyTasks.js");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println("wygenerowano job: " + taskJob);
+        try {
+            Thread.sleep(8000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return taskJob;
+    }
+
+    public static String createTranslationJob(WebDriver driver) {
+        //zwiekszam timeout dla skryptów
+        driver.manage().timeouts().setScriptTimeout(60, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+
+        try {
+            runScript(driver, "jobGenerator.js");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -50,7 +87,7 @@ public class JsScript {
     public static String createTranslationJobForDropbox(WebDriver driver) {
 
         try {
-            createJob(driver, "jobGeneratorDropbox.js");
+            runScript(driver, "jobGeneratorDropbox.js");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -58,6 +95,14 @@ public class JsScript {
         return taskJob;
     }
 
+    public static void switchUser(WebDriver driver, String user) {
+        try {
+            runScriptWithParam(driver, "zmianaUsera.js", user);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
 
     public static String readfile(String filename) {
         String basePath = Property.getProperty("basePath");

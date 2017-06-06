@@ -44,8 +44,13 @@ public class NegotiationTaskPage extends AbstractTaskPage {
         try {
             switch (button) {
                 case ACCEPT: {
-                    acceptButton.click();
-                    wait.until(ExpectedConditions.textToBePresentInElement(status, TaskStatus.ACCEPTED));
+                    System.out.println("sprawdzam jaki jest status " + getStatus());
+                    if (getStatus().equals(TaskStatus.NEW)) {
+                        acceptButton.click();
+                        wait.until(ExpectedConditions.textToBePresentInElement(status, TaskStatus.ACCEPTED));
+                    } else {
+                        System.out.println("task został automatycznie zaakceptowany");
+                    }
                     break;
                 }
                 case TRANSLATION_TASK_REF: {
@@ -58,8 +63,9 @@ public class NegotiationTaskPage extends AbstractTaskPage {
                     break;
                 }
             }
-        } catch (TimeoutException time){
-            Assert.fail("TimeOut: oczekiwanie na zmiane statusu");}
+        } catch (TimeoutException time) {
+            Assert.fail("TimeOut: oczekiwanie na zmiane statusu");
+        }
 
 
     }

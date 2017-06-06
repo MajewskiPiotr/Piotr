@@ -1,9 +1,11 @@
 package PageObjects.main;
 
 import PageObjects.Base.PageObject;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
 
 /**
  * Created by Piotr Majewski on 2017-05-15.
@@ -24,15 +26,19 @@ public class LoginPage extends PageObject {
     }
 
     public void open() {
+
         driver.navigate().to(baseUrl + pageUrl);
         //TODO dodać sprawdzenia czy udalo sie odpalic aplikacje
     }
 
     private void login(String login, String haslo) {
-        userName.sendKeys(login);
-        password.sendKeys(haslo);
-        logIn.click();
+        try {
 
+            userName.sendKeys(login);
+            password.sendKeys(haslo);
+            logIn.click();
+        }catch (NoSuchElementException exception){
+            Assert.fail("Nie udało sie uruchomić JIRA");}
     }
 
     public DashboardPage logInToJira(String login, String haslo) {

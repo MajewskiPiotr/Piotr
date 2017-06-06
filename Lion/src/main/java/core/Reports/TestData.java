@@ -21,12 +21,14 @@ public class TestData implements Serializable {
 
     //FLOW
     String translator;
+    String editor;
     String Scenariusz;
     String jobTask;
     String packageTask;
     String negociationTask;
     String translationTask;
     List<Assigments> listOfAssigments;
+    List<Assigments> listOfEditors;
 
     boolean zakonczono = true;
 
@@ -213,6 +215,24 @@ public class TestData implements Serializable {
         this.phnone = phnone;
     }
 
+    public String getEditor() {
+        return editor;
+    }
+
+    public void setEditor(String editor) {
+        this.editor = editor;
+    }
+
+    public List<Assigments> getListOfEditors() {
+        return listOfEditors;
+    }
+
+    public void setListOfEditors(List<Assigments> listOfEditors) {
+        this.listOfEditors = listOfEditors;
+    }
+
+
+
     @Override
     public String toString() {
         return "TestData{" +
@@ -222,12 +242,14 @@ public class TestData implements Serializable {
                 ", poc='" + poc + '\'' +
                 ", phnone='" + phnone + '\'' +
                 ", translator='" + translator + '\'' +
+                ", editor='" + editor + '\'' +
                 ", Scenariusz='" + Scenariusz + '\'' +
                 ", jobTask='" + jobTask + '\'' +
                 ", packageTask='" + packageTask + '\'' +
                 ", negociationTask='" + negociationTask + '\'' +
                 ", translationTask='" + translationTask + '\'' +
                 ", listOfAssigments=" + listOfAssigments +
+                ", listOfEditors=" + listOfEditors +
                 ", zakonczono=" + zakonczono +
                 '}';
     }

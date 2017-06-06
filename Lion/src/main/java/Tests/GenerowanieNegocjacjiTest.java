@@ -31,7 +31,7 @@ public class GenerowanieNegocjacjiTest extends BaseTestClass {
     @BeforeMethod
     public void setUp() {
         EnviromentSettings enviromentSettings = new EnviromentSettings();
-        enviromentSettings.SetTestEnviroment(TestEnviroments.STAGE1);
+        enviromentSettings.SetTestEnviroment(TestEnviroments.STAGE2);
         driver = enviromentSettings.setUpDriver(BrowserType.CHROME);
     }
 
@@ -48,7 +48,7 @@ public class GenerowanieNegocjacjiTest extends BaseTestClass {
         System.out.println("weryfikujemy joba :" + data.getJobTask());
         LoginPage loginAsAdmin = new LoginPage(driver);
         loginAsAdmin.open();
-        DashboardPage dashboardPage = loginAsAdmin.logInToJira("piotr.majewski", "piotr.majewski");
+        DashboardPage dashboardPage = loginAsAdmin.loginAsAdmin();
         dashboardPage.goToTask(data.getJobTask());
         JobTaskPage taskJobViewPage = new JobTaskPage(driver);
         Assert.assertEquals(taskJobViewPage.getStatus(), TaskStatus.IN_PROCESSING, "JOB Nie zmienił stanu na IN PROGRESS");

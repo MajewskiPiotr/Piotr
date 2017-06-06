@@ -2,6 +2,7 @@ package core.Tools.Configuration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.concurrent.TimeUnit;
 
@@ -33,12 +34,12 @@ public class EnviromentSettings {
             }
             case MOZILLA: {
                 System.setProperty("webdriver.gecko.driver", basePath + "\\geckodriver.exe");
-                driver = new ChromeDriver();
+                driver = new FirefoxDriver();
                 break;
             }
         }
-        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-        driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(120, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         return driver;
     }

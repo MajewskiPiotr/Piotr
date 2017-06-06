@@ -1,10 +1,5 @@
 package Tests;
 
-import Tests.BaseTest.BaseTestClass;
-import core.Tools.Configuration.BrowserType;
-import core.Tools.Configuration.EnviromentSettings;
-import core.Tools.Configuration.TestEnviroments;
-import core.Tools.JsScript;
 import PageObjects.Elements.Task.TaskButton;
 import PageObjects.Elements.Task.TaskLink;
 import PageObjects.Elements.Task.TaskStatus;
@@ -17,6 +12,11 @@ import PageObjects.TaskPage.TaskPage_Tab.TranslationTabPage;
 import PageObjects.main.DashboardPage;
 import PageObjects.main.LoginPage;
 import PageObjects.main.PackagePluginSettings;
+import Tests.BaseTest.BaseTestClass;
+import core.Tools.Configuration.BrowserType;
+import core.Tools.Configuration.EnviromentSettings;
+import core.Tools.Configuration.TestEnviroments;
+import core.Tools.JsScript;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -59,6 +59,7 @@ public class KompletowanieIprocesowaniePaczki extends BaseTestClass {
         TaskPage taskPage = translationTab.goToFirstTask();
         TaskPage packageTaskPage = (TaskPage) taskPage.clickInLink(TaskLink.PACKAGE_REFERENCE);
         data.setPackageTask(packageTaskPage.getUrl());
+        //czekam na załadowania sie wszystkich podtasków
         try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
@@ -70,7 +71,6 @@ public class KompletowanieIprocesowaniePaczki extends BaseTestClass {
         data.setListOfAssigments(packagePageAssigmentTab.getNegotiations());
 
         System.out.println("package task: " + data.getPackageTask());
-
     }
 
     @Test(priority = 12)
