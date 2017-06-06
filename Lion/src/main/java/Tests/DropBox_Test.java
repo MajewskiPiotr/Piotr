@@ -1,5 +1,10 @@
 package Tests;
 
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
 import PageObjects.Elements.Task.TaskButton;
 import PageObjects.Elements.Task.TaskStatus;
 import PageObjects.Elements.Task.TaskTab;
@@ -11,14 +16,10 @@ import PageObjects.main.DashboardPage;
 import PageObjects.main.LoginPage;
 import Tests.BaseTest.BaseTestClass;
 import Tests.BaseTest.GenerowanieJoba;
+import core.Tools.JsScript;
 import core.Tools.Configuration.BrowserType;
 import core.Tools.Configuration.EnviromentSettings;
 import core.Tools.Configuration.TestEnviroments;
-import core.Tools.JsScript;
-import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
 
 /**
  * Created by Piotr Majewski on 2017-05-30.
