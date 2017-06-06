@@ -11,9 +11,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
  * Created by Piotr Majewski on 2017-05-16.
  */
 public class JobTaskPage extends AbstractTaskPage {
+
+
     @FindBy(id = "comment-issue")
     private WebElement commentButton;
-
 
     @FindBy(id = "action_id_61")
     private WebElement processingButton;
