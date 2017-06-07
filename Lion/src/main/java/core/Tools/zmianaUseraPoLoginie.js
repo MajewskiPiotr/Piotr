@@ -1,6 +1,20 @@
 /**
  * Created by Piotr Majewski on 2017-06-05.
  */
+
+function getUserKey(userName) {
+    $.ajax({
+        url: AJS.params.baseURL + "/rest/api/2/user?username=" + userName,
+        success: function (response) {
+
+            var userKey = response.key
+
+            zmianaUsera(userKey)
+        }
+    })
+}
+
+
 function zmianaUsera(userID) {
 
     var userID
@@ -11,7 +25,7 @@ function zmianaUsera(userID) {
     }
     data.scriptParams = JSON.stringify(data)
     AJS.$.ajax({
-        url: '/jira/rest/scriptrunner/latest/canned/com.onresolve.scriptrunner.canned.jira.admin.SwitchUser',
+        url: AJS.params.baseURL + '/rest/scriptrunner/latest/canned/com.onresolve.scriptrunner.canned.jira.admin.SwitchUser',
         type: 'post',
         contentType: "application/x-www-form-urlencoded; charset=UTF-8",
         headers: {"X-Atlassian-token": "no-check"},
@@ -23,4 +37,4 @@ function zmianaUsera(userID) {
 
 }
 login = arguments[arguments.length - 1]
-zmianaUsera(login);
+getUserKey(login);
