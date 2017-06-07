@@ -19,6 +19,9 @@ public class NegotiationTaskPage extends AbstractTaskPage {
     @FindBy(id = "action_id_71")
     private WebElement rejectButton;
 
+    @FindBy(id = "action_id_51")
+    private WebElement automaticallyAccept;
+
 
     public NegotiationTaskPage(WebDriver driver) {
 
@@ -46,8 +49,15 @@ public class NegotiationTaskPage extends AbstractTaskPage {
                 case ACCEPT: {
                     System.out.println("sprawdzam jaki jest status " + getStatus());
                     if (getStatus().equals(TaskStatus.NEW)) {
-                        acceptButton.click();
-                        wait.until(ExpectedConditions.textToBePresentInElement(status, TaskStatus.ACCEPTED));
+                        if (acceptButton.isEnabled()) {
+                            acceptButton.click();
+                            wait.until(ExpectedConditions.textToBePresentInElement(status, TaskStatus.ACCEPTED));
+                        }
+                        if (automaticallyAccept.isEnabled()) {
+                            automaticallyAccept.click();
+                            wait.until(ExpectedConditions.textToBePresentInElement(status, TaskStatus.AUTOMATICALLY_ACCEPTED));
+
+                        }
                     } else {
                         System.out.println("task został automatycznie zaakceptowany");
                     }

@@ -13,6 +13,7 @@ import Tests.BaseTest.GenerowanieJoba;
 import core.Tools.Configuration.BrowserType;
 import core.Tools.Configuration.EnviromentSettings;
 import core.Tools.Configuration.TestEnviroments;
+import core.Tools.JsScript;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -47,7 +48,8 @@ public class DropBox_Test_Odrzucenie extends BaseTestClass {
 
         LoginPage loginAsTranslator = new LoginPage(driver);
         loginAsTranslator.open();
-        DashboardPage kanbanPage = loginAsTranslator.logInToJira(data.getListOfAssigments().get(0).getTranslator(), "lion");
+        DashboardPage kanbanPage = loginAsTranslator.loginAsAdmin();
+        JsScript.switchUser(driver,data.getListOfAssigments().get(0).getTranslator());
         NegotiationTaskPage userTask = kanbanPage.goToNegotiationTask(data.getListOfAssigments().get(0).getKey());
         userTask.clickOnButton(TaskButton.REJECT);
 

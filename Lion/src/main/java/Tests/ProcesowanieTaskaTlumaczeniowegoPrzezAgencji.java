@@ -80,6 +80,7 @@ public class ProcesowanieTaskaTlumaczeniowegoPrzezAgencji extends BaseTestClass 
         lista.add(TaskStatus.COMPLETED);
         lista.add(TaskStatus.READY_TO_VERIFY);
         Assert.assertTrue(lista.contains(task.getStatus()), "Status taska nieprawidlowy !");
+        //TODO nie zawsze poprawnie zczytuje status
     }
 
 
