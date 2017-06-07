@@ -13,7 +13,7 @@ import java.io.IOException;
 /**
  * Created by Piotr Majewski on 2017-05-26.
  */
-public class TestowyTest extends BaseTestClass {
+public class TestowyTest2 extends BaseTestClass {
 
 
 
@@ -24,13 +24,13 @@ public class TestowyTest extends BaseTestClass {
         driver = enviromentSettings.setUpDriver(BrowserType.CHROME);
     }
 
-    @Test(priority = 50)
-    public void zmodyfikujProfil11() throws IOException {
+    @Test(priority = 55)
+    public void zmodyfikujProfil21() throws IOException {
         Assert.assertTrue(false, "TESt jest do dupy i nie przechodzi");
     }
 
-    @Test(priority = 51)
-    public void zmodyfikujProfi12() throws IOException {
+    @Test(priority = 56)
+    public void zmodyfikujProfi22() throws IOException {
         Assert.assertTrue(true, "a ten test jest wporzo");
 
     }

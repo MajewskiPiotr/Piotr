@@ -1,6 +1,8 @@
 package core.Listeners;
 
+import com.itextpdf.text.DocumentException;
 import core.Reports.PdfCreator;
+import core.Reports.RaporPDF;
 import core.Reports.TestData;
 import Tests.BaseTestClass;
 import core.Tools.Configuration.Property;
@@ -8,6 +10,7 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
+import java.io.FileNotFoundException;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
@@ -88,6 +91,14 @@ public class Listeners implements ITestListener {
     @Override
     public void onFinish(ITestContext context) {
         System.out.println("Result : " +listabledow.toString());
-        PdfCreator.create(listabledow);
+        RaporPDF raporPDF = new RaporPDF();
+        try {
+            raporPDF.create(listabledow);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (DocumentException e) {
+            e.printStackTrace();
+        }
+
     }
 }
