@@ -12,6 +12,7 @@ import org.testng.Assert;
  * KLasa reprezentuje strone logowania do aplikacji Jira
  */
 public class LoginPage extends PageObject {
+
     private String pageUrl = "\\login.jsp";
 
     @FindBy(name = "os_username")

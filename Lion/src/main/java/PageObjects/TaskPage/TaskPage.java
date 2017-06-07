@@ -19,7 +19,6 @@ import java.util.List;
  */
 public class TaskPage extends AbstractTaskPage {
 
-
     @FindBy(id = "action_id_81")
     protected WebElement completedEditorButton;
 
@@ -46,6 +45,9 @@ public class TaskPage extends AbstractTaskPage {
 
     @FindBy(id = "customfield_10334-val")
     protected WebElement packageReference;
+
+    @FindBy(xpath = "//*[@id='issue_actions_container']")
+    protected WebElement allComents;
 
     public TaskPage(WebDriver driver) {
         super(driver);
@@ -122,6 +124,11 @@ public class TaskPage extends AbstractTaskPage {
                 wait.until(ExpectedConditions.invisibilityOfElementWithText(By.xpath("//*[@id='status-val']/span"), TaskStatus.SELF_QA));
                 break;
             }
+            case COMMENT: {
+                commentButton.click();
+                wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='comment']")));
+                break;
+            }
         }
 
     }
@@ -132,6 +139,10 @@ public class TaskPage extends AbstractTaskPage {
 
     public int getTranslatorPool1Count() {
         return translatorPool1.size();
+    }
+
+    public String getAllComents() {
+        return allComents.getText();
     }
 
 

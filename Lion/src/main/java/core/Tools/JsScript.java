@@ -104,6 +104,15 @@ public class JsScript {
 
     }
 
+    public static void switchUserByLogin(WebDriver driver, String user) {
+        try {
+            runScriptWithParam(driver, "zmianaUseraPoLoginie.js", user);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
     public static String readfile(String filename) {
         String basePath = Property.getProperty("basePath");
         String scrypt = "";

@@ -58,7 +58,6 @@ public class DropBox_Test_Odrzucenie extends BaseTestClass {
     @Test(priority = 83)
     public void weryfikacjaStanowNegocjacji() {
         Assert.assertFalse(data.getListOfAssigments() == null, "Brak danych do testu. Nie zainijowano Listy z negocjacjami");
-
         LoginPage loginAsAdmin = new LoginPage(driver);
         loginAsAdmin.open();
         DashboardPage dashboardPage = loginAsAdmin.logInToJira("piotr.majewski", "piotr.majewski");
