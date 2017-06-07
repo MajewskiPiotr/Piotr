@@ -2,8 +2,10 @@ package core.Reports;
 
 import core.Tools.Configuration.Property;
 import core.Tools.HelpersClass.Assigments;
+import org.testng.ITestResult;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -59,6 +61,8 @@ public class TestData implements Serializable {
         }
 
     }
+
+
 
     public static TestData readTestData(String nazwaPl) {
 

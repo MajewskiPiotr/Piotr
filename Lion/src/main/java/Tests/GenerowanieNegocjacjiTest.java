@@ -4,6 +4,7 @@ import Tests.BaseTest.BaseTestClass;
 import Tests.BaseTest.GenerowanieJoba;
 import core.Tools.Configuration.BrowserType;
 import core.Tools.Configuration.EnviromentSettings;
+import core.Tools.Configuration.Property;
 import core.Tools.Configuration.TestEnviroments;
 import PageObjects.Elements.Task.TaskButton;
 import PageObjects.Elements.Task.TaskStatus;

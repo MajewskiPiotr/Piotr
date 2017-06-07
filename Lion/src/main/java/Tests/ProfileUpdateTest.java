@@ -1,6 +1,10 @@
 package Tests;
 
+<<<<<<< HEAD
 import Tests.BaseTest.BaseTestClass;
+=======
+import core.Reports.TestData;
+>>>>>>> SendEmail-feature
 import core.Tools.Configuration.BrowserType;
 import core.Tools.Configuration.EnviromentSettings;
 import core.Tools.Configuration.TestEnviroments;
