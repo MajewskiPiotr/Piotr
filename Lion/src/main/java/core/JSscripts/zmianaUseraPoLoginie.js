@@ -12,6 +12,7 @@ function getUserKey(userName) {
             zmianaUsera(userKey)
         }
     })
+    return true;
 }
 
 
@@ -37,4 +38,5 @@ function zmianaUsera(userID) {
 
 }
 login = arguments[arguments.length - 1]
-getUserKey(login);
+//noinspection JSAnnotator
+return getUserKey(login);
