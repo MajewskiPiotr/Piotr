@@ -81,7 +81,7 @@ public class AssigmentsTabPage extends JobTaskPage {
             }
 
         }
-        return rejected >= 0 && rejected + statusNew == list.size();
+        return rejected >= 0 & rejected + statusNew == list.size();
     }
 
     public boolean checkIsStatusChange() {

@@ -45,7 +45,7 @@ public class KanbanPage extends PageObject {
             driver.navigate().to(baseUrl + "/browse/" + element.getText());
             return new PageObject(driver);
         } else {
-            Assert.fail("Lista jest pusta!");
+            Assert.fail("Lista tasków na Kanban jest pusta / Nie udało sie wejść na Kanban?");
         }
         return null;
     }

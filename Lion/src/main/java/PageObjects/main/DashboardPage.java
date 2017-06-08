@@ -35,5 +35,11 @@ public class DashboardPage extends PageObject {
         return new KanbanPage(driver);
     }
 
+    public ProfilePage goToProfilePage() {
+
+        return new ProfilePage(driver);
+
+    }
+
 
 }

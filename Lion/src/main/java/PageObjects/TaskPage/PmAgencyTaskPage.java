@@ -28,7 +28,7 @@ public class PmAgencyTaskPage extends AbstractTaskPage {
                 break;
             }
             case REJECT: {
-
+                //TODO dodanie sprawdzania stanu i jak jest Automatycznie zaakceptowane to jakis Assert.fail
                 rejectButton.click();
                 wait.until(ExpectedConditions.textToBePresentInElement(status, TaskStatus.REJECTED));
                 break;

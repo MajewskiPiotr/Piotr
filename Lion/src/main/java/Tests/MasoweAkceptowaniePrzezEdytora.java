@@ -28,12 +28,7 @@ import org.testng.annotations.Test;
  */
 public class MasoweAkceptowaniePrzezEdytora extends BaseTestClass {
 
-    @BeforeMethod
-    public void setUp() {
-        EnviromentSettings enviromentSettings = new EnviromentSettings();
-        enviromentSettings.SetTestEnviroment(TestEnviroments.STAGE1);
-        driver = enviromentSettings.setUpDriver(BrowserType.CHROME);
-    }
+
 
     @Test(priority = 211)
     public void wygenerujJobIpaczke() {
@@ -75,7 +70,7 @@ public class MasoweAkceptowaniePrzezEdytora extends BaseTestClass {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.open();
         DashboardPage dashboardPage = loginPage.loginAsAdmin();
-        JsScript.switchUser(driver, data.getListOfAssigments().get(0).getTranslator());
+        JsScript.switchUserByLogin(driver, data.getListOfAssigments().get(0).getTranslator());
         NegotiationTaskPage negotiationTaskPage = dashboardPage.goToNegotiationTask(data.getListOfAssigments().get(0).getKey());
         negotiationTaskPage.clickOnButton(TaskButton.ACCEPT);
         negotiationTaskPage.clickOnButton(TaskButton.TRANSLATION_TASK_REF);
@@ -106,7 +101,7 @@ public class MasoweAkceptowaniePrzezEdytora extends BaseTestClass {
         loginAsEditor.open();
         DashboardPage dashboardPage = loginAsEditor.loginAsAdmin();
         //zmiana użytkownika na edytora
-        JsScript.switchUser(driver, editor.getTranslator());
+        JsScript.switchUserByLogin(driver, editor.getTranslator());
         System.out.println("zalogowano sie jako: " + editor.getTranslator());
         NegotiationTaskPage negotiationTask = dashboardPage.goToNegotiationTask(editor.getKey());
         negotiationTask.clickOnButton(TaskButton.ACCEPT);
@@ -120,8 +115,5 @@ public class MasoweAkceptowaniePrzezEdytora extends BaseTestClass {
     }
 
 
-    @AfterMethod
-    public void tearDown() {
-        driver.close();
-    }
+
 }

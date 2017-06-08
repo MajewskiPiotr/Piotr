@@ -10,6 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.Assert;
 
 import java.util.List;
 
@@ -78,6 +79,7 @@ public class TaskPage extends AbstractTaskPage {
 
         switch (button) {
             case COMPLETED_EDITOR: {
+                Assert.assertTrue(completedEditorButton.isEnabled());
                 completedEditorButton.click();
                 break;
             }

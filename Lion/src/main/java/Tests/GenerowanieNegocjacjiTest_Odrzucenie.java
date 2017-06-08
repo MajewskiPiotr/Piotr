@@ -21,17 +21,13 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import javax.swing.*;
+
 /**
  * Created by Piotr Majewski on 2017-05-16.
  */
 public class GenerowanieNegocjacjiTest_Odrzucenie extends BaseTestClass {
-    //zmienne do przekazywanie miedzy testami
-    @BeforeMethod
-    public void setUp() {
-        EnviromentSettings enviromentSettings = new EnviromentSettings();
-        enviromentSettings.SetTestEnviroment(TestEnviroments.STAGE1);
-        driver = enviromentSettings.setUpDriver(BrowserType.CHROME);
-    }
+
 
     //test dziala tylko na Chromie
     //powod: skrypt generujacy Joba nie dziala na innej przegladarce
@@ -60,6 +56,7 @@ public class GenerowanieNegocjacjiTest_Odrzucenie extends BaseTestClass {
     @Test(priority = 61)
     public void weryfikacjaUtworzonegoJoba() {
         System.out.println("weryfikujemy joba :" + data.getJobTask());
+        Assert.assertTrue(data.getJobTask()!=null, "Nie udało sie utworzyć Joba w poprzednim teście.");
         LoginPage loginAsAdmin = new LoginPage(driver);
         loginAsAdmin.open();
         DashboardPage dashboardPage = loginAsAdmin.logInToJira("piotr.majewski", "piotr.majewski");
@@ -97,7 +94,8 @@ public class GenerowanieNegocjacjiTest_Odrzucenie extends BaseTestClass {
 
         LoginPage loginAsTranslator = new LoginPage(driver);
         loginAsTranslator.open();
-        KanbanPage kanbanPage = loginAsTranslator.logInToJiraAndGoToKanban(data.getListOfAssigments().get(0).getTranslator(), "lion");
+        DashboardPage kanbanPage = loginAsTranslator.loginAsAdmin();
+        JsScript.switchUserByLogin(driver, data.getListOfAssigments().get(0).getTranslator());
         NegotiationTaskPage userTask = kanbanPage.goToNegotiationTask(data.getListOfAssigments().get(0).getKey());
         userTask.clickOnButton(TaskButton.REJECT);
 
@@ -120,8 +118,5 @@ public class GenerowanieNegocjacjiTest_Odrzucenie extends BaseTestClass {
     }
 
 
-    @AfterMethod
-    public void tearDown() {
-        driver.close();
-    }
+
 }

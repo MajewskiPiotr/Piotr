@@ -35,7 +35,8 @@ public class CurrentSearchPage extends PageObject {
         driver.navigate().to(baseUrl + "/issues");
         PageFactory.initElements(driver, this);
         wait.until(ExpectedConditions.visibilityOf(modeswither));
-        try {
+        try {//TODO spróbowac poczekać na ten element jakoś krócej
+            //albo wymyśleź element na który należy czekać
             driver.findElement(By.xpath("//*[@id='content']//*[@title='Columns']"));
             System.out.println("strona Wyszukiwania źle zostala załadowala");
         } catch (Exception e) {
@@ -52,13 +53,10 @@ public class CurrentSearchPage extends PageObject {
         WebElement advanceSearchField = driver.findElement(By.id("advanced-search"));
         advanceSearchField.clear();
         advanceSearchField.sendKeys("issuetype = \"New Work Available\" AND status = New AND cf[10009] = UI" + Keys.ENTER);
-<<<<<<< HEAD
         //czekam na wykonanie zapytania
 
         wait.until(ExpectedConditions.urlContains("browse"));
-=======
         //TODO czekanie na wyniki
->>>>>>> SendEmail-feature
         //List<WebElement> lista = driver.findElements(By.xpath("//*[@class='issue-link-key']"));
         WebElement element = taskList.get(0);
 

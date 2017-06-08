@@ -1,9 +1,5 @@
 package Tests;
 
-import Tests.BaseTest.BaseTestClass;
-import core.Tools.Configuration.BrowserType;
-import core.Tools.Configuration.EnviromentSettings;
-import core.Tools.Configuration.TestEnviroments;
 import PageObjects.Elements.KanbanHeader;
 import PageObjects.Elements.Task.TaskButton;
 import PageObjects.Elements.Task.TaskStatus;
@@ -13,9 +9,10 @@ import PageObjects.TaskPage.TaskPage;
 import PageObjects.main.DashboardPage;
 import PageObjects.main.KanbanPage;
 import PageObjects.main.LoginPage;
+import Tests.BaseTest.BaseTestClass;
+import core.Tools.JsScript;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
@@ -24,25 +21,20 @@ import java.util.List;
 /**
  * Created by Piotr Majewski on 2017-05-19.
  */
+@Listeners(core.Listeners.Listeners.class)
 public class ProcesowanieTaskaTlumaczeniowegoPrzezAgencji extends BaseTestClass {
 
     String pmAgencylogin = "001-svpmgr_66551";
-    String pmAgencyhaslo = "lion";
-
-
-    @BeforeMethod
-    public void setUp() {
-        EnviromentSettings enviromentSettings = new EnviromentSettings();
-        enviromentSettings.SetTestEnviroment(TestEnviroments.STAGE1);
-        driver = enviromentSettings.setUpDriver(BrowserType.CHROME);
-    }
 
 
     @Test(priority = 21)
-    public void obslugaPrzezPmAgencyjnego() {
+    public void obslugaPrzezPmAgencyjnego() throws InterruptedException {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.open();
-        KanbanPage kanbanPage = loginPage.logInToJiraAndGoToKanban(pmAgencylogin, pmAgencyhaslo);
+        DashboardPage dashboardPage = loginPage.loginAsAdmin();
+        JsScript.switchUserByLogin(driver, pmAgencylogin);
+        KanbanPage kanbanPage = dashboardPage.goToKanban();
+
         kanbanPage.chooseTask(KanbanHeader.NEW, 1);
         PmAgencyTaskPage pmAgencyTaskPage = new PmAgencyTaskPage(driver);
         System.out.println(" link do negocjacji : " + pmAgencyTaskPage.getUrl());
@@ -68,7 +60,8 @@ public class ProcesowanieTaskaTlumaczeniowegoPrzezAgencji extends BaseTestClass 
     public void obslugaPrzezTranslatora() {
         LoginPage loginAsTranslator = new LoginPage(driver);
         loginAsTranslator.open();
-        DashboardPage dashboardPage = loginAsTranslator.logInToJira(data.getTranslator(), "lion");
+        DashboardPage dashboardPage = loginAsTranslator.loginAsAdmin();
+        JsScript.switchUserByLogin(driver, data.getTranslator());
         TaskPage task = dashboardPage.goToTask(data.getNegociationTask());
         task.clickOnButton(TaskButton.IN_PROGRESS);
         Assert.assertEquals(task.getStatus(), TaskStatus.IN_PROGRESS);
@@ -84,8 +77,4 @@ public class ProcesowanieTaskaTlumaczeniowegoPrzezAgencji extends BaseTestClass 
     }
 
 
-    @AfterMethod
-    public void tearDown() {
-        driver.close();
-    }
 }

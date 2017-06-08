@@ -1,11 +1,5 @@
 package Tests;
 
-import Tests.BaseTest.BaseTestClass;
-import Tests.BaseTest.GenerowanieJoba;
-import core.Tools.Configuration.BrowserType;
-import core.Tools.Configuration.EnviromentSettings;
-import core.Tools.Configuration.Property;
-import core.Tools.Configuration.TestEnviroments;
 import PageObjects.Elements.Task.TaskButton;
 import PageObjects.Elements.Task.TaskStatus;
 import PageObjects.Elements.Task.TaskTab;
@@ -15,8 +9,14 @@ import PageObjects.TaskPage.TaskPage;
 import PageObjects.TaskPage.TaskPage_Tab.AssigmentsTabPage;
 import PageObjects.TaskPage.TaskPage_Tab.TranslationTabPage;
 import PageObjects.main.DashboardPage;
-import PageObjects.main.KanbanPage;
 import PageObjects.main.LoginPage;
+import Tests.BaseTest.BaseTestClass;
+import Tests.BaseTest.GenerowanieJoba;
+import core.Tools.Configuration.BrowserType;
+import core.Tools.Configuration.EnviromentSettings;
+import core.Tools.Configuration.TestEnviroments;
+import core.Tools.JsScript;
+import core.Tools.LionAssert;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -28,13 +28,7 @@ import org.testng.annotations.Test;
  */
 @Listeners(core.Listeners.Listeners.class)
 public class GenerowanieNegocjacjiTest extends BaseTestClass {
-    //zmienne do przekazywanie miedzy testami
-    @BeforeMethod
-    public void setUp() {
-        EnviromentSettings enviromentSettings = new EnviromentSettings();
-        enviromentSettings.SetTestEnviroment(TestEnviroments.STAGE2);
-        driver = enviromentSettings.setUpDriver(BrowserType.CHROME);
-    }
+
 
     //test dziala tylko na Chromie
     //powod: skrypt generujacy Joba nie dziala na innej przegladarce
@@ -60,9 +54,9 @@ public class GenerowanieNegocjacjiTest extends BaseTestClass {
         Assert.assertEquals(plpCount, translationTasksPage.countTranslatorTask());
         TaskPage translationTask = translationTasksPage.goToFirstTask();
         //weryfikacja stanu Translation task
-        System.out.println("Translator Task: " + translationTask.getUrl());
+        System.out.println("Translator Task: " + translationTask.getUrl()+ " stan "+ translationTask.getStatus());
+        LionAssert.assertStatus(translationTask.getStatus(), TaskStatus.WAITING_FOR_ASSIGMENT, TaskStatus.ASSIGNED_TO_TRANSLATOR,"niepoprawny stan TranslatgionTaska podczas weryfikacji Joba ");
 
-        Assert.assertEquals(translationTask.getStatus(), TaskStatus.WAITING_FOR_ASSIGMENT);
         //weryfikujemy czy wygenerowaly się TranslatorsPool
 
         Assert.assertTrue(translationTask.getTranslatorPool1Count() > 0, "Nie wygenerowano ");
@@ -83,11 +77,11 @@ public class GenerowanieNegocjacjiTest extends BaseTestClass {
 
         LoginPage loginAsTranslator = new LoginPage(driver);
         loginAsTranslator.open();
-        KanbanPage kanbanPage = loginAsTranslator.logInToJiraAndGoToKanban(data.getListOfAssigments().get(0).getTranslator(), "lion");
+        DashboardPage kanbanPage = loginAsTranslator.loginAsAdmin();
+        JsScript.switchUserByLogin(driver, data.getListOfAssigments().get(0).getTranslator());
         NegotiationTaskPage userTask = kanbanPage.goToNegotiationTask(data.getListOfAssigments().get(0).getKey());
         userTask.clickOnButton(TaskButton.ACCEPT);
-
-        Assert.assertEquals(userTask.getStatus(), TaskStatus.ACCEPTED);
+        LionAssert.assertStatus(userTask.getStatus(), TaskStatus.ACCEPTED, TaskStatus.AUTOMATICALLY_ACCEPTED, "nie poprawny sta Negocjacji po zaakceptowaniu");
         System.out.println("Task badany : " + userTask.getUrl());
     }
 
@@ -112,8 +106,5 @@ public class GenerowanieNegocjacjiTest extends BaseTestClass {
     }
 
 
-    @AfterMethod
-    public void tearDown() {
-        driver.close();
-    }
+
 }

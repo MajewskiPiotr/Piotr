@@ -1,19 +1,15 @@
 package core.Listeners;
 
+import Tests.BaseTest.BaseTestClass;
 import com.itextpdf.text.DocumentException;
-import core.Reports.PdfCreator;
 import core.Reports.RaporPDF;
 import core.Reports.TestData;
-import Tests.BaseTest.BaseTestClass;
 import core.Tools.Configuration.Property;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
 import java.io.FileNotFoundException;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,18 +24,8 @@ public class Listeners implements ITestListener {
         String basePath = Property.getProperty("basePath");
 
         String path = "";
-        LocalDateTime time = LocalDateTime.now(ZoneId.systemDefault());
-        String currentTimeStamp = time.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME).
-                replace("T", "_").replace(":", "-").substring(0, 13);
-
-        if (result.isSuccess()) {
-            path = basePath + "\\Lion\\DaneTestowe\\" +
-                    result.getInstance().getClass().getSimpleName() + "\\ScreenShots" + "\\PASS_" + result.getMethod().getMethodName() + ".jpg";
-
-        } else {
-            path = basePath + "\\Lion\\DaneTestowe\\" +
-                    result.getInstance().getClass().getSimpleName() + "\\ScreenShots" + "\\Fail_" + result.getMethod().getMethodName() + ".jpg";
-        }
+        path = basePath + "\\Lion\\DaneTestowe\\" +
+                result.getInstance().getClass().getSimpleName() + "\\" + result.getMethod().getMethodName() + ".jpg";
         return path;
     }
 
@@ -64,7 +50,7 @@ public class Listeners implements ITestListener {
     public void onTestFailure(ITestResult result) {
         try {
             BaseTestClass.takeSnapShot(BaseTestClass.getDriver(), getPath(result));
-              TestData.saveTestData(BaseTestClass.getData());
+            TestData.saveTestData(BaseTestClass.getData());
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -90,7 +76,7 @@ public class Listeners implements ITestListener {
 
     @Override
     public void onFinish(ITestContext context) {
-        System.out.println("Result : " +listabledow.toString());
+        System.out.println("Result : " + listabledow.toString());
         RaporPDF raporPDF = new RaporPDF();
         try {
             raporPDF.create(listabledow);

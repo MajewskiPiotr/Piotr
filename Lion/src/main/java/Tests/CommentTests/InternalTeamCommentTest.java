@@ -27,12 +27,7 @@ public class InternalTeamCommentTest extends BaseTestClass {
     //Leanguage Owner
     private String LO = "Marianna.Kulakowska";
     private String komentarz ="Testowy komentarz" + new Date().getTime();
-    @BeforeMethod
-    public void setUp() {
-        EnviromentSettings enviromentSettings = new EnviromentSettings();
-        enviromentSettings.SetTestEnviroment(TestEnviroments.STAGE2);
-        driver = enviromentSettings.setUpDriver(BrowserType.CHROME);
-    }
+
 
     @Test(priority = 311)
     public void wprowadzKomentarzDoTranslationTask() {
@@ -57,9 +52,6 @@ public class InternalTeamCommentTest extends BaseTestClass {
         Assert.assertTrue(task.getAllComents().contains(komentarz));
     }
 
-    @AfterMethod
-    public void tearDown() {
-      //  driver.close();
-    }
+
 }
 

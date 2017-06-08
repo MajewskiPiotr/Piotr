@@ -4,10 +4,7 @@ import PageObjects.Elements.Task.TaskButton;
 import PageObjects.Elements.Task.TaskStatus;
 import PageObjects.TaskPage.TaskPage;
 import core.Tools.HelpersClass.Task;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -68,8 +65,12 @@ public class TranslationTabPage extends TaskPage {
             clickOnButtonAndDontWait(TaskButton.COMPLETED_EDITOR);
             // driver.findElement(By.id("id=\"comment-wiki-edit")).sendKeys("testowt");
         }
-        wait.until(ExpectedConditions.or(ExpectedConditions.textToBePresentInElement(status, TaskStatus.COMPLETED), ExpectedConditions.textToBePresentInElement(status, TaskStatus.QA)));
-        return true;
+        try {
+            wait.until(ExpectedConditions.or(ExpectedConditions.textToBePresentInElement(status, TaskStatus.COMPLETED), ExpectedConditions.textToBePresentInElement(status, TaskStatus.QA)));
+            return true;
+        } catch (TimeoutException t) {
+            return false;
+        }
     }
 
     public boolean checkIsStatusChange() {

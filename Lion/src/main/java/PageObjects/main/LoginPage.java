@@ -67,8 +67,8 @@ public class LoginPage extends PageObject {
 
     }
 
-    public ProfilePage logInToJiraAndGoToProfile(String login, String haslo) {
-        login(login, haslo);
+    public ProfilePage GoToProfilePage() {
+
         return new ProfilePage(driver);
 
     }

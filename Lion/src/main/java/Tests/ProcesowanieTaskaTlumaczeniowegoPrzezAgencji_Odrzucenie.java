@@ -14,6 +14,7 @@ import Tests.BaseTest.BaseTestClass;
 import core.Tools.Configuration.BrowserType;
 import core.Tools.Configuration.EnviromentSettings;
 import core.Tools.Configuration.TestEnviroments;
+import core.Tools.JsScript;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -28,19 +29,15 @@ public class ProcesowanieTaskaTlumaczeniowegoPrzezAgencji_Odrzucenie extends Bas
     String pmAgencyhaslo = "lion";
 
 
-    @BeforeMethod
-    public void setUp() {
-        EnviromentSettings enviromentSettings = new EnviromentSettings();
-        enviromentSettings.SetTestEnviroment(TestEnviroments.STAGE1);
-        driver = enviromentSettings.setUpDriver(BrowserType.CHROME);
-    }
 
 
     @Test(priority = 100)
-    public void odrzucenieNegocjacjiPrzezPmAgencyjnego() {
+    public void odrzucenieNegocjacjiPrzezPmAgencyjnego() throws InterruptedException {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.open();
-        KanbanPage kanbanPage = loginPage.logInToJiraAndGoToKanban(pmAgencylogin, pmAgencyhaslo);
+        DashboardPage dashboardPage = loginPage.loginAsAdmin();
+        JsScript.switchUserByLogin(driver,pmAgencylogin);
+        KanbanPage kanbanPage = dashboardPage.goToKanban();
         kanbanPage.chooseTask(KanbanHeader.NEW, 1);
         PmAgencyTaskPage pmAgencyTaskPage = new PmAgencyTaskPage(driver);
         System.out.println(" link do negocjacji : " + pmAgencyTaskPage.getUrl());
@@ -64,8 +61,5 @@ public class ProcesowanieTaskaTlumaczeniowegoPrzezAgencji_Odrzucenie extends Bas
     }
 
 
-    @AfterMethod
-    public void tearDown() {
-        driver.close();
-    }
+
 }

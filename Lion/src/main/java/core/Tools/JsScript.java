@@ -4,6 +4,7 @@ import core.Tools.Configuration.Property;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.ScriptTimeoutException;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -23,6 +24,9 @@ public class JsScript {
             try {
                 driver.manage().timeouts().setScriptTimeout(60, TimeUnit.SECONDS);
                 taskJob = (String) ((JavascriptExecutor) driver).executeScript(readfile(file));
+                if (taskJob == null) {
+                    Assert.fail("Nie udało sie wygenerować JOB-a");
+                }
             } catch (ScriptTimeoutException ex) {
                 if (ex.getCause() != null) {
                     throw new Exception("Problem ze scryptem ");
@@ -39,7 +43,8 @@ public class JsScript {
         if (driver instanceof JavascriptExecutor) {
             try {
                 driver.manage().timeouts().setScriptTimeout(60, TimeUnit.SECONDS);
-                taskJob = (String) ((JavascriptExecutor) driver).executeScript(readfile(file), param);
+                Boolean isSuccess = (Boolean) ((JavascriptExecutor) driver).executeScript(readfile(file), param);
+                System.out.println("czy udalo sie przelaczyć: "+ isSuccess);
             } catch (ScriptTimeoutException ex) {
                 if (ex.getCause() != null) {
                     throw new Exception("Problem ze scryptem ");
@@ -110,14 +115,14 @@ public class JsScript {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
+        driver.navigate().refresh();
     }
 
     public static String readfile(String filename) {
         String basePath = Property.getProperty("basePath");
         String scrypt = "";
         // Deklarowanie i tworzenie obiektu typu File
-        File plikDane = new File(basePath + "\\Lion\\src\\main\\java\\core\\Tools\\" + filename);
+        File plikDane = new File(basePath + "\\Lion\\src\\main\\java\\core\\JSscripts\\" + filename);
         ;
         // Utworzenie obiektu typu String, który będzie
         // przechowywał odczytany tekst

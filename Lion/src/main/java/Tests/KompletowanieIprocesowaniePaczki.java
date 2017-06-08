@@ -17,6 +17,7 @@ import core.Tools.Configuration.BrowserType;
 import core.Tools.Configuration.EnviromentSettings;
 import core.Tools.Configuration.TestEnviroments;
 import core.Tools.JsScript;
+import core.Tools.LionAssert;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -28,12 +29,7 @@ import org.testng.annotations.Test;
 public class KompletowanieIprocesowaniePaczki extends BaseTestClass {
 
 
-    @BeforeMethod
-    public void setUp() {
-        EnviromentSettings enviromentSettings = new EnviromentSettings();
-        enviromentSettings.SetTestEnviroment(TestEnviroments.STAGE1);
-        driver = enviromentSettings.setUpDriver(BrowserType.CHROME);
-    }
+
 
     @Test(priority = 10)
     public void utworzeniePaczki() {
@@ -75,14 +71,17 @@ public class KompletowanieIprocesowaniePaczki extends BaseTestClass {
 
     @Test(priority = 12)
     public void akceptacjaPaczkiPrzezTranslatora() {
+        System.out.println("user : "+data.getListOfAssigments().get(0).getTranslator());
         LoginPage loginAsTranslator = new LoginPage(driver);
         loginAsTranslator.open();
-        DashboardPage dashboardPage = loginAsTranslator.logInToJira(data.getListOfAssigments().get(0).getTranslator(), "lion");
+        DashboardPage dashboardPage = loginAsTranslator.loginAsAdmin();
+        JsScript.switchUserByLogin(driver,data.getListOfAssigments().get(0).getTranslator() );
         NegotiationTaskPage negociationTask = dashboardPage.goToNegotiationTask(data.getListOfAssigments().get(0).getKey());
         System.out.println("Task negocjacyjny Translatora :" + negociationTask.getUrl());
         //Akceptacja taska
         negociationTask.clickOnButton(TaskButton.ACCEPT);
-        Assert.assertEquals(negociationTask.getStatus(), TaskStatus.ACCEPTED);
+        LionAssert.assertStatus(negociationTask.getStatus(), TaskStatus.ACCEPTED, TaskStatus.AUTOMATICALLY_ACCEPTED,"nie poprawny sta Negocjacji po zaakceptowaniu");
+
     }
 
 
@@ -100,10 +99,5 @@ public class KompletowanieIprocesowaniePaczki extends BaseTestClass {
 
     }
 
-    @AfterMethod
-    public void tearDown() {
-        driver.close();
-
-    }
 
 }

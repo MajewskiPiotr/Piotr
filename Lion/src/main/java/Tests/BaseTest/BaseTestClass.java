@@ -1,6 +1,9 @@
 package Tests.BaseTest;
 
 import core.Reports.TestData;
+import core.Tools.Configuration.BrowserType;
+import core.Tools.Configuration.EnviromentSettings;
+import core.Tools.Configuration.TestEnviroments;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -8,7 +11,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 
 import java.io.File;
 import java.time.LocalDateTime;
@@ -27,6 +32,18 @@ public class BaseTestClass {
         return data;
     }
 
+    @BeforeMethod
+    public void setUp() {
+        EnviromentSettings enviromentSettings = new EnviromentSettings();
+        enviromentSettings.SetTestEnviroment(TestEnviroments.STAGE2);
+        driver = enviromentSettings.setUpDriver(BrowserType.CHROME);
+    }
+
+
+    @AfterMethod
+    public void tearDown() {
+        driver.close();
+    }
     public static WebDriver getDriver() {
 
         if (driver == null) {
@@ -65,6 +82,9 @@ public class BaseTestClass {
 
     }
 
+
+
+
     @BeforeClass
     public void setUpTestData() {
         data = TestData.readTestData(this.getClass().getSimpleName());
@@ -73,8 +93,9 @@ public class BaseTestClass {
         }
 
     }
+
     @AfterClass
-    public void clean(){
+    public void clean() {
         TestData.flush(this.getClass().getSimpleName());
 
     }

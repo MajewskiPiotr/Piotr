@@ -1,10 +1,5 @@
 package Tests;
 
-import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
-
 import PageObjects.Elements.Task.TaskButton;
 import PageObjects.Elements.Task.TaskStatus;
 import PageObjects.Elements.Task.TaskTab;
@@ -16,22 +11,22 @@ import PageObjects.main.DashboardPage;
 import PageObjects.main.LoginPage;
 import Tests.BaseTest.BaseTestClass;
 import Tests.BaseTest.GenerowanieJoba;
-import core.Tools.JsScript;
 import core.Tools.Configuration.BrowserType;
 import core.Tools.Configuration.EnviromentSettings;
 import core.Tools.Configuration.TestEnviroments;
+import core.Tools.JsScript;
+import core.Tools.LionAssert;
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 /**
  * Created by Piotr Majewski on 2017-05-30.
  */
 public class DropBox_Test extends BaseTestClass {
 
-    @BeforeMethod
-    public void setUp() {
-        EnviromentSettings enviromentSettings = new EnviromentSettings();
-        enviromentSettings.SetTestEnviroment(TestEnviroments.STAGE1);
-        driver = enviromentSettings.setUpDriver(BrowserType.CHROME);
-    }
+
 
     @Test(priority = 70)
     public void wygenerujTaskJobForDropbox() {
@@ -40,7 +35,7 @@ public class DropBox_Test extends BaseTestClass {
 
     @Test(priority = 71)
     public void weryfikacjaUtworzonegoJoba() {
-       GenerowanieJoba.zweryfikujJoba(driver);
+        GenerowanieJoba.zweryfikujJoba(driver);
     }
 
     @Test(priority = 72)
@@ -50,10 +45,11 @@ public class DropBox_Test extends BaseTestClass {
         LoginPage loginAsTranslator = new LoginPage(driver);
         loginAsTranslator.open();
         DashboardPage kanbanPage = loginAsTranslator.loginAsAdmin();
-        JsScript.switchUser(driver,data.getListOfAssigments().get(0).getTranslator());
+        //zmiana usera na translatora
+        JsScript.switchUserByLogin(driver, data.getListOfAssigments().get(0).getTranslator() );
         NegotiationTaskPage userTask = kanbanPage.goToNegotiationTask(data.getListOfAssigments().get(0).getKey());
         userTask.clickOnButton(TaskButton.ACCEPT);
-        Assert.assertEquals(userTask.getStatus(), TaskStatus.ACCEPTED);
+        LionAssert.assertStatus(userTask.getStatus(), TaskStatus.ACCEPTED, TaskStatus.AUTOMATICALLY_ACCEPTED, "nie poprawny sta Negocjacji po zaakceptowaniu");
 
         System.out.println("Task badany : " + userTask.getUrl());
     }
@@ -75,9 +71,6 @@ public class DropBox_Test extends BaseTestClass {
         data.setZakonczono(true);
     }
 
-    @AfterMethod
-    public void tearDown() {
-        driver.close();
-    }
+
 
 }

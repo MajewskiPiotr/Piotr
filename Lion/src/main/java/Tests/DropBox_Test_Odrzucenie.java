@@ -24,12 +24,7 @@ import org.testng.annotations.Test;
  */
 public class DropBox_Test_Odrzucenie extends BaseTestClass {
 
-    @BeforeMethod
-    public void setUp() {
-        EnviromentSettings enviromentSettings = new EnviromentSettings();
-        enviromentSettings.SetTestEnviroment(TestEnviroments.STAGE1);
-        driver = enviromentSettings.setUpDriver(BrowserType.CHROME);
-    }
+
 
     @Test(priority = 80)
     public void wygenerujTaskJobForDropbox() {
@@ -49,7 +44,7 @@ public class DropBox_Test_Odrzucenie extends BaseTestClass {
         LoginPage loginAsTranslator = new LoginPage(driver);
         loginAsTranslator.open();
         DashboardPage kanbanPage = loginAsTranslator.loginAsAdmin();
-        JsScript.switchUser(driver,data.getListOfAssigments().get(0).getTranslator());
+        JsScript.switchUserByLogin(driver,data.getListOfAssigments().get(0).getTranslator());
         NegotiationTaskPage userTask = kanbanPage.goToNegotiationTask(data.getListOfAssigments().get(0).getKey());
         userTask.clickOnButton(TaskButton.REJECT);
 
@@ -65,13 +60,9 @@ public class DropBox_Test_Odrzucenie extends BaseTestClass {
         DashboardPage dashboardPage = loginAsAdmin.logInToJira("piotr.majewski", "piotr.majewski");
         TaskPage jobTask = dashboardPage.goToTask(data.getTranslationTask());
         AssigmentsTabPage pageObject = (AssigmentsTabPage) jobTask.goToTab(TaskTab.ASSIGMENTS);
-
         Assert.assertTrue(pageObject.checkIsTaskRejected(), "Task nie został odrzucony");
     }
 
-    @AfterMethod
-    public void tearDown() {
-        driver.close();
-    }
+
 
 }

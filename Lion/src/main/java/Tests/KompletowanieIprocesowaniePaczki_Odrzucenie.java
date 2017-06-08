@@ -28,12 +28,7 @@ import org.testng.annotations.Test;
 public class KompletowanieIprocesowaniePaczki_Odrzucenie extends BaseTestClass {
 
 
-    @BeforeMethod
-    public void setUp() {
-        EnviromentSettings enviromentSettings = new EnviromentSettings();
-        enviromentSettings.SetTestEnviroment(TestEnviroments.STAGE1);
-        driver = enviromentSettings.setUpDriver(BrowserType.CHROME);
-    }
+
 
     @Test(priority = 90)
     public void utworzeniePaczki() {
@@ -77,7 +72,8 @@ public class KompletowanieIprocesowaniePaczki_Odrzucenie extends BaseTestClass {
     public void odrzuceniePaczkiPrzezTranslatora() {
         LoginPage loginAsTranslator = new LoginPage(driver);
         loginAsTranslator.open();
-        DashboardPage dashboardPage = loginAsTranslator.logInToJira(data.getListOfAssigments().get(0).getTranslator(), "lion");
+        DashboardPage dashboardPage = loginAsTranslator.loginAsAdmin();
+        JsScript.switchUserByLogin(driver, data.getListOfAssigments().get(0).getTranslator());
         NegotiationTaskPage negociationTask = dashboardPage.goToNegotiationTask(data.getListOfAssigments().get(0).getKey());
         System.out.println("Task negocjacyjny Translatora :" + negociationTask.getUrl());
         //Akceptacja taska
@@ -100,10 +96,6 @@ public class KompletowanieIprocesowaniePaczki_Odrzucenie extends BaseTestClass {
 
     }
 
-    @AfterMethod
-    public void tearDown() {
-        driver.close();
 
-    }
 
 }

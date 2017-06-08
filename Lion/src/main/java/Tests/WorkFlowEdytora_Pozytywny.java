@@ -27,12 +27,7 @@ import org.testng.annotations.Test;
 public class WorkFlowEdytora_Pozytywny extends BaseTestClass {
 
 
-    @BeforeMethod
-    public void setUp() {
-        EnviromentSettings enviromentSettings = new EnviromentSettings();
-        enviromentSettings.SetTestEnviroment(TestEnviroments.STAGE1);
-        driver = enviromentSettings.setUpDriver(BrowserType.CHROME);
-    }
+
 
     //należy zalogowac sie na usera ktory posiada ustawiony edit level
     //W obecnej chwili ustawiam tam UI i takich taskow wyszukuje w kolejnym tescie
@@ -86,9 +81,6 @@ public class WorkFlowEdytora_Pozytywny extends BaseTestClass {
 
     }
 
-    @AfterMethod
-    public void tearDown() {
-        driver.close();
-    }
+
 }
 

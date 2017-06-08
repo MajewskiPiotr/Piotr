@@ -1,19 +1,12 @@
 package Tests;
 
-<<<<<<< HEAD
-import Tests.BaseTest.BaseTestClass;
-=======
-import core.Reports.TestData;
->>>>>>> SendEmail-feature
-import core.Tools.Configuration.BrowserType;
-import core.Tools.Configuration.EnviromentSettings;
-import core.Tools.Configuration.TestEnviroments;
 import PageObjects.Elements.ProfilePageFields;
+import PageObjects.main.DashboardPage;
 import PageObjects.main.LoginPage;
 import PageObjects.main.ProfilePage;
+import Tests.BaseTest.BaseTestClass;
+import core.Tools.JsScript;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.time.format.DateTimeFormatter;
@@ -24,12 +17,7 @@ import java.util.Random;
  */
 public class ProfileUpdateTest extends BaseTestClass {
 
-    @BeforeMethod
-    public void setUp() {
-        EnviromentSettings enviromentSettings = new EnviromentSettings();
-        enviromentSettings.SetTestEnviroment(TestEnviroments.STAGE1);
-        driver = enviromentSettings.setUpDriver(BrowserType.CHROME);
-    }
+    String user = "001-HU_00588888";
 
     @Test(priority = 50)
     public void zmodyfikujProfil() {
@@ -42,7 +30,10 @@ public class ProfileUpdateTest extends BaseTestClass {
 
         LoginPage loginAsTranslator = new LoginPage(driver);
         loginAsTranslator.open();
-        ProfilePage profilePage = loginAsTranslator.logInToJiraAndGoToProfile("001-HU_00588888", "lion");
+        DashboardPage dashboardPage = loginAsTranslator.loginAsAdmin();
+        JsScript.switchUserByLogin(driver, user);
+        ProfilePage profilePage = dashboardPage.goToProfilePage();
+
         //wprowadzam dane
         profilePage.typeInFields(ProfilePageFields.AVAILABILITY, data.getAvailability());
         profilePage.typeInFields(ProfilePageFields.AVAILABILITY_FROM_UTC, data.getAvailabilityFromUtc());
@@ -58,19 +49,16 @@ public class ProfileUpdateTest extends BaseTestClass {
         System.out.println(data.toString());
         LoginPage loginAsTranslator = new LoginPage(driver);
         loginAsTranslator.open();
-        ProfilePage profilePage = loginAsTranslator.logInToJiraAndGoToProfile("001-HU_00588888", "lion");
+        DashboardPage dashboardPage = loginAsTranslator.loginAsAdmin();
+        JsScript.switchUserByLogin(driver, user);
+        ProfilePage profilePage = dashboardPage.goToProfilePage();
 
         Assert.assertEquals(profilePage.getTextFromFields(ProfilePageFields.AVAILABILITY), data.getAvailability());
         Assert.assertEquals(profilePage.getTextFromFields(ProfilePageFields.AVAILABILITY_FROM_UTC), data.getAvailabilityFromUtc());
         Assert.assertEquals(profilePage.getTextFromFields(ProfilePageFields.AVAILABILITY_TO_UTC), data.getAvailabilityToUtc());
         Assert.assertEquals(profilePage.getTextFromFields(ProfilePageFields.POC), data.getPoc());
         Assert.assertEquals(profilePage.getTextFromFields(ProfilePageFields.PHONE), data.getPhnone());
-
     }
 
-    @AfterMethod
-    public void tearDown() {
 
-        driver.close();
-    }
 }
