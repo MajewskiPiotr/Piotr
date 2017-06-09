@@ -6,8 +6,11 @@ import PageObjects.TaskPage.AbstractTaskPage;
 import PageObjects.TaskPage.TaskPage;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.List;
 
 /**
  * Created by Piotr Majewski on 2017-06-09.
@@ -52,6 +55,13 @@ public abstract class AbstractJiraPage extends PageObject {
 
     public String getUrl() {
         return driver.getCurrentUrl();
+    }
+
+    protected void wypiszListe(List<WebElement> elements) {
+        for (WebElement w : elements) {
+            System.out.println(w.getText());
+        }
+
     }
 
 }

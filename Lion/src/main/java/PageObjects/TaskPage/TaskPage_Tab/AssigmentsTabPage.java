@@ -20,7 +20,7 @@ import java.util.List;
  */
 public class AssigmentsTabPage extends AbstractJiraPage {
 
-    @FindBy(xpath = "//*[@id='customfield_12000-val']//tbody/tr")
+    @FindBy(xpath = "//*[@id='customfield_12000-val']//tbody/tr[*]")
     private List<WebElement> assignments;
 
 
@@ -38,34 +38,24 @@ public class AssigmentsTabPage extends AbstractJiraPage {
     }
 
     public List<WebElement> getAssigmentsListByType(AssignmentsType type) {
-
-
-        for (WebElement element : getAssignments()) {
-            System.out.println("badany :" + FindInTaskTab.getTaskType(element).getText());
-            if (FindInTaskTab.getTaskType(element).getText().equals(type.getTaskType())) {
-                System.out.println("dodaje");
+        List<WebElement> newWebElementList = new ArrayList<>();
+        for (int i = 0; i < assignments.size(); i++) {
+            WebElement webElementUnderTest = assignments.get(i);
+            if (FindInTaskTab.getTaskTypeFromAssignmentTab(webElementUnderTest, i+1).getText().equals(type.getTaskType())) {
+                newWebElementList.add(webElementUnderTest);
             }
         }
-
-        return null;
+        return newWebElementList;
     }
 
     private List<WebElement> getAssignments() {
         if (assignments == null) {
             Assert.fail("lista Assignments nie została zainicjowana bądź jest pusta");
         }
-        System.out.println("stara lista");
-        wypiszListe(assignments);
         return assignments;
     }
 
     //wewnętrzna funkcja wypisywania
-    private void wypiszListe(List<WebElement> elements) {
-        System.out.println("Old lista");
-        for (WebElement w : elements) {
-            System.out.println(w.getText());
-        }
 
-    }
 
 }

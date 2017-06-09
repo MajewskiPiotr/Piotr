@@ -4,8 +4,10 @@ import PageObjects.ElementsOnPages.Task.Tab.AssignmentsType;
 import PageObjects.ElementsOnPages.Task.TaskTab;
 import PageObjects.TaskPage.TaskPage;
 import PageObjects.TaskPage.TaskPage_Tab.AssigmentsTabPage;
+import PageObjects.TaskPage.TaskPage_Tab.TranslationTabPage;
 import PageObjects.main.DashboardPage;
 import PageObjects.main.LoginPage;
+import core.JSscripts.JsScript;
 import org.testng.annotations.Test;
 
 /**
@@ -16,9 +18,10 @@ public class testowyTest extends BaseTestClass {
     public void test() {
         LoginPage login = new LoginPage(driver);
         DashboardPage dashboardPage = login.loginAsAdmin();
-        TaskPage translationTask = dashboardPage.goToTask("GO-51221");
+        JsScript.switchUserByLogin(driver, "001-HU_00288888 ");
+        TaskPage translationTask = dashboardPage.goToTask("GO-51472");
 
-        AssigmentsTabPage assigments = (AssigmentsTabPage) translationTask.goToTab(TaskTab.ASSIGMENTS);
-        assigments.getAssigmentsListByType(AssignmentsType.New_Editor_Work_Available);
+        TranslationTabPage assigments = (TranslationTabPage) translationTask.goToTab(TaskTab.TRANSLATION_TASKS);
+        assigments.getTranslationTask();
     }
 }
