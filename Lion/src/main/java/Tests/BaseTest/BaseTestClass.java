@@ -35,7 +35,7 @@ public class BaseTestClass {
     @BeforeMethod
     public void setUp() {
         EnviromentSettings enviromentSettings = new EnviromentSettings();
-        enviromentSettings.SetTestEnviroment(TestEnviroments.STAGE2);
+        enviromentSettings.SetTestEnviroment(TestEnviroments.STAGE1);
         driver = enviromentSettings.setUpDriver(BrowserType.CHROME);
     }
 

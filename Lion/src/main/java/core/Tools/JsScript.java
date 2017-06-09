@@ -58,8 +58,8 @@ public class JsScript {
 
     public static String createTranslationJobWithManyTasks(WebDriver driver) {
         //zwiekszam timeout dla skryptów
-        driver.manage().timeouts().setScriptTimeout(180, TimeUnit.SECONDS);
-        driver.manage().timeouts().pageLoadTimeout(180, TimeUnit.SECONDS);
+        driver.manage().timeouts().setScriptTimeout(300, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(300, TimeUnit.SECONDS);
 
         try {
             runScript(driver, "jobGeneratorManyTasks.js");

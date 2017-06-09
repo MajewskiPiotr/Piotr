@@ -163,7 +163,7 @@ function createTask(jobKey) {
 }
 
 //noinspection JSAnnotato,JSAnnotator
-return createJoBIssue(translationJob, 10)
+return createJoBIssue(translationJob, 30)
 
 
 

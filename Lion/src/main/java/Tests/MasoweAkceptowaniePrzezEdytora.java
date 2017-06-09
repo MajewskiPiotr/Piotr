@@ -108,7 +108,7 @@ public class MasoweAkceptowaniePrzezEdytora extends BaseTestClass {
         Assert.assertEquals(negotiationTask.getStatus(), TaskStatus.ACCEPTED);
         TaskPage translationTask = (TaskPage) negotiationTask.clickInLink(TaskLink.TRANSLATION_TASK_REF);
         translationTask.clickOnButton(TaskButton.ASSIGN_TO_EDITOR);
-        negotiationTask.goToTab(TaskTab.TRANSLATION_TASKS);
+        translationTask.goToTab(TaskTab.TRANSLATION_TASKS);
         TranslationTabPage translationTabPage = new TranslationTabPage(driver);
         Assert.assertTrue(translationTabPage.countTranslatorTask() > 0, "brak translation Tasks");
         Assert.assertTrue(translationTabPage.otworzWszystkieTranslationTask(), "Timeout przy próbie skompletowania tasków");
