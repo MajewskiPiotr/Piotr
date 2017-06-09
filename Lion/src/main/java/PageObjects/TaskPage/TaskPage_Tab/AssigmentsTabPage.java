@@ -38,25 +38,23 @@ public class AssigmentsTabPage extends AbstractJiraPage {
     }
 
     public List<WebElement> getAssigmentsListByType(AssignmentsType type) {
-        List<WebElement> newLista = new ArrayList<>();
-        List<WebElement> oldLista = getAssignments();
-        for (WebElement element : oldLista) {
+
+
+        for (WebElement element : getAssignments()) {
             System.out.println("badany :" + FindInTaskTab.getTaskType(element).getText());
             if (FindInTaskTab.getTaskType(element).getText().equals(type.getTaskType())) {
                 System.out.println("dodaje");
-                newLista.add(element);
             }
         }
-        for (WebElement lis : newLista) {
-            System.out.println("new Lista " + FindInTaskTab.getTaskType(lis).getText());
-        }
-        return newLista;
+
+        return null;
     }
 
     private List<WebElement> getAssignments() {
         if (assignments == null) {
             Assert.fail("lista Assignments nie została zainicjowana bądź jest pusta");
         }
+        System.out.println("stara lista");
         wypiszListe(assignments);
         return assignments;
     }
