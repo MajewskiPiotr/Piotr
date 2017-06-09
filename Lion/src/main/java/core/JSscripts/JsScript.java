@@ -1,4 +1,4 @@
-package core.Tools;
+package core.JSscripts;
 
 import core.Tools.Configuration.Property;
 import org.openqa.selenium.JavascriptExecutor;

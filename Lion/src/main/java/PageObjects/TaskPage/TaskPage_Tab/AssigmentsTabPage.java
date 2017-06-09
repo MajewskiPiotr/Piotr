@@ -41,8 +41,9 @@ public class AssigmentsTabPage extends AbstractJiraPage {
         List<WebElement> newLista = new ArrayList<>();
         List<WebElement> oldLista = getAssignments();
         for (WebElement element : oldLista) {
-            System.out.println("szukana :" + FindInTaskTab.getTaskType(element).getText());
+            System.out.println("badany :" + FindInTaskTab.getTaskType(element).getText());
             if (FindInTaskTab.getTaskType(element).getText().equals(type.getTaskType())) {
+                System.out.println("dodaje");
                 newLista.add(element);
             }
         }
@@ -60,8 +61,8 @@ public class AssigmentsTabPage extends AbstractJiraPage {
         return assignments;
     }
 
-
-    public void wypiszListe(List<WebElement> elements) {
+    //wewnętrzna funkcja wypisywania
+    private void wypiszListe(List<WebElement> elements) {
         System.out.println("Old lista");
         for (WebElement w : elements) {
             System.out.println(w.getText());
