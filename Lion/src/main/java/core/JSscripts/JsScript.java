@@ -122,7 +122,7 @@ public class JsScript {
         String basePath = Property.getProperty("basePath");
         String scrypt = "";
         // Deklarowanie i tworzenie obiektu typu File
-        File plikDane = new File(basePath + "\\Lion\\src\\main\\java\\core\\JSscripts\\" + filename);
+        File plikDane = new File(basePath + "\\Lion\\src\\MainPage\\java\\core\\JSscripts\\" + filename);
         ;
         // Utworzenie obiektu typu String, który będzie
         // przechowywał odczytany tekst

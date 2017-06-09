@@ -1,8 +1,7 @@
-package PageObjects.main;
+package PageObjects.MainPage;
 
 import PageObjects.Base.AbstractJiraPage;
-import PageObjects.Base.PageObject;
-import PageObjects.ElementsOnPages.ProfilePageFields;
+import core.ElementsOnPages.ProfilePageFields;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

@@ -1,12 +1,11 @@
 package Tests;
 
-import PageObjects.ElementsOnPages.Task.Tab.AssignmentsType;
-import PageObjects.ElementsOnPages.Task.TaskTab;
+import core.ElementsOnPages.Task.TaskStatus;
+import core.ElementsOnPages.Task.TaskTab;
 import PageObjects.TaskPage.TaskPage;
-import PageObjects.TaskPage.TaskPage_Tab.AssigmentsTabPage;
 import PageObjects.TaskPage.TaskPage_Tab.TranslationTabPage;
-import PageObjects.main.DashboardPage;
-import PageObjects.main.LoginPage;
+import PageObjects.MainPage.DashboardPage;
+import PageObjects.MainPage.LoginPage;
 import core.JSscripts.JsScript;
 import org.testng.annotations.Test;
 
@@ -22,6 +21,6 @@ public class testowyTest extends BaseTestClass {
         TaskPage translationTask = dashboardPage.goToTask("GO-51472");
 
         TranslationTabPage assigments = (TranslationTabPage) translationTask.goToTab(TaskTab.TRANSLATION_TASKS);
-        assigments.getTranslationTask();
+        assigments.getTranslationTask(TaskStatus.ASSIGNED_TO_AG);
     }
 }

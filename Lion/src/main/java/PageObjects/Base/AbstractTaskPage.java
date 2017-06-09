@@ -1,8 +1,7 @@
-package PageObjects.TaskPage;
+package PageObjects.Base;
 
-import PageObjects.Base.AbstractJiraPage;
-import PageObjects.Base.PageObject;
-import PageObjects.ElementsOnPages.Task.*;
+import core.ElementsOnPages.Task.*;
+import PageObjects.TaskPage.TaskPage;
 import PageObjects.TaskPage.TaskPage_Tab.AssigmentsTabPage;
 import PageObjects.TaskPage.TaskPage_Tab.TranslationTabPage;
 import org.openqa.selenium.By;
@@ -10,8 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-
-import java.util.List;
+import org.testng.Assert;
 
 /**
  * Created by Piotr Majewski on 2017-05-19.
@@ -121,13 +119,12 @@ public abstract class AbstractTaskPage extends AbstractJiraPage {
         switch (button) {
             case COMPLETED_EDITOR: {
                 completedEditorButton.click();
-                wait.until(ExpectedConditions.or(ExpectedConditions.textToBePresentInElement(status, TaskStatus.COMPLETED), ExpectedConditions.textToBePresentInElement(status, TaskStatus.QA)));
-
+                wait.until(ExpectedConditions.or(ExpectedConditions.textToBePresentInElement(status, TaskStatus.COMPLETED.getStatus()), ExpectedConditions.textToBePresentInElement(status, TaskStatus.QA.getStatus())));
                 break;
             }
             case ASSIGN_TO_EDITOR: {
                 assignToEditorButton.click();
-                wait.until(ExpectedConditions.textToBePresentInElement(status, TaskStatus.ASSIGNED_TO_EDITOR));
+                wait.until(ExpectedConditions.textToBePresentInElement(status, TaskStatus.ASSIGNED_TO_EDITOR.getStatus()));
                 break;
             }
             case ASSIGN_TO_TRANSLATOR: {
@@ -138,18 +135,18 @@ public abstract class AbstractTaskPage extends AbstractJiraPage {
             }
             case IN_PROGRESS: {
                 inProgressButton.click();
-                wait.until(ExpectedConditions.textToBePresentInElement(status, TaskStatus.IN_PROGRESS));
+                wait.until(ExpectedConditions.textToBePresentInElement(status, TaskStatus.IN_PROGRESS.getStatus()));
                 break;
 
             }
             case SELF_QA: {
                 selfQAButton.click();
-                wait.until(ExpectedConditions.textToBePresentInElement(status, TaskStatus.SELF_QA));
+                wait.until(ExpectedConditions.textToBePresentInElement(status, TaskStatus.SELF_QA.getStatus()));
                 break;
             }
             case COMPLETED_TRANSLATOR: {
                 comletedTranslatorButton.click();
-                wait.until(ExpectedConditions.invisibilityOfElementWithText(By.xpath("//*[@id='status-val']/span"), TaskStatus.SELF_QA));
+                wait.until(ExpectedConditions.invisibilityOfElementWithText(By.xpath("//*[@id='status-val']/span"), TaskStatus.SELF_QA.getStatus()));
                 break;
             }
             case COMMENT: {
@@ -162,6 +159,8 @@ public abstract class AbstractTaskPage extends AbstractJiraPage {
     }
 
     public String getStatus() {
+        if (status.getText()==""){
+            Assert.fail("Nie udało się pobrać Statusu");}
         return status.getText();
     }
 

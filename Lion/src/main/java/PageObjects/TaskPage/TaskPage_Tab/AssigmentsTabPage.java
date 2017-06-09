@@ -1,7 +1,7 @@
 package PageObjects.TaskPage.TaskPage_Tab;
 
 import PageObjects.Base.AbstractJiraPage;
-import PageObjects.ElementsOnPages.Task.Tab.AssignmentsType;
+import core.ElementsOnPages.Task.Tab.AssignmentsType;
 import core.Tools.FindInTaskTab;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;

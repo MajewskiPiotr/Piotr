@@ -1,7 +1,6 @@
-package PageObjects.main;
+package PageObjects.MainPage;
 
 import PageObjects.Base.AbstractJiraPage;
-import PageObjects.Base.PageObject;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -15,7 +14,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 public class DashboardPage extends AbstractJiraPage {
 
     //Napis SystemDashboard
-    @FindBy(className = "aui-page-header-main")
+    @FindBy(className = "aui-page-header-MainPage")
     private WebElement systemDashboard;
 
 

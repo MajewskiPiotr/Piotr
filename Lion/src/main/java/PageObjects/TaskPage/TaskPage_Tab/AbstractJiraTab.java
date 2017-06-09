@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Created by Piotr Majewski on 2017-06-09.
  */
-public class IJiraTab extends PageObject{
+public abstract class AbstractJiraTab extends PageObject{
 
 
     TaskPage goToTask(WebElement element){return null;};

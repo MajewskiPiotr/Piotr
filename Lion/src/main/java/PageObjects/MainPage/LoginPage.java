@@ -1,4 +1,4 @@
-package PageObjects.main;
+package PageObjects.MainPage;
 
 import PageObjects.Base.PageObject;
 import org.openqa.selenium.NoSuchElementException;

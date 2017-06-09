@@ -1,8 +1,8 @@
 package PageObjects.TaskPage.TaskPage_Tab;
 
 import PageObjects.Base.AbstractJiraPage;
-import PageObjects.ElementsOnPages.Task.TaskStatus;
 import PageObjects.TaskPage.TaskPage;
+import core.ElementsOnPages.Task.TaskStatus;
 import core.Tools.FindInTaskTab;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -30,12 +30,12 @@ public class TranslationTabPage extends AbstractJiraPage {
     }
 
     //zwraca Liste WebElementów z listy Translation Task
-    //@param TaskStatus
+    //@param OLDTaskStatus
     public List<WebElement> getTranslationTask(TaskStatus status) {
         List<WebElement> newWebElementList = new ArrayList<>();
         for (int i = 0; i < listaTaskow.size(); i++) {
             WebElement webElementUnderTest = listaTaskow.get(i);
-            if (FindInTaskTab.getTaskTypeFromTranlationTaskTab(webElementUnderTest, i + 1).getText().equals(status)) {
+            if (FindInTaskTab.getTaskTypeFromTranlationTaskTab(webElementUnderTest, i + 1).getText().equals(status.getStatus())) {
                 newWebElementList.add(webElementUnderTest);
             }
         }

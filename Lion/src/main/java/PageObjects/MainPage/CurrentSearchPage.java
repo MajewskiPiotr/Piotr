@@ -1,7 +1,6 @@
-package PageObjects.main;
+package PageObjects.MainPage;
 
 import PageObjects.Base.AbstractJiraPage;
-import PageObjects.Base.PageObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;

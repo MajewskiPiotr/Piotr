@@ -1,8 +1,8 @@
-package PageObjects.main;
+package PageObjects.MainPage;
 
 import PageObjects.Base.AbstractJiraPage;
 import PageObjects.Base.PageObject;
-import PageObjects.ElementsOnPages.KanbanHeader;
+import core.ElementsOnPages.KanbanHeader;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

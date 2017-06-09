@@ -1,8 +1,7 @@
 package PageObjects.Base;
 
-import PageObjects.ElementsOnPages.Task.TaskButton;
-import PageObjects.ElementsOnPages.Task.TaskLink;
-import PageObjects.TaskPage.AbstractTaskPage;
+import core.ElementsOnPages.Task.TaskButton;
+import core.ElementsOnPages.Task.TaskLink;
 import PageObjects.TaskPage.TaskPage;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;

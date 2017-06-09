@@ -1,13 +1,10 @@
 package PageObjects.TaskPage;
 
-import PageObjects.ElementsOnPages.Task.TaskButton;
+import PageObjects.Base.AbstractTaskPage;
+import core.ElementsOnPages.Task.TaskButton;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
-
-import java.util.List;
 
 
 /**

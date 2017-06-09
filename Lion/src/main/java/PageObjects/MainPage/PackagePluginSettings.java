@@ -1,8 +1,7 @@
-package PageObjects.main;
+package PageObjects.MainPage;
 
 import PageObjects.Base.AbstractJiraPage;
-import PageObjects.Base.PageObject;
-import PageObjects.ElementsOnPages.Task.TaskButton;
+import core.ElementsOnPages.Task.TaskButton;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
