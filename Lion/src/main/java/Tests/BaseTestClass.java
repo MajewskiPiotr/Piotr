@@ -1,6 +1,5 @@
-package Tests.BaseTest;
+package Tests;
 
-import core.Reports.TestData;
 import core.Tools.Configuration.BrowserType;
 import core.Tools.Configuration.EnviromentSettings;
 import core.Tools.Configuration.TestEnviroments;
@@ -25,25 +24,19 @@ import java.time.ZoneId;
  */
 public class BaseTestClass {
     protected static WebDriver driver;
-    protected static TestData data;
     protected LocalDateTime time = LocalDateTime.now(ZoneId.systemDefault());
-
-    public static TestData getData() {
-        return data;
-    }
 
     @BeforeMethod
     public void setUp() {
         EnviromentSettings enviromentSettings = new EnviromentSettings();
-        enviromentSettings.SetTestEnviroment(TestEnviroments.STAGE2);
+        enviromentSettings.SetTestEnviroment(TestEnviroments.STAGE1);
         driver = enviromentSettings.setUpDriver(BrowserType.CHROME);
     }
-
-
     @AfterMethod
     public void tearDown() {
-        driver.close();
+        //driver.close();
     }
+
     public static WebDriver getDriver() {
 
         if (driver == null) {
@@ -53,13 +46,6 @@ public class BaseTestClass {
         return driver;
     }
 
-    /**
-     * This function will take screenshot
-     *
-     * @param webdriver
-     * @param fileWithPath
-     * @throws Exception
-     */
 
     public static void takeSnapShot(WebDriver webdriver, String fileWithPath) throws Exception {
 
@@ -82,21 +68,14 @@ public class BaseTestClass {
 
     }
 
-
-
-
     @BeforeClass
     public void setUpTestData() {
-        data = TestData.readTestData(this.getClass().getSimpleName());
-        if (data.getScenariusz() == null) {
-            data.setScenariusz(this.getClass().getSimpleName());
-        }
+
 
     }
 
     @AfterClass
     public void clean() {
-        TestData.flush(this.getClass().getSimpleName());
 
     }
 }

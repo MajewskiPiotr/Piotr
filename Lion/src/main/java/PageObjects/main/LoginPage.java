@@ -2,6 +2,7 @@ package PageObjects.main;
 
 import PageObjects.Base.PageObject;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -26,20 +27,23 @@ public class LoginPage extends PageObject {
         super(driver);
     }
 
-    public void open() {
-
-        driver.navigate().to(baseUrl + pageUrl);
-        //TODO dodać sprawdzenia czy udalo sie odpalic aplikacje
+    private void open() {
+        try {
+            driver.navigate().to(baseUrl + pageUrl);
+        } catch (TimeoutException ex) {
+            Assert.fail("Nie udało otworzyć sie aplikacji pod adresem " + baseUrl + pageUrl);
+        }
     }
 
     private void login(String login, String haslo) {
+        open();
         try {
-
             userName.sendKeys(login);
             password.sendKeys(haslo);
             logIn.click();
-        }catch (NoSuchElementException exception){
-            Assert.fail("Nie udało sie uruchomić JIRA");}
+        } catch (NoSuchElementException exception) {
+            Assert.fail("Nie udało sie uruchomić JIRA");
+        }
     }
 
     public DashboardPage logInToJira(String login, String haslo) {
@@ -56,20 +60,12 @@ public class LoginPage extends PageObject {
 
     public CurrentSearchPage logInToJiraAndGoToSearch(String login, String haslo) {
         login(login, haslo);
-
         return new CurrentSearchPage(driver);
-
     }
 
     public KanbanPage logInToJiraAndGoToKanban(String login, String haslo) {
         login(login, haslo);
         return new KanbanPage(driver);
-
     }
 
-    public ProfilePage GoToProfilePage() {
-
-        return new ProfilePage(driver);
-
-    }
 }

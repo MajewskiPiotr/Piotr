@@ -1,7 +1,8 @@
 package PageObjects.main;
 
+import PageObjects.Base.AbstractJiraPage;
 import PageObjects.Base.PageObject;
-import PageObjects.Elements.Task.TaskButton;
+import PageObjects.ElementsOnPages.Task.TaskButton;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,7 +12,7 @@ import org.openqa.selenium.support.ui.Select;
 /**
  * Created by Piotr Majewski on 2017-05-22.
  */
-public class PackagePluginSettings extends PageObject {
+public class PackagePluginSettings extends AbstractJiraPage {
 
     @FindBy(xpath = "//*[@id='content']//*[@value='Execute']")
     protected WebElement executeButton;

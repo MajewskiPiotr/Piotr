@@ -1,8 +1,8 @@
-package PageObjects.Elements.Task;
+package PageObjects.ElementsOnPages.Task;
 
 /**
  * Created by Piotr Majewski on 2017-06-06.
  */
-public enum TaskRole {
+public enum TaskPeople {
     Language_Owner,Project_Manager,AccessUsers;
 }

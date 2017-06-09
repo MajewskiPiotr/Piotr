@@ -1,7 +1,8 @@
 package PageObjects.main;
 
+import PageObjects.Base.AbstractJiraPage;
 import PageObjects.Base.PageObject;
-import PageObjects.Elements.KanbanHeader;
+import PageObjects.ElementsOnPages.KanbanHeader;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,7 +16,7 @@ import java.util.List;
  * Created by Piotr Majewski on 2017-05-15.
  * Klasa reprezentuje strone KANBAN w aplikacji JIRA
  */
-public class KanbanPage extends PageObject {
+public class KanbanPage extends AbstractJiraPage {
 
     @FindBy(xpath = "//*[@id='ghx-pool']/div[2]/ul/li[1]/div[*]/div[1]")
     List<WebElement> listofNew;

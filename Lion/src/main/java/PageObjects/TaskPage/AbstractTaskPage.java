@@ -1,15 +1,15 @@
 package PageObjects.TaskPage;
 
+import PageObjects.Base.AbstractJiraPage;
 import PageObjects.Base.PageObject;
-import PageObjects.Elements.Task.TaskRole;
-import PageObjects.Elements.Task.TaskTab;
+import PageObjects.ElementsOnPages.Task.*;
 import PageObjects.TaskPage.TaskPage_Tab.AssigmentsTabPage;
 import PageObjects.TaskPage.TaskPage_Tab.TranslationTabPage;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
 
@@ -17,39 +17,61 @@ import java.util.List;
  * Created by Piotr Majewski on 2017-05-19.
  * KLasa abstracyjna. Kazda Page Task powinien dziedziczyc po tej klasie.
  */
-public abstract class AbstractTaskPage extends PageObject {
+
+//TODO w środosiku produkcyjnych można potworzyć podKlasy i umiescić w nich elementy z których nie wszyscy korzystają (np. AssignToTranslator uzywa tylko Edytor
+public abstract class AbstractTaskPage extends AbstractJiraPage {
+
+    //Zakladki
+    @FindBy(xpath = "//*[@class='tabs-menu']//*/strong[text()='Translation Tasks']")
+    protected WebElement translationTasksTab;
+    @FindBy(xpath = "//*[@class='tabs-menu']//*/strong[text()='Assignments']")
+    protected WebElement assignmentsTab;
 
 
-    @FindBy(id = "customfield_10801-val")
-    protected WebElement editor;
-
-    @FindBy(xpath = "//*[@id='customfield_10338-val']//*[@class='user-hover']")
-    protected WebElement languageOwner;
-
-    @FindBy(id = "action_id_71")
-    protected WebElement rejectButton;
-
-    @FindBy(id = "assignee-val")
-    protected WebElement assignee;
-
-
-    @FindBy(xpath = "//*[@id='status-val']/span")
-    protected WebElement status;
-
+    //Guziki
     @FindBy(id = "action_id_11")
     protected WebElement acceptButton;
-
-    @FindBy(xpath = "//*[@class='wrap']//a[@class=\"issue-link\"]")
-    protected WebElement translationTaskRef;
-
+    @FindBy(id = "action_id_81")
+    protected WebElement completedEditorButton;
+    @FindBy(id = "action_id_331")
+    protected WebElement assignToEditorButton;
+    @FindBy(id = "action_id_391")
+    protected WebElement assignToTranslatorButton;
+    @FindBy(id = "action_id_51")
+    protected WebElement inProgressButton;
+    @FindBy(id = "action_id_321")
+    protected WebElement selfQAButton;
+    @FindBy(id = "action_id_61")
+    protected WebElement comletedTranslatorButton;
+    @FindBy(id = "action_id_71")
+    protected WebElement rejectButton;
     @FindBy(id = "comment-issue")
     protected WebElement commentButton;
 
+    //Pola
+
+    @FindBy(id = "customfield_10801-val")
+    protected WebElement editor;
+    @FindBy(xpath = "//*[@id='customfield_10338-val']//*[@class='user-hover']")
+    protected WebElement languageOwner;
+    @FindBy(id = "assignee-val")
+    protected WebElement assignee;
+
+    //stan Taska
+    @FindBy(xpath = "//*[@id='status-val']/span")
+    protected WebElement status;
+
+
+    //Inne
+    @FindBy(id = "customfield_10334-val")
+    protected WebElement packageReference;
+    @FindBy(xpath = "//*[@id='issue_actions_container']")
+    protected WebElement allComents;
+    @FindBy(xpath = "//*[@class='wrap']//a[@class=\"issue-link\"]")
+    protected WebElement translationTaskRef;
     @FindBy(id = "comment")
     protected WebElement commentField;
 
-    @FindBy(xpath = "//*[@label='Project Roles']")
-    protected WebElement commentAccessList;
 
     public AbstractTaskPage(WebDriver driver) {
         super(driver);
@@ -58,27 +80,34 @@ public abstract class AbstractTaskPage extends PageObject {
     public PageObject goToTab(TaskTab tab) {
         PageObject obj = null;
         switch (tab) {
-            case TRANSLATION_TASKS: {
-                driver.findElement(By.xpath("//*[@class='tabs-menu']//*/strong[text()='Translation Tasks']")).click();
-                obj = new TranslationTabPage(driver);
+            case ASSIGMENTS: {
+                assignmentsTab.click();
+                obj = new AssigmentsTabPage(driver);
                 break;
             }
-            case ASSIGMENTS: {
-                driver.findElement(By.xpath("//*[@class='tabs-menu']//*/strong[text()='Assignments']")).click();
-                obj = new AssigmentsTabPage(driver);
+            case TRANSLATION_TASKS: {
+                translationTasksTab.click();
+                obj = new TranslationTabPage(driver);
                 break;
             }
         }
         return obj;
     }
 
-    public String getStatus() {
-        return status.getText();
+    public AbstractTaskPage clickInLink(TaskLink link) {
+        AbstractTaskPage obj = null;
+        switch (link) {
+            case PACKAGE_REFERENCE: {
+                packageReference.click();
+                obj = new TaskPage(driver);
+            }
+        }
+        return obj;
     }
 
-    public String getUserFromRole(TaskRole role) {
+    public String getUserFromRole(TaskPeople people) {
         String roleName = null;
-        switch (role) {
+        switch (people) {
             case Language_Owner: {
                 roleName = languageOwner.getAttribute("rel");
                 break;
@@ -87,22 +116,54 @@ public abstract class AbstractTaskPage extends PageObject {
         return roleName;
     }
 
-    public String getEditor() {
-        return editor.getText();
+    public void clickOnButton(TaskButton button) {
+
+        switch (button) {
+            case COMPLETED_EDITOR: {
+                completedEditorButton.click();
+                wait.until(ExpectedConditions.or(ExpectedConditions.textToBePresentInElement(status, TaskStatus.COMPLETED), ExpectedConditions.textToBePresentInElement(status, TaskStatus.QA)));
+
+                break;
+            }
+            case ASSIGN_TO_EDITOR: {
+                assignToEditorButton.click();
+                wait.until(ExpectedConditions.textToBePresentInElement(status, TaskStatus.ASSIGNED_TO_EDITOR));
+                break;
+            }
+            case ASSIGN_TO_TRANSLATOR: {
+
+                assignToTranslatorButton.click();
+                wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.id("workflow-transition-391-dialog"))));
+                break;
+            }
+            case IN_PROGRESS: {
+                inProgressButton.click();
+                wait.until(ExpectedConditions.textToBePresentInElement(status, TaskStatus.IN_PROGRESS));
+                break;
+
+            }
+            case SELF_QA: {
+                selfQAButton.click();
+                wait.until(ExpectedConditions.textToBePresentInElement(status, TaskStatus.SELF_QA));
+                break;
+            }
+            case COMPLETED_TRANSLATOR: {
+                comletedTranslatorButton.click();
+                wait.until(ExpectedConditions.invisibilityOfElementWithText(By.xpath("//*[@id='status-val']/span"), TaskStatus.SELF_QA));
+                break;
+            }
+            case COMMENT: {
+                commentButton.click();
+                wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='comment']")));
+                break;
+            }
+        }
+
     }
 
-    public String getAssignee() {
-        return assignee.getText();
+    public String getStatus() {
+        return status.getText();
     }
 
-    public void typeCommentAndSetScope(String txt, String scope) {
-        commentField.sendKeys(txt);
-        driver.findElement(By.xpath("//*[@id='commentLevel-multi-select']/a/span[2]")).click();
-        setScope(scope);
-        //driver.findElement(By.xpath("//*[@id='issue-comment-add-submit']")).click();
-    }
 
-    public void setScope(String scope) {
-
-    }
 }

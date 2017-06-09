@@ -1,5 +1,6 @@
 
 
+import PageObjects.ElementsOnPages.Task.Tab.AssignmentsType;
 import com.sun.jna.platform.win32.Sspi;
 
 import javax.mail.MessagingException;
@@ -13,8 +14,9 @@ import java.util.Date;
 public class TestJavaclass {
 
     public static void main(String[] args) throws IOException, MessagingException {
-        System.out.println(        new Timestamp(System.currentTimeMillis()).toString().substring(0,16)
-        );
+        System.out.println(AssignmentsType.New_Editor_Work_Available.getTaskType());
+
+
     }
 
 }

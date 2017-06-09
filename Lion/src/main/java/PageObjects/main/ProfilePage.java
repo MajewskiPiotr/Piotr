@@ -1,7 +1,8 @@
 package PageObjects.main;
 
+import PageObjects.Base.AbstractJiraPage;
 import PageObjects.Base.PageObject;
-import PageObjects.Elements.ProfilePageFields;
+import PageObjects.ElementsOnPages.ProfilePageFields;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,7 +10,7 @@ import org.openqa.selenium.support.FindBy;
 /**
  * Created by Piotr Majewski on 2017-05-25.
  */
-public class ProfilePage extends PageObject {
+public class ProfilePage extends AbstractJiraPage {
 
     @FindBy(xpath = "//*[@class='field-group']//*[@name='availability']")
     protected WebElement availability;

@@ -1,4 +1,4 @@
-package PageObjects.Elements.Task;
+package PageObjects.ElementsOnPages.Task;
 
 /**
  * Created by Piotr Majewski on 2017-05-22.

@@ -1,8 +1,7 @@
 package PageObjects.main;
 
+import PageObjects.Base.AbstractJiraPage;
 import PageObjects.Base.PageObject;
-import PageObjects.TaskPage.JobTaskPage;
-import PageObjects.TaskPage.NegotiationTaskPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -17,7 +16,7 @@ import java.util.List;
  * Created by Piotr Majewski on 2017-05-16.
  * KLasa odzwierciedlaj�ca strone zaawansowanego szukania.
  */
-public class CurrentSearchPage extends PageObject {
+public class CurrentSearchPage extends AbstractJiraPage {
 
     @FindBy(className = "mode-switcher")
     private WebElement modeswither;
@@ -45,7 +44,7 @@ public class CurrentSearchPage extends PageObject {
     }
 
     //Wyszukuje Taski z Value: UI
-    public NegotiationTaskPage searchForNewNegociationTask() {
+    public void searchForNewNegociationTask() {
         //zmiana na wyszukiwania zaawansowane
         if (modeswither.getText().equals("Advanced")) {
             modeswither.click();
@@ -63,12 +62,11 @@ public class CurrentSearchPage extends PageObject {
         System.out.println("Task negocjacyjny: " + element.getText());
         setTaskNumberURL(baseUrl + "/browse/" + element.getText().trim());
         driver.navigate().to(getTaskNumberURL());
-        return new NegotiationTaskPage(driver);
     }
 
     //metoda wyszukuje najnowszego Taska (TranslationJob)
     @Deprecated//Użyj funkcji generowania Job-ów
-    public JobTaskPage searchForNewTransactionJOB() {
+    public void searchForNewTransactionJOB() {
         //zmiana na wyszukiwania zaawansowane
         if (modeswither.getText().equals("Advanced")) {
             modeswither.click();
@@ -84,7 +82,6 @@ public class CurrentSearchPage extends PageObject {
         setTaskNumberURL(baseUrl + "/browse/" + element.getText().trim());
         driver.navigate().to(getTaskNumberURL());
         System.out.println("wyszukany task negocjacyjny :" + getTaskNumberURL());
-        return new JobTaskPage(driver);
     }
 
     public String getTaskNumberURL() {

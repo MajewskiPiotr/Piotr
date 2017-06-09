@@ -1,43 +1,28 @@
 package PageObjects.Base;
 
-import core.Tools.Configuration.EnviromentSettings;
 import PageObjects.ElementsOnPages.Task.TaskButton;
 import PageObjects.ElementsOnPages.Task.TaskLink;
+import PageObjects.TaskPage.AbstractTaskPage;
 import PageObjects.TaskPage.TaskPage;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
- * Created by Piotr Majewski on 2017-05-16.
- * Klasa bazowa wszystkich Page objektow jakie beda tworzone
+ * Created by Piotr Majewski on 2017-06-09.
  */
-public class PageObject {
-    protected WebDriver driver;
-    protected Wait wait;
-    protected String baseUrl;
+public abstract class AbstractJiraPage extends PageObject {
 
-    public PageObject() {
+    public AbstractJiraPage(WebDriver driver){
+        super(driver);
     }
-
-    public PageObject(WebDriver driver) {
-        //pobieramy adres testowanej strony
-        baseUrl = EnviromentSettings.getTestEnviroment();
-        this.driver = driver;
-        wait = new WebDriverWait(driver, 60);
-        PageFactory.initElements(driver, this);
-
-    }
-
 
     public void clickOnButton(TaskButton button) {
     }
 
-    public PageObject clickInLink(TaskLink link) {
-        return new PageObject(driver);
+    public AbstractJiraPage clickInLink(TaskLink link){
+        return (AbstractJiraPage) new Object();
     }
 
     public void waitForProcessing() {
@@ -68,4 +53,5 @@ public class PageObject {
     public String getUrl() {
         return driver.getCurrentUrl();
     }
+
 }

@@ -1,5 +1,6 @@
 package PageObjects.main;
 
+import PageObjects.Base.AbstractJiraPage;
 import PageObjects.Base.PageObject;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,9 +12,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
  * KLasa reprezntuje Dashboard w aplikacji JIRA
  * widok pojawia sie po zalogowaniu sie do app.
  */
-public class DashboardPage extends PageObject {
+public class DashboardPage extends AbstractJiraPage {
 
-
+    //Napis SystemDashboard
     @FindBy(className = "aui-page-header-main")
     private WebElement systemDashboard;
 
@@ -22,7 +23,6 @@ public class DashboardPage extends PageObject {
         super(driver);
         driver.navigate().to(baseUrl + "/secure/Dashboard.jspa");
         wait.until(ExpectedConditions.visibilityOf(systemDashboard));
-
     }
 
     public PackagePluginSettings goToPackegePluginSettings() {
@@ -36,9 +36,7 @@ public class DashboardPage extends PageObject {
     }
 
     public ProfilePage goToProfilePage() {
-
         return new ProfilePage(driver);
-
     }
 
 

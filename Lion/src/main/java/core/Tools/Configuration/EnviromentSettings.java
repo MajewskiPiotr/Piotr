@@ -1,5 +1,6 @@
 package core.Tools.Configuration;
 
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -13,7 +14,10 @@ public class EnviromentSettings {
     //Adres testowanej aplikacji
     private static String currentUrl;
 
-    public static String GetTestEnviroment() {
+    public static String getTestEnviroment() {
+        if (currentUrl == null) {
+            Assert.fail("Nie udało się ustawić adresu (URL) testowanej aplikacji");
+        }
         return currentUrl;
     }
 
@@ -38,8 +42,8 @@ public class EnviromentSettings {
                 break;
             }
         }
-        driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
-        driver.manage().timeouts().pageLoadTimeout(120, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         return driver;
     }

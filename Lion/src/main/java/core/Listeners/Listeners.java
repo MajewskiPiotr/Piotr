@@ -1,9 +1,8 @@
 package core.Listeners;
 
-import Tests.BaseTest.BaseTestClass;
+import Tests.BaseTestClass;
 import com.itextpdf.text.DocumentException;
 import core.Reports.RaporPDF;
-import core.Reports.TestData;
 import core.Tools.Configuration.Property;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
@@ -22,7 +21,6 @@ public class Listeners implements ITestListener {
 
     private String getPath(ITestResult result) {
         String basePath = Property.getProperty("basePath");
-
         String path = "";
         path = basePath + "\\Lion\\DaneTestowe\\" +
                 result.getInstance().getClass().getSimpleName() + "\\" + result.getMethod().getMethodName() + ".jpg";
@@ -39,7 +37,6 @@ public class Listeners implements ITestListener {
     public void onTestSuccess(ITestResult result) {
         try {
             BaseTestClass.takeSnapShot(BaseTestClass.getDriver(), getPath(result));
-            TestData.saveTestData(BaseTestClass.getData());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -50,7 +47,6 @@ public class Listeners implements ITestListener {
     public void onTestFailure(ITestResult result) {
         try {
             BaseTestClass.takeSnapShot(BaseTestClass.getDriver(), getPath(result));
-            TestData.saveTestData(BaseTestClass.getData());
 
         } catch (Exception e) {
             e.printStackTrace();
