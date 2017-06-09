@@ -1,4 +1,4 @@
-package PageObjects.ElementsOnPages.Task.Tab;
+package core.ElementsOnPages.Task.Tab;
 
 /**
  * Created by Piotr Majewski on 2017-06-09.

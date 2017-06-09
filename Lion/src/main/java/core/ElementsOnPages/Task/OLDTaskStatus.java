@@ -3,7 +3,8 @@ package core.ElementsOnPages.Task;
 /**
  * Created by Piotr Majewski on 2017-05-16.
  */
-public class TaskStatus {
+@Deprecated
+public class OLDTaskStatus {
     public static final String ACCEPTED = "ACCEPTED";
     public static final String UNAVAILABLE = "UNAVAILABLE";
     public static final String NEW = "NEW";

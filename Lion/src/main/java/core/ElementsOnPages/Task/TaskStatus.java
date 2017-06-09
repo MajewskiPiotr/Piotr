@@ -3,7 +3,7 @@ package core.ElementsOnPages.Task;
 /**
  * Created by Piotr Majewski on 2017-06-09.
  */
-public enum ExperimentalTaskStatuss {
+public enum TaskStatus {
 
     ACCEPTED("ACCEPTED"),
     UNAVAILABLE("UNAVAILABLE"),
@@ -23,7 +23,7 @@ public enum ExperimentalTaskStatuss {
     AUTOMATICALLY_ACCEPTED("AUTOMATICALLY ACCEPTED");
 
     private String opis;
-    ExperimentalTaskStatuss(String opis) {
+    TaskStatus(String opis) {
         this.opis = opis;
     }
 
