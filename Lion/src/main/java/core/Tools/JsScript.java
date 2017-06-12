@@ -17,6 +17,19 @@ import java.util.concurrent.TimeUnit;
 public class JsScript {
     static String taskJob = "";
 
+    public static String createTranslationJobWithParam(WebDriver driver, String param) {
+        //zwiekszam timeout dla skryptów
+        driver.manage().timeouts().setScriptTimeout(60, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+
+        try {
+            runScriptWithParam(driver, "jobGenerator.js", param);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println("wygenerowano job: " + taskJob);
+        return taskJob;
+    }
 
     private static void runScript(WebDriver driver, String file) throws Exception {
 
@@ -43,8 +56,8 @@ public class JsScript {
         if (driver instanceof JavascriptExecutor) {
             try {
                 driver.manage().timeouts().setScriptTimeout(60, TimeUnit.SECONDS);
-                Boolean isSuccess = (Boolean) ((JavascriptExecutor) driver).executeScript(readfile(file), param);
-                System.out.println("czy udalo sie przelaczyć: "+ isSuccess);
+                taskJob = (String) ((JavascriptExecutor) driver).executeScript(readfile(file), param);
+                System.out.println("czy udalo sie przelaczyć: "+ taskJob);
             } catch (ScriptTimeoutException ex) {
                 if (ex.getCause() != null) {
                     throw new Exception("Problem ze scryptem ");

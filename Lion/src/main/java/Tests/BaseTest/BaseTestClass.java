@@ -42,7 +42,7 @@ public class BaseTestClass {
 
     @AfterMethod
     public void tearDown() {
-        driver.close();
+     //   driver.close();
     }
     public static WebDriver getDriver() {
 

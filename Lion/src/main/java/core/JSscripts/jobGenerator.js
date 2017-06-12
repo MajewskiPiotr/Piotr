@@ -1,6 +1,8 @@
 var $ = AJS.$;
 var baseURL = AJS.params.baseURL;
 var jobKey;
+var taskDate  = arguments[arguments.length - 1]
+var taskDate  = arguments[arguments.length - 1]
 
 
 //var targetLanguages = ["LION-45", "LION-46", "LION-52", "LION-61", "LION-77", "LION-67", "LION-103", "LION-112", "LION-118", "LION-56", "LION-57"];
@@ -35,14 +37,14 @@ var translationTask = {
         "customfield_10707": 0.0,
         "customfield_10708": 0.0,
         "customfield_10709": 0.0,
-        "customfield_10106": "2017-06-10T10:22:00.000-0500",
-        "customfield_10301": "2017-06-10T10:22:00.000-0500",
-        "customfield_12700": "2017-06-10T10:22:00.000-0500",
+        "customfield_10106": taskDate+"T10:22:00.000-0500",
+        "customfield_10301": taskDate+"T10:22:00.000-0500",
+        "customfield_12700": taskDate+"T10:22:00.000-0500",
         "summary": "Task JS CREATED",
         "customfield_10116": {
             "value": "No",
         },
-        "duedate": "2017-06-10"
+        "duedate": taskDate
     }
 }
 
@@ -77,7 +79,7 @@ var translationJob = {
             "customfield_10307": [
                 {"key": "LION-249"}
             ],
-            "customfield_10020": "2017-06-10T18:00:00.000-0500",
+            "customfield_10020": taskDate+"T18:00:00.000-0500",
             "customfield_10021": {
                 "value": "No",
             },

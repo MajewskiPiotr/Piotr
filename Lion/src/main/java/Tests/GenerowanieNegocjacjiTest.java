@@ -59,7 +59,7 @@ public class GenerowanieNegocjacjiTest extends BaseTestClass {
 
         //weryfikujemy czy wygenerowaly się TranslatorsPool
 
-        Assert.assertTrue(translationTask.getTranslatorPool1Count() > 0, "Nie wygenerowano ");
+        Assert.assertTrue(translationTask.getTranslatorPool1Count() > 0, "Nie wygenerowano Pooli");
 
         //przechodzimy na zakladke Assigments
         AssigmentsTabPage assigmentsTabPage = (AssigmentsTabPage) translationTask.goToTab(TaskTab.ASSIGMENTS);
