@@ -14,7 +14,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 public class DashboardPage extends AbstractJiraPage {
 
     //Napis SystemDashboard
-    @FindBy(className = "aui-page-header-MainPage")
+    @FindBy(className = "aui-page-header-main")
     private WebElement systemDashboard;
 
 

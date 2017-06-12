@@ -17,10 +17,6 @@ public class testowyTest extends BaseTestClass {
     public void test() {
         LoginPage login = new LoginPage(driver);
         DashboardPage dashboardPage = login.loginAsAdmin();
-        JsScript.switchUserByLogin(driver, "001-HU_00288888 ");
-        TaskPage translationTask = dashboardPage.goToTask("GO-51472");
-
-        TranslationTabPage assigments = (TranslationTabPage) translationTask.goToTab(TaskTab.TRANSLATION_TASKS);
-        assigments.getTranslationTask(TaskStatus.ASSIGNED_TO_AG);
+        JsScript.createTranslationJob(driver);
     }
 }

@@ -18,7 +18,7 @@ public class JsScript {
     static String taskJob = "";
 
 
-    private static void runScript(WebDriver driver, String file) throws Exception {
+    private static void runScript(WebDriver driver, String file) {
 
         if (driver instanceof JavascriptExecutor) {
             try {
@@ -29,31 +29,29 @@ public class JsScript {
                 }
             } catch (ScriptTimeoutException ex) {
                 if (ex.getCause() != null) {
-                    throw new Exception("Problem ze scryptem ");
+                    Assert.fail("Problem ze scryptem ");
                 }
             }
         } else {
             throw new IllegalStateException("This driver does not support JavaScript!");
         }
-
     }
 
-    private static void runScriptWithParam(WebDriver driver, String file, String param) throws Exception {
+    private static void runScriptWithParam(WebDriver driver, String file, String param) {
 
         if (driver instanceof JavascriptExecutor) {
             try {
                 driver.manage().timeouts().setScriptTimeout(60, TimeUnit.SECONDS);
                 Boolean isSuccess = (Boolean) ((JavascriptExecutor) driver).executeScript(readfile(file), param);
-                System.out.println("czy udalo sie przelaczyć: "+ isSuccess);
+                System.out.println("czy udalo sie przelaczyć: " + isSuccess);
             } catch (ScriptTimeoutException ex) {
                 if (ex.getCause() != null) {
-                    throw new Exception("Problem ze scryptem ");
+                    Assert.fail("Problem ze scryptem ");
                 }
             }
         } else {
             throw new IllegalStateException("This driver does not support JavaScript!");
         }
-
     }
 
     public static String createTranslationJobWithManyTasks(WebDriver driver) {
@@ -61,11 +59,7 @@ public class JsScript {
         driver.manage().timeouts().setScriptTimeout(180, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(180, TimeUnit.SECONDS);
 
-        try {
-            runScript(driver, "jobGeneratorManyTasks.js");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        runScript(driver, "jobGeneratorManyTasks.js");
         System.out.println("wygenerowano job: " + taskJob);
         try {
             Thread.sleep(8000);
@@ -79,42 +73,25 @@ public class JsScript {
         //zwiekszam timeout dla skryptów
         driver.manage().timeouts().setScriptTimeout(60, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+        runScript(driver, "jobGenerator.js");
 
-        try {
-            runScript(driver, "jobGenerator.js");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
         System.out.println("wygenerowano job: " + taskJob);
         return taskJob;
     }
 
     public static String createTranslationJobForDropbox(WebDriver driver) {
 
-        try {
-            runScript(driver, "jobGeneratorDropbox.js");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        runScript(driver, "jobGeneratorDropbox.js");
         System.out.println("wygenerowano job for Dropbox : " + taskJob);
         return taskJob;
     }
 
     public static void switchUser(WebDriver driver, String user) {
-        try {
-            runScriptWithParam(driver, "zmianaUsera.js", user);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
+        runScriptWithParam(driver, "zmianaUsera.js", user);
     }
 
     public static void switchUserByLogin(WebDriver driver, String user) {
-        try {
-            runScriptWithParam(driver, "zmianaUseraPoLoginie.js", user);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        runScriptWithParam(driver, "zmianaUseraPoLoginie.js", user);
         driver.navigate().refresh();
     }
 
@@ -122,8 +99,8 @@ public class JsScript {
         String basePath = Property.getProperty("basePath");
         String scrypt = "";
         // Deklarowanie i tworzenie obiektu typu File
-        File plikDane = new File(basePath + "\\Lion\\src\\MainPage\\java\\core\\JSscripts\\" + filename);
-        ;
+        File plikDane = new File(basePath + "\\Lion\\src\\main\\java\\core\\JSscripts\\" + filename);
+
         // Utworzenie obiektu typu String, który będzie
         // przechowywał odczytany tekst
         try {
@@ -137,7 +114,7 @@ public class JsScript {
             }
             // Jeśli nie udało się odczytać pliku
         } catch (FileNotFoundException e) {
-            System.out.println("Brak Pliku do odczytania!");
+            Assert.fail("Brak Pliku ze skryptem do odczytania!");
         }
         return scrypt;
 
