@@ -2,7 +2,6 @@ var $ = AJS.$;
 var baseURL = AJS.params.baseURL;
 var jobKey;
 var taskDate  = arguments[arguments.length - 1]
-var taskDate  = arguments[arguments.length - 1]
 
 
 //var targetLanguages = ["LION-45", "LION-46", "LION-52", "LION-61", "LION-77", "LION-67", "LION-103", "LION-112", "LION-118", "LION-56", "LION-57"];

@@ -94,7 +94,7 @@ public class JsScript {
         driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
 
         try {
-            runScript(driver, "jobGenerator.js");
+            runScriptWithParam(driver, "jobGenerator.js","2017-06-21");
         } catch (Exception e) {
             e.printStackTrace();
         }

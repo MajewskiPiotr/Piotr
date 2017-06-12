@@ -16,7 +16,7 @@ import org.testng.annotations.Test;
  */
 public class TetsowyTest extends BaseTestClass {
 
-    @Test
+
     public void test() {
         TestData data = BaseTestClass.getData();
         LoginPage loginAsAdmin = new LoginPage(driver);
