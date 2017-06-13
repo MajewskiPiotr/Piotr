@@ -1,6 +1,5 @@
 package Tests;
 
-import core.Tools.Configuration.BrowserType;
 import core.Tools.Configuration.EnviromentSettings;
 import core.Tools.Configuration.TestEnviroments;
 import org.apache.commons.io.FileUtils;
@@ -24,14 +23,15 @@ public class BaseTestClass {
     protected static WebDriver driver;
     protected LocalDateTime time = LocalDateTime.now(ZoneId.systemDefault());
 
-    @Parameters({"nodeUrl"})
+    @Parameters({"nodeUrl", "browser"})
     @BeforeMethod
-    public void setUp(String nodeUrl) throws MalformedURLException {
+    public void setUp(String nodeUrl, String browser) throws MalformedURLException {
         EnviromentSettings enviromentSettings = new EnviromentSettings();
         enviromentSettings.SetTestEnviroment(TestEnviroments.STAGE1);
-        driver = enviromentSettings.setUpRemoteDriver(nodeUrl);
-        //rowserType.CHROME);
+        driver = enviromentSettings.setUpDriver(nodeUrl, browser, true);
+
     }
+
     @AfterMethod
     public void tearDown() {
         driver.close();
