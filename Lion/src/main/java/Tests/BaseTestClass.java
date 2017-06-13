@@ -8,7 +8,10 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.testng.Assert;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 
 import java.io.File;
 import java.net.MalformedURLException;
@@ -23,18 +26,19 @@ public class BaseTestClass {
     protected static WebDriver driver;
     protected LocalDateTime time = LocalDateTime.now(ZoneId.systemDefault());
 
-    @Parameters({"nodeUrl", "browser"})
+    //@Parameters({"nodeUrl", "browser"})
+    //String nodeUrl, String browser)
     @BeforeMethod
-    public void setUp(String nodeUrl, String browser) throws MalformedURLException {
+    public void setUp() throws MalformedURLException {
         EnviromentSettings enviromentSettings = new EnviromentSettings();
         enviromentSettings.SetTestEnviroment(TestEnviroments.STAGE1);
-        driver = enviromentSettings.setUpDriver(nodeUrl, browser, true);
+        driver = enviromentSettings.setUpDriver(null, "chrome", false);
 
     }
 
     @AfterMethod
     public void tearDown() {
-        driver.close();
+       // driver.close();
     }
 
     public static WebDriver getDriver() {

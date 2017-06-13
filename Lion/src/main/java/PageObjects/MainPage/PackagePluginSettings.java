@@ -30,9 +30,7 @@ public class PackagePluginSettings extends AbstractJiraPage {
     @Override
     public void clickOnButton(TaskButton button) {
         switch (button) {
-            case EXECUTE: {
-                executeButton.click();
-            }
+
         }
     }
 

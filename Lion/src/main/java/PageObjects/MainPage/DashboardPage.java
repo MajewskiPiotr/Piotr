@@ -1,6 +1,7 @@
 package PageObjects.MainPage;
 
 import PageObjects.Base.AbstractJiraPage;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -21,7 +22,7 @@ public class DashboardPage extends AbstractJiraPage {
     public DashboardPage(WebDriver driver) {
         super(driver);
         driver.navigate().to(baseUrl + "/secure/Dashboard.jspa");
-        wait.until(ExpectedConditions.visibilityOf(systemDashboard));
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.className("aui-page-header-main")));
     }
 
     public PackagePluginSettings goToPackegePluginSettings() {
@@ -29,14 +30,15 @@ public class DashboardPage extends AbstractJiraPage {
         return new PackagePluginSettings(driver);
 
     }
-
-    public KanbanPage goToKanban() throws InterruptedException {
-        return new KanbanPage(driver);
+    public QueQuePage goToQueQue(){
+        return new QueQuePage(driver);
     }
 
     public ProfilePage goToProfilePage() {
         return new ProfilePage(driver);
     }
-
+    public Insightpage goToInsightPage(){
+        return new Insightpage(driver);
+    }
 
 }

@@ -1,13 +1,10 @@
 package Tests;
 
-import core.ElementsOnPages.Task.TaskStatus;
-import core.ElementsOnPages.Task.TaskTab;
-import PageObjects.TaskPage.TaskPage;
-import PageObjects.TaskPage.TaskPage_Tab.TranslationTabPage;
 import PageObjects.MainPage.DashboardPage;
 import PageObjects.MainPage.LoginPage;
-import core.JSscripts.JsScript;
-import org.testng.annotations.Parameters;
+import PageObjects.MainPage.QueQuePage;
+import PageObjects.TaskPage.TaskPage;
+import core.ElementsOnPages.Task.TaskButton;
 import org.testng.annotations.Test;
 
 /**
@@ -19,6 +16,18 @@ public class testowyTest extends BaseTestClass {
     public void test() {
         LoginPage login = new LoginPage(driver);
         DashboardPage dashboardPage = login.loginAsAdmin();
-        JsScript.createTranslationJob(driver);
+        QueQuePage queQuePage = dashboardPage.goToQueQue();
+
+        queQuePage.clickOnButton(TaskButton.HELPDESK_TEAM_A);
+        System.out.println("kliknąłem");
+        TaskPage taskPage = queQuePage.goToFirstTaskOnList();
+        taskPage.getProductClass();
+
+        //DashboardPage dashboardPage1 = taskPage.goToDashboard();
+        //Insightpage insightpage = dashboardPage1.goToInsightPage();
+        //insightpage.clickOnButton(TaskButton.SLA);
+        //insightpage.switchViewToList();
+
+
     }
 }

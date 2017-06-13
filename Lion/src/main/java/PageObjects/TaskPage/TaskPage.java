@@ -26,15 +26,6 @@ public class TaskPage extends AbstractTaskPage {
 
     public void clickOnButtonAndDontWait(TaskButton button) {
 
-        switch (button) {
-            case COMPLETED_EDITOR: {
-                Assert.assertTrue(completedEditorButton.isEnabled());
-                completedEditorButton.click();
-                break;
-            }
-
-
-        }
 
     }
 }

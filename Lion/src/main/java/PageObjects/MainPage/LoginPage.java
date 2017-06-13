@@ -1,10 +1,7 @@
 package PageObjects.MainPage;
 
 import PageObjects.Base.PageObject;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
@@ -14,13 +11,13 @@ import org.testng.Assert;
  */
 public class LoginPage extends PageObject {
 
-    private String pageUrl = "\\login.jsp";
+    private String pageUrl = "";
 
     @FindBy(name = "os_username")
     private WebElement userName;
     @FindBy(id = "login-form-password")
     private WebElement password;
-    @FindBy(id = "login-form-submit")
+    @FindBy(id="login-form")
     private WebElement logIn;
 
     public LoginPage(WebDriver driver) {
@@ -35,12 +32,23 @@ public class LoginPage extends PageObject {
         }
     }
 
+    public DashboardPage loginAsAdmin() {
+        login("agent5", "agent5");
+        return new DashboardPage(driver);
+
+    }
+
     private void login(String login, String haslo) {
         open();
         try {
             userName.sendKeys(login);
-            password.sendKeys(haslo);
-            logIn.click();
+            password.sendKeys(haslo + Keys.ENTER);
+            //logIn.submit();
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         } catch (NoSuchElementException exception) {
             Assert.fail("Nie udało sie uruchomić JIRA");
         }
@@ -52,11 +60,6 @@ public class LoginPage extends PageObject {
 
     }
 
-    public DashboardPage loginAsAdmin() {
-        login("piotr.majewski", "piotr.majewski");
-        return new DashboardPage(driver);
-
-    }
 
     public CurrentSearchPage logInToJiraAndGoToSearch(String login, String haslo) {
         login(login, haslo);
