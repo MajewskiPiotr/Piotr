@@ -9,10 +9,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.*;
 
 import java.io.File;
 import java.net.MalformedURLException;
@@ -27,16 +24,17 @@ public class BaseTestClass {
     protected static WebDriver driver;
     protected LocalDateTime time = LocalDateTime.now(ZoneId.systemDefault());
 
+    @Parameters({"nodeUrl"})
     @BeforeMethod
-    public void setUp() throws MalformedURLException {
+    public void setUp(String nodeUrl) throws MalformedURLException {
         EnviromentSettings enviromentSettings = new EnviromentSettings();
         enviromentSettings.SetTestEnviroment(TestEnviroments.STAGE1);
-        driver = enviromentSettings.setUpRemoteDriver();
+        driver = enviromentSettings.setUpRemoteDriver(nodeUrl);
         //rowserType.CHROME);
     }
     @AfterMethod
     public void tearDown() {
-        //driver.close();
+        driver.close();
     }
 
     public static WebDriver getDriver() {

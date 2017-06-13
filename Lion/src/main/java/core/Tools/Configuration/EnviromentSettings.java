@@ -31,8 +31,8 @@ public class EnviromentSettings {
         currentUrl = urlForPageToSet;
     }
 
-    public WebDriver setUpRemoteDriver() throws MalformedURLException {
-        URL nodeUrl = new URL("http://192.168.1.172:5566/wd/hub");
+    public WebDriver setUpRemoteDriver(String url) throws MalformedURLException {
+        URL nodeUrl = new URL(url);
         DesiredCapabilities capabilities = DesiredCapabilities.chrome();
         capabilities.setPlatform(Platform.VISTA);
         capabilities.setBrowserName("chrome");

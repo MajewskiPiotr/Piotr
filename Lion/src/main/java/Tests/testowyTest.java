@@ -7,12 +7,14 @@ import PageObjects.TaskPage.TaskPage_Tab.TranslationTabPage;
 import PageObjects.MainPage.DashboardPage;
 import PageObjects.MainPage.LoginPage;
 import core.JSscripts.JsScript;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 /**
  * Created by Piotr Majewski on 2017-06-08.
  */
 public class testowyTest extends BaseTestClass {
+
     @Test
     public void test() {
         LoginPage login = new LoginPage(driver);
