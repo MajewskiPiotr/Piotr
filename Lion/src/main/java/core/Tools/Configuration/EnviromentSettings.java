@@ -5,6 +5,7 @@ import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -31,26 +32,51 @@ public class EnviromentSettings {
         currentUrl = urlForPageToSet;
     }
 
-    public WebDriver setUpRemoteDriver(String url) throws MalformedURLException {
-        URL nodeUrl = new URL(url);
-        DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-        capabilities.setPlatform(Platform.VISTA);
-        capabilities.setBrowserName("chrome");
-        return new RemoteWebDriver(nodeUrl, capabilities);
+    public WebDriver setUpDriver(String url, String browserType, Boolean isRemote) throws MalformedURLException {
+        if (isRemote) {
+            return setUpRemoteDriver(url, browserType);
+        } else {
+            return setUpLocalDriver(browserType);
+        }
+
     }
 
+    private WebDriver setUpRemoteDriver(String url, String browserType) throws MalformedURLException {
+        URL nodeUrl = new URL(url);
+        WebDriver driver = null;
 
+        switch (browserType) {
+            case BrowserType.CHROME: {
+                DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+                capabilities.setPlatform(Platform.VISTA);
+                capabilities.setBrowserName("chrome");
+                driver = new RemoteWebDriver(nodeUrl, capabilities);
+                break;
+            }
+            case BrowserType.FIREFOX: {
+                DesiredCapabilities capabilities = DesiredCapabilities.firefox();
+                capabilities.setPlatform(Platform.VISTA);
+                capabilities.setBrowserName("firefox");
+                driver = new RemoteWebDriver(nodeUrl, capabilities);
+                break;
+            }
+            default: {
+                Assert.fail("Nie ubsługiwana przeglądarka");
+            }
+        }
+        return driver;
+    }
     //Funckja ustawia parametry przeglądarki w zaleznosci od dokonanego wyboru.
-    public WebDriver setUpDriver(BrowserType browserType) {
+    private WebDriver setUpLocalDriver(String browserType) {
         String basePath = Property.getProperty("basePath") + "/Lion/src/resources";
         WebDriver driver = null;
         switch (browserType) {
-            case CHROME: {
+            case BrowserType.CHROME: {
                 System.setProperty("webdriver.chrome.driver", basePath + "\\chromedriver.exe");
                 driver = new ChromeDriver();
                 break;
             }
-            case MOZILLA: {
+            case BrowserType.FIREFOX: {
                 System.setProperty("webdriver.gecko.driver", basePath + "\\geckodriver.exe");
                 driver = new FirefoxDriver();
                 break;
