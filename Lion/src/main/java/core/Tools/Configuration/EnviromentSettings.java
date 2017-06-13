@@ -1,10 +1,15 @@
 package core.Tools.Configuration;
 
 import org.junit.Assert;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -25,6 +30,15 @@ public class EnviromentSettings {
     public void SetTestEnviroment(String urlForPageToSet) {
         currentUrl = urlForPageToSet;
     }
+
+    public WebDriver setUpRemoteDriver() throws MalformedURLException {
+        URL nodeUrl = new URL("http://192.168.1.172:5566/wd/hub");
+        DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+        capabilities.setPlatform(Platform.VISTA);
+        capabilities.setBrowserName("chrome");
+        return new RemoteWebDriver(nodeUrl, capabilities);
+    }
+
 
     //Funckja ustawia parametry przeglądarki w zaleznosci od dokonanego wyboru.
     public WebDriver setUpDriver(BrowserType browserType) {

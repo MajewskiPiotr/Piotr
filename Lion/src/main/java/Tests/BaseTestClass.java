@@ -15,6 +15,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
 import java.io.File;
+import java.net.MalformedURLException;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 
@@ -27,10 +28,11 @@ public class BaseTestClass {
     protected LocalDateTime time = LocalDateTime.now(ZoneId.systemDefault());
 
     @BeforeMethod
-    public void setUp() {
+    public void setUp() throws MalformedURLException {
         EnviromentSettings enviromentSettings = new EnviromentSettings();
         enviromentSettings.SetTestEnviroment(TestEnviroments.STAGE1);
-        driver = enviromentSettings.setUpDriver(BrowserType.CHROME);
+        driver = enviromentSettings.setUpRemoteDriver();
+        //rowserType.CHROME);
     }
     @AfterMethod
     public void tearDown() {
