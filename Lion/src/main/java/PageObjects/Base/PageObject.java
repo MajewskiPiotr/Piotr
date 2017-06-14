@@ -40,11 +40,7 @@ public class PageObject {
         return new PageObject(driver);
     }
 
-    public void waitForProcessing() {
-        new WebDriverWait(driver, 30).until((ExpectedCondition<Boolean>) wd ->
-                ((JavascriptExecutor) wd).executeScript("return document.readyState").equals("complete"));
 
-    }
 
     public TaskPage goToTask(String url) {
         if (url.length() == 8) {

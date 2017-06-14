@@ -2,6 +2,7 @@ package PageObjects.Base;
 
 import PageObjects.MainPage.DashboardPage;
 import core.ElementsOnPages.Task.*;
+import core.Tools.FindInTaskList;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,6 +10,9 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Piotr Majewski on 2017-05-19.
@@ -28,19 +32,23 @@ public abstract class AbstractTaskPage extends AbstractJiraPage {
     protected WebElement commentButton;
 
     //Pola
-    @FindBy(xpath = "//*[@id='rowForcustomfield_10615']//*[@class='tinylink']")
-    protected WebElement product;
+    @FindBy(xpath = "//*[@id='rowForcustomfield_10615']//*[@class='tinylink']/*")
+    protected List<WebElement> product;
+
+
     @FindBy(xpath = "//*[@id='customfield_10401-val']")
     protected WebElement category;
-    @FindBy(xpath = "(.//*[@class=\"sla-tag-duration\"])[1]")
-    protected WebElement sla;
 
+    @FindBy(xpath = "//*[@id='customfield_10400-val']/div")
+    protected List<WebElement> productsAffected;
+
+    @FindBy(xpath = "(.//*[@class=\"sla-view-issue\"])[2]//*[@class='sla-view-info']/div[2]")
+    protected WebElement sla;
 
 
     //stan Taska
     @FindBy(xpath = "//*[@id='status-val']/span")
     protected WebElement status;
-
 
 
     public AbstractTaskPage(WebDriver driver) {
@@ -69,11 +77,22 @@ public abstract class AbstractTaskPage extends AbstractJiraPage {
         return roleName;
     }
 
-    public void getProductClass(){
-        new Actions(driver).clickAndHold(product).perform();
+    public List<String> getProductClass() {
+        List<String> productClassArray = new ArrayList<>();
+        By productclass = new By.ByXPath("//*[@id='rlabs-details']/div/div[5]//*[@class='rlabs-value']");
 
-        String text = driver.findElement(By.xpath("//*[@id='rlabs-details']/div/div[5]")).getText();
-        System.out.println(text);
+        if (product.size() > 0) {
+            new Actions(driver).clickAndHold(product.get(0)).perform();
+            String text = driver.findElement(productclass).getText();
+            productClassArray.add(text);
+        } else {
+            for (WebElement element : productsAffected) {
+                new Actions(driver).clickAndHold(FindInTaskList.getProductClass(element)).perform();
+                productClassArray.add(driver.findElement(productclass).getText());
+            }
+            System.out.println("Tablica " + productClassArray.toString());
+        }
+        return productClassArray;
     }
 
     public void clickOnButton(TaskButton button) {
@@ -99,17 +118,17 @@ public abstract class AbstractTaskPage extends AbstractJiraPage {
     }
 
     public String getTextFromField(TaskField field) {
-        String textfromField="";
+        String textfromField = "";
         switch (field) {
             case Product: {
-               textfromField= product.getText();
+                textfromField = product.get(0).getText();
                 break;
             }
             case Category: {
-                textfromField =category.getText();
+                textfromField = category.getText();
                 break;
             }
-            case SLA:{
+            case SLA: {
                 textfromField = sla.getText();
                 break;
             }

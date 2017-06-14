@@ -3,7 +3,7 @@ package PageObjects.MainPage;
 import PageObjects.Base.AbstractJiraPage;
 import PageObjects.TaskPage.TaskPage;
 import core.ElementsOnPages.Task.TaskButton;
-import core.Tools.FindInTaskTab;
+import core.Tools.FindInTaskList;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,6 +18,7 @@ import java.util.List;
  * widok pojawia sie po zalogowaniu sie do app.
  */
 public class QueQuePage extends AbstractJiraPage {
+
     @FindBy(xpath = "//*[@id='pinnednav-opts-sd-queues-nav']//*[text()='Helpdesk Dispatcher']")
     private WebElement helpDesk_DISPATCHER;
     @FindBy(xpath = "//*[@id='pinnednav-opts-sd-queues-nav']//*[@title[contains(.,'TeamA')]]")
@@ -32,18 +33,19 @@ public class QueQuePage extends AbstractJiraPage {
     //Napis SystemDashboard
     @FindBy(className = "aui-page-header-main")
     private WebElement systemDashboard;
-
+    @FindBy(xpath = "//*[@class='sd-agent-header']")
+    private WebElement header;
 
     public QueQuePage(WebDriver driver) {
         super(driver);
         driver.navigate().to(baseUrl + "/projects/DLSD/queues/");
         wait.until(ExpectedConditions.presenceOfElementLocated(By.className("aui-page-header-main")));
-        System.out.println(ExpectedConditions.presenceOfElementLocated(By.className("aui-page-header-main")).toString());
     }
 
     public TaskPage goToFirstTaskOnList() {
-        FindInTaskTab.getTaskLink(getTaskList().get(0)).click();
-        System.out.println("wybrałem task");
+        String currentUrl = getUrl();
+
+        driver.navigate().to(currentUrl+ "/"+ FindInTaskList.getTaskLink(getTaskList().get(0)));
         return new TaskPage(driver);
     }
 
@@ -52,18 +54,25 @@ public class QueQuePage extends AbstractJiraPage {
         switch (button) {
             case HELPDESK_DISPATCHER: {
                 helpDesk_DISPATCHER.click();
+                //wait.until(ExpectedConditions.textToBePresentInElement(header,"Helpdesk Dispatcher"));
                 break;
             }
             case HELPDESK_TEAM_A: {
                 helpDesk_TEAM_A.click();
+                // wait.until(ExpectedConditions.textToBePresentInElement(header,"↳ Helpdesk TeamA"));
+
                 break;
             }
             case HELPDESK_TEAM_B: {
                 helpDesk_TEAM_B.click();
+                // wait.until(ExpectedConditions.textToBePresentInElement(header,"↳ Helpdesk TeamB"));
+
                 break;
             }
             case HELPDESK_TEAM_C: {
                 helpDesk_TEAM_C.click();
+                //  wait.until(ExpectedConditions.textToBePresentInElement(header,"↳ Helpdesk TeamB"));
+
                 break;
             }
         }
@@ -73,7 +82,7 @@ public class QueQuePage extends AbstractJiraPage {
 
     private void waitt() {
         try {
-            Thread.sleep(2000);
+            Thread.sleep(4000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
