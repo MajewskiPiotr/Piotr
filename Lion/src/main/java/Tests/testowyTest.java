@@ -18,7 +18,7 @@ import java.util.List;
  */
 //test weryfikuje poprawność wyznaczenia czasu SLA na podstawie macieży ProduktClass i Category z Insight
 public class testowyTest extends BaseTestClass {
-    private String category="K3";
+    private String category;
     private List<String> productClassList = new ArrayList<>();
     private String solutionTimeFromInsight;
     private String solutionTimeFromTask;
@@ -30,13 +30,19 @@ public class testowyTest extends BaseTestClass {
         DashboardPage dashboardPage = login.loginAsAdmin();
         QueQuePage queQuePage = dashboardPage.goToQueQue();
         queQuePage.clickOnButton(TaskButton.HELPDESK_DISPATCHER);
-        TaskPage taskPage = queQuePage.goToFirstTaskOnList();
+        TaskPage taskPage = queQuePage.goToTask();
 
         //pobieramy potrrzebne dane z Taska
         productClassList = taskPage.getProductClass();
         category = taskPage.getTextFromField(TaskField.Category);
         solutionTimeFromTask = taskPage.getTextFromField(TaskField.SLA);
-        System.out.println("z taska " + solutionTimeFromTask);
+
+
+        System.out.println("productClass "+productClassList.toString());
+        System.out.println("category "+category.toString());
+        System.out.println("solutionTimeFromTask "+solutionTimeFromTask.toString());
+
+
         //Przechodzimy do insight
         DashboardPage dashboardPage1 = taskPage.goToDashboard();
 

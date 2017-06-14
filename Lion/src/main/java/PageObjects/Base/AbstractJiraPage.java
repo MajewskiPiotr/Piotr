@@ -34,12 +34,8 @@ public abstract class AbstractJiraPage extends PageObject {
     }
 
     public TaskPage goToTask(String url) {
-        if (url.length() == 8) {
-            driver.navigate().to(baseUrl + "/browse/" + url);
-
-        } else {
-            driver.navigate().to(url);
-        }
+        driver.navigate().to(baseUrl + "/browse/" + url);
+      
         return new TaskPage(driver);
     }
 

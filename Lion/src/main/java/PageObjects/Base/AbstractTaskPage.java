@@ -90,8 +90,9 @@ public abstract class AbstractTaskPage extends AbstractJiraPage {
                 new Actions(driver).clickAndHold(FindInTaskList.getProductClass(element)).perform();
                 productClassArray.add(driver.findElement(productclass).getText());
             }
-            System.out.println("Tablica " + productClassArray.toString());
         }
+        System.out.println("Tablica " + productClassArray.toString());
+
         return productClassArray;
     }
 
@@ -129,7 +130,10 @@ public abstract class AbstractTaskPage extends AbstractJiraPage {
                 break;
             }
             case SLA: {
-                textfromField = sla.getText();
+                String s = sla.getText();
+                textfromField = s.substring(s.indexOf(" ")).replace(" ", "").replace("h","");
+
+
                 break;
             }
         }
