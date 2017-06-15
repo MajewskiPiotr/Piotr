@@ -6,11 +6,13 @@ import core.Tools.FindInTaskList;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,7 +44,7 @@ public abstract class AbstractTaskPage extends AbstractJiraPage {
     @FindBy(xpath = "//*[@id='customfield_10400-val']/div")
     protected List<WebElement> productsAffected;
 
-    @FindBy(xpath = "(.//*[@class=\"sla-view-issue\"])[2]//*[@class='sla-view-info']/div[2]")
+    @FindBy(xpath = "//*[@class='sla-view-info']/div[text()='Time to resolution']/../div[2]")
     protected WebElement sla;
 
 
@@ -80,15 +82,16 @@ public abstract class AbstractTaskPage extends AbstractJiraPage {
     public List<String> getProductClass() {
         List<String> productClassArray = new ArrayList<>();
         By productclass = new By.ByXPath("//*[@id='rlabs-details']/div/div[5]//*[@class='rlabs-value']");
-
         if (product.size() > 0) {
             new Actions(driver).clickAndHold(product.get(0)).perform();
             String text = driver.findElement(productclass).getText();
             productClassArray.add(text);
         } else {
-            for (WebElement element : productsAffected) {
-                new Actions(driver).clickAndHold(FindInTaskList.getProductClass(element)).perform();
-                productClassArray.add(driver.findElement(productclass).getText());
+            for (int i = 0; i < productsAffected.size(); i++) {
+                new Actions(driver).clickAndHold(FindInTaskList.getProductClass(productsAffected.get(i))).build().perform();
+                productClassArray.add(driver.findElement(By.xpath(("(//*[@id='rlabs-details']/div/div[5]//*[@class='rlabs-value'])[" + (i+1) + "]"))).getText());
+                
+
             }
         }
         System.out.println("Tablica " + productClassArray.toString());
@@ -131,7 +134,7 @@ public abstract class AbstractTaskPage extends AbstractJiraPage {
             }
             case SLA: {
                 String s = sla.getText();
-                textfromField = s.substring(s.indexOf(" ")).replace(" ", "").replace("h","");
+                textfromField = s.substring(s.indexOf(" ")).replace(" ", "").replace("h", "");
 
 
                 break;

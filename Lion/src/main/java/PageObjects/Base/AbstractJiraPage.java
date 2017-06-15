@@ -34,7 +34,7 @@ public abstract class AbstractJiraPage extends PageObject {
     }
 
     public TaskPage goToTask(String url) {
-        driver.navigate().to(baseUrl + "/browse/" + url);
+        driver.navigate().to(driver.getCurrentUrl() +"/"+ url);
       
         return new TaskPage(driver);
     }

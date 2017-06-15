@@ -8,7 +8,7 @@ import java.util.Properties;
  */
 public class Property {
     //Plik z konfiguracją
-    private File f = new File("c:/Lion_automatyzacja/Lion/lion.properties");
+    private File f = new File("C:\\Lion\\Piotr\\Lion\\lion.properties");
     //przyszły obiekt Property
     private Properties properties = new Properties();
 

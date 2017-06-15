@@ -20,8 +20,8 @@ import java.util.List;
 public class testowyTest extends BaseTestClass {
     private String category;
     private List<String> productClassList = new ArrayList<>();
-    private String solutionTimeFromInsight;
-    private String solutionTimeFromTask;
+    private int solutionTimeFromInsight;
+    private int solutionTimeFromTask;
 
     @Test
     public void test() {
@@ -30,27 +30,29 @@ public class testowyTest extends BaseTestClass {
         DashboardPage dashboardPage = login.loginAsAdmin();
         QueQuePage queQuePage = dashboardPage.goToQueQue();
         queQuePage.clickOnButton(TaskButton.HELPDESK_DISPATCHER);
-        TaskPage taskPage = queQuePage.goToTask();
+        TaskPage taskPage = queQuePage.goToTask("DLSD-162");
 
         //pobieramy potrrzebne dane z Taska
         productClassList = taskPage.getProductClass();
         category = taskPage.getTextFromField(TaskField.Category);
-        solutionTimeFromTask = taskPage.getTextFromField(TaskField.SLA);
+        solutionTimeFromTask = Integer.parseInt(taskPage.getTextFromField(TaskField.SLA));
+
+
 
 
         System.out.println("productClass "+productClassList.toString());
         System.out.println("category "+category.toString());
-        System.out.println("solutionTimeFromTask "+solutionTimeFromTask.toString());
+        System.out.println("solutionTimeFromTask "+solutionTimeFromTask);
 
 
         //Przechodzimy do insight
-        DashboardPage dashboardPage1 = taskPage.goToDashboard();
+      //  DashboardPage dashboardPage1 = taskPage.goToDashboard();
 
-        Insightpage insightpage = dashboardPage1.goToInsightPage();
-        insightpage.clickOnButton(TaskButton.SLA);
-        insightpage.switchViewToList();
-        solutionTimeFromInsight = insightpage.findSolutionTime(productClassList, category);
-        System.out.println("wyniki : "+solutionTimeFromInsight);
-        Assert.assertEquals(solutionTimeFromInsight, solutionTimeFromTask);
+       // Insightpage insightpage = dashboardPage1.goToInsightPage();
+      //  insightpage.clickOnButton(TaskButton.SLA);
+      //  insightpage.switchViewToList();
+       // solutionTimeFromInsight = insightpage.findSolutionTime(productClassList, category);
+     //   System.out.println("wyniki : "+solutionTimeFromInsight);
+     //   Assert.assertEquals(solutionTimeFromInsight, solutionTimeFromTask);
     }
 }

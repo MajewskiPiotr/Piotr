@@ -6,6 +6,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +29,7 @@ public class Insightpage extends AbstractJiraPage {
     public Insightpage(WebDriver driver) {
         super(driver);
         driver.navigate().to(baseUrl + "/secure/ObjectSchema.jspa?id=1");
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='rlabs-actions-object-filter-button']")));
     }
 
     @Override
@@ -50,9 +53,8 @@ public class Insightpage extends AbstractJiraPage {
     }
 
     //Funckcja na podstawie parametrów wyszukuje najbardziej restrykcyjne SLA
-    public String findSolutionTime(List<String> productClassList, String category) {
-        int temp=10000;
-        String minSLA="";
+    public int findSolutionTime(List<String> productClassList, String category) {
+        int minSlaTime=10000;
         List<WebElement> tempList = new ArrayList<>();
 
         //filtrowanie macierz po categorii
@@ -72,17 +74,16 @@ public class Insightpage extends AbstractJiraPage {
             if (productClassList.contains(webElement.findElement(By.className("rlabs-value-container")).findElement(By.xpath(".//a")).getText())) {
                 String badaneSLA = webElement.findElement(By.className("js_tooltip")).getText();
                 String jednostka = badaneSLA.substring(badaneSLA.indexOf(" ")).replace(" ", "");
-                System.out.println("jednostka to:" + jednostka);
-                int czas = Integer.parseInt(badaneSLA.substring(0, badaneSLA.indexOf(" ")));
-                int tempSla = okreslWartoscSLA(czas, jednostka);
-                if (tempSla<temp){
-                    temp=tempSla;
+                int timeFromString = Integer.parseInt(badaneSLA.substring(0, badaneSLA.indexOf(" ")));
+                int thisTime = okreslWartoscSLA(timeFromString, jednostka);
+                if (thisTime<minSlaTime){
+                    minSlaTime=thisTime;
                 }
 
             }
         }
 
-        return minSLA;
+        return minSlaTime;
     }
 
 //funkcja pozawala na porównywanie dni z godzinami
