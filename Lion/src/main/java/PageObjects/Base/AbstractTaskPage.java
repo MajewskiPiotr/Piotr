@@ -32,6 +32,10 @@ public abstract class AbstractTaskPage extends AbstractJiraPage {
     protected WebElement rejectButton;
     @FindBy(id = "comment-issue")
     protected WebElement commentButton;
+    @FindBy(id = "opsbar-operations_more")
+    protected WebElement moreButton;
+    @FindBy(id = "create-linked-issue")
+    protected WebElement createLinkedIssueButton;
 
     //Pola
     @FindBy(xpath = "//*[@id='rowForcustomfield_10615']//*[@class='tinylink']/*")
@@ -39,6 +43,7 @@ public abstract class AbstractTaskPage extends AbstractJiraPage {
 
 
     @FindBy(xpath = "//*[@id='customfield_10401-val']")
+    @FindBy(xpath = "//*[@id='cLiustomfield_10401-val']")
     protected WebElement category;
 
     @FindBy(xpath = "//*[@id='customfield_10400-val']/div")
@@ -46,7 +51,14 @@ public abstract class AbstractTaskPage extends AbstractJiraPage {
 
     @FindBy(xpath = "//*[@class='sla-view-info']/div[text()='Time to resolution']/../div[2]")
     protected WebElement sla;
+    @FindBy(xpath = "//*[@id='issue-comment-add']//*[@id='comment-wiki-edit']//*[@id='comment']")
+    protected WebElement poleWprowadzaniaKomentarza;
+    @FindBy(xpath = "//*[@id='aui-flag-container']/div/div/a")
+    protected WebElement allert;
 
+    //Linked Issue
+    @FindBy(xpath = "//*[@class='issue-link link-title']")
+    protected List<WebElement> linkedIssue;
 
     //stan Taska
     @FindBy(xpath = "//*[@id='status-val']/span")
@@ -73,6 +85,12 @@ public abstract class AbstractTaskPage extends AbstractJiraPage {
         return obj;
     }
 
+    public void wprowadzKomentarz(String komentarz) {
+        new Actions(driver).moveToElement(poleWprowadzaniaKomentarza).sendKeys(poleWprowadzaniaKomentarza, komentarz).perform();
+
+        driver.findElement(By.id("issue-comment-add-submit")).click();
+    }
+
     public String getUserFromRole(TaskPeople people) {
         String roleName = null;
 
@@ -91,6 +109,8 @@ public abstract class AbstractTaskPage extends AbstractJiraPage {
                 new Actions(driver).clickAndHold(FindInTaskList.getProductClass(productsAffected.get(i))).build().perform();
                 productClassArray.add(driver.findElement(By.xpath(("(//*[@id='rlabs-details']/div/div[5]//*[@class='rlabs-value'])[" + (i+1) + "]"))).getText());
                 
+                productClassArray.add(driver.findElement(By.xpath(("(//*[@id='rlabs-details']/div/div[5]//*[@class='rlabs-value'])[" + (i + 1) + "]"))).getText());
+
 
             }
         }
