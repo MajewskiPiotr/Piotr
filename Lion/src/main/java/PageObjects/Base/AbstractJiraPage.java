@@ -29,14 +29,14 @@ public abstract class AbstractJiraPage extends PageObject {
 
 
 
-    public AbstractTaskPage goToTask(String url) {
+    public TaskPage goToTask(String url) {
         if(url.length()<10) {
             driver.navigate().to(driver.getCurrentUrl() + "/" + url);
         }
         else {
             driver.navigate().to(url);
         }
-        return new AbstractTaskPage(driver);
+        return new TaskPage(driver);
     }
 
     public void goToUrl(String url) {

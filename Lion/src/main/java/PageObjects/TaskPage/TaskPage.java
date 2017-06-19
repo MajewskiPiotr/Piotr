@@ -25,8 +25,6 @@ public class TaskPage extends AbstractTaskPage {
     }
 
 
-
-
     public String createLinkedIssue() {
 
         new Actions(driver).click(moreButton).click(createLinkedIssueButton).perform();
@@ -38,12 +36,13 @@ public class TaskPage extends AbstractTaskPage {
         createissueLink.create();
         String temp = allert.getText();
         String relatedLink = temp.substring(0, temp.indexOf(" "));
-        System.out.println("related Link "+ relatedLink);
+        System.out.println("related Link " + relatedLink);
         return relatedLink;
 
     }
 
-    public RelatedTaskPage goToRelatedIssue(String url){
-       return (RelatedTaskPage) goToTask(baseUrl+"/browse/" + url);
+    public RelatedTaskPage goToRelatedIssue(String url) {
+        goToUrl(url);
+        return new RelatedTaskPage(driver);
     }
 }

@@ -3,6 +3,7 @@ package Tests;
 import PageObjects.MainPage.DashboardPage;
 import PageObjects.MainPage.LoginPage;
 import PageObjects.MainPage.QueQuePage;
+import PageObjects.TaskPage.RelatedTaskPage;
 import PageObjects.TaskPage.TaskPage;
 import core.ElementsOnPages.Task.TaskButton;
 import org.testng.annotations.Test;
@@ -23,7 +24,7 @@ public class PropagacjaKomentarzy extends BaseTestClass {
         TaskPage taskPage = queQuePage.goToTask("DLSD-164");
 
         String relatedIssue = taskPage.createLinkedIssue();
-        TaskPage relatedIssueTask = taskPage.goToRelatedIssue();
+        RelatedTaskPage relatedIssueTask = taskPage.goToRelatedIssue(relatedIssue);
         relatedIssueTask.clickOnButton(TaskButton.COMMENT);
         relatedIssueTask.wprowadzKomentarz("komentarz testowy");
 

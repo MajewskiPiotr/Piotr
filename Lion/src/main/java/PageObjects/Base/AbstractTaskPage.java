@@ -43,7 +43,6 @@ public abstract class AbstractTaskPage extends AbstractJiraPage {
 
 
     @FindBy(xpath = "//*[@id='customfield_10401-val']")
-    @FindBy(xpath = "//*[@id='cLiustomfield_10401-val']")
     protected WebElement category;
 
     @FindBy(xpath = "//*[@id='customfield_10400-val']/div")
