@@ -27,16 +27,16 @@ public abstract class AbstractJiraPage extends PageObject {
         return (AbstractJiraPage) new Object();
     }
 
-    public void waitForProcessing() {
-        new WebDriverWait(driver, 30).until((ExpectedCondition<Boolean>) wd ->
-                ((JavascriptExecutor) wd).executeScript("return document.readyState").equals("complete"));
 
-    }
 
-    public TaskPage goToTask(String url) {
-        driver.navigate().to(driver.getCurrentUrl() +"/"+ url);
-      
-        return new TaskPage(driver);
+    public AbstractTaskPage goToTask(String url) {
+        if(url.length()<10) {
+            driver.navigate().to(driver.getCurrentUrl() + "/" + url);
+        }
+        else {
+            driver.navigate().to(url);
+        }
+        return new AbstractTaskPage(driver);
     }
 
     public void goToUrl(String url) {

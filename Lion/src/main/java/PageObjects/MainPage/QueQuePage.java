@@ -39,7 +39,7 @@ public class QueQuePage extends AbstractJiraPage {
     public QueQuePage(WebDriver driver) {
         super(driver);
         driver.navigate().to(baseUrl + "/projects/DLSD/queues/");
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.className("aui-page-header-main")));
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='pinnednav-opts-sd-queues-nav']//*[text()='Waiting for customer']")));
     }
 
     public TaskPage goToFirstTaskOnList() {
