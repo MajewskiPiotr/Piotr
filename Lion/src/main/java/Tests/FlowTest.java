@@ -2,6 +2,7 @@ package Tests;
 
 import PageObjects.CustomerService.CustomerServiceLoginPage;
 import PageObjects.CustomerService.CustomerServicePage;
+import PageObjects.ServiceDesk.MainPage.ServiceDeskLoginPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -22,6 +23,8 @@ public class FlowTest extends BaseTestClass {
 
     @Test
     public void obslugaPrzezAgenta(){
+        ServiceDeskLoginPage serviceDeskLoginPage = new ServiceDeskLoginPage(driver);
+        serviceDeskLoginPage.loginAsAdmin();
 
     }
 

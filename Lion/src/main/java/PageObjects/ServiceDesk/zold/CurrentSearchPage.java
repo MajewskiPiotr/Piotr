@@ -1,4 +1,4 @@
-package PageObjects.ServiceDesk.MainPage;
+package PageObjects.ServiceDesk.zold;
 
 import PageObjects.Base.AbstractJiraPage;
 import org.openqa.selenium.By;

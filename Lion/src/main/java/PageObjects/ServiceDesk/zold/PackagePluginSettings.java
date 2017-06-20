@@ -1,4 +1,4 @@
-package PageObjects.ServiceDesk.old;
+package PageObjects.ServiceDesk.zold;
 
 import PageObjects.Base.AbstractJiraPage;
 import core.ElementsOnPages.Task.TaskButton;

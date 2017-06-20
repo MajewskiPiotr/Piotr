@@ -1,10 +1,6 @@
 package PageObjects.CustomerService;
 
 import PageObjects.Base.PageObject;
-import PageObjects.ServiceDesk.MainPage.CurrentSearchPage;
-import PageObjects.ServiceDesk.MainPage.DashboardPage;
-import PageObjects.ServiceDesk.MainPage.KanbanPage;
-import core.Tools.Configuration.EnviromentSettings;
 import core.Tools.Configuration.TestEnviroments;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;

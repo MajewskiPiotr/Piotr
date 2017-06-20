@@ -84,31 +84,6 @@ public class ServiceDeskLoginPage extends PageObject {
     }
 
 
-    public DashboardPage logInToJira(String login, String haslo) {
-
-        login(login, haslo);
-
-        return new DashboardPage(driver);
-
-
-    }
-
-
-    public CurrentSearchPage logInToJiraAndGoToSearch(String login, String haslo) {
-
-        login(login, haslo);
-        return new CurrentSearchPage(driver);
-
-    }
-
-
-    public KanbanPage logInToJiraAndGoToKanban(String login, String haslo) {
-
-        login(login, haslo);
-
-        return new KanbanPage(driver);
-
-    }
 
 
 }

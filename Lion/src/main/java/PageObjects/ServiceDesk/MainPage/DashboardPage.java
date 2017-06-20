@@ -1,8 +1,8 @@
 package PageObjects.ServiceDesk.MainPage;
 
 import PageObjects.Base.AbstractJiraPage;
-import PageObjects.ServiceDesk.old.PackagePluginSettings;
-import PageObjects.ServiceDesk.old.ProfilePage;
+import PageObjects.ServiceDesk.zold.PackagePluginSettings;
+import PageObjects.ServiceDesk.zold.ProfilePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

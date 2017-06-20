@@ -1,4 +1,4 @@
-package PageObjects.ServiceDesk.TaskPage.TaskPage_Tab;
+package PageObjects.ServiceDesk.zold.TaskPage_Tab;
 
 import PageObjects.Base.PageObject;
 import PageObjects.ServiceDesk.TaskPage.TaskPage;
