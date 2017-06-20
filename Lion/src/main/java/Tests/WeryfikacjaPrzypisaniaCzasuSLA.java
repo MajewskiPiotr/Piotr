@@ -1,10 +1,10 @@
 package Tests;
 
-import PageObjects.MainPage.DashboardPage;
-import PageObjects.MainPage.Insightpage;
-import PageObjects.MainPage.LoginPage;
-import PageObjects.MainPage.QueQuePage;
-import PageObjects.TaskPage.TaskPage;
+import PageObjects.ServiceDesk.MainPage.DashboardPage;
+import PageObjects.ServiceDesk.MainPage.Insightpage;
+import PageObjects.ServiceDesk.MainPage.ServiceDeskLoginPage;
+import PageObjects.ServiceDesk.MainPage.QueQuePage;
+import PageObjects.ServiceDesk.TaskPage.TaskPage;
 import core.ElementsOnPages.Task.TaskButton;
 import core.ElementsOnPages.Task.TaskField;
 import org.testng.Assert;
@@ -26,7 +26,7 @@ public class WeryfikacjaPrzypisaniaCzasuSLA extends BaseTestClass {
     @Test
     public void weryfikacjaPoprawnosciCzasuSlaTaska() {
         //logujemy sie do aplikacji i wchodzimy na zadanie
-        LoginPage login = new LoginPage(driver);
+        ServiceDeskLoginPage login = new ServiceDeskLoginPage(driver);
         DashboardPage dashboardPage = login.loginAsAdmin();
         QueQuePage queQuePage = dashboardPage.goToQueQue();
         queQuePage.clickOnButton(TaskButton.HELPDESK_DISPATCHER);

@@ -1,11 +1,10 @@
-package PageObjects.TaskPage;
+package PageObjects.ServiceDesk.TaskPage;
 
 import PageObjects.Base.AbstractTaskPage;
-import core.ElementsOnPages.Task.TaskButton;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.testng.Assert;
 
 
 /**
@@ -34,15 +33,35 @@ public class TaskPage extends AbstractTaskPage {
         createissueLink.setIssueType();
         createissueLink.setDescription();
         createissueLink.create();
-        String temp = allert.getText();
-        String relatedLink = temp.substring(0, temp.indexOf(" "));
+        String allertTxt = allert.getText();
+        String relatedLink = allertTxt.substring(0, allertTxt.indexOf(" "));
         System.out.println("related Link " + relatedLink);
         return relatedLink;
 
     }
 
-    public RelatedTaskPage goToRelatedIssue(String url) {
+    public TaskPage goToRelatedIssue(String url) {
         goToUrl(url);
-        return new RelatedTaskPage(driver);
+        return new TaskPage(driver);
+    }
+
+    public void wprowadzKomentarz(String komentarz) {
+        new Actions(driver).moveToElement(poleWprowadzaniaKomentarza).sendKeys(poleWprowadzaniaKomentarza, komentarz).perform();
+        driver.findElement(By.id("issue-comment-add-submit")).click();
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public boolean zweryfikujKomentarz(String badanyKomentarz) {
+        boolean isPresent = false;
+        for (String komentarze : getKomentarze()) {
+            if (komentarze.contains(badanyKomentarz)) {
+                isPresent = true;
+            }
+        }
+        return isPresent;
     }
 }

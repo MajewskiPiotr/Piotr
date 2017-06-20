@@ -1,18 +1,16 @@
 package PageObjects.Base;
 
-import PageObjects.MainPage.DashboardPage;
+import PageObjects.ServiceDesk.MainPage.DashboardPage;
 import core.ElementsOnPages.Task.*;
 import core.Tools.FindInTaskList;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
-import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +19,7 @@ import java.util.List;
  * KLasa abstracyjna. Kazda Page Task powinien dziedziczyc po tej klasie.
  */
 
-//TODO w środosiku produkcyjnych można potworzyć podKlasy i umiescić w nich elementy z których nie wszyscy korzystają (np. AssignToTranslator uzywa tylko Edytor
+
 public abstract class AbstractTaskPage extends AbstractJiraPage {
 
 
@@ -40,18 +38,22 @@ public abstract class AbstractTaskPage extends AbstractJiraPage {
     //Pola
     @FindBy(xpath = "//*[@id='rowForcustomfield_10615']//*[@class='tinylink']/*")
     protected List<WebElement> product;
-
-
     @FindBy(xpath = "//*[@id='customfield_10401-val']")
     protected WebElement category;
-
     @FindBy(xpath = "//*[@id='customfield_10400-val']/div")
     protected List<WebElement> productsAffected;
-
     @FindBy(xpath = "//*[@class='sla-view-info']/div[text()='Time to resolution']/../div[2]")
     protected WebElement sla;
+    @FindBy(xpath = "//*[@id='key-val']")
+    protected WebElement taskNr;
+
+
+    //komentarze i pokrewne
     @FindBy(xpath = "//*[@id='issue-comment-add']//*[@id='comment-wiki-edit']//*[@id='comment']")
     protected WebElement poleWprowadzaniaKomentarza;
+    @FindBy(xpath = "//*[@class='action-body flooded']")
+    protected List<WebElement> listaKomentarzy;
+
     @FindBy(xpath = "//*[@id='aui-flag-container']/div/div/a")
     protected WebElement allert;
 
@@ -84,10 +86,17 @@ public abstract class AbstractTaskPage extends AbstractJiraPage {
         return obj;
     }
 
-    public void wprowadzKomentarz(String komentarz) {
-        new Actions(driver).moveToElement(poleWprowadzaniaKomentarza).sendKeys(poleWprowadzaniaKomentarza, komentarz).perform();
-
-        driver.findElement(By.id("issue-comment-add-submit")).click();
+    public List<String> getKomentarze() {
+        List<String> lista = new ArrayList<String>();
+        for (WebElement element : listaKomentarzy) {
+            String tempKom= element.getText();
+            lista.add(tempKom);
+        }
+        System.out.println(lista.toString());
+        return lista;
+    }
+    public String getTaskNumber(){
+        return taskNr.getText();
     }
 
     public String getUserFromRole(TaskPeople people) {
@@ -106,8 +115,8 @@ public abstract class AbstractTaskPage extends AbstractJiraPage {
         } else {
             for (int i = 0; i < productsAffected.size(); i++) {
                 new Actions(driver).clickAndHold(FindInTaskList.getProductClass(productsAffected.get(i))).build().perform();
-                productClassArray.add(driver.findElement(By.xpath(("(//*[@id='rlabs-details']/div/div[5]//*[@class='rlabs-value'])[" + (i+1) + "]"))).getText());
-                
+                productClassArray.add(driver.findElement(By.xpath(("(//*[@id='rlabs-details']/div/div[5]//*[@class='rlabs-value'])[" + (i + 1) + "]"))).getText());
+
                 productClassArray.add(driver.findElement(By.xpath(("(//*[@id='rlabs-details']/div/div[5]//*[@class='rlabs-value'])[" + (i + 1) + "]"))).getText());
 
 

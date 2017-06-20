@@ -1,4 +1,4 @@
-package PageObjects.MainPage;
+package PageObjects.ServiceDesk.MainPage;
 
 import PageObjects.Base.AbstractJiraPage;
 import PageObjects.Base.PageObject;

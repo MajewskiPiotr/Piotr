@@ -1,6 +1,11 @@
-package PageObjects.MainPage;
+package PageObjects.CustomerService;
 
 import PageObjects.Base.PageObject;
+import PageObjects.ServiceDesk.MainPage.CurrentSearchPage;
+import PageObjects.ServiceDesk.MainPage.DashboardPage;
+import PageObjects.ServiceDesk.MainPage.KanbanPage;
+import core.Tools.Configuration.EnviromentSettings;
+import core.Tools.Configuration.TestEnviroments;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
@@ -9,34 +14,29 @@ import org.testng.Assert;
  * Created by Piotr Majewski on 2017-05-15.
  * KLasa reprezentuje strone logowania do aplikacji Jira
  */
-public class LoginPage extends PageObject {
+public class CustomerServiceLoginPage extends PageObject {
 
     private String pageUrl = "";
 
     @FindBy(name = "os_username")
     private WebElement userName;
-    @FindBy(id = "login-form-password")
+    @FindBy(id = "os_password")
     private WebElement password;
     @FindBy(id="login-form")
     private WebElement logIn;
 
-    public LoginPage(WebDriver driver) {
+    public CustomerServiceLoginPage(WebDriver driver) {
         super(driver);
     }
 
     private void open() {
         try {
-            driver.navigate().to(baseUrl + pageUrl);
+            driver.navigate().to(TestEnviroments.CUSTOMER);
         } catch (TimeoutException ex) {
-            Assert.fail("Nie udało otworzyć sie aplikacji pod adresem " + baseUrl + pageUrl);
+            Assert.fail("Nie udało otworzyć sie aplikacji pod adresem " + TestEnviroments.CUSTOMER);
         }
     }
 
-    public DashboardPage loginAsAdmin() {
-        login("agent5", "agent5");
-        return new DashboardPage(driver);
-
-    }
 
     private void login(String login, String haslo) {
         open();
@@ -54,21 +54,12 @@ public class LoginPage extends PageObject {
         }
     }
 
-    public DashboardPage logInToJira(String login, String haslo) {
-        login(login, haslo);
-        return new DashboardPage(driver);
-
+    public CustomerServicePage logInToCustomer() {
+        login("ParkerCustomer", "12345678");
+        return new CustomerServicePage(driver);
     }
 
 
-    public CurrentSearchPage logInToJiraAndGoToSearch(String login, String haslo) {
-        login(login, haslo);
-        return new CurrentSearchPage(driver);
-    }
 
-    public KanbanPage logInToJiraAndGoToKanban(String login, String haslo) {
-        login(login, haslo);
-        return new KanbanPage(driver);
-    }
 
 }

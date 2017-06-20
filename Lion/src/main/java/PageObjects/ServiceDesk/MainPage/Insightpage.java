@@ -1,4 +1,4 @@
-package PageObjects.MainPage;
+package PageObjects.ServiceDesk.MainPage;
 
 import PageObjects.Base.AbstractJiraPage;
 import core.ElementsOnPages.Task.TaskButton;
@@ -6,7 +6,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.ArrayList;

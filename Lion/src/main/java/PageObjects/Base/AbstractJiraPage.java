@@ -2,12 +2,9 @@ package PageObjects.Base;
 
 import core.ElementsOnPages.Task.TaskButton;
 import core.ElementsOnPages.Task.TaskLink;
-import PageObjects.TaskPage.TaskPage;
-import org.openqa.selenium.JavascriptExecutor;
+import PageObjects.ServiceDesk.TaskPage.TaskPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
@@ -39,14 +36,7 @@ public abstract class AbstractJiraPage extends PageObject {
         return new TaskPage(driver);
     }
 
-    public void goToUrl(String url) {
-        if (url.length() == 8) {
-            driver.navigate().to(baseUrl + "/browse/" + url);
 
-        } else {
-            driver.navigate().to(baseUrl + url);
-        }
-    }
 
     public String getUrl() {
         return driver.getCurrentUrl();

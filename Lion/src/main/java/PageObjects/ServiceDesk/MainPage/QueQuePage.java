@@ -1,7 +1,7 @@
-package PageObjects.MainPage;
+package PageObjects.ServiceDesk.MainPage;
 
 import PageObjects.Base.AbstractJiraPage;
-import PageObjects.TaskPage.TaskPage;
+import PageObjects.ServiceDesk.TaskPage.TaskPage;
 import core.ElementsOnPages.Task.TaskButton;
 import core.Tools.FindInTaskList;
 import org.openqa.selenium.By;

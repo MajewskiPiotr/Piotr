@@ -3,11 +3,10 @@ package PageObjects.Base;
 import core.Tools.Configuration.EnviromentSettings;
 import core.ElementsOnPages.Task.TaskButton;
 import core.ElementsOnPages.Task.TaskLink;
-import PageObjects.TaskPage.TaskPage;
-import org.openqa.selenium.JavascriptExecutor;
+import PageObjects.ServiceDesk.TaskPage.TaskPage;
+import core.Tools.Configuration.TestEnviroments;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -40,6 +39,11 @@ public class PageObject {
         return new PageObject(driver);
     }
 
+    public void uruchomAplikacjeCustomer(String url){
+        goToUrl(TestEnviroments.CUSTOMER + url);
+
+    }
+
 
 
     public TaskPage goToTask(String url) {
@@ -53,13 +57,15 @@ public class PageObject {
     }
 
     public void goToUrl(String url) {
+        System.out.println("go to " + url);
         if (url.length() == 8) {
             driver.navigate().to(baseUrl + "/browse/" + url);
 
         } else {
-            driver.navigate().to(baseUrl + url);
+            driver.navigate().to(url);
         }
-    }
+
+   }
 
     public String getUrl() {
         return driver.getCurrentUrl();

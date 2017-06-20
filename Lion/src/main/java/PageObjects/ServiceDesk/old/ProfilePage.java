@@ -1,4 +1,4 @@
-package PageObjects.MainPage;
+package PageObjects.ServiceDesk.old;
 
 import PageObjects.Base.AbstractJiraPage;
 import core.ElementsOnPages.ProfilePageFields;

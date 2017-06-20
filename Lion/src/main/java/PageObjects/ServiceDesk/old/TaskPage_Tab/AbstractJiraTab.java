@@ -1,7 +1,7 @@
-package PageObjects.TaskPage.TaskPage_Tab;
+package PageObjects.ServiceDesk.TaskPage.TaskPage_Tab;
 
 import PageObjects.Base.PageObject;
-import PageObjects.TaskPage.TaskPage;
+import PageObjects.ServiceDesk.TaskPage.TaskPage;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
