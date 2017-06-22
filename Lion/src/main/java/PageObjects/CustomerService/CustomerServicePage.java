@@ -1,6 +1,9 @@
 package PageObjects.CustomerService;
 
 import PageObjects.Base.PageObject;
+import PageObjects.ServiceDesk.TaskPage.TaskPage;
+import core.Tools.Configuration.EnviromentSettings;
+import core.Tools.Configuration.TestEnviroments;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -8,7 +11,7 @@ import org.openqa.selenium.support.FindBy;
 /**
  * Created by Piotr Majewski on 2017-06-20.
  */
-public class CustomerServicePage extends PageObject {
+public class CustomerServicePage extends AbstractCustomerServicePage {
 
     @FindBy(xpath = "//*[@id='cv-request-content']//strong[contains(.,'envir')]")
     protected WebElement enviromentIncidentButton;
@@ -35,5 +38,6 @@ public class CustomerServicePage extends PageObject {
         createButton.click();
         return zgloszenieNr.getText();
     }
+
 
 }

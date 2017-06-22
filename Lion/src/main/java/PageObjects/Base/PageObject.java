@@ -1,10 +1,7 @@
 package PageObjects.Base;
 
-import core.Tools.Configuration.EnviromentSettings;
 import core.ElementsOnPages.Task.TaskButton;
-import core.ElementsOnPages.Task.TaskLink;
-import PageObjects.ServiceDesk.TaskPage.TaskPage;
-import core.Tools.Configuration.TestEnviroments;
+import core.Tools.Configuration.EnviromentSettings;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Wait;
@@ -35,27 +32,6 @@ public class PageObject {
     public void clickOnButton(TaskButton button) {
     }
 
-    public PageObject clickInLink(TaskLink link) {
-        return new PageObject(driver);
-    }
-
-    public void uruchomAplikacjeCustomer(String url){
-        goToUrl(TestEnviroments.CUSTOMER + url);
-
-    }
-
-
-
-    public TaskPage goToTask(String url) {
-        if (url.length() == 8) {
-            driver.navigate().to(baseUrl + "/browse/" + url);
-
-        } else {
-            driver.navigate().to(url);
-        }
-        return new TaskPage(driver);
-    }
-
     public void goToUrl(String url) {
         System.out.println("go to " + url);
         if (url.length() == 8) {
@@ -65,7 +41,7 @@ public class PageObject {
             driver.navigate().to(url);
         }
 
-   }
+    }
 
     public String getUrl() {
         return driver.getCurrentUrl();

@@ -10,9 +10,9 @@ import org.testng.Assert;
  * Created by Piotr Majewski on 2017-05-15.
  * KLasa reprezentuje strone logowania do aplikacji Jira
  */
-public class CustomerServiceLoginPage extends PageObject {
+public class CustomerServiceLoginPage extends AbstractCustomerServicePage {
 
-    private String pageUrl = "";
+    private String CustomerURL = TestEnviroments.CUSTOMER;
 
     @FindBy(name = "os_username")
     private WebElement userName;
@@ -27,7 +27,7 @@ public class CustomerServiceLoginPage extends PageObject {
 
     private void open() {
         try {
-            driver.navigate().to(TestEnviroments.CUSTOMER);
+            driver.navigate().to(CustomerURL);
         } catch (TimeoutException ex) {
             Assert.fail("Nie udało otworzyć sie aplikacji pod adresem " + TestEnviroments.CUSTOMER);
         }
@@ -46,7 +46,7 @@ public class CustomerServiceLoginPage extends PageObject {
                 e.printStackTrace();
             }
         } catch (NoSuchElementException exception) {
-            Assert.fail("Nie udało sie uruchomić JIRA");
+            Assert.fail("Nie udało sie uruchomić CUSTOMER JIRA");
         }
     }
 

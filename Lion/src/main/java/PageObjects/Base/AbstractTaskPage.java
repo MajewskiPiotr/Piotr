@@ -34,6 +34,10 @@ public abstract class AbstractTaskPage extends AbstractJiraPage {
     protected WebElement moreButton;
     @FindBy(id = "create-linked-issue")
     protected WebElement createLinkedIssueButton;
+    @FindBy(id = "edit-issue")
+    protected WebElement editButton;
+    @FindBy(id = "action_id_851")
+    protected WebElement respondToCustomerButton;
 
     //Pola
     @FindBy(xpath = "//*[@id='rowForcustomfield_10615']//*[@class='tinylink']/*")

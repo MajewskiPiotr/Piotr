@@ -44,7 +44,6 @@ public class QueQuePage extends AbstractJiraPage {
 
     public TaskPage goToFirstTaskOnList() {
         String currentUrl = getUrl();
-
         driver.navigate().to(currentUrl+ "/"+ FindInTaskList.getTaskLink(getTaskList().get(0)));
         return new TaskPage(driver);
     }

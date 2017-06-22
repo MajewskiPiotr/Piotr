@@ -44,14 +44,14 @@ public class ServiceDeskLoginPage extends PageObject {
 
 
     public DashboardPage loginAsAdmin() {
-
         login("agent5", "agent5");
-
         return new DashboardPage(driver);
-
-
     }
 
+    public DashboardPage loginAsAgent() {
+        login("piotr.majewski", "12345678");
+        return new DashboardPage(driver);
+    }
 
     private void login(String login, String haslo) {
 
