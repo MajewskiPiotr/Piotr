@@ -20,8 +20,8 @@ public class TaskPage extends AbstractTaskPage {
     @FindBy(xpath = "//*[@id='sla-web-panel']//*/span[contains(@class,'pause')]")
     protected WebElement pauseIcon;
 
-    @FindBy(xpath = "//*[@id='issue_actions_container']//div[@class='action-body flooded']")
-    protected List<WebElement> listaKomentarzy;
+    //@FindBy(xpath = "//*[@id='issue_actions_container']//div[@class='action-body flooded']")
+    //protected List<WebElement> listaKomentarzy;
 
     public TaskPage(WebDriver driver) {
         super(driver);
@@ -43,8 +43,7 @@ public class TaskPage extends AbstractTaskPage {
         createissueLink.setIssueType();
         createissueLink.setDescription();
         createissueLink.create();
-        String allertTxt = allert.getText();
-        String relatedLink = allertTxt.substring(0, allertTxt.indexOf(" "));
+        String relatedLink = getNewCreatedIssueNumber();
         System.out.println("related Link " + relatedLink);
         return relatedLink;
 
@@ -66,7 +65,7 @@ public class TaskPage extends AbstractTaskPage {
         }
     }
 
-    public boolean zweryfikujKomentarz(String badanyKomentarz) {
+    public boolean verifyCommentExist(String badanyKomentarz) {
         boolean isPresent = false;
         for (String komentarze : getKomentarze()) {
             if (komentarze.contains(badanyKomentarz)) {
@@ -76,9 +75,7 @@ public class TaskPage extends AbstractTaskPage {
         return isPresent;
     }
 
-    public void przypiszZadanie() {
 
-    }
 
     public EditIssuePage edytujIssue() {
         editButton.click();

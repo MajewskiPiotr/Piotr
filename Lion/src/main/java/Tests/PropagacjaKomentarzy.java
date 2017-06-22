@@ -44,7 +44,7 @@ public class PropagacjaKomentarzy extends BaseTestClass {
         //Wracamy do Taska głównego i weryfikujemy czy komenarz został rozpropagowany
         relatedIssueTask.goToUrl(issueURL);
         TaskPage mainPage = new TaskPage(driver);
-        Assert.assertTrue(mainPage.zweryfikujKomentarz(komentarz), "nie udała sie propagacja komentarzy");
+        Assert.assertTrue(mainPage.verifyCommentExist(komentarz), "nie udała sie propagacja komentarzy");
     }
 
     @Test(priority = 20)
@@ -53,6 +53,6 @@ public class PropagacjaKomentarzy extends BaseTestClass {
         CustomerServiceLoginPage customerServiceLoginPage = new CustomerServiceLoginPage(driver);
         CustomerServicePage customerServicePage = customerServiceLoginPage.logInToCustomer();
         CustomerTaskPage customerTaskPage = customerServiceLoginPage.goToTask(nrTaska);
-        Assert.assertTrue(customerTaskPage.zweryfikujIstnienieKomentarza(komentarz), "Komenarz nie został rozpropagowany do Customera");
+        Assert.assertTrue(customerTaskPage.verifyCommentExist(komentarz), "Komenarz nie został rozpropagowany do Customera");
     }
 }

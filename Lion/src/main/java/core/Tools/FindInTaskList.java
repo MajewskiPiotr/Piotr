@@ -19,9 +19,11 @@ public class FindInTaskList {
 
 
     public static WebElement getProductClass(WebElement element) {
-
         return element.findElement(By.className("rlabs-customfield-viewdialog-object-info"));
+    }
 
+    public static WebElement getStatusFromRelatedIssue(WebElement element, int iterator){
+        return element.findElement(By.xpath("//dd["+iterator+"]//*[@class='link-snapshot']"));
     }
 
 }

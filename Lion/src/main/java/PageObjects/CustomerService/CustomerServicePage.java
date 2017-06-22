@@ -36,7 +36,9 @@ public class CustomerServicePage extends AbstractCustomerServicePage {
         subjectInput.sendKeys(subject);
         descriptionInput.sendKeys(description);
         createButton.click();
-        return zgloszenieNr.getText();
+        String nrZgloszenia = zgloszenieNr.getText();
+        driver.navigate().to(CustomerURL);
+        return nrZgloszenia;
     }
 
 

@@ -8,6 +8,9 @@ import org.openqa.selenium.WebDriver;
  * Created by Piotr Majewski on 2017-06-21.
  */
 public class AbstractCustomerServicePage extends PageObject {
+    protected String CustomerURL = TestEnviroments.CUSTOMER;
+
+
     public AbstractCustomerServicePage(WebDriver driver) {
         super(driver);
     }

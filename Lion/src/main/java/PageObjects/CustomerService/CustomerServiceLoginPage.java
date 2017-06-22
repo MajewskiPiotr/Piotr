@@ -12,7 +12,6 @@ import org.testng.Assert;
  */
 public class CustomerServiceLoginPage extends AbstractCustomerServicePage {
 
-    private String CustomerURL = TestEnviroments.CUSTOMER;
 
     @FindBy(name = "os_username")
     private WebElement userName;
@@ -29,7 +28,7 @@ public class CustomerServiceLoginPage extends AbstractCustomerServicePage {
         try {
             driver.navigate().to(CustomerURL);
         } catch (TimeoutException ex) {
-            Assert.fail("Nie udało otworzyć sie aplikacji pod adresem " + TestEnviroments.CUSTOMER);
+            Assert.fail("Nie udało otworzyć sie aplikacji pod adresem " + CustomerURL);
         }
     }
 

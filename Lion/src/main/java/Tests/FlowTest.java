@@ -16,6 +16,14 @@ import org.testng.annotations.Test;
 /**
  * Created by Piotr Majewski on 2017-06-20.
  */
+
+//Test weryfikuje poprawność procesu biznesowego w aplikacji
+/*1. Zgłaszamy Bład
+2. Agent Edytuje go i nadaje SLA
+3. Odbicie zgłoszenia do klienta
+4. Odbicie zgłoszenid do Agenta
+5. Agent weryfikuje otrzymanie Wiadomości
+ */
 public class FlowTest extends BaseTestClass {
     private String nrIssueFromCustomer = "";
     private String slaTime = "";
@@ -40,13 +48,14 @@ public class FlowTest extends BaseTestClass {
         TaskPage taskPage = queQuePage.goToTask(nrIssueFromCustomer);
         Assert.assertEquals(nrIssueFromCustomer, taskPage.getTaskNumber(), "nie udało się pobrać odpowiedniego zadania do testów");
         EditIssuePage editIssuePage = taskPage.edytujIssue();
-        editIssuePage.sklasyfikujIssue();
+        editIssuePage.issueClasification();
         slaTime = taskPage.getTextFromField(TaskField.SLA);
         Assert.assertTrue(!slaTime.equals(""), "nie udało sie poprawnie obsluzyc ISSUE");
     }
 
     @Test(priority = 2)
-    public void obslugaKomunikacji_Agent_Customer() {
+    //odbicie zgłoszenia do Customera
+    public void AgentSendMessageToCustomer() {
 
         //zalogować sie jako Agent i przejśc na zgłoszenie
         //wpisac Komentarz dla Klienta
@@ -58,29 +67,32 @@ public class FlowTest extends BaseTestClass {
         taskPage.respondToCustomer(komenarzDoCustomera);
         Assert.assertTrue(taskPage.isPause(), "Issue nie zostało zapauzowane");
         Assert.assertEquals(taskPage.getStatus(), TaskStatus.WAITING_FOR_CUSTOMER.getStatus());
-
     }
 
     @Test(priority = 3)
-    public void obslugaKomunikacjiCustomer_Agent() {
+    public void CustomerSendMessageToAgent() {
         //Zalogowac się jako Customer i przejść do zgłoszenia
         //odpowiedzieć na pytanie od Agenta.
         CustomerServiceLoginPage customerServiceLoginPage = new CustomerServiceLoginPage(driver);
         CustomerServicePage customerServicePage = customerServiceLoginPage.logInToCustomer();
         CustomerTaskPage customerTaskPage = customerServicePage.goToTask(nrIssueFromCustomer);
+        //weryfikujemy czy wyświetla się czas SLA
+        Assert.assertTrue(customerTaskPage.isSlaExist());
         customerTaskPage.respondToAgent(komentarzDoAgenta);
-        Assert.assertTrue(customerTaskPage.zweryfikujIstnienieKomentarza(komenarzDoCustomera), "W aplikacji Customer brak komentarza od Agenta");
+        //weryfikujemy czy komentarz jest widoczny
+        Assert.assertTrue(customerTaskPage.verifyCommentExist(komenarzDoCustomera), "W aplikacji Customer brak komentarza od Agenta");
+        //weryfikujemy czy ustawił się prawidłowy stan zgłoszenia
         Assert.assertEquals(customerTaskPage.getStatus(), TaskStatus.WAITING_FOR_SUPPORT.getStatus());
     }
 
     @Test(priority = 4)
-    public void weryfikacjaKomentarzaOdCustomera() {
+    public void verifyMessageFromCustomer() {
         ServiceDeskLoginPage serviceDeskLoginPage = new ServiceDeskLoginPage(driver);
         DashboardPage dashboardPage = serviceDeskLoginPage.loginAsAgent();
         QueQuePage queQuePage = dashboardPage.goToQueQue();
         TaskPage taskPage = queQuePage.goToTask(nrIssueFromCustomer);
-        Assert.assertTrue(taskPage.zweryfikujKomentarz(komentarzDoAgenta), "Brak komentarza od Customera");
-
+        //weryfikujemy czy komentarz od Customera jest widoczny w SD
+        Assert.assertTrue(taskPage.verifyCommentExist(komentarzDoAgenta), "Brak komentarza od Customera");
     }
 
 }

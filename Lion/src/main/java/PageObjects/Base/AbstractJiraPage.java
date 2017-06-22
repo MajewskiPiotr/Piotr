@@ -1,10 +1,11 @@
 package PageObjects.Base;
 
+import PageObjects.ServiceDesk.TaskPage.TaskPage;
 import core.ElementsOnPages.Task.TaskButton;
 import core.ElementsOnPages.Task.TaskLink;
-import PageObjects.ServiceDesk.TaskPage.TaskPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
@@ -12,30 +13,29 @@ import java.util.List;
  * Created by Piotr Majewski on 2017-06-09.
  */
 public abstract class AbstractJiraPage extends PageObject {
+    @FindBy(xpath = "//*[@id='aui-flag-container']/div/div/a")
+    protected WebElement allert;
 
-    public AbstractJiraPage(WebDriver driver){
+    public AbstractJiraPage(WebDriver driver) {
         super(driver);
     }
 
     public void clickOnButton(TaskButton button) {
     }
 
-    public AbstractJiraPage clickInLink(TaskLink link){
+    public AbstractJiraPage clickInLink(TaskLink link) {
         return (AbstractJiraPage) new Object();
     }
 
 
-
     public TaskPage goToTask(String url) {
-        if(url.length()<10) {
+        if (url.length() < 10) {
             driver.navigate().to(driver.getCurrentUrl() + "/" + url);
-        }
-        else {
+        } else {
             driver.navigate().to(url);
         }
         return new TaskPage(driver);
     }
-
 
 
     public String getUrl() {
@@ -47,6 +47,12 @@ public abstract class AbstractJiraPage extends PageObject {
             System.out.println(w.getText());
         }
 
+    }
+
+    public String getNewCreatedIssueNumber(){
+        String allertTxt = allert.getText();
+        String newIssue = allertTxt.substring(0, allertTxt.indexOf(" "));
+        return newIssue;
     }
 
 }

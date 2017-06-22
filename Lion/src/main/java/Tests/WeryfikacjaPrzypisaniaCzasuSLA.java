@@ -22,7 +22,7 @@ public class WeryfikacjaPrzypisaniaCzasuSLA extends BaseTestClass {
     private List<String> productClassList = new ArrayList<>();
     private int solutionTimeFromInsight;
     private int solutionTimeFromTask;
-
+    //TODO przerobić aby sprawdzenia wykonywane było na nowym przypadku
     @Test
     public void weryfikacjaPoprawnosciCzasuSlaTaska() {
         //logujemy sie do aplikacji i wchodzimy na zadanie
@@ -30,7 +30,7 @@ public class WeryfikacjaPrzypisaniaCzasuSLA extends BaseTestClass {
         DashboardPage dashboardPage = login.loginAsAdmin();
         QueQuePage queQuePage = dashboardPage.goToQueQue();
         queQuePage.clickOnButton(TaskButton.HELPDESK_DISPATCHER);
-        TaskPage taskPage = (TaskPage) queQuePage.goToTask("DLSD-158");
+        TaskPage taskPage = queQuePage.goToTask("DLSD-158");
 
         //pobieramy potrrzebne dane z Taska
         productClassList = taskPage.getProductClass();

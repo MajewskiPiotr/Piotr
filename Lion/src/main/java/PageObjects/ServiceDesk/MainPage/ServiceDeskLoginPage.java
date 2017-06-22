@@ -52,6 +52,11 @@ public class ServiceDeskLoginPage extends PageObject {
         login("piotr.majewski", "12345678");
         return new DashboardPage(driver);
     }
+    public QueQuePage loginAsAgentAngGoToQueque() {
+        login("piotr.majewski", "12345678");
+        return new QueQuePage(driver);
+    }
+
 
     private void login(String login, String haslo) {
 

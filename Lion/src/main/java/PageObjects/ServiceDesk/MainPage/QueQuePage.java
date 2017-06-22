@@ -1,9 +1,11 @@
 package PageObjects.ServiceDesk.MainPage;
 
 import PageObjects.Base.AbstractJiraPage;
+import PageObjects.ServiceDesk.TaskPage.EditIssuePage;
 import PageObjects.ServiceDesk.TaskPage.TaskPage;
 import core.ElementsOnPages.Task.TaskButton;
 import core.Tools.FindInTaskList;
+import core.Tools.JiraWait;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -30,6 +32,9 @@ public class QueQuePage extends AbstractJiraPage {
     @FindBy(xpath = "//*[@id='issuetable']/tbody/*")
     private List<WebElement> taskList;
 
+    @FindBy(xpath = "//*[@id='create_link']")
+    protected WebElement createButton;
+
     //Napis SystemDashboard
     @FindBy(className = "aui-page-header-main")
     private WebElement systemDashboard;
@@ -44,7 +49,7 @@ public class QueQuePage extends AbstractJiraPage {
 
     public TaskPage goToFirstTaskOnList() {
         String currentUrl = getUrl();
-        driver.navigate().to(currentUrl+ "/"+ FindInTaskList.getTaskLink(getTaskList().get(0)));
+        driver.navigate().to(currentUrl + "/" + FindInTaskList.getTaskLink(getTaskList().get(0)));
         return new TaskPage(driver);
     }
 
@@ -75,19 +80,17 @@ public class QueQuePage extends AbstractJiraPage {
                 break;
             }
         }
-        waitt();
+        JiraWait.waitForProcesing(2000);
 
     }
 
-    private void waitt() {
-        try {
-            Thread.sleep(4000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
 
     private List<WebElement> getTaskList() {
         return taskList;
+    }
+
+    public EditIssuePage createIssue() {
+        createButton.click();
+        return new EditIssuePage(driver);
     }
 }

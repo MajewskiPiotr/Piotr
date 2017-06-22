@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
 import java.util.ArrayList;
@@ -24,10 +25,8 @@ public abstract class AbstractTaskPage extends AbstractJiraPage {
 
 
     //Guziki
-    @FindBy(id = "action_id_11")
-    protected WebElement acceptButton;
-    @FindBy(id = "action_id_71")
-    protected WebElement rejectButton;
+    @FindBy(xpath = "//*[@id='action_id_2']")
+    protected WebElement closeIssueButton;
     @FindBy(id = "comment-issue")
     protected WebElement commentButton;
     @FindBy(id = "opsbar-operations_more")
@@ -58,16 +57,14 @@ public abstract class AbstractTaskPage extends AbstractJiraPage {
     @FindBy(xpath = "//*[@class='action-body flooded']")
     protected List<WebElement> listaKomentarzy;
 
-    @FindBy(xpath = "//*[@id='aui-flag-container']/div/div/a")
-    protected WebElement allert;
-
-    //Linked Issue
-    @FindBy(xpath = "//*[@class='issue-link link-title']")
-    protected List<WebElement> linkedIssue;
 
     //stan Taska
     @FindBy(xpath = "//*[@id='status-val']/span")
     protected WebElement status;
+
+    //Lista zaleznych Issue
+    @FindBy(xpath = "//*[@class='links-container']/*/dd//*[@class='link-snapshot']/*")
+    protected List<WebElement> relatedIssueList;
 
 
     public AbstractTaskPage(WebDriver driver) {
@@ -93,13 +90,14 @@ public abstract class AbstractTaskPage extends AbstractJiraPage {
     public List<String> getKomentarze() {
         List<String> lista = new ArrayList<String>();
         for (WebElement element : listaKomentarzy) {
-            String tempKom= element.getText();
+            String tempKom = element.getText();
             lista.add(tempKom);
         }
         System.out.println(lista.toString());
         return lista;
     }
-    public String getTaskNumber(){
+
+    public String getTaskNumber() {
         return taskNr.getText();
     }
 
@@ -175,4 +173,28 @@ public abstract class AbstractTaskPage extends AbstractJiraPage {
         return textfromField;
     }
 
+    public boolean checkIsRelatedIssueIsClosed() {
+        boolean close = false;
+        for (int i = 1; i <= relatedIssueList.size(); i++) {
+            if (FindInTaskList.getStatusFromRelatedIssue(relatedIssueList.get(i - 1), i).getText().equals("RESOLVED")) {
+                close = true;
+            } else {
+                close = false;
+                break;
+            }
+
+        }
+        return close;
+    }
+
+    public void closeIssue() {
+        closeIssueButton.click();
+        //wait until system show new screen with close parameters
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='issue-workflow-transition']")));
+        Select select = new Select(driver.findElement(By.id("resolution")));
+        select.selectByVisibleText("Done");
+        driver.findElement(By.xpath("//*[@id='issue-workflow-transition-submit']")).click();
+        wait.until(ExpectedConditions.textToBePresentInElement(status, TaskStatus.CLOSED.getStatus()));
+        driver.navigate().refresh();
+    }
 }

@@ -1,6 +1,7 @@
 package PageObjects.CustomerService;
 
 import core.Tools.JiraWait;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -36,7 +37,7 @@ public class CustomerTaskPage extends AbstractCustomerServicePage {
         JiraWait.waitForProcesing(4000);
     }
 
-    public boolean zweryfikujIstnienieKomentarza(String komentarz) {
+    public boolean verifyCommentExist(String komentarz) {
         boolean exist = false;
         for (WebElement webElement : listaKomentarzy) {
             if (webElement.getText().contains(komentarz)) {
@@ -44,6 +45,11 @@ public class CustomerTaskPage extends AbstractCustomerServicePage {
                 break;
             }
         }
+        JiraWait.waitForProcesing(2000);
         return exist;
+    }
+
+    public boolean isSlaExist() {
+        return driver.findElement(By.xpath("//*[@class='sla-tag sla-tag-ongoing ']")).isDisplayed();
     }
 }
