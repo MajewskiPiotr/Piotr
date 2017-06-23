@@ -10,8 +10,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-import java.util.List;
-
 
 /**
  * Created by Piotr Majewski on 2017-05-15.
@@ -54,15 +52,18 @@ public class TaskPage extends AbstractTaskPage {
         return new TaskPage(driver);
     }
 
+    public void wprowadzKomentarz(String komentarz) {
+        new Actions(driver).moveToElement(poleWprowadzaniaKomentarza).sendKeys(poleWprowadzaniaKomentarza, komentarz).perform();
+        driver.findElement(By.id("issue-comment-add-submit")).click();
+        JiraWait.waitForProcesing(3000);
+    }
+
+
     public void wprowadzKomentarzWidocznyDlaCustomera(String komentarz) {
         WebElement sendToClientChecBox = driver.findElement(By.xpath("//*[@type='checkbox']"));
         new Actions(driver).moveToElement(poleWprowadzaniaKomentarza).sendKeys(poleWprowadzaniaKomentarza, komentarz).click(sendToClientChecBox).perform();
         driver.findElement(By.id("issue-comment-add-submit")).click();
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        JiraWait.waitForProcesing(3000);
     }
 
     public boolean verifyCommentExist(String badanyKomentarz) {
@@ -76,7 +77,6 @@ public class TaskPage extends AbstractTaskPage {
     }
 
 
-
     public EditIssuePage edytujIssue() {
         editButton.click();
         return new EditIssuePage(driver);
@@ -88,10 +88,9 @@ public class TaskPage extends AbstractTaskPage {
         JiraWait.waitForProcesing(2000);
     }
 
-    public boolean isPause(){
+    public boolean isPause() {
         return pauseIcon.isDisplayed();
     }
-
 
 
 }

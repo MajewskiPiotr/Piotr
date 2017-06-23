@@ -22,7 +22,9 @@ public class PropagacjaKomentarzy extends BaseTestClass {
     //Dane testowe
     private String issueURL;
     private String relatedIssue;
-    private String komentarz = "Komenarz DO Customera " + new Date().getTime();
+    private String komentarzWidocznyDlaCustomera = "Komenarz DO Customera " + new Date().getTime();
+    private String komentarzNieWidocznyDlaCustomera = "Komenarz Nie dla Customera " + new Date().getTime();
+
     private String nrTaska;
 
     @Test(priority = 10)
@@ -39,12 +41,13 @@ public class PropagacjaKomentarzy extends BaseTestClass {
         //Na nowo utworzonym Tasku wprowadzamy komentarz
         TaskPage relatedIssueTask = taskPage.goToRelatedIssue(relatedIssue);
         relatedIssueTask.clickOnButton(TaskButton.COMMENT);
-        relatedIssueTask.wprowadzKomentarzWidocznyDlaCustomera(komentarz);
+        relatedIssueTask.wprowadzKomentarzWidocznyDlaCustomera(komentarzWidocznyDlaCustomera);
+        relatedIssueTask.wprowadzKomentarz(komentarzNieWidocznyDlaCustomera);
 
         //Wracamy do Taska głównego i weryfikujemy czy komenarz został rozpropagowany
         relatedIssueTask.goToUrl(issueURL);
         TaskPage mainPage = new TaskPage(driver);
-        Assert.assertTrue(mainPage.verifyCommentExist(komentarz), "nie udała sie propagacja komentarzy");
+        Assert.assertTrue(mainPage.verifyCommentExist(komentarzWidocznyDlaCustomera), "nie udała sie propagacja komentarzy");
     }
 
     @Test(priority = 20)
@@ -53,6 +56,9 @@ public class PropagacjaKomentarzy extends BaseTestClass {
         CustomerServiceLoginPage customerServiceLoginPage = new CustomerServiceLoginPage(driver);
         CustomerServicePage customerServicePage = customerServiceLoginPage.logInToCustomer();
         CustomerTaskPage customerTaskPage = customerServiceLoginPage.goToTask(nrTaska);
-        Assert.assertTrue(customerTaskPage.verifyCommentExist(komentarz), "Komenarz nie został rozpropagowany do Customera");
+        //Weryfikujemy czy komentarz ustawiony jako Widoczny dla klienta jest widoczny
+        Assert.assertTrue(customerTaskPage.verifyCommentExist(komentarzWidocznyDlaCustomera), "Komenarz nie został rozpropagowany do Customera");
+        //Weryfikujemy czy wewenętrzny komentarz nie został przekazany do klienta
+        Assert.assertTrue(!customerTaskPage.verifyCommentExist(komentarzNieWidocznyDlaCustomera), "Komenarz został nie prawidłowo rozpropagowany do Customera");
     }
 }

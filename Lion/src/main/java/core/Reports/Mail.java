@@ -7,7 +7,7 @@ import java.util.Properties;
 
 public class Mail  {
 
-    public void send(String subject, String messageBody) throws MessagingException {
+    public void send(String subject, String messageBody) {
         final String username = "piotrmajewski1983@wp.pl";
         final String password = "1983";
 
@@ -29,7 +29,7 @@ public class Mail  {
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress("piotrmajewski1983@wp.pl"));
             message.setRecipients(Message.RecipientType.TO,
-                    InternetAddress.parse("piotrmajewski1983@wp.pl"));
+                    InternetAddress.parse("dreamlab-demo@evercode.home.pl"));
             message.setSubject(subject);
             message.setText(messageBody);
 
