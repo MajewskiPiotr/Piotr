@@ -46,10 +46,13 @@ public class CustomerTaskPage extends AbstractCustomerServicePage {
             }
         }
         JiraWait.waitForProcesing(2000);
+        driver.navigate().refresh();
         return exist;
     }
 
     public boolean isSlaExist() {
-        return driver.findElement(By.xpath("//*[@class='sla-tag sla-tag-ongoing ']")).isDisplayed();
+        boolean is =  driver.findElement(By.xpath("//*[contains(@class,'sla-tag')]")).isDisplayed();
+        System.out.println("czy jest element " + is );
+        return is;
     }
 }

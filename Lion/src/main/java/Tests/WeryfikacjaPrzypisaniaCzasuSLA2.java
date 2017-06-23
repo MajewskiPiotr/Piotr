@@ -20,14 +20,14 @@ import java.util.List;
  * Created by Piotr Majewski on 2017-06-08.
  */
 //test weryfikuje poprawność wyznaczenia czasu SLA na podstawie macieży ProduktClass i Category z Insight
-public class WeryfikacjaPrzypisaniaCzasuSLA extends BaseTestClass {
+// W tym tescie zostanie przypisanych wiele ProductClass
+public class WeryfikacjaPrzypisaniaCzasuSLA2 extends BaseTestClass {
     private String category;
     private List<String> productClassList = new ArrayList<>();
     private int solutionTimeFromInsight;
     private int solutionTimeFromTask;
     private String issue;
 
-    //TODO przerobić aby sprawdzenia wykonywane było na nowym przypadku
     @Test(priority = 40)
     public void generowanieBledu() {
         CustomerServiceLoginPage customerServiceLoginPage = new CustomerServiceLoginPage(driver);
@@ -45,7 +45,7 @@ public class WeryfikacjaPrzypisaniaCzasuSLA extends BaseTestClass {
         queQuePage.clickOnButton(TaskButton.HELPDESK_DISPATCHER);
         TaskPage taskPage = queQuePage.goToTask(issue);
         EditIssuePage editIssuePage = taskPage.edytujIssue();
-        editIssuePage.issueClasification();
+        editIssuePage.issueClasificationWithManyProduct();
 
 
         //pobieramy potrrzebne dane z Taska
@@ -61,7 +61,8 @@ public class WeryfikacjaPrzypisaniaCzasuSLA extends BaseTestClass {
         insightpage.clickOnButton(TaskButton.SLA);
         insightpage.switchViewToList();
         solutionTimeFromInsight = insightpage.findSolutionTime(productClassList, category);
-        System.out.println("wyniki : " + solutionTimeFromInsight);
+        System.out.println("solutionTimeFromInsight: "+ solutionTimeFromInsight);
+        System.out.println("solutionTimeFromTask: "+ solutionTimeFromTask);
 
         //weryfikacja SLA z Taska i SLA z INSIGHTA
         Assert.assertEquals(solutionTimeFromInsight, solutionTimeFromTask, "Czas SLA został wyliczony nie poprawnie");

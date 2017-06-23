@@ -3,6 +3,7 @@ package PageObjects.Base;
 import PageObjects.ServiceDesk.MainPage.DashboardPage;
 import core.ElementsOnPages.Task.*;
 import core.Tools.FindInTaskList;
+import core.Tools.JiraWait;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -108,24 +109,24 @@ public abstract class AbstractTaskPage extends AbstractJiraPage {
     }
 
     public List<String> getProductClass() {
+        JiraWait.waitForProcesing(1000);
         List<String> productClassArray = new ArrayList<>();
+
         By productclass = new By.ByXPath("//*[@id='rlabs-details']/div/div[5]//*[@class='rlabs-value']");
         if (product.size() > 0) {
-            new Actions(driver).clickAndHold(product.get(0)).perform();
+            new Actions(driver).moveToElement(product.get(0)).perform();
             String text = driver.findElement(productclass).getText();
             productClassArray.add(text);
-        } else {
+        }
+        if (productsAffected.size() > 0) {
+            driver.navigate().refresh();
+            JiraWait.waitForProcesing(2000);
             for (int i = 0; i < productsAffected.size(); i++) {
-                new Actions(driver).clickAndHold(FindInTaskList.getProductClass(productsAffected.get(i))).build().perform();
+                new Actions(driver).moveToElement(productsAffected.get(i)).build().perform();
                 productClassArray.add(driver.findElement(By.xpath(("(//*[@id='rlabs-details']/div/div[5]//*[@class='rlabs-value'])[" + (i + 1) + "]"))).getText());
-
-                productClassArray.add(driver.findElement(By.xpath(("(//*[@id='rlabs-details']/div/div[5]//*[@class='rlabs-value'])[" + (i + 1) + "]"))).getText());
-
-
             }
         }
         System.out.println("Tablica " + productClassArray.toString());
-
         return productClassArray;
     }
 

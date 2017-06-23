@@ -11,9 +11,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Random;
 
 /**
@@ -40,7 +38,8 @@ public class EditIssuePage extends AbstractJiraPage {
     protected WebElement descriptionField;
     @FindBy(id = "issuelinks-issues-textarea")
     protected WebElement issueField;
-
+    @FindBy(xpath = "//*[@id='customfield_10400-multi-select']/span")
+    protected WebElement productAffectedDropdwn;
 
     public EditIssuePage(WebDriver driver) {
         super(driver);
@@ -60,7 +59,22 @@ public class EditIssuePage extends AbstractJiraPage {
         return create();
     }
 
+    public void issueClasificationWithManyProduct() {
+        setProduct();
+        setCategory();
+        setProductAffected();
+        update();
+    }
 
+    private void setProductAffected() {
+        for (int i = 1; i < 3; i++) {
+            productAffectedDropdwn.click();
+            JiraWait.waitForProcesing(1000);
+            List<WebElement> listOdProductAfected = driver.findElements(By.xpath("//*[@id='customfield_10400-suggestions']//*[@id='showing-first-25-objects']/li"));
+            Random random = new Random();
+            listOdProductAfected.get(random.nextInt(listOdProductAfected.size() - 1)).click();
+        }
+    }
 
     //metoda uzupełnia pola randomowymi wartościami
     public void issueClasification() {
@@ -101,10 +115,8 @@ public class EditIssuePage extends AbstractJiraPage {
     private void setProduct() {
         productDropdown.click();
         List<WebElement> listOdProduct = driver.findElements(By.xpath("//*[@id='showing-first-25-objects']/*"));
-        //TODO zamienić wybieranie na Random
-        //Random random = new Random();
-        //listOdProduct.get(random.nextInt(listOdProduct.size() - 1)).click();
-        listOdProduct.get(2).click();
+        Random random = new Random();
+        listOdProduct.get(random.nextInt(listOdProduct.size() - 1)).click();
 
     }
 
@@ -124,7 +136,6 @@ public class EditIssuePage extends AbstractJiraPage {
         } else {
             productClassDropdown.click();
             productClassDropdown.sendKeys(Keys.ENTER);
-
         }
     }
 
