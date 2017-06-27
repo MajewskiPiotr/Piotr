@@ -17,7 +17,8 @@ import org.testng.annotations.Test;
  * Created by Piotr Majewski on 2017-06-20.
  */
 
-//Test weryfikuje poprawność procesu biznesowego w aplikacji
+//Test weryfikuje poprawność procesu biznesowego w aplikacji, sprawdzamy czy odpowiednio dodane komentarze są widoczne dla odpowiednich userów
+
 /*1. Zgłaszamy Bład
 2. Agent Edytuje go i nadaje SLA
 3. Odbicie zgłoszenia do klienta
@@ -51,7 +52,7 @@ public class FlowTest_Comment extends BaseTestClass {
         EditIssuePage editIssuePage = taskPage.edytujIssue();
         editIssuePage.issueClasification();
         slaTime = taskPage.getTextFromField(TaskField.SLA);
-        Assert.assertTrue(!slaTime.equals(""), "nie udało sie poprawnie obsluzyc ISSUE");
+        Assert.assertTrue(!slaTime.equals(""), "nie udało sie poprawnie utworzyć SLA dla ISSUE");
     }
 
     @Test(priority = 2)
@@ -96,7 +97,4 @@ public class FlowTest_Comment extends BaseTestClass {
         //weryfikujemy czy komentarz od Customera jest widoczny w SD
         Assert.assertTrue(taskPage.verifyCommentExist(customerComment), "Brak komentarza od Customera");
     }
-
-    //TODO zamknięcie zgłoszenia
-
 }

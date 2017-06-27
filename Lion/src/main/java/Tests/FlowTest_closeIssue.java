@@ -15,7 +15,7 @@ import org.testng.annotations.Test;
  * Created by Piotr Majewski on 2017-06-27.
  */
 
-/* Scenariusz
+/* Scenariusz weryfikuje prawidłowe ustawianie stanów po zamknięciu zadanie przez JiraSoftware
 1. utworzyć zgłoszenie _CUSTOMER
 2. zklasyfikować zgłoszenie w SD _AGENT
 3. utworzyć ISSUE w JiraSoftware (related issue) _AGENT
@@ -24,7 +24,7 @@ import org.testng.annotations.Test;
 6. moze jeszcze jakaś weryfikacja w _Cutomer
 
  */
-public class FlowTest extends BaseTestClass {
+public class FlowTest_closeIssue extends BaseTestClass {
 
     private String issueNr = "";
     private String relatedIssue = "";
@@ -33,7 +33,7 @@ public class FlowTest extends BaseTestClass {
     public void createIssue() {
         CustomerServiceLoginPage customerServiceLoginPage = new CustomerServiceLoginPage(driver);
         CustomerServicePage customerServicePage = customerServiceLoginPage.logInToCustomer();
-        issueNr = customerServicePage.zglosBlad("Bład zgłoszony Automatem, Scenariusz FlowTest", " bład został zgłoszony automatem");
+        issueNr = customerServicePage.zglosBlad("Bład zgłoszony Automatem, Scenariusz FlowTest_closeIssue", " bład został zgłoszony automatem");
     }
 
     @Test
