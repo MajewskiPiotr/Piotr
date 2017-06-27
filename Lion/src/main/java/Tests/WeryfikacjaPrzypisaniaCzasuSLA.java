@@ -27,7 +27,6 @@ public class WeryfikacjaPrzypisaniaCzasuSLA extends BaseTestClass {
     private int solutionTimeFromTask;
     private String issue;
 
-    //TODO przerobić aby sprawdzenia wykonywane było na nowym przypadku
     @Test(priority = 40)
     public void generowanieBledu() {
         CustomerServiceLoginPage customerServiceLoginPage = new CustomerServiceLoginPage(driver);

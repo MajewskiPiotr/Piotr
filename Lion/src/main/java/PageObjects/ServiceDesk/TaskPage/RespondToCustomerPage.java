@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 /**
  * Created by Piotr Majewski on 2017-06-20.
+ * Klasa odpowiada ekranowi jaki pojawia sie w momencie kliknięcie w Respond to Customer
  */
 public class RespondToCustomerPage extends PageObject {
 

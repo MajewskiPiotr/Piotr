@@ -33,12 +33,12 @@ public class PageObject {
     }
 
     public void goToUrl(String url) {
-        System.out.println("go to " + url);
-        if (url.length() == 8) {
-            driver.navigate().to(baseUrl + "/browse/" + url);
+        if (url.contains("evercode")) {
+            driver.navigate().to(url);
 
         } else {
-            driver.navigate().to(url);
+            driver.navigate().to(baseUrl + "/browse/" + url);
+
         }
 
     }

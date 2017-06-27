@@ -1,6 +1,6 @@
 package PageObjects.CustomerService;
 
-import core.Tools.JiraWait;
+import core.Tools.Tools;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -34,7 +34,7 @@ public class CustomerTaskPage extends AbstractCustomerServicePage {
     public void respondToAgent(String komentarz) {
         new Actions(driver).moveToElement(poleWprowadzaniaTekstu).click(poleWprowadzaniaTekstu).sendKeys(komentarz)
                 .moveToElement(addButton).click(addButton).perform();
-        JiraWait.waitForProcesing(4000);
+        Tools.waitForProcesing(4000);
     }
 
     public boolean verifyCommentExist(String komentarz) {
@@ -45,7 +45,7 @@ public class CustomerTaskPage extends AbstractCustomerServicePage {
                 break;
             }
         }
-        JiraWait.waitForProcesing(2000);
+        Tools.waitForProcesing(2000);
         driver.navigate().refresh();
         return exist;
     }

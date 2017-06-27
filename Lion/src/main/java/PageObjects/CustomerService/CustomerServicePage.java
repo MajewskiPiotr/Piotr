@@ -1,9 +1,5 @@
 package PageObjects.CustomerService;
 
-import PageObjects.Base.PageObject;
-import PageObjects.ServiceDesk.TaskPage.TaskPage;
-import core.Tools.Configuration.EnviromentSettings;
-import core.Tools.Configuration.TestEnviroments;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -26,6 +22,7 @@ public class CustomerServicePage extends AbstractCustomerServicePage {
     protected WebElement zgloszenieNr;
 
 
+
     public CustomerServicePage(WebDriver driver) {
         super(driver);
     }
@@ -40,6 +37,7 @@ public class CustomerServicePage extends AbstractCustomerServicePage {
         driver.navigate().to(CustomerURL);
         return nrZgloszenia;
     }
+
 
 
 }

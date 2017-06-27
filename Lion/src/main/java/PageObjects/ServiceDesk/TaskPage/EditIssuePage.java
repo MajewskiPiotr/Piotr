@@ -1,7 +1,7 @@
 package PageObjects.ServiceDesk.TaskPage;
 
 import PageObjects.Base.AbstractJiraPage;
-import core.Tools.JiraWait;
+import core.Tools.Tools;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -59,7 +59,7 @@ public class EditIssuePage extends AbstractJiraPage {
         return create();
     }
 
-    public void issueClasificationWithManyProduct() {
+    public void clasyficationIssueWithProductAffected() {
         setProduct();
         setCategory();
         setProductAffected();
@@ -69,7 +69,7 @@ public class EditIssuePage extends AbstractJiraPage {
     private void setProductAffected() {
         for (int i = 1; i < 3; i++) {
             productAffectedDropdwn.click();
-            JiraWait.waitForProcesing(1000);
+            Tools.waitForProcesing(1000);
             List<WebElement> listOdProductAfected = driver.findElements(By.xpath("//*[@id='customfield_10400-suggestions']//*[@id='showing-first-25-objects']/li"));
             Random random = new Random();
             listOdProductAfected.get(random.nextInt(listOdProductAfected.size() - 1)).click();
@@ -91,17 +91,17 @@ public class EditIssuePage extends AbstractJiraPage {
     }
 
     private void setDescription(String description) {
-        JiraWait.waitForProcesing(2000);
+        Tools.waitForProcesing(2000);
         new Actions(driver).moveToElement(descriptionField).click(descriptionField).sendKeys(description).perform();
     }
 
     private void setSummary(String s) {
-        JiraWait.waitForProcesing(2000);
+        Tools.waitForProcesing(2000);
         new Actions(driver).moveToElement(summaryField).click(summaryField).sendKeys(s).perform();
     }
 
     private void setIssueTypeDropdown(String s) {
-        JiraWait.waitForProcesing(2000);
+        Tools.waitForProcesing(2000);
         issueTypeDropdown.clear();
         issueTypeDropdown.sendKeys(s + Keys.ENTER);
 
@@ -129,7 +129,7 @@ public class EditIssuePage extends AbstractJiraPage {
     }
 
     private void setProductClass() {
-        JiraWait.waitForProcesing(2000);
+        Tools.waitForProcesing(2000);
         String SLA = driver.findElement(By.xpath("//*[@id='evercode-sla-field']")).getText();
         if (SLA.contains("none")) {
             Assert.fail("Brak zdefiniowanego Product Class dla wybranych opcji");

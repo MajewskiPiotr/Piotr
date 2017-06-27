@@ -22,8 +22,8 @@ public class PropagacjaKomentarzy extends BaseTestClass {
     //Dane testowe
     private String issueURL;
     private String relatedIssue;
-    private String komentarzWidocznyDlaCustomera = "Komenarz DO Customera " + new Date().getTime();
-    private String komentarzNieWidocznyDlaCustomera = "Komenarz Nie dla Customera " + new Date().getTime();
+    private String komentarzWidocznyDlaCustomera = "Testowy comment widoczny dla Customera " + new Date().getTime();
+    private String komentarzNieWidocznyDlaCustomera = "Testowy comment NIE widoczny dla Customera" + new Date().getTime();
 
     private String nrTaska;
 
@@ -33,7 +33,9 @@ public class PropagacjaKomentarzy extends BaseTestClass {
         ServiceDeskLoginPage serviceDeskLoginPage = new ServiceDeskLoginPage(driver);
         DashboardPage dashboardPage = serviceDeskLoginPage.loginAsAgent();
         QueQuePage queQuePage = dashboardPage.goToQueQue();
-        TaskPage taskPage = queQuePage.goToFirstTaskOnList();
+        TaskPage taskPage = queQuePage.goToTask("DLSD-331");
+
+        //Zbieram dane do kolejnych testów
         issueURL = taskPage.getUrl();
         relatedIssue = taskPage.createLinkedIssue();
         nrTaska = taskPage.getTaskNumber();
@@ -42,6 +44,7 @@ public class PropagacjaKomentarzy extends BaseTestClass {
         TaskPage relatedIssueTask = taskPage.goToRelatedIssue(relatedIssue);
         relatedIssueTask.clickOnButton(TaskButton.COMMENT);
         relatedIssueTask.wprowadzKomentarzWidocznyDlaCustomera(komentarzWidocznyDlaCustomera);
+        relatedIssueTask.clickOnButton(TaskButton.COMMENT);
         relatedIssueTask.wprowadzKomentarz(komentarzNieWidocznyDlaCustomera);
 
         //Wracamy do Taska głównego i weryfikujemy czy komenarz został rozpropagowany
@@ -61,4 +64,6 @@ public class PropagacjaKomentarzy extends BaseTestClass {
         //Weryfikujemy czy wewenętrzny komentarz nie został przekazany do klienta
         Assert.assertTrue(!customerTaskPage.verifyCommentExist(komentarzNieWidocznyDlaCustomera), "Komenarz został nie prawidłowo rozpropagowany do Customera");
     }
+
+    //TODO trzeba by jeszcze sprawdzić czy w SD są te komentarze z odpowiednimi Labelkami
 }

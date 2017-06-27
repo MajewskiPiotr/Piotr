@@ -49,7 +49,7 @@ public class MasterIncident extends BaseTestClass {
         ServiceDeskLoginPage serviceDeskLoginPage = new ServiceDeskLoginPage(driver);
         QueQuePage queQuePage = serviceDeskLoginPage.loginAsAgentAngGoToQueque();
         TaskPage masterIncidentPage = queQuePage.goToTask(masterIncident);
-        masterIncidentPage.closeIssue();
+        masterIncidentPage.resolveIssue();
         Assert.assertTrue(masterIncidentPage.checkIsRelatedIssueIsClosed(), "podrzędne issue nie zostały zamknięte");
     }
 }

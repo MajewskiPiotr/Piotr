@@ -5,7 +5,7 @@ import PageObjects.ServiceDesk.TaskPage.EditIssuePage;
 import PageObjects.ServiceDesk.TaskPage.TaskPage;
 import core.ElementsOnPages.Task.TaskButton;
 import core.Tools.FindInTaskList;
-import core.Tools.JiraWait;
+import core.Tools.Tools;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -80,7 +80,7 @@ public class QueQuePage extends AbstractJiraPage {
                 break;
             }
         }
-        JiraWait.waitForProcesing(2000);
+        Tools.waitForProcesing(2000);
 
     }
 

@@ -1,9 +1,10 @@
 package PageObjects.Base;
 
-import PageObjects.ServiceDesk.MainPage.DashboardPage;
-import core.ElementsOnPages.Task.*;
+import core.ElementsOnPages.Task.TaskButton;
+import core.ElementsOnPages.Task.TaskField;
+import core.ElementsOnPages.Task.TaskStatus;
 import core.Tools.FindInTaskList;
-import core.Tools.JiraWait;
+import core.Tools.Tools;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -38,6 +39,8 @@ public abstract class AbstractTaskPage extends AbstractJiraPage {
     protected WebElement editButton;
     @FindBy(id = "action_id_851")
     protected WebElement respondToCustomerButton;
+    @FindBy(id = "action_id_31")
+    protected WebElement doneButton;
 
     //Pola
     @FindBy(xpath = "//*[@id='rowForcustomfield_10615']//*[@class='tinylink']/*")
@@ -67,25 +70,9 @@ public abstract class AbstractTaskPage extends AbstractJiraPage {
     @FindBy(xpath = "//*[@class='links-container']/*/dd//*[@class='link-snapshot']/*")
     protected List<WebElement> relatedIssueList;
 
-
+    //Konstuktor
     public AbstractTaskPage(WebDriver driver) {
         super(driver);
-    }
-
-    public PageObject goToTab(TaskTab tab) {
-        PageObject obj = null;
-        switch (tab) {
-
-        }
-        return obj;
-    }
-
-    public AbstractTaskPage clickInLink(TaskLink link) {
-        AbstractTaskPage obj = null;
-        switch (link) {
-
-        }
-        return obj;
     }
 
     public List<String> getKomentarze() {
@@ -102,14 +89,8 @@ public abstract class AbstractTaskPage extends AbstractJiraPage {
         return taskNr.getText();
     }
 
-    public String getUserFromRole(TaskPeople people) {
-        String roleName = null;
-
-        return roleName;
-    }
-
     public List<String> getProductClass() {
-        JiraWait.waitForProcesing(1000);
+        Tools.waitForProcesing(1000);
         List<String> productClassArray = new ArrayList<>();
 
         By productclass = new By.ByXPath("//*[@id='rlabs-details']/div/div[5]//*[@class='rlabs-value']");
@@ -120,7 +101,7 @@ public abstract class AbstractTaskPage extends AbstractJiraPage {
         }
         if (productsAffected.size() > 0) {
             driver.navigate().refresh();
-            JiraWait.waitForProcesing(2000);
+            Tools.waitForProcesing(2000);
             for (int i = 0; i < productsAffected.size(); i++) {
                 new Actions(driver).moveToElement(productsAffected.get(i)).build().perform();
                 productClassArray.add(driver.findElement(By.xpath(("(//*[@id='rlabs-details']/div/div[5]//*[@class='rlabs-value'])[" + (i + 1) + "]"))).getText());
@@ -138,6 +119,11 @@ public abstract class AbstractTaskPage extends AbstractJiraPage {
                 wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='comment']")));
                 break;
             }
+            case DONE: {
+                doneButton.click();
+                wait.until(ExpectedConditions.textToBePresentInElement(status, TaskStatus.DONE.getStatus()));
+                break;
+            }
         }
     }
 
@@ -148,9 +134,6 @@ public abstract class AbstractTaskPage extends AbstractJiraPage {
         return status.getText();
     }
 
-    public DashboardPage goToDashboard() {
-        return new DashboardPage(driver);
-    }
 
     public String getTextFromField(TaskField field) {
         String textfromField = "";
@@ -188,7 +171,7 @@ public abstract class AbstractTaskPage extends AbstractJiraPage {
         return close;
     }
 
-    public void closeIssue() {
+    public void resolveIssue() {
         closeIssueButton.click();
         //wait until system show new screen with close parameters
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='issue-workflow-transition']")));
