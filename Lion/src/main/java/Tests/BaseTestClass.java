@@ -74,12 +74,9 @@ public class BaseTestClass {
 
     @BeforeClass
     public void setUpTestData() {
-
-
     }
 
     @AfterClass
     public void clean() {
-
     }
 }

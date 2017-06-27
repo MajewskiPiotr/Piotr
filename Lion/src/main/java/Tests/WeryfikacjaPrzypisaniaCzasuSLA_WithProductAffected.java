@@ -21,7 +21,7 @@ import java.util.List;
  */
 //test weryfikuje poprawność wyznaczenia czasu SLA na podstawie macieży ProduktClass i Category z Insight
 // W tym tescie zostanie przypisanych wiele ProductClass
-public class WeryfikacjaPrzypisaniaCzasuSLA2 extends BaseTestClass {
+public class WeryfikacjaPrzypisaniaCzasuSLA_WithProductAffected extends BaseTestClass {
     private String category;
     private List<String> productClassList = new ArrayList<>();
     private int solutionTimeFromInsight;
