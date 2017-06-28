@@ -18,7 +18,7 @@ import java.util.Date;
  */
 
 //Test weryfikuje czy komentarze poprawnie zostają przeniesione z Taska utworzonego w ramach zgłoszenia.
-public class PropagacjaKomentarzy extends BaseTestClass {
+public class _5_PropagacjaKomentarzy extends BaseTestClass {
     //Dane testowe
     private String issueURL;
     private String relatedIssue;
@@ -27,13 +27,13 @@ public class PropagacjaKomentarzy extends BaseTestClass {
 
     private String nrTaska;
 
-    @Test(priority = 10)
+    @Test(priority = 50)
     public void propagacjaPomiedzyZaleznymiTaskami() {
         //Z poziomu Taska założyc nowe zgłoszenie do 3 linii
         ServiceDeskLoginPage serviceDeskLoginPage = new ServiceDeskLoginPage(driver);
         DashboardPage dashboardPage = serviceDeskLoginPage.loginAsAgent();
         QueQuePage queQuePage = dashboardPage.goToQueQue();
-        TaskPage taskPage = queQuePage.goToTask("DLSD-331");
+        TaskPage taskPage = queQuePage.goToFirstTaskOnList();
 
         //Zbieram dane do kolejnych testów
         issueURL = taskPage.getUrl();
@@ -53,7 +53,7 @@ public class PropagacjaKomentarzy extends BaseTestClass {
         Assert.assertTrue(mainPage.verifyCommentExist(komentarzWidocznyDlaCustomera), "nie udała sie propagacja komentarzy");
     }
 
-    @Test(priority = 20)
+    @Test(priority = 51, dependsOnMethods = {"propagacjaPomiedzyZaleznymiTaskami"})
     public void weryfikacjaPropagacjiKomentarzyDoCustomera() {
         //Uruchamiamy aplikacje Customer i weryfikujemy czy komentarz został tam rozpropagowany
         CustomerServiceLoginPage customerServiceLoginPage = new CustomerServiceLoginPage(driver);

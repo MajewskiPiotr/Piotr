@@ -24,19 +24,19 @@ import org.testng.annotations.Test;
 6. moze jeszcze jakaś weryfikacja w _Cutomer
 
  */
-public class FlowTest_closeIssue extends BaseTestClass {
+public class _1_FlowTest_closeIssue extends BaseTestClass {
 
     private String issueNr = "";
     private String relatedIssue = "";
 
-    @Test
+    @Test(priority = 1)
     public void createIssue() {
         CustomerServiceLoginPage customerServiceLoginPage = new CustomerServiceLoginPage(driver);
         CustomerServicePage customerServicePage = customerServiceLoginPage.logInToCustomer();
-        issueNr = customerServicePage.zglosBlad("Bład zgłoszony Automatem, Scenariusz FlowTest_closeIssue", " bład został zgłoszony automatem");
+        issueNr = customerServicePage.zglosBlad("Bład zgłoszony Automatem, Scenariusz _1_FlowTest_closeIssue", " bład został zgłoszony automatem");
     }
 
-    @Test
+    @Test(priority = 2, dependsOnMethods = {"createIssue"})
     public void obsluzenieIssue() {
         ServiceDeskLoginPage serviceDeskLoginPage = new ServiceDeskLoginPage(driver);
         QueQuePage queQuePage = serviceDeskLoginPage.loginAsAgentAngGoToQueque();
@@ -49,7 +49,7 @@ public class FlowTest_closeIssue extends BaseTestClass {
         Assert.assertEquals(taskPage1.getStatus(), TaskStatus.RESOLVED.getStatus(), "Stan Issue w SD nie został ustawiony na Resolved");
     }
 
-    @Test
+    @Test(priority = 3, dependsOnMethods = {"obsluzenieIssue"})
     public void verifyStatusInCustomer() {
         CustomerServiceLoginPage customerServiceLoginPage = new CustomerServiceLoginPage(driver);
         CustomerServicePage customerServicePage = customerServiceLoginPage.logInToCustomer();

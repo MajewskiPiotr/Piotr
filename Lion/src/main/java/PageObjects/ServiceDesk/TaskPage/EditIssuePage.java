@@ -46,7 +46,7 @@ public class EditIssuePage extends AbstractJiraPage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='jira-dialog-content']")));
     }
 
-    //tworzymy MasterIncident z podanych parametrów
+    //tworzymy _4_MasterIncident z podanych parametrów
     public String createMasterIncident(String summary, String description, List<String> issue) {
         setProject("DreamLabSD (DLSD)");
         setIssueTypeDropdown("Master Incident");

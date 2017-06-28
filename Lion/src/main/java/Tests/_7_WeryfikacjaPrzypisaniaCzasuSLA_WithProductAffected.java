@@ -21,22 +21,22 @@ import java.util.List;
  */
 //test weryfikuje poprawność wyznaczenia czasu SLA na podstawie macieży ProduktClass i Category z Insight
 // W tym tescie zostanie przypisanych wiele ProductClass
-public class WeryfikacjaPrzypisaniaCzasuSLA_WithProductAffected extends BaseTestClass {
+public class _7_WeryfikacjaPrzypisaniaCzasuSLA_WithProductAffected extends BaseTestClass {
     private String category;
     private List<String> productClassList = new ArrayList<>();
     private int solutionTimeFromInsight;
     private int solutionTimeFromTask;
     private String issue;
 
-    @Test(priority = 40)
+    @Test(priority = 70)
     public void generowanieBledu() {
         CustomerServiceLoginPage customerServiceLoginPage = new CustomerServiceLoginPage(driver);
         CustomerServicePage customerServicePage = customerServiceLoginPage.logInToCustomer();
-        issue = customerServicePage.zglosBlad("Zgłoszenie błedu - Test Automatyczne - Weryfikacja Przypisania Czasu SLA", "Opis błedu dla automatu");
+        issue = customerServicePage.zglosBlad("Zgłoszenie błedu - Test Automatyczne - Weryfikacja Przypisania Czasu SLA_withProductAffected", "Opis błedu dla automatu");
         Assert.assertTrue(!issue.equals(""), "nie udało sie poprawnie obsluzyc ISSUE");
     }
 
-    @Test(priority = 41)
+    @Test(priority = 71, dependsOnMethods = {"generowanieBledu"})
     public void weryfikacjaPoprawnosciCzasuSlaTaska() {
         //logujemy sie do aplikacji i wchodzimy na zadanie
         ServiceDeskLoginPage login = new ServiceDeskLoginPage(driver);

@@ -11,16 +11,16 @@ import org.testng.annotations.Test;
 /**
  * Created by Piotr Majewski on 2017-06-23.
  */
-public class IncidentCallByEmail extends BaseTestClass {
-    private String summary = "Testowe zgłoszenie emailem z nowym adresem";
+public class _3_IncidentCallByEmail extends BaseTestClass {
+    private String summary = "Bład zgłoszony poprzez Emaila dla potrzeby Skryptów automatycznych";
 
-    @Test
+    @Test(priority = 30)
     public void callIssueViaEmail() {
         Mail mail = new Mail();
         mail.send(summary, "treść zgłoszenia");
     }
 
-    @Test
+    @Test(priority = 31)
     public void verifyThatIssueIsCreate() {
         ServiceDeskLoginPage serviceDeskLoginPage = new ServiceDeskLoginPage(driver);
         DashboardPage dashboardPage = serviceDeskLoginPage.loginAsAgent();

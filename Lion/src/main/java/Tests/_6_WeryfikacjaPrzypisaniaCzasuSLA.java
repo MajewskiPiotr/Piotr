@@ -20,14 +20,14 @@ import java.util.List;
  * Created by Piotr Majewski on 2017-06-08.
  */
 //test weryfikuje poprawność wyznaczenia czasu SLA na podstawie macieży ProduktClass i Category z Insight
-public class WeryfikacjaPrzypisaniaCzasuSLA extends BaseTestClass {
+public class _6_WeryfikacjaPrzypisaniaCzasuSLA extends BaseTestClass {
     private String category;
     private List<String> productClassList = new ArrayList<>();
     private int solutionTimeFromInsight;
     private int solutionTimeFromTask;
     private String issue;
 
-    @Test(priority = 40)
+    @Test(priority = 60)
     public void generowanieBledu() {
         CustomerServiceLoginPage customerServiceLoginPage = new CustomerServiceLoginPage(driver);
         CustomerServicePage customerServicePage = customerServiceLoginPage.logInToCustomer();
@@ -35,7 +35,7 @@ public class WeryfikacjaPrzypisaniaCzasuSLA extends BaseTestClass {
         Assert.assertTrue(!issue.equals(""), "nie udało sie poprawnie obsluzyc ISSUE");
     }
 
-    @Test(priority = 41)
+    @Test(priority = 61, dependsOnMethods = {"generowanieBledu"})
     public void weryfikacjaPoprawnosciCzasuSlaTaska() {
         //logujemy sie do aplikacji i wchodzimy na zadanie
         ServiceDeskLoginPage login = new ServiceDeskLoginPage(driver);

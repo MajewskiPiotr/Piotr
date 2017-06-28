@@ -9,7 +9,7 @@ import java.util.List;
  */
 public class Tools {
 
-    public static void waitForProcesing(long wait){
+    public static void waitForProcesing(long wait) {
         try {
             Thread.sleep(wait);
         } catch (InterruptedException e) {
@@ -18,9 +18,18 @@ public class Tools {
     }
 
     //metoda wypisujaca zawartość listy
-    public static void wypiszListe(List<WebElement> elements) {
-        for (WebElement w : elements) {
-            System.out.println(w.getText());
+    public static void wypiszListe(List elements) {
+        if (elements.equals(WebElement.class)) {
+            List<WebElement> lista = (List<WebElement>) elements;
+            for (WebElement w : lista) {
+                System.out.println(w.getText());
+            }
+        } else {
+            List<String> lista = (List<String>) elements;
+            for (String w : lista) {
+                System.out.println(w);
+            }
         }
 
-    }}
+    }
+}

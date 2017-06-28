@@ -6,6 +6,7 @@ import PageObjects.ServiceDesk.MainPage.QueQuePage;
 import PageObjects.ServiceDesk.MainPage.ServiceDeskLoginPage;
 import PageObjects.ServiceDesk.TaskPage.EditIssuePage;
 import PageObjects.ServiceDesk.TaskPage.TaskPage;
+import core.Tools.Tools;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -15,7 +16,7 @@ import java.util.List;
 /**
  * Created by Piotr Majewski on 2017-06-22.
  */
-public class MasterIncident extends BaseTestClass {
+public class _4_MasterIncident extends BaseTestClass {
     /* Test weryfikuje propagowanie zamykania się podrzędnych zgłoszeń
     1. Zgłosić 2 błedy jako Cutomer
     2. Jako Agent utworzyć Master Incident i do niego podłączyć uprzednio utworzone błędy.
@@ -26,25 +27,26 @@ public class MasterIncident extends BaseTestClass {
     private List<String> relatedoIssue = new ArrayList<>();
 
 
-    @Test(priority = 10)
+    @Test(priority = 40)
     public void createIssue() {
         CustomerServiceLoginPage customerServiceLoginPage = new CustomerServiceLoginPage(driver);
         CustomerServicePage customerServicePage = customerServiceLoginPage.logInToCustomer();
-        relatedoIssue.add(customerServicePage.zglosBlad("Nie dziala TURBOBomba1", "problem z serwisem turbo"));
-        relatedoIssue.add(customerServicePage.zglosBlad("Nie dziala TURBOBomba2", "problem z serwisem turbo"));
-        relatedoIssue.add(customerServicePage.zglosBlad("Nie dziala TURBOBomba3", "problem z serwisem turbo"));
+        relatedoIssue.add(customerServicePage.zglosBlad("Bład zgłoszony Automatem, Scenariusz MasterIncident_zgłoszenie1", "problem z serwisem turbo"));
+        relatedoIssue.add(customerServicePage.zglosBlad("Bład zgłoszony Automatem, Scenariusz MasterIncident_zgłoszenie2", "problem z serwisem turbo"));
+        relatedoIssue.add(customerServicePage.zglosBlad("Bład zgłoszony Automatem, Scenariusz MasterIncident_zgłoszenie1", "problem z serwisem turbo"));
+        Tools.wypiszListe(relatedoIssue);
     }
 
-    @Test(priority = 11, dependsOnMethods = {"createIssue"})
+    @Test(priority = 41, dependsOnMethods = {"createIssue"})
     public void createMasterIncident() {
         ServiceDeskLoginPage serviceDeskLoginPage = new ServiceDeskLoginPage(driver);
         QueQuePage queQuePage = serviceDeskLoginPage.loginAsAgentAngGoToQueque();
         EditIssuePage masterIncidentPage = queQuePage.createIssue();
-        masterIncident = masterIncidentPage.createMasterIncident("testowe Summary", "testowy opis", relatedoIssue);
+        masterIncident = masterIncidentPage.createMasterIncident("Błąd zgłoszony automatem - Master Inciddent", "testowy opis", relatedoIssue);
         Assert.assertTrue(masterIncident != "", "nie udało się utworzyć Master Incidenta");
     }
 
-    @Test(priority = 12, dependsOnMethods = {"createMasterIncident"})
+    @Test(priority = 42, dependsOnMethods = {"createMasterIncident"})
     public void masterIncidentFlow() {
         ServiceDeskLoginPage serviceDeskLoginPage = new ServiceDeskLoginPage(driver);
         QueQuePage queQuePage = serviceDeskLoginPage.loginAsAgentAngGoToQueque();

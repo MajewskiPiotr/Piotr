@@ -26,22 +26,22 @@ import org.testng.annotations.Test;
 5. Agent weryfikuje otrzymanie Wiadomości
 6.
  */
-public class FlowTest_Comment extends BaseTestClass {
+public class _2_FlowTest_Comment extends BaseTestClass {
     private String issueNr = "";
     private String slaTime = "";
     private String agentComment = "Komentarz do Customera";
     private String customerComment = "komentarz do Agenta";
 
-    @Test(priority = 0)
+    @Test(priority = 20)
     public void utworzZgloszenieByCustomer() {
         //Zalogować się do Systemu wystawionego dla klienta i zglosić błąd
         CustomerServiceLoginPage customerServiceLoginPage = new CustomerServiceLoginPage(driver);
         CustomerServicePage customerServicePage = customerServiceLoginPage.logInToCustomer();
-        issueNr = customerServicePage.zglosBlad("Nie dziala TURBO", "problem z serwisem");
+        issueNr = customerServicePage.zglosBlad("Bład zgłoszony Automatem, Scenariusz _2_FlowTest_Comment", "problem z serwisem");
         Assert.assertTrue(!issueNr.equals(""), "nie udało się utworzyć zgłoszenia w Systemie Customer");
     }
 
-    @Test(priority = 1, dependsOnMethods = {"utworzZgloszenieByCustomer"})
+    @Test(priority = 21, dependsOnMethods = {"utworzZgloszenieByCustomer"})
     public void obslugaPrzezAgenta() {
         //zalogować się do ServiceDeska i wybrać utworzony wcześniej Task
         ServiceDeskLoginPage serviceDeskLoginPage = new ServiceDeskLoginPage(driver);
@@ -55,7 +55,7 @@ public class FlowTest_Comment extends BaseTestClass {
         Assert.assertTrue(!slaTime.equals(""), "nie udało sie poprawnie utworzyć SLA dla ISSUE");
     }
 
-    @Test(priority = 2)
+    @Test(priority = 22, dependsOnMethods = {"obslugaPrzezAgenta"})
     //odbicie zgłoszenia do Customera
     public void AgentSendMessageToCustomer() {
 
@@ -72,7 +72,7 @@ public class FlowTest_Comment extends BaseTestClass {
         Assert.assertEquals(taskPage.getStatus(), TaskStatus.WAITING_FOR_CUSTOMER.getStatus());
     }
 
-    @Test(priority = 3)
+    @Test(priority = 23, dependsOnMethods = {"AgentSendMessageToCustomer"})
     public void CustomerSendMessageToAgent() {
         //Zalogowac się jako Customer i przejść do zgłoszenia
         //odpowiedzieć na pytanie od Agenta.
@@ -88,7 +88,7 @@ public class FlowTest_Comment extends BaseTestClass {
         Assert.assertEquals(customerTaskPage.getStatus(), TaskStatus.WAITING_FOR_SUPPORT.getStatus());
     }
 
-    @Test(priority = 4)
+    @Test(priority = 24, dependsOnMethods = {"CustomerSendMessageToAgent"})
     public void verifyMessageFromCustomer() {
         ServiceDeskLoginPage serviceDeskLoginPage = new ServiceDeskLoginPage(driver);
         DashboardPage dashboardPage = serviceDeskLoginPage.loginAsAgent();
