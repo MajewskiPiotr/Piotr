@@ -6,6 +6,7 @@ import core.ElementsOnPages.Task.TaskStatus;
 import core.Tools.FindInTaskList;
 import core.Tools.Tools;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -135,7 +136,7 @@ public abstract class AbstractTaskPage extends AbstractJiraPage {
     }
 
 
-    public String getTextFromField(TaskField field) {
+    public String getTextFromField(TaskField field)  {
         String textfromField = "";
         switch (field) {
             case Product: {
@@ -147,11 +148,15 @@ public abstract class AbstractTaskPage extends AbstractJiraPage {
                 break;
             }
             case SLA: {
-                String s = sla.getText();
-                textfromField = s.substring(s.indexOf(" ")).replace(" ", "").replace("h", "");
+                try {
+                    String s = sla.getText();
+                    textfromField = s.substring(s.indexOf(" ")).replace(" ", "").replace("h", "");
+                    break;
+                }
+                catch (NoSuchElementException exception){
+                    Assert.fail("wybrane produkty nie mają sklasyfikowanego SLA");
+                }
 
-
-                break;
             }
         }
         return textfromField;
@@ -181,4 +186,5 @@ public abstract class AbstractTaskPage extends AbstractJiraPage {
         wait.until(ExpectedConditions.textToBePresentInElement(status, TaskStatus.CLOSED.getStatus()));
         driver.navigate().refresh();
     }
+
 }

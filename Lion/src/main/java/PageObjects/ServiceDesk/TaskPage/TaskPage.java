@@ -20,7 +20,7 @@ public class TaskPage extends AbstractTaskPage {
     @FindBy(id = "summary-val")
     protected WebElement summary;
     //TODO z tego zrobić liste albo coś :)
-    @FindBy(xpath = "//*[@class='sd-comment-secondary-details']")
+    @FindBy(xpath = "//span[contains(@class,'evercode-label-comment')]")
     protected WebElement commentLabel;
 
     //Konstruktor
@@ -39,6 +39,7 @@ public class TaskPage extends AbstractTaskPage {
         new Actions(driver).click(moreButton).click(createLinkedIssueButton).perform();
         CreateLinkedIssue createissueLink = new CreateLinkedIssue(driver);
         createissueLink.setProject();
+        createissueLink.setIssueType();
         createissueLink.setCousedBy();
         createissueLink.setSoftwareTeam();
         createissueLink.create();
@@ -52,17 +53,22 @@ public class TaskPage extends AbstractTaskPage {
         return new TaskPage(driver);
     }
 
-    public void wprowadzKomentarz(String komentarz) {
+    public String wprowadzKomentarz(String komentarz) {
         new Actions(driver).moveToElement(poleWprowadzaniaKomentarza).sendKeys(poleWprowadzaniaKomentarza, komentarz).perform();
         driver.findElement(By.id("issue-comment-add-submit")).click();
         Tools.waitForProcesing(3000);
+        driver.navigate().refresh();
+        return getLabel(komentarz);
     }
 
-    public void wprowadzKomentarzWidocznyDlaCustomera(String komentarz) {
+
+    public String wprowadzKomentarzWidocznyDlaCustomera(String komentarz) {
         WebElement sendToClientChecBox = driver.findElement(By.xpath("//*[@type='checkbox']"));
         new Actions(driver).moveToElement(poleWprowadzaniaKomentarza).sendKeys(poleWprowadzaniaKomentarza, komentarz).click(sendToClientChecBox).perform();
         driver.findElement(By.id("issue-comment-add-submit")).click();
         Tools.waitForProcesing(3000);
+        driver.navigate().refresh();
+        return getLabel(komentarz);
     }
 
     public boolean verifyCommentExist(String badanyKomentarz) {
@@ -93,6 +99,15 @@ public class TaskPage extends AbstractTaskPage {
 
     public String getSummary() {
         return summary.getText();
+    }
+
+    private String getLabel(String komentarz) {
+        String comment = komentarz;
+        WebElement label = driver.findElement(By.xpath("//div[contains(@class,'twixi-wrap')]//p[text()='" + comment + "']/../../..//span[contains(@class,'evercode-label-comment')]"));
+        System.out.println(label.getText()+ "  taka jest labelka");
+        return label.getText();
+
+
     }
 
 

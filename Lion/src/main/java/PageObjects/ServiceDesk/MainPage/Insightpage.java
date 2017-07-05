@@ -53,7 +53,7 @@ public class Insightpage extends AbstractJiraPage {
 
     //Funckcja na podstawie parametrów wyszukuje najbardziej restrykcyjne SLA
     public int findSolutionTime(List<String> productClassList, String category) {
-        int minSlaTime=10000;
+        int minSlaTime=1000000;
         List<WebElement> tempList = new ArrayList<>();
 
         //filtrowanie macierz po categorii

@@ -65,6 +65,9 @@ public class _7_WeryfikacjaPrzypisaniaCzasuSLA_WithProductAffected extends BaseT
         System.out.println("solutionTimeFromTask: "+ solutionTimeFromTask);
 
         //weryfikacja SLA z Taska i SLA z INSIGHTA
+        //weryfikujemy czy udało sie ustawić slaTime
+        if(solutionTimeFromInsight==1000000){Assert.fail("Produkty przypisane do Issue nie posiadają ustawionych ProductClass w Insigth");}
+        //weryfikujmy czy został ustawiony prawidłowy SlA
         Assert.assertEquals(solutionTimeFromInsight, solutionTimeFromTask, "Czas SLA został wyliczony nie poprawnie");
     }
 }
