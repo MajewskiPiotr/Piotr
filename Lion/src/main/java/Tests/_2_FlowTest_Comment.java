@@ -8,6 +8,7 @@ import PageObjects.ServiceDesk.MainPage.QueQuePage;
 import PageObjects.ServiceDesk.MainPage.ServiceDeskLoginPage;
 import PageObjects.ServiceDesk.TaskPage.EditIssuePage;
 import PageObjects.ServiceDesk.TaskPage.TaskPage;
+import core.ElementsOnPages.CommentLabel;
 import core.ElementsOnPages.Task.TaskField;
 import core.ElementsOnPages.Task.TaskStatus;
 import org.testng.Assert;
@@ -67,7 +68,7 @@ public class _2_FlowTest_Comment extends BaseTestClass {
         TaskPage taskPage = queQuePage.goToTask(issueNr);
         Assert.assertEquals(taskPage.getStatus(), TaskStatus.WAITING_FOR_SUPPORT.getStatus(), "stan ISSUE uniemożliwia przekazanie odpowiedzi do Customera");
         taskPage.respondToCustomer(agentComment);
-        //TODO zweryfikowac czy Labelka komentarza jest prawidłowa
+        Assert.assertEquals(CommentLabel.TO_CUSTOMER.getLabel(), taskPage.getLabel(agentComment), "Nie prawidłowa Labelka na komentarzu");
         Assert.assertTrue(taskPage.isPause(), "Issue nie zostało zapauzowane");
         Assert.assertEquals(taskPage.getStatus(), TaskStatus.WAITING_FOR_CUSTOMER.getStatus());
     }
@@ -96,5 +97,9 @@ public class _2_FlowTest_Comment extends BaseTestClass {
         TaskPage taskPage = queQuePage.goToTask(issueNr);
         //weryfikujemy czy komentarz od Customera jest widoczny w SD
         Assert.assertTrue(taskPage.verifyCommentExist(customerComment), "Brak komentarza od Customera");
+        //TODO weryfikacja poprawności Labelki
+        //!!!!!!!!!! Jaka ma być oczekiwana Labelka
+        Assert.assertEquals(CommentLabel.TO_CUSTOMER.getLabel(), taskPage.getLabel(customerComment), "Nie prawidłowa Labelka na komentarzu");
+
     }
 }

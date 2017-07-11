@@ -4,6 +4,7 @@ package core.ElementsOnPages.Task;
  * Created by Piotr Majewski on 2017-05-16.
  */
 @Deprecated
+//Stara klasa TaskButton używane w LionBride
 public class OLDTaskStatus {
     public static final String ACCEPTED = "ACCEPTED";
     public static final String UNAVAILABLE = "UNAVAILABLE";

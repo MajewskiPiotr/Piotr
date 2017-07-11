@@ -4,17 +4,19 @@ package core.ElementsOnPages;
  * Created by Piotr Majewski on 2017-06-26.
  */
 public enum CommentLabel {
-    INTERNAL("INTERNAL");
+    INTERNAL("INTERNAL"),
+    TO_CUSTOMER("TO CUSTOMER");
 
-    private String opis;
+
+    private String label;
 
 
-    CommentLabel(String opis) {
-        this.opis = opis;
+    CommentLabel(String label) {
+        this.label = label;
     }
 
-    public String getOpis() {
-        return opis;
+    public String getLabel() {
+        return label;
     }
 }
 

@@ -62,13 +62,12 @@ public class TaskPage extends AbstractTaskPage {
     }
 
 
-    public String wprowadzKomentarzWidocznyDlaCustomera(String komentarz) {
+    public void wprowadzKomentarzWidocznyDlaCustomera(String komentarz) {
         WebElement sendToClientChecBox = driver.findElement(By.xpath("//*[@type='checkbox']"));
         new Actions(driver).moveToElement(poleWprowadzaniaKomentarza).sendKeys(poleWprowadzaniaKomentarza, komentarz).click(sendToClientChecBox).perform();
         driver.findElement(By.id("issue-comment-add-submit")).click();
         Tools.waitForProcesing(3000);
         driver.navigate().refresh();
-        return getLabel(komentarz);
     }
 
     public boolean verifyCommentExist(String badanyKomentarz) {
@@ -101,7 +100,7 @@ public class TaskPage extends AbstractTaskPage {
         return summary.getText();
     }
 
-    private String getLabel(String komentarz) {
+    public String getLabel(String komentarz) {
         String comment = komentarz;
         WebElement label = driver.findElement(By.xpath("//div[contains(@class,'twixi-wrap')]//p[text()='" + comment + "']/../../..//span[contains(@class,'evercode-label-comment')]"));
         System.out.println(label.getText()+ "  taka jest labelka");
