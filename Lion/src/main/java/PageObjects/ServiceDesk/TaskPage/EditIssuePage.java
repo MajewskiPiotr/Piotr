@@ -22,7 +22,7 @@ public class EditIssuePage extends AbstractJiraPage {
     protected WebElement updateButton;
     @FindBy(xpath = "//*[@id='create-issue-submit']")
     protected WebElement createButton;
-    @FindBy(id = "customfield_10615-field")
+    @FindBy(xpath = "//*[@class='field-group']//label[text()='Product']/..//div/input")
     protected WebElement productDropdown;
     @FindBy(id = "customfield_10401-field")
     protected WebElement categoryDropdown;
