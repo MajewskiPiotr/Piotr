@@ -35,14 +35,14 @@ public class BaseTestClass {
     @BeforeMethod
     public void setUp() {
         EnviromentSettings enviromentSettings = new EnviromentSettings();
-        enviromentSettings.SetTestEnviroment(TestEnviroments.STAGE1);
+        enviromentSettings.SetTestEnviroment(TestEnviroments.LOKAL_JAKUB);
         driver = enviromentSettings.setUpDriver(BrowserType.CHROME);
     }
 
 
     @AfterMethod
     public void tearDown() {
-     //   driver.close();
+        driver.close();
     }
     public static WebDriver getDriver() {
 
