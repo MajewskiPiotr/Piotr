@@ -50,6 +50,7 @@ public class _2_FlowTest_Comment extends BaseTestClass {
         QueQuePage queQuePage = dashboardPage.goToQueQue();
         TaskPage taskPage = queQuePage.goToTask(issueNr);
         Assert.assertEquals(issueNr, taskPage.getTaskNumber(), "nie udało się pobrać odpowiedniego zadania do testów");
+
         EditIssuePage editIssuePage = taskPage.edytujIssue();
         editIssuePage.issueClasification();
         slaTime = taskPage.getTextFromField(TaskField.SLA);

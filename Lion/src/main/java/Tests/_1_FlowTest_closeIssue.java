@@ -36,11 +36,11 @@ public class _1_FlowTest_closeIssue extends BaseTestClass {
         issueNr = customerServicePage.zglosBlad("Bład zgłoszony Automatem, Scenariusz _1_FlowTest_closeIssue", " bład został zgłoszony automatem");
     }
 
-    @Test(priority = 2, dependsOnMethods = {"createIssue"})
+    @Test(priority = 2)// dependsOnMethods = {"createIssue"})
     public void obsluzenieIssue() {
         ServiceDeskLoginPage serviceDeskLoginPage = new ServiceDeskLoginPage(driver);
         QueQuePage queQuePage = serviceDeskLoginPage.loginAsAgentAngGoToQueque();
-        TaskPage taskPage = queQuePage.goToTask(issueNr);
+        TaskPage taskPage = queQuePage.goToTask("DLSD-54");
         relatedIssue = taskPage.createLinkedIssue();
         TaskPage relatedIssue = taskPage.goToRelatedIssue(this.relatedIssue);
         relatedIssue.clickOnButton(TaskButton.DONE);

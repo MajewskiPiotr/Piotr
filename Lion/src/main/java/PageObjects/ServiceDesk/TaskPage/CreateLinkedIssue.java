@@ -34,8 +34,6 @@ public class CreateLinkedIssue extends PageObject {
     @FindBy(id = "create-issue-submit")
     protected WebElement createButton;
 
-    @FindBy(xpath = "//*[@id='customfield_10702-suggestions']//*[@id='all-objects']/*")
-    protected List<WebElement> softwareTeamList;
 
     @FindBy(xpath = "//*[@id='issuelinks-linktype']")
     protected WebElement couseList;
@@ -64,9 +62,14 @@ public class CreateLinkedIssue extends PageObject {
 
 
     public void setSoftwareTeam() {
-        driver.findElement(By.xpath("//*[@id='customfield_10702-field']")).click();
-        Random random = new Random();
-        softwareTeamList.get(random.nextInt(softwareTeamList.size() - 1)).click();
+
+        WebElement dropdown = driver.findElement(By.xpath("//*[@class='field-group']//label[text()='Software Team']/..//div/input"));
+        dropdown.click();
+       //Random random = new Random();
+        Tools.waitForProcesing(2000);
+        driver.findElement(By.xpath("../div//*[@id='all-objects']/*"));
+        List<WebElement> lista = dropdown.findElements(By.xpath("/../div//*[@id='all-objects']/*"));
+        System.out.println(lista.toString());
     }
 
     public void create() {
@@ -81,8 +84,8 @@ public class CreateLinkedIssue extends PageObject {
     }
 
     public void setIssueType() {
-       // issueType.click();
-      //  issueType.sendKeys("Task" + Keys.ENTER);
+        // issueType.click();
+        //  issueType.sendKeys("Task" + Keys.ENTER);
         Tools.waitForProcesing(2000);
 
     }

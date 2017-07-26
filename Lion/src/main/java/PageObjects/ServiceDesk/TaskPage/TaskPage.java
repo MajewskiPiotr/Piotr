@@ -38,9 +38,11 @@ public class TaskPage extends AbstractTaskPage {
     public String createLinkedIssue() {
         new Actions(driver).click(moreButton).click(createLinkedIssueButton).perform();
         CreateLinkedIssue createissueLink = new CreateLinkedIssue(driver);
-        createissueLink.setProject();
+        //projekt teraz wybierany automatycznie
+        //createissueLink.setProject();
         createissueLink.setIssueType();
-        createissueLink.setCousedBy();
+        //wybiera sie teraz automatycznie
+        //createissueLink.setCousedBy();
         createissueLink.setSoftwareTeam();
         createissueLink.create();
         String relatedLink = getNewCreatedIssueNumber();

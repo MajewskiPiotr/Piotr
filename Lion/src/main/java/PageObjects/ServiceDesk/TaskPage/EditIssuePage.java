@@ -24,7 +24,7 @@ public class EditIssuePage extends AbstractJiraPage {
     protected WebElement createButton;
     @FindBy(xpath = "//*[@class='field-group']//label[text()='Product']/..//div/input")
     protected WebElement productDropdown;
-    @FindBy(id = "customfield_10401-field")
+    @FindBy(id = "//*[@class='field-group']//label[text()='Category']/..//div/input")
     protected WebElement categoryDropdown;
     @FindBy(id = "customfield_10614-field")
     protected WebElement productClassDropdown;

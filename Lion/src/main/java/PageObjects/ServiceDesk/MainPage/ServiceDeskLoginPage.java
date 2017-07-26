@@ -49,11 +49,11 @@ public class ServiceDeskLoginPage extends PageObject {
     }
 
     public DashboardPage loginAsAgent() {
-        login("evercode_pmajewski", "2?Zz?3!8");
+        login("evercode_pmajewski", "q@!@e#U5");
         return new DashboardPage(driver);
     }
     public QueQuePage loginAsAgentAngGoToQueque() {
-        login("evercode_pmajewski", "2?Zz?3!8");
+        login("evercode_pmajewski", "q@!@e#U5");
         return new QueQuePage(driver);
     }
 
