@@ -27,7 +27,8 @@ public class Insightpage extends AbstractJiraPage {
 
     public Insightpage(WebDriver driver) {
         super(driver);
-        driver.navigate().to(baseUrl + "/secure/ObjectSchema.jspa?id=1");
+        driver.navigate().to(baseUrl + "secure/ObjectSchema.jspa?id=1");
+        System.out.println("LOG: otwieram INSIGHT");
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='rlabs-actions-object-filter-button']")));
     }
 

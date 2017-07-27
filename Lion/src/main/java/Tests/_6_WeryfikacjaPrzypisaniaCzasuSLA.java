@@ -25,17 +25,17 @@ public class _6_WeryfikacjaPrzypisaniaCzasuSLA extends BaseTestClass {
     private List<String> productClassList = new ArrayList<>();
     private int solutionTimeFromInsight;
     private int solutionTimeFromTask;
-    private String issue;
+    private String issue="DLSD-95";
 
     @Test(priority = 60)
     public void generowanieBledu() {
         CustomerServiceLoginPage customerServiceLoginPage = new CustomerServiceLoginPage(driver);
         CustomerServicePage customerServicePage = customerServiceLoginPage.logInToCustomer();
-        issue = customerServicePage.zglosBlad("Zgłoszenie błedu - Test Automatyczne - Weryfikacja Przypisania Czasu SLA", "Opis błedu dla automatu");
+        issue = customerServicePage.zglosBlad("Zgłoszenie błedu - Testy Automatyczne - Weryfikacja Przypisania Czasu SLA", "Opis błedu dla automatu");
         Assert.assertTrue(!issue.equals(""), "nie udało sie poprawnie obsluzyc ISSUE");
     }
 
-    @Test(priority = 61, dependsOnMethods = {"generowanieBledu"})
+    @Test(priority = 61)//, dependsOnMethods = {"generowanieBledu"})
     public void weryfikacjaPoprawnosciCzasuSlaTaska() {
         //logujemy sie do aplikacji i wchodzimy na zadanie
         ServiceDeskLoginPage login = new ServiceDeskLoginPage(driver);
@@ -43,15 +43,15 @@ public class _6_WeryfikacjaPrzypisaniaCzasuSLA extends BaseTestClass {
         QueQuePage queQuePage = dashboardPage.goToQueQue();
         queQuePage.clickOnButton(TaskButton.HELPDESK_DISPATCHER);
         TaskPage taskPage = queQuePage.goToTask(issue);
-        EditIssuePage editIssuePage = taskPage.edytujIssue();
-        editIssuePage.issueClasification();
+        //EditIssuePage editIssuePage = taskPage.edytujIssue();
+        //editIssuePage.issueClasification();
 
 
         //pobieramy potrrzebne dane z Taska
         productClassList = taskPage.getProductClass();
         category = taskPage.getTextFromField(TaskField.Category);
         solutionTimeFromTask = Integer.parseInt(taskPage.getTextFromField(TaskField.SLA));
-
+        System.out.println(" zebrałem dane : productClassList" + productClassList.toString() +" category " + category.toString() + "  solutionTimeFromTask "+solutionTimeFromTask);
 
         //Przechodzimy do insight i sprawdzamy jakie SLA popwinno mieć zgłoszenie o podanych parametrach
         DashboardPage dashboardPage1 = taskPage.goToDashboard();

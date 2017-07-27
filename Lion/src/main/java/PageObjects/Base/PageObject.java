@@ -33,11 +33,11 @@ public class PageObject {
     }
 
     public void goToUrl(String url) {
-        if (url.contains("evercode")) {
+        if (url.contains("evercode")|| url.contains("onet")) {
             driver.navigate().to(url);
 
         } else {
-            driver.navigate().to(baseUrl + "/browse/" + url);
+            driver.navigate().to(baseUrl + "browse/" + url);
 
         }
 

@@ -1,7 +1,6 @@
 package PageObjects.ServiceDesk.TaskPage;
 
 import PageObjects.Base.AbstractTaskPage;
-import core.Tools.Configuration.TestEnviroments;
 import core.Tools.Tools;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -51,7 +50,7 @@ public class TaskPage extends AbstractTaskPage {
     }
 
     public TaskPage goToRelatedIssue(String url) {
-        goToUrl(TestEnviroments.STAGE1 + "/browse/" + url);
+        goToUrl(url);
         return new TaskPage(driver);
     }
 
@@ -91,6 +90,7 @@ public class TaskPage extends AbstractTaskPage {
         respondToCustomerButton.click();
         new RespondToCustomerPage(driver).przekazDoCustomera(komentarz);
         Tools.waitForProcesing(2000);
+        driver.navigate().refresh();
         //TODO zweryfikować czy labelka sie ustawiła
     }
 
@@ -105,7 +105,7 @@ public class TaskPage extends AbstractTaskPage {
     public String getLabel(String komentarz) {
         String comment = komentarz;
         WebElement label = driver.findElement(By.xpath("//div[contains(@class,'twixi-wrap')]//p[text()='" + comment + "']/../../..//span[contains(@class,'evercode-label-comment')]"));
-        System.out.println(label.getText()+ "  taka jest labelka");
+        System.out.println(label.getText() + "  taka jest labelka");
         return label.getText();
 
 

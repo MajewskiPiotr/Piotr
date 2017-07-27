@@ -44,11 +44,13 @@ public abstract class AbstractTaskPage extends AbstractJiraPage {
     protected WebElement doneButton;
 
     //Pola
-    @FindBy(xpath = "//*[@id='rowForcustomfield_10615']//*[@class='tinylink']/*")
+    //@FindBy(xpath = "//*[@class='wrap']/*[@title='Product']/../div/div")
+
+    @FindBy(xpath = "//*[@id='customfield_12718-val']")
     protected List<WebElement> product;
-    @FindBy(xpath = "//*[@id='customfield_10401-val']")
+    @FindBy(xpath = "//*[@class='wrap']/*[@title='Category']/../div")
     protected WebElement category;
-    @FindBy(xpath = "//*[@id='customfield_10400-val']/div")
+    @FindBy(xpath = "//*[@class='wrap']/*[@title='Products Affected']/../div/div")
     protected List<WebElement> productsAffected;
     @FindBy(xpath = "//*[@class='sla-view-info']/div[text()='Time to resolution']/../div[2]")
     protected WebElement sla;
@@ -91,11 +93,12 @@ public abstract class AbstractTaskPage extends AbstractJiraPage {
     }
 
     public List<String> getProductClass() {
-        Tools.waitForProcesing(1000);
+        Tools.waitForProcesing(2000);
         List<String> productClassArray = new ArrayList<>();
 
         By productclass = new By.ByXPath("//*[@id='rlabs-details']/div/div[5]//*[@class='rlabs-value']");
         if (product.size() > 0) {
+            Tools.waitForProcesing(2000);
             new Actions(driver).moveToElement(product.get(0)).perform();
             String text = driver.findElement(productclass).getText();
             productClassArray.add(text);

@@ -40,6 +40,7 @@ public class DashboardPage extends AbstractJiraPage {
         return new ProfilePage(driver);
     }
     public Insightpage goToInsightPage(){
+
         return new Insightpage(driver);
     }
 

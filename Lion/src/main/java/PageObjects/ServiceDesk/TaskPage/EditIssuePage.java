@@ -24,9 +24,9 @@ public class EditIssuePage extends AbstractJiraPage {
     protected WebElement createButton;
     @FindBy(xpath = "//*[@class='field-group']//label[text()='Product']/..//div/input")
     protected WebElement productDropdown;
-    @FindBy(id = "//*[@class='field-group']//label[text()='Category']/..//div/input")
+    @FindBy(xpath = "//*[@class='field-group']//label[text()='Category']/..//div/input")
     protected WebElement categoryDropdown;
-    @FindBy(id = "customfield_10614-field")
+    @FindBy(xpath = "//*[@class='field-group']//label[text()='Product Class']/..//div/input")
     protected WebElement productClassDropdown;
     @FindBy(id = "project-field")
     protected WebElement projectDropdown;
@@ -112,15 +112,20 @@ public class EditIssuePage extends AbstractJiraPage {
         projectDropdown.sendKeys(s + Keys.ENTER);
     }
 
+
     private void setProduct() {
         productDropdown.click();
         List<WebElement> listOdProduct = driver.findElements(By.xpath("//*[@id='showing-first-25-objects']/*"));
         Random random = new Random();
-        listOdProduct.get(random.nextInt(listOdProduct.size() - 1)).click();
+        //listOdProduct.get(random.nextInt(listOdProduct.size() - 1)).click();
+        // TODO  testowo na potrzeby testów ustawiam na stałe (do czasu uzupełnienia Product Class )
+        listOdProduct.get(2).click();
+
 
     }
 
     private void setCategory() {
+        Tools.waitForProcesing(2000);
         categoryDropdown.click();
         List<WebElement> listOfCategory = driver.findElements(By.xpath("//*[@id='all-objects']/*"));
         Random random = new Random();
@@ -135,14 +140,14 @@ public class EditIssuePage extends AbstractJiraPage {
             Assert.fail("Brak zdefiniowanego Product Class dla wybranych opcji");
         } else {
             productClassDropdown.click();
-            productClassDropdown.sendKeys(Keys.ENTER);
+            Tools.waitForProcesing(1000);
+            productClassDropdown.sendKeys(Keys.ARROW_DOWN ,Keys.ENTER);
         }
     }
 
     private void update() {
         updateButton.click();
-        //czekam na zamknięcie sie okna z edycją Issue
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='descriptionmodule_heading']")));
+        //TODO wymysleć lepsze czekanie na update issue
     }
 
     private String create() {

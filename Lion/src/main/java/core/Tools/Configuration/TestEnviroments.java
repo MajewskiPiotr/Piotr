@@ -6,7 +6,7 @@ package core.Tools.Configuration;
 public class TestEnviroments {
 
     public static final String STAGE1 = "http://jira-dev.grupa.onet/";
-    public static final String CUSTOMER = "http://jira-dev.grupa.onet/servicedesk/customer/portal/1";
+    public static final String CUSTOMER = "http://jira-dev.grupa.onet/servicedesk/customer/portal/1/";
 
 
 
