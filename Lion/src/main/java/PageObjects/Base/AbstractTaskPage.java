@@ -50,8 +50,8 @@ public abstract class AbstractTaskPage extends AbstractJiraPage {
     protected List<WebElement> product;
     @FindBy(xpath = "//*[@class='wrap']/*[@title='Category']/../div")
     protected WebElement category;
-    //TODO Pole PRODUCT przy zmianie środowiska nalezy zmienić ten CF
-    @FindBy(xpath = "//*[@class='wrap']/*[@title='Products Affected']/../div/div")
+    //TODO Pole PRODUCT Affected przy zmianie środowiska nalezy zmienić ten CF
+    @FindBy(xpath = "//*[@id='customfield_12720-val']/div")
     protected List<WebElement> productsAffected;
     @FindBy(xpath = "//*[@class='sla-view-info']/div[text()='Time to resolution']/../div[2]")
     protected WebElement sla;
@@ -94,6 +94,7 @@ public abstract class AbstractTaskPage extends AbstractJiraPage {
     }
 
     public List<String> getProductClass() {
+        driver.navigate().refresh();
         Tools.waitForProcesing(2000);
         List<String> productClassArray = new ArrayList<>();
 
@@ -105,11 +106,12 @@ public abstract class AbstractTaskPage extends AbstractJiraPage {
             productClassArray.add(text);
         }
         if (productsAffected.size() > 0) {
-            driver.navigate().refresh();
             Tools.waitForProcesing(2000);
             for (int i = 0; i < productsAffected.size(); i++) {
                 new Actions(driver).moveToElement(productsAffected.get(i)).build().perform();
-                productClassArray.add(driver.findElement(By.xpath(("(//*[@id='rlabs-details']/div/div[5]//*[@class='rlabs-value'])[" + (i + 1) + "]"))).getText());
+                    productClassArray.add(driver.findElement(By.xpath(("(//*[@id='rlabs-details']/div/div[5]//*[@class='rlabs-value'])[" + (i + 1) + "]"))).getText());
+                driver.navigate().refresh();
+
             }
         }
         System.out.println("Tablica " + productClassArray.toString());

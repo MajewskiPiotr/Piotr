@@ -25,7 +25,7 @@ public class _6_WeryfikacjaPrzypisaniaCzasuSLA extends BaseTestClass {
     private List<String> productClassList = new ArrayList<>();
     private int solutionTimeFromInsight;
     private int solutionTimeFromTask;
-    private String issue="DLSD-95";
+    private String issue;//="DLSD-95";
 
     @Test(priority = 60)
     public void generowanieBledu() {
@@ -35,7 +35,7 @@ public class _6_WeryfikacjaPrzypisaniaCzasuSLA extends BaseTestClass {
         Assert.assertTrue(!issue.equals(""), "nie udało sie poprawnie obsluzyc ISSUE");
     }
 
-    @Test(priority = 61)//, dependsOnMethods = {"generowanieBledu"})
+    @Test(priority = 61, dependsOnMethods = {"generowanieBledu"})
     public void weryfikacjaPoprawnosciCzasuSlaTaska() {
         //logujemy sie do aplikacji i wchodzimy na zadanie
         ServiceDeskLoginPage login = new ServiceDeskLoginPage(driver);
@@ -43,6 +43,7 @@ public class _6_WeryfikacjaPrzypisaniaCzasuSLA extends BaseTestClass {
         QueQuePage queQuePage = dashboardPage.goToQueQue();
         queQuePage.clickOnButton(TaskButton.HELPDESK_DISPATCHER);
         TaskPage taskPage = queQuePage.goToTask(issue);
+        System.out.println("task "+ taskPage.getTaskNumber());
         //EditIssuePage editIssuePage = taskPage.edytujIssue();
         //editIssuePage.issueClasification();
 

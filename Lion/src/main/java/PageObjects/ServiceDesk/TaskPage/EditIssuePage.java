@@ -38,7 +38,7 @@ public class EditIssuePage extends AbstractJiraPage {
     protected WebElement descriptionField;
     @FindBy(id = "issuelinks-issues-textarea")
     protected WebElement issueField;
-    @FindBy(xpath = "//*[@id='customfield_10400-multi-select']/span")
+    @FindBy(xpath = "//*[@id='customfield_12720-multi-select']/span")
     protected WebElement productAffectedDropdwn;
 
     public EditIssuePage(WebDriver driver) {
@@ -70,7 +70,8 @@ public class EditIssuePage extends AbstractJiraPage {
         for (int i = 1; i < 3; i++) {
             productAffectedDropdwn.click();
             Tools.waitForProcesing(1000);
-            List<WebElement> listOdProductAfected = driver.findElements(By.xpath("//*[@id='customfield_10400-suggestions']//*[@id='showing-first-25-objects']/li"));
+            //TODO lista wyboru Product Affected przy zmianie srodowiska zmienić ten CF
+            List<WebElement> listOdProductAfected = driver.findElements(By.xpath("//*[@id='customfield_12720-suggestions']//*[@id='showing-first-25-objects']/li"));
             Random random = new Random();
             listOdProductAfected.get(random.nextInt(listOdProductAfected.size() - 1)).click();
         }
