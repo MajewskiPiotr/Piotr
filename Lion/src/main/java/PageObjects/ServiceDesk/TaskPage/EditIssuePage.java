@@ -116,7 +116,8 @@ public class EditIssuePage extends AbstractJiraPage {
         productDropdown.click();
         List<WebElement> listOdProduct = driver.findElements(By.xpath("//*[@id='showing-first-25-objects']/*"));
         Random random = new Random();
-        listOdProduct.get(random.nextInt(listOdProduct.size() - 1)).click();
+       //listOdProduct.get(random.nextInt(listOdProduct.size() - 1)).click();
+        listOdProduct.get(2).click();
 
     }
 

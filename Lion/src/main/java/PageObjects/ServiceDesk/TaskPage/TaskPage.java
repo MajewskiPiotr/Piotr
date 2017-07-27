@@ -38,9 +38,9 @@ public class TaskPage extends AbstractTaskPage {
     public String createLinkedIssue() {
         new Actions(driver).click(moreButton).click(createLinkedIssueButton).perform();
         CreateLinkedIssue createissueLink = new CreateLinkedIssue(driver);
-        createissueLink.setProject();
-        createissueLink.setIssueType();
-        createissueLink.setCousedBy();
+       // createissueLink.setProject();
+        //createissueLink.setIssueType();
+       //createissueLink.setCousedBy();
         createissueLink.setSoftwareTeam();
         createissueLink.create();
         String relatedLink = getNewCreatedIssueNumber();
@@ -102,10 +102,21 @@ public class TaskPage extends AbstractTaskPage {
 
     public String getLabel(String komentarz) {
         String comment = komentarz;
-        WebElement label = driver.findElement(By.xpath("//div[contains(@class,'twixi-wrap')]//p[text()='" + comment + "']/../../..//span[contains(@class,'evercode-label-comment')]"));
+        WebElement label = driver.findElement(By.xpath("//div[contains(@class,'twixi-wrap')]//p[text()=" + comment + "]/../../..//span[contains(@class,'evercode-label-comment')]"));
         System.out.println(label.getText()+ "  taka jest labelka");
         return label.getText();
+    }
 
+    public void closeRelatedIssue(){
+        if (doneButton.isDisplayed()) {
+            doneButton.click();
+        }
+        else{
+            driver.findElement(By.id("opsbar-transitions_more")).click();
+
+            driver.findElement(By.xpath("//*[@id='action_id_41']/span")).click();
+
+        }
 
     }
 

@@ -43,7 +43,7 @@ public class _1_FlowTest_closeIssue extends BaseTestClass {
         TaskPage taskPage = queQuePage.goToTask(issueNr);
         relatedIssue = taskPage.createLinkedIssue();
         TaskPage relatedIssue = taskPage.goToRelatedIssue(this.relatedIssue);
-        relatedIssue.clickOnButton(TaskButton.DONE);
+        relatedIssue.closeRelatedIssue();
         QueQuePage queQuePage1 = relatedIssue.goToQueQue();
         TaskPage taskPage1 = queQuePage1.goToTask(issueNr);
         Assert.assertEquals(taskPage1.getStatus(), TaskStatus.RESOLVED.getStatus(), "Stan Issue w SD nie został ustawiony na Resolved");
