@@ -44,12 +44,13 @@ public abstract class AbstractTaskPage extends AbstractJiraPage {
     protected WebElement doneButton;
 
     //Pola
-    //@FindBy(xpath = "//*[@class='wrap']/*[@title='Product']/../div/div")
 
-    @FindBy(xpath = "//*[@id='customfield_12718-val']")
+    //TODO Pole PRODUCT przy zmianie środowiska nalezy zmienić ten CF
+    @FindBy(xpath = "//*[@id='rowForcustomfield_12718']//*[@class='tinylink']/*")
     protected List<WebElement> product;
     @FindBy(xpath = "//*[@class='wrap']/*[@title='Category']/../div")
     protected WebElement category;
+    //TODO Pole PRODUCT przy zmianie środowiska nalezy zmienić ten CF
     @FindBy(xpath = "//*[@class='wrap']/*[@title='Products Affected']/../div/div")
     protected List<WebElement> productsAffected;
     @FindBy(xpath = "//*[@class='sla-view-info']/div[text()='Time to resolution']/../div[2]")
