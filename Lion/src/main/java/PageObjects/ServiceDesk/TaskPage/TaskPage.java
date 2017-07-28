@@ -90,6 +90,7 @@ public class TaskPage extends AbstractTaskPage {
         new RespondToCustomerPage(driver).przekazDoCustomera(komentarz);
         Tools.waitForProcesing(2000);
         //TODO zweryfikować czy labelka sie ustawiła
+        driver.navigate().refresh();
     }
 
     public boolean isPause() {
@@ -101,8 +102,10 @@ public class TaskPage extends AbstractTaskPage {
     }
 
     public String getLabel(String komentarz) {
+        driver.navigate().refresh();
+        Tools.waitForProcesing(1000);
         String comment = komentarz;
-        WebElement label = driver.findElement(By.xpath("//div[contains(@class,'twixi-wrap')]//p[text()=" + comment + "]/../../..//span[contains(@class,'evercode-label-comment')]"));
+        WebElement label = driver.findElement(By.xpath("//div[contains(@class,'twixi-wrap')]//p[text()='" + comment + "']/../../..//span[contains(@class,'evercode-label-comment')]"));
         System.out.println(label.getText()+ "  taka jest labelka");
         return label.getText();
     }
@@ -113,9 +116,7 @@ public class TaskPage extends AbstractTaskPage {
         }
         else{
             driver.findElement(By.id("opsbar-transitions_more")).click();
-
             driver.findElement(By.xpath("//*[@id='action_id_41']/span")).click();
-
         }
 
     }

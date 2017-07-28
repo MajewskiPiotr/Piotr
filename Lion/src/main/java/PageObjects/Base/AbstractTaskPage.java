@@ -105,7 +105,8 @@ public abstract class AbstractTaskPage extends AbstractJiraPage {
             Tools.waitForProcesing(2000);
             for (int i = 0; i < productsAffected.size(); i++) {
                 new Actions(driver).moveToElement(productsAffected.get(i)).build().perform();
-                productClassArray.add(driver.findElement(By.xpath(("(//*[@id='rlabs-details']/div/div[5]//*[@class='rlabs-value'])[" + (i + 1) + "]"))).getText());
+                //TODO zmienić w przypadku zmiany środowiska
+                productClassArray.add(driver.findElement(By.xpath(("//*[@id='customfield_10400-val']/div["+(i+1)+"]"))).getText());
             }
         }
         System.out.println("Tablica " + productClassArray.toString());

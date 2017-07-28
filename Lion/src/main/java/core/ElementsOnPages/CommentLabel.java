@@ -5,7 +5,8 @@ package core.ElementsOnPages;
  */
 public enum CommentLabel {
     INTERNAL("INTERNAL"),
-    TO_CUSTOMER("TO CUSTOMER");
+    TO_CUSTOMER("TO CUSTOMER"),
+    FROM_CUSTOMER("FROM CUSTOMER");
 
 
     private String label;

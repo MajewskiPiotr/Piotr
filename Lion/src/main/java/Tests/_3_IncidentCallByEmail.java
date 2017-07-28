@@ -20,7 +20,7 @@ public class _3_IncidentCallByEmail extends BaseTestClass {
         mail.send(summary, "treść zgłoszenia");
     }
 
-    @Test(priority = 31)
+   // @Test(priority = 31)
     public void verifyThatIssueIsCreate() {
         ServiceDeskLoginPage serviceDeskLoginPage = new ServiceDeskLoginPage(driver);
         DashboardPage dashboardPage = serviceDeskLoginPage.loginAsAgent();

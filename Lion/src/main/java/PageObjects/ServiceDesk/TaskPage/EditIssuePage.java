@@ -46,7 +46,7 @@ public class EditIssuePage extends AbstractJiraPage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='jira-dialog-content']")));
     }
 
-    //tworzymy _4_MasterIncident z podanych parametrów
+    //tworzymy _5_MasterIncident z podanych parametrów
     public String createMasterIncident(String summary, String description, List<String> issue) {
         setProject("DreamLabSD (DLSD)");
         setIssueTypeDropdown("Master Incident");
@@ -136,7 +136,8 @@ public class EditIssuePage extends AbstractJiraPage {
             Assert.fail("Brak zdefiniowanego Product Class dla wybranych opcji");
         } else {
             productClassDropdown.click();
-            productClassDropdown.sendKeys(Keys.ENTER);
+            Tools.waitForProcesing(1000);
+            productClassDropdown.sendKeys(Keys.ARROW_DOWN,Keys.ENTER);
         }
     }
 

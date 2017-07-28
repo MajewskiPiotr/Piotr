@@ -18,7 +18,7 @@ import java.util.Date;
  */
 
 //Test weryfikuje czy komentarze poprawnie zostają przeniesione z Taska utworzonego w ramach zgłoszenia.
-public class _5_PropagacjaKomentarzy extends BaseTestClass {
+public class _4_PropagacjaKomentarzy extends BaseTestClass {
     //Dane testowe
     private String issueURL;
     private String relatedIssue;
@@ -37,6 +37,7 @@ public class _5_PropagacjaKomentarzy extends BaseTestClass {
 
         //Zbieram dane do kolejnych testów
         issueURL = taskPage.getUrl();
+        System.out.println("Task: " + issueURL);
         relatedIssue = taskPage.createLinkedIssue();
         nrTaska = taskPage.getTaskNumber();
 
