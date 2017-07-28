@@ -44,8 +44,8 @@ public class _6_WeryfikacjaPrzypisaniaCzasuSLA extends BaseTestClass {
         queQuePage.clickOnButton(TaskButton.HELPDESK_DISPATCHER);
         TaskPage taskPage = queQuePage.goToTask(issue);
         System.out.println("task "+ taskPage.getTaskNumber());
-        //EditIssuePage editIssuePage = taskPage.edytujIssue();
-        //editIssuePage.issueClasification();
+        EditIssuePage editIssuePage = taskPage.edytujIssue();
+        editIssuePage.issueClasification();
 
 
         //pobieramy potrrzebne dane z Taska
