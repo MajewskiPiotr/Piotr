@@ -26,7 +26,7 @@ public class _7_WeryfikacjaPrzypisaniaCzasuSLA_WithProductAffected extends BaseT
     private List<String> productClassList = new ArrayList<>();
     private int solutionTimeFromInsight;
     private int solutionTimeFromTask;
-    private String issue;
+    private String issue="DLSD-130";
 
     @Test(priority = 70)
     public void generowanieBledu() {
@@ -36,7 +36,7 @@ public class _7_WeryfikacjaPrzypisaniaCzasuSLA_WithProductAffected extends BaseT
         Assert.assertTrue(!issue.equals(""), "nie udało sie poprawnie obsluzyc ISSUE");
     }
 
-    @Test(priority = 71, dependsOnMethods = {"generowanieBledu"})
+    @Test(priority = 71)//, dependsOnMethods = {"generowanieBledu"})
     public void weryfikacjaPoprawnosciCzasuSlaTaska() {
         //logujemy sie do aplikacji i wchodzimy na zadanie
         ServiceDeskLoginPage login = new ServiceDeskLoginPage(driver);
@@ -44,8 +44,8 @@ public class _7_WeryfikacjaPrzypisaniaCzasuSLA_WithProductAffected extends BaseT
         QueQuePage queQuePage = dashboardPage.goToQueQue();
         queQuePage.clickOnButton(TaskButton.HELPDESK_DISPATCHER);
         TaskPage taskPage = queQuePage.goToTask(issue);
-        EditIssuePage editIssuePage = taskPage.edytujIssue();
-        editIssuePage.clasyficationIssueWithProductAffected();
+        //EditIssuePage editIssuePage = taskPage.edytujIssue();
+        //editIssuePage.clasyficationIssueWithProductAffected();
 
 
         //pobieramy potrrzebne dane z Taska
