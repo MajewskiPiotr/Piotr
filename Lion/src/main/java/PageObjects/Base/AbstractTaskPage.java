@@ -93,6 +93,28 @@ public abstract class AbstractTaskPage extends AbstractJiraPage {
         return taskNr.getText();
     }
 
+    public String getMpkNumber() {
+        String mpkNumber = "";
+        driver.navigate().refresh();
+        Tools.waitForProcesing(2000);
+        List<String> productClassArray = new ArrayList<>();
+
+        By mpkField = new By.ByXPath("//*[@title='MPK']/../div[@class='rlabs-value']");
+        if (product.size() > 0) {
+            Tools.waitForProcesing(2000);
+            new Actions(driver).moveToElement(product.get(0)).perform();
+            try {
+                mpkNumber = driver.findElement(mpkField).getText();
+
+            } catch (NoSuchElementException e) {
+                Assert.fail("Wybrany Product nie posiada wypełnionego pola MPK");
+            }
+        } else {
+            Assert.fail("Pole Product nie zostało uzupełnione");
+        }
+        return mpkNumber;
+    }
+
     public List<String> getProductClass() {
         driver.navigate().refresh();
         Tools.waitForProcesing(2000);
@@ -106,12 +128,12 @@ public abstract class AbstractTaskPage extends AbstractJiraPage {
             productClassArray.add(text);
         }
         if (productsAffected.size() > 0) {
+            driver.navigate().refresh();
             Tools.waitForProcesing(2000);
             for (int i = 0; i < productsAffected.size(); i++) {
                 new Actions(driver).moveToElement(productsAffected.get(i)).build().perform();
-                //TODO cf do modyfikacji po zmienie środowiska
-                productClassArray.add(driver.findElement(By.xpath(("//*[@id='customfield_12718-val']/div["+(i+1)+"]"))).getText());
-                driver.navigate().refresh();
+                //TODO zmienić w przypadku zmiany środowiska
+                productClassArray.add(driver.findElement(By.xpath(("//*[@id='customfield_12720-val']/div[" + (i + 1) + "]"))).getText());
 
             }
         }
@@ -143,7 +165,7 @@ public abstract class AbstractTaskPage extends AbstractJiraPage {
     }
 
 
-    public String getTextFromField(TaskField field)  {
+    public String getTextFromField(TaskField field) {
         String textfromField = "";
         switch (field) {
             case Product: {
@@ -159,8 +181,7 @@ public abstract class AbstractTaskPage extends AbstractJiraPage {
                     String s = sla.getText();
                     textfromField = s.substring(s.indexOf(" ")).replace(" ", "").replace("h", "");
                     break;
-                }
-                catch (NoSuchElementException exception){
+                } catch (NoSuchElementException exception) {
                     Assert.fail("wybrane produkty nie mają sklasyfikowanego SLA");
                 }
 

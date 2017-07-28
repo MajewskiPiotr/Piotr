@@ -44,8 +44,8 @@ public class _7_WeryfikacjaPrzypisaniaCzasuSLA_WithProductAffected extends BaseT
         QueQuePage queQuePage = dashboardPage.goToQueQue();
         queQuePage.clickOnButton(TaskButton.HELPDESK_DISPATCHER);
         TaskPage taskPage = queQuePage.goToTask(issue);
-        //EditIssuePage editIssuePage = taskPage.edytujIssue();
-        //editIssuePage.clasyficationIssueWithProductAffected();
+        EditIssuePage editIssuePage = taskPage.edytujIssue();
+        editIssuePage.clasyficationIssueWithProductAffected();
 
 
         //pobieramy potrrzebne dane z Taska

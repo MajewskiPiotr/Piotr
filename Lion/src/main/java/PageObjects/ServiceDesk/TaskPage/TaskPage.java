@@ -33,7 +33,11 @@ public class TaskPage extends AbstractTaskPage {
         }
     }
 
-
+    public String getRelatedProjectName(){
+        new Actions(driver).click(moreButton).click(createLinkedIssueButton).perform();
+        String projectName = driver.findElement(By.xpath("//*[@id='project-field']")).getText();
+        return projectName;
+    }
     public String createLinkedIssue() {
         new Actions(driver).click(moreButton).click(createLinkedIssueButton).perform();
         CreateLinkedIssue createissueLink = new CreateLinkedIssue(driver);

@@ -28,17 +28,22 @@ public class _5_PropagacjaKomentarzy extends BaseTestClass {
     private String nrTaska;
 
     @Test(priority = 50)
+    public void createIssue() {
+        CustomerServiceLoginPage customerServiceLoginPage = new CustomerServiceLoginPage(driver);
+        CustomerServicePage customerServicePage = customerServiceLoginPage.logInToCustomer();
+        nrTaska = customerServicePage.zglosBlad("Bład zgłoszony Automatem, Scenariusz _1_FlowTest_closeIssue", " bład został zgłoszony automatem");
+    }
+    @Test(priority = 51)
     public void propagacjaPomiedzyZaleznymiTaskami() {
         //Z poziomu Taska założyc nowe zgłoszenie do 3 linii
         ServiceDeskLoginPage serviceDeskLoginPage = new ServiceDeskLoginPage(driver);
         DashboardPage dashboardPage = serviceDeskLoginPage.loginAsAgent();
         QueQuePage queQuePage = dashboardPage.goToQueQue();
-        TaskPage taskPage = queQuePage.goToFirstTaskOnList();
+        TaskPage taskPage = queQuePage.goToTask(nrTaska);
 
         //Zbieram dane do kolejnych testów
         issueURL = taskPage.getUrl();
         relatedIssue = taskPage.createLinkedIssue();
-        nrTaska = taskPage.getTaskNumber();
 
         //Na nowo utworzonym Tasku wprowadzamy komentarz
         TaskPage relatedIssueTask = taskPage.goToRelatedIssue(relatedIssue);
@@ -53,7 +58,7 @@ public class _5_PropagacjaKomentarzy extends BaseTestClass {
         Assert.assertTrue(mainPage.verifyCommentExist(komentarzWidocznyDlaCustomera), "nie udała sie propagacja komentarzy");
     }
 
-    @Test(priority = 51, dependsOnMethods = {"propagacjaPomiedzyZaleznymiTaskami"})
+    @Test(priority = 52, dependsOnMethods = {"propagacjaPomiedzyZaleznymiTaskami"})
     public void weryfikacjaPropagacjiKomentarzyDoCustomera() {
         //Uruchamiamy aplikacje Customer i weryfikujemy czy komentarz został tam rozpropagowany
         CustomerServiceLoginPage customerServiceLoginPage = new CustomerServiceLoginPage(driver);
