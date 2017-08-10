@@ -21,7 +21,6 @@ import java.time.ZoneId;
  */
 public class BaseTestClass {
     protected static WebDriver driver;
-    protected LocalDateTime time = LocalDateTime.now(ZoneId.systemDefault());
 
     @Parameters({"nodeUrl", "browser"})
     @BeforeMethod
@@ -68,14 +67,5 @@ public class BaseTestClass {
 
     }
 
-    @BeforeClass
-    public void setUpTestData() {
 
-
-    }
-
-    @AfterClass
-    public void clean() {
-
-    }
 }
