@@ -14,13 +14,13 @@ import org.testng.annotations.Test;
 public class _3_IncidentCallByEmail extends BaseTestClass {
     private String summary = "Bład zgłoszony poprzez Emaila dla potrzeby Skryptów automatycznych";
 
-    @Test(priority = 30)
+    @Test(priority = 00)
     public void callIssueViaEmail() {
         Mail mail = new Mail();
         mail.send(summary, "treść zgłoszenia");
     }
 
-    @Test(priority = 31)
+   // @Test(priority = 3000001)
     public void verifyThatIssueIsCreate() {
         ServiceDeskLoginPage serviceDeskLoginPage = new ServiceDeskLoginPage(driver);
         DashboardPage dashboardPage = serviceDeskLoginPage.loginAsAgent();

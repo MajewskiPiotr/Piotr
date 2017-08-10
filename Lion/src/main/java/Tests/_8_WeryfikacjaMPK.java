@@ -20,7 +20,7 @@ public class _8_WeryfikacjaMPK extends BaseTestClass {
     private String relatedProjectName;
 
     // 1. Zgłosić bład
-    @Test(priority = 1)
+    @Test(priority = 80)
     public void generowanieBledu() {
         CustomerServiceLoginPage customerServiceLoginPage = new CustomerServiceLoginPage(driver);
         CustomerServicePage customerServicePage = customerServiceLoginPage.logInToCustomer();
@@ -30,7 +30,7 @@ public class _8_WeryfikacjaMPK extends BaseTestClass {
 
     // 2. Wyedytować i ustawic losowy Product
     // 3. Zapamiętac numer MPK przypisany do Product
-    @Test(priority = 2)
+    @Test(priority = 81)
     public void edycjaIssue() {
         ServiceDeskLoginPage login = new ServiceDeskLoginPage(driver);
         DashboardPage dashboardPage = login.loginAsAgent();
@@ -42,7 +42,6 @@ public class _8_WeryfikacjaMPK extends BaseTestClass {
        // editIssuePage.issueClasification();
         mpk = taskPage.getMpkNumber();
         System.out.println("LOG: mpk "+ mpk );
-
         relatedProjectName = taskPage.getRelatedProjectName();
         System.out.println("LOG: relatedProjectName " + relatedProjectName);
 
