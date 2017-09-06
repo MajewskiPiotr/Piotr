@@ -49,7 +49,7 @@ public class TaskPage extends AbstractTaskPage {
     }
 
     public TaskPage goToRelatedIssue(String url) {
-        goToUrl(TestEnviroments.STAGE1 + "/browse/" + url);
+        goToUrl(TestEnviroments.VPN + "/browse/" + url);
         return new TaskPage(driver);
     }
 

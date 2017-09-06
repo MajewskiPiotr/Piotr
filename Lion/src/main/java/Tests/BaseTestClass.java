@@ -31,7 +31,7 @@ public class BaseTestClass {
     @BeforeMethod
     public void setUp() throws MalformedURLException {
         EnviromentSettings enviromentSettings = new EnviromentSettings();
-        enviromentSettings.SetTestEnviroment(TestEnviroments.STAGE1);
+        enviromentSettings.SetTestEnviroment(TestEnviroments.JiraDev);
         driver = enviromentSettings.setUpDriver(null, "chrome", false);
 
     }
