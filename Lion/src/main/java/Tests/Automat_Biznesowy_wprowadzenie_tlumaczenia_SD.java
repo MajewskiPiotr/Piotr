@@ -18,6 +18,7 @@ import java.util.List;
 //nie jest to test do uruchamiania wraz z innymi
 // do działania należy podac ściezkę do pliku w którym definiujemy mapowanie from;to np. en;pl
 public class Automat_Biznesowy_wprowadzenie_tlumaczenia_SD extends BaseTestClass {
+
     //adres do ustawień wtyczki translator w modyfikowanym projekcie
     private static final String VPN = "/secure/project/TranslationPortal.jspa?pid=10101";
     private static final String PROD = "/secure/project/TranslationPortal.jspa?pid=19207";
