@@ -1,5 +1,6 @@
 package Tests;
 
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 /**
@@ -7,12 +8,12 @@ import org.testng.annotations.Test;
  */
 public class testClass {
 
-    @Test
-    public void test1() {
-        System.out.println("test1");
+    @Test(parameters = {"number-of-times"})
+    public void test1(int number) {
+        System.out.println("test1 "+ number);
     }
 
-    @Test
+    @Test(groups = {"smoke"})
 
     public void test2() {
         System.out.println("test2");
@@ -30,7 +31,7 @@ public class testClass {
         System.out.println("test4");
     }
 
-    @Test
+    @Test(groups = {"smoke"})
 
     public void test5() {
         System.out.println("test5");

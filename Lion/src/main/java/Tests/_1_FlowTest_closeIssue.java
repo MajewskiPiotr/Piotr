@@ -31,6 +31,7 @@ public class _1_FlowTest_closeIssue extends BaseTestClass {
 
     @Test(priority = 1)
     public void createIssue() {
+        System.out.println("Selenium Test");
         CustomerServiceLoginPage customerServiceLoginPage = new CustomerServiceLoginPage(driver);
         CustomerServicePage customerServicePage = customerServiceLoginPage.logInToCustomer();
         issueNr = customerServicePage.zglosBlad("Bład zgłoszony Automatem, Scenariusz _1_FlowTest_closeIssue", " bład został zgłoszony automatem");
