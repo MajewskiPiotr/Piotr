@@ -1,20 +1,26 @@
 package core.ProjectComparator;
 
+import core.ProjectComparator.helpers.MappingIssueTypes;
+import core.ProjectComparator.helpers.NodeHelper;
 import org.testng.Assert;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by Piotr Majewski on 2017-09-11.
+ *  * Klasa reprentuje Noda WorkFlowScheme
+
  */
 public class WorkFlowScheme {
     String name;
     String desc;
+    //Lista nodów mappingIssueTypes
     List<MappingIssueTypes> listOfMappingIssueTypes = new ArrayList<>();
 
     private void setMappingIssueTypes(NodeList nodeList) {
@@ -49,21 +55,18 @@ public class WorkFlowScheme {
         this.name = name;
     }
 
-    public String getDesc() {
-        return desc;
-    }
 
     public void setDesc(String desc) {
         this.desc = desc;
     }
 
-    public static WorkFlowScheme getWorkFlowSchemeFromXMLFILE(String xmlFile, String IssueTypeSchemeName) {
+    public static WorkFlowScheme getWorkFlowSchemeFromXMLFILE(File xmlFile, String IssueTypeSchemeName) {
         WorkFlowScheme workFlowScheme = new WorkFlowScheme();
         Document xmlDocument = NodeHelper.getDocument(xmlFile);
         NodeList workflowSchemeList = xmlDocument.getElementsByTagName("workflowScheme");
 
         if (workflowSchemeList.getLength() == 0) {
-            Assert.fail("Brak workflowScheme w podanym pliku");
+            Assert.fail("Brak WorkFlow Scheme w podanym pliku");
         }
         //Wyciągamy liste dla źródła
         for (int x = 0; x < workflowSchemeList.getLength(); x++) {
@@ -77,7 +80,7 @@ public class WorkFlowScheme {
                     workFlowScheme.setMappingIssueTypes(childNodesList);
                     System.out.println(workFlowScheme);
                 } else {
-                    Assert.fail("Nie znaleziono Issue type Scheme o podanej nazwie :");
+                    Assert.fail("Nie znaleziono WorkFlow Scheme o podanej nazwie :");
                 }
             }
         }

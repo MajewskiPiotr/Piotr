@@ -1,28 +1,28 @@
 package core.ProjectComparator;
 
+import core.ProjectComparator.helpers.NodeHelper;
 import org.testng.Assert;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by Piotr Majewski on 2017-09-08.
+ * klasa reprezentuje Noda IssueTypeScheme z pliku XML
  */
+
+
 public class IssueTypeScheme {
 
     private String name;
     private String desc;
     private String defaultType;
+    //Lista Nodów issueTypeWithSequence
     public List<String> issueTypeWithSequence = new ArrayList<>();
 
 
@@ -53,24 +53,10 @@ public class IssueTypeScheme {
     /*Metoda zwraca obiekt IssueTypeScheme wypełniony danymi z pliku xml
     *Param - String - Path to file
       */
-    public static IssueTypeScheme getIssueTypeSchemFromXMLFILE(String xmlFile, String IssueTypeSchemeName) {
+    public static IssueTypeScheme getIssueTypeSchemFromXMLFILE(File xmlFile, String IssueTypeSchemeName) {
         Document xmlDocument = null;
-        File sourceFile = new File(xmlFile);
-        DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-        DocumentBuilder db = null;
-        try {
-            db = dbf.newDocumentBuilder();
-        } catch (ParserConfigurationException e) {
-            e.printStackTrace();
-        }
+        xmlDocument = NodeHelper.getDocument(xmlFile);
 
-        try {
-            xmlDocument = db.parse(sourceFile);
-        } catch (SAXException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
         xmlDocument.getDocumentElement().normalize();
         IssueTypeScheme issueTypeScheme = new IssueTypeScheme();
 
@@ -109,10 +95,6 @@ public class IssueTypeScheme {
         }
         return lista;
     }
-
-
-
-
 
 
     @Override

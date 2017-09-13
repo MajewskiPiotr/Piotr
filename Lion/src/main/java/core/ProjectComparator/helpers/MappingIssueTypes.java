@@ -1,7 +1,9 @@
-package core.ProjectComparator;
+package core.ProjectComparator.helpers;
 
 /**
  * Created by Piotr Majewski on 2017-09-11.
+ *  klasa reprezentuje Noda MappingIssueTypes
+
  */
 public class MappingIssueTypes {
     String issueType;

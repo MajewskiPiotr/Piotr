@@ -1,4 +1,4 @@
-package core.ProjectComparator;
+package core.ProjectComparator.helpers;
 
 import org.testng.Assert;
 import org.w3c.dom.Document;
@@ -32,17 +32,25 @@ public class NodeHelper {
     //Zwracamy text w Node o podanej nazwie
     //Jako Param podajemy NodeList
     public static String getTextFromNodeInList(NodeList nodeList, String node) {
+        String nodeText = "";
         Element element = (Element) nodeList;
         NodeList nameList = element.getElementsByTagName(node);
+        if (nameList.getLength() == 1) {
+            nodeText = nameList.item(0).getTextContent();
+        }
+        if (nameList.getLength() == 0) {
+            System.out.println("INFO: brak tego typu node " + node);
+            nodeText = "";
+
+        }
         if (nameList.getLength() > 1) {
             Assert.fail("Znaleziono więcej nodów o podanej nazwie :" + node);
         }
-        return nameList.item(0).getTextContent();
+        return nodeText;
     }
 
-    public static Document getDocument(String path) {
+    public static Document getDocument(File sourceFile) {
         Document xmlDocument = null;
-        File sourceFile = new File(path);
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         DocumentBuilder db = null;
         try {
@@ -52,6 +60,7 @@ public class NodeHelper {
         }
         try {
             xmlDocument = db.parse(sourceFile);
+
         } catch (SAXException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -62,4 +71,14 @@ public class NodeHelper {
 
     }
 
+
+    public static NodeList getNodeFromXMLFileByTagName(File xmlFile, String nodeTag) {
+        Document xmlDocument = NodeHelper.getDocument(xmlFile);
+        NodeList nodefromXMLFile = xmlDocument.getElementsByTagName(nodeTag);
+
+        if (nodefromXMLFile.getLength() == 0) {
+            Assert.fail("Brak Issue Type schemes w podanym pliku");
+        }
+        return nodefromXMLFile;
+    }
 }
