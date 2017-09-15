@@ -12,12 +12,12 @@ public class testClass {
         System.out.println("test1 "+ number);
     }
 
-    @Test(groups = {"smoke"})
+    @Test(groups = {"regresja"})
     public void test2() {
         System.out.println("test2");
     }
 
-    @Test
+    @Test(groups = {"regresja"})
     public void test3() {
         System.out.println("test3");
     }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE project [
-]>
+        ]>
 
 <project name="Selenium" default="usage" basedir=".">
 
@@ -18,11 +18,23 @@
 
     <property name="ng.result" value="test-output"/>
 
-    <!--target name="start-selenium-server">
 
-    <java jar="${ws.home}/lib/selenium-server.jar"/>
+    <target name="makexsltreports">
 
-    </target-->
+        <mkdir dir="${ws.home}/XSLT_Reports/output"/>
+
+        <xslt in="${ng.result}/testng-results.xml" style="src/xslt/testng-results.xsl"
+
+              out="${ws.home}/XSLT_Reports/output/index.html" classpathref="test.c" processor="SaxonLiaison">
+
+            <param name="testNgXslt.outputDir" expression="${ws.home}/XSLT_Reports/output/"/>
+
+            <param name="testNgXslt.showRuntimeTotals" expression="true"/>
+
+        </xslt>
+
+    </target>
+
 
     <target name="setClassPath" unless="test.classpath">
 
@@ -44,7 +56,7 @@
 
         <tstamp>
 
-            <format property="start.time" pattern="MM/dd/yyyy hh:mm aa" />
+            <format property="start.time" pattern="MM/dd/yyyy hh:mm aa"/>
 
         </tstamp>
 
@@ -54,7 +66,7 @@
 
                    else="${env.ANT_HOME}/bin/ant">
 
-            <os family="windows" />
+            <os family="windows"/>
 
         </condition>
 
@@ -82,7 +94,7 @@
 
     <!-- compile -->
 
-    <target name="compile" depends="init, clean" >
+    <target name="compile" depends="init, clean">
 
         <delete includeemptydirs="true" quiet="true">
 
@@ -122,7 +134,17 @@
 
     <!-- run -->
 
+    <target name="runTest" depends="init">
+
+        <testng classpath="${test.classpath}:${test.dest}" suitename="suite1">
+
+            <xmlfileset dir="${ws.home}" includes="testng.xml"/>
+
+        </testng>
+
+    </target>
     <target name="run" depends="compile">
+        <echo message=""/>
 
         <testng classpath="${test.classpath}:${test.dest}" suitename="suite1">
 
@@ -159,21 +181,6 @@
 
     </path>
 
-    <target name="makexsltreports">
-
-        <mkdir dir="${ws.home}/XSLT_Reports/output"/>
-
-        <xslt in="${ng.result}/testng-results.xml" style="src/xslt/testng-results.xsl"
-
-              out="${ws.home}/XSLT_Reports/output/index.html" classpathref="test.c" processor="SaxonLiaison">
-
-            <param name="testNgXslt.outputDir" expression="${ws.home}/XSLT_Reports/output/"/>
-
-            <param name="testNgXslt.showRuntimeTotals" expression="true"/>
-
-        </xslt>
-
-    </target>
 
     <!-- ****************** targets not used ****************** -->
 

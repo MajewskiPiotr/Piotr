@@ -29,7 +29,7 @@ public class _1_FlowTest_closeIssue extends BaseTestClass {
     private String issueNr = "";
     private String relatedIssue = "";
 
-    @Test(priority = 1)
+    @Test(priority = 1, groups = {"regresja"})
     public void createIssue() {
         System.out.println("Selenium Test");
         CustomerServiceLoginPage customerServiceLoginPage = new CustomerServiceLoginPage(driver);
@@ -39,7 +39,7 @@ public class _1_FlowTest_closeIssue extends BaseTestClass {
 
     }
 
-   // @Test(priority = 2, dependsOnMethods = {"createIssue"})
+   @Test(priority = 2, dependsOnMethods = {"createIssue"}, groups = {"regresja"})
     public void obsluzenieIssue() {
         ServiceDeskLoginPage serviceDeskLoginPage = new ServiceDeskLoginPage(driver);
         QueQuePage queQuePage = serviceDeskLoginPage.loginAsAgentAngGoToQueque();
@@ -52,7 +52,7 @@ public class _1_FlowTest_closeIssue extends BaseTestClass {
         Assert.assertEquals(taskPage1.getStatus(), TaskStatus.RESOLVED.getStatus(), "Stan Issue w SD nie został ustawiony na Resolved");
     }
 
-   // @Test(priority = 3, dependsOnMethods = {"obsluzenieIssue"})
+   @Test(priority = 3, dependsOnMethods = {"obsluzenieIssue"}, groups = {"regresja"})
     public void verifyStatusInCustomer() {
         CustomerServiceLoginPage customerServiceLoginPage = new CustomerServiceLoginPage(driver);
         CustomerServicePage customerServicePage = customerServiceLoginPage.logInToCustomer();

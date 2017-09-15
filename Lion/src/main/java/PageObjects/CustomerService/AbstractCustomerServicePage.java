@@ -11,6 +11,11 @@ public class AbstractCustomerServicePage extends PageObject {
     protected String CustomerURL = TestEnviroments.CUSTOMER;
 
 
+
+    public void setCustomerURL(String customerURL) {
+        CustomerURL = customerURL;
+    }
+
     public AbstractCustomerServicePage(WebDriver driver) {
         super(driver);
     }

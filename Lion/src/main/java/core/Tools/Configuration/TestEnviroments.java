@@ -10,6 +10,8 @@ public class TestEnviroments {
 
 
     public static final String CUSTOMER = "http://vpn.evercode.com.pl/servicedesk/customer/portal/2/";
+    public static final String SUBSTITUTION = "http://vpn.evercode.com.pl/servicedesk/customer/portal/2/";
+
 
 
 
