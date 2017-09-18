@@ -50,7 +50,7 @@ public class CustomerServiceLoginPage extends AbstractCustomerServicePage {
     }
 
     public CustomerServicePage logInToCustomer() {
-        login("DreamLabCustomer", "12345678");
+        login("ParkerCustomer", "12345678");
         return new CustomerServicePage(driver);
     }
 
