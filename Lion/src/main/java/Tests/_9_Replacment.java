@@ -16,7 +16,7 @@ import java.io.IOException;
 /**
  * Created by Piotr Majewski on 2017-06-22.
  */
-public class _8_Replacment extends BaseTestClass {
+public class _9_Replacment extends BaseTestClass {
     /**************** PTA
      1. zalogować się do ServidDeska (Portal KLienta)
      2. założyć Zgłoszenie Substitution
