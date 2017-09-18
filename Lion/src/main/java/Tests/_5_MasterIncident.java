@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * Created by Piotr Majewski on 2017-06-22.
  */
-public class _4_MasterIncident extends BaseTestClass {
+public class _5_MasterIncident extends BaseTestClass {
     /* Test weryfikuje propagowanie zamykania się podrzędnych zgłoszeń
     1. Zgłosić 2 błedy jako Cutomer
     2. Jako Agent utworzyć Master Incident i do niego podłączyć uprzednio utworzone błędy.

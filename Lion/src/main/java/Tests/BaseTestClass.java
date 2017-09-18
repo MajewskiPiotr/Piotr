@@ -8,10 +8,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.*;
 
 import java.io.File;
 import java.net.MalformedURLException;
@@ -28,15 +25,15 @@ public class BaseTestClass {
 
     //@Parameters({"nodeUrl", "browser"})
     //String nodeUrl, String browser)
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void setUp() throws MalformedURLException {
         EnviromentSettings enviromentSettings = new EnviromentSettings();
-        enviromentSettings.SetTestEnviroment(TestEnviroments.STAGE1);
+        enviromentSettings.SetTestEnviroment(TestEnviroments.VPN);
         driver = enviromentSettings.setUpDriver(null, "chrome", false);
 
     }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void tearDown() {
         driver.close();
     }
@@ -72,11 +69,5 @@ public class BaseTestClass {
 
     }
 
-    @BeforeClass
-    public void setUpTestData() {
-    }
 
-    @AfterClass
-    public void clean() {
-    }
 }

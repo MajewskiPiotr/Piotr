@@ -43,5 +43,7 @@ public class DashboardPage extends AbstractJiraPage {
 
         return new Insightpage(driver);
     }
-
+    public Insightpage goToInsightPage(String insightObjectScheme){
+        return new Insightpage(driver, insightObjectScheme);
+    }
 }

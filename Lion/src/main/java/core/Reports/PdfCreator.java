@@ -1,4 +1,5 @@
-package core.Reports;
+
+ package core.Reports;
 
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.PdfPCell;
@@ -10,7 +11,6 @@ import org.testng.ITestResult;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Date;
-
 
 public class PdfCreator {
     private static String FILE = Property.getProperty("basePath") + "/Lion/DaneTestowe/raport" + new Date().getTime() + ".pdf";

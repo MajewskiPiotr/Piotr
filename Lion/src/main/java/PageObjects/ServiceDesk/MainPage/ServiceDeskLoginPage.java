@@ -44,7 +44,11 @@ public class ServiceDeskLoginPage extends PageObject {
 
 
     public DashboardPage loginAsAdmin() {
-        login("agent5", "agent5");
+        login("admin2", "admin2");
+        return new DashboardPage(driver);
+    }
+    public DashboardPage loginAsAdminOnProd() {
+        login("evercode_pmajewski", "DW2Ar53@");
         return new DashboardPage(driver);
     }
 

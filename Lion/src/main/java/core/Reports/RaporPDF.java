@@ -1,6 +1,8 @@
-package core.Reports;
+ package core.Reports;
 
 import com.itextpdf.text.*;
+
+
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
@@ -11,12 +13,11 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
  * Created by Piotr Majewski on 2017-06-07.
- */
+*/
 public class RaporPDF {
     private static final BaseColor green = new BaseColor(64, 128, 0);
     private static final BaseColor red = BaseColor.RED;
@@ -149,5 +150,6 @@ public class RaporPDF {
         }
     }
 }
+
 
 

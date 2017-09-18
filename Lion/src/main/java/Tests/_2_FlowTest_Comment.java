@@ -100,6 +100,7 @@ public class _2_FlowTest_Comment extends BaseTestClass {
         Assert.assertTrue(taskPage.verifyCommentExist(customerComment), "Brak komentarza od Customera");
         //TODO weryfikacja poprawności Labelki
         //!!!!!!!!!! Jaka ma być oczekiwana Labelka
-        Assert.assertEquals(taskPage.getLabel(customerComment),CommentLabel.FROM_CUSTOMER.getLabel(), "Nie prawidłowa Labelka na komentarzu");
+        Assert.assertEquals(taskPage.getLabel(customerComment) , CommentLabel.FROM_CUSTOMER.getLabel(), "Nie prawidłowa Labelka na komentarzu");
+
     }
 }

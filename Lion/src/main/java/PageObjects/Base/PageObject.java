@@ -36,6 +36,9 @@ public class PageObject {
         if (url.contains("evercode")|| url.contains("onet")) {
             driver.navigate().to(url);
 
+        } else if (url.contains("project")) {
+            driver.navigate().to(baseUrl +  url);
+
         } else {
             driver.navigate().to(baseUrl + "browse/" + url);
 
