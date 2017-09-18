@@ -31,7 +31,7 @@ public class _8_Replacment extends BaseTestClass {
 
     String nrZgloszeniaZastepstwa;
 
-    @Test(priority = 81)
+    @Test(priority = 91)
     public void setSubstitution() {
         CustomerServiceLoginPage customerServiceLoginPage = new CustomerServiceLoginPage(driver);
         //a potrzeby testów zastępst zmieniam URL serviceDeska na URL serviceDeska przeznaczonego do Zastępst
@@ -40,7 +40,7 @@ public class _8_Replacment extends BaseTestClass {
         nrZgloszeniaZastepstwa = customerServicePage.setSubstitution("adminEVC", "customer1");
     }
 
-    @Test(priority = 82)
+    @Test(priority = 92)
     public void checkSustitutionIsInInsight() throws IOException, InterruptedException {
 
         ServiceDeskLoginPage serviceDeskLoginPage = new ServiceDeskLoginPage(driver);
@@ -52,7 +52,7 @@ public class _8_Replacment extends BaseTestClass {
         Assert.assertEquals(subsState, "on", "zastępstwo jest w błędnym stanie");
     }
 
-    @Test(priority = 83)
+    @Test(priority = 93)
     public void closeSubstitution() {
         CustomerServiceLoginPage customerServiceLoginPage = new CustomerServiceLoginPage(driver);
         CustomerServicePage customerServicePage = customerServiceLoginPage.logInToCustomer();
@@ -62,7 +62,7 @@ public class _8_Replacment extends BaseTestClass {
 
     }
 
-    @Test(priority = 84)
+    @Test(priority = 94)
     public void checkSustitutionIsClosed() {
         ServiceDeskLoginPage serviceDeskLoginPage = new ServiceDeskLoginPage(driver);
         DashboardPage dashboardPage = serviceDeskLoginPage.loginAsAdmin();
