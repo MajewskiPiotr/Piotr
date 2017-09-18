@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 public class _3_IncidentCallByEmail extends BaseTestClass {
     private String summary = "Bład zgłoszony poprzez Emaila dla potrzeby Skryptów automatycznych";
 
-    @Test(priority = 00)
+    //@Test(priority = 00)
     public void callIssueViaEmail() {
 
         //Test wyłączony klasy z powodu problemów z Compilowanie ANT-EM
