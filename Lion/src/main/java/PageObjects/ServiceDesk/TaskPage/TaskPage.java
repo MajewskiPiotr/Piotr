@@ -1,6 +1,7 @@
 package PageObjects.ServiceDesk.TaskPage;
 
 import PageObjects.Base.AbstractTaskPage;
+import core.ElementsOnPages.Task.TaskStatus;
 import core.Tools.Configuration.TestEnviroments;
 import core.Tools.Tools;
 import org.openqa.selenium.By;
@@ -38,9 +39,9 @@ public class TaskPage extends AbstractTaskPage {
     public String createLinkedIssue() {
         new Actions(driver).click(moreButton).click(createLinkedIssueButton).perform();
         CreateLinkedIssue createissueLink = new CreateLinkedIssue(driver);
-       // createissueLink.setProject();
+        // createissueLink.setProject();
         //createissueLink.setIssueType();
-       //createissueLink.setCousedBy();
+        //createissueLink.setCousedBy();
         createissueLink.setSoftwareTeam();
         createissueLink.create();
         String relatedLink = getNewCreatedIssueNumber();
@@ -66,7 +67,9 @@ public class TaskPage extends AbstractTaskPage {
         WebElement sendToClientChecBox = driver.findElement(By.xpath("//*[@type='checkbox']"));
         new Actions(driver).moveToElement(poleWprowadzaniaKomentarza).sendKeys(poleWprowadzaniaKomentarza, komentarz).click(sendToClientChecBox).perform();
         driver.findElement(By.id("issue-comment-add-submit")).click();
-        Tools.waitForProcesing(3000);
+        wait.until(ExpectedConditions.invisibilityOf(driver.findElement(By.xpath("//*[@id='issue-comment-add-cancel']"))));
+
+        //TODO wait na coś
         driver.navigate().refresh();
     }
 
@@ -106,18 +109,24 @@ public class TaskPage extends AbstractTaskPage {
         Tools.waitForProcesing(1000);
         String comment = komentarz;
         WebElement label = driver.findElement(By.xpath("//div[contains(@class,'twixi-wrap')]//p[text()='" + comment + "']/../../..//span[contains(@class,'evercode-label-comment')]"));
-        System.out.println(label.getText()+ "  taka jest labelka");
+        System.out.println(label.getText() + "  taka jest labelka");
         return label.getText();
     }
 
-    public void closeRelatedIssue(){
+    public void closeRelatedIssue() {
         if (doneButton.isDisplayed()) {
             doneButton.click();
-        }
-        else{
+        } else {
             driver.findElement(By.id("opsbar-transitions_more")).click();
             driver.findElement(By.xpath("//*[@id='action_id_41']/span")).click();
         }
+        //wypełniamy pole (Incident Duration)  w PopUpie DONE
+        WebElement incidentDurationInput = driver.findElement(By.xpath("//*[@id='customfield_11002']"));
+        incidentDurationInput.sendKeys("10");
+        incidentDurationInput.click();
+        //klikamy na guzik DONE na otwartym popUpie
+        driver.findElement(By.xpath("//*[@id='issue-workflow-transition-submit']")).click();
+        wait.until(ExpectedConditions.textToBePresentInElement(status, TaskStatus.DONE.getStatus()));
 
     }
 

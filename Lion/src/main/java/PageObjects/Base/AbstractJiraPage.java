@@ -4,6 +4,7 @@ import PageObjects.ServiceDesk.MainPage.DashboardPage;
 import PageObjects.ServiceDesk.MainPage.QueQuePage;
 import PageObjects.ServiceDesk.TaskPage.TaskPage;
 import core.ElementsOnPages.Task.TaskButton;
+import core.Tools.Tools;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -38,7 +39,9 @@ public abstract class AbstractJiraPage extends PageObject {
     }
 
     public String getNewCreatedIssueNumber() {
+        Tools.waitForProcesing(1000);
         String allertTxt = allert.getText();
+        System.out.println("wypisuje allertTxT :" + allertTxt);
         String newIssue = allertTxt.substring(0, allertTxt.indexOf(" "));
         return newIssue;
     }

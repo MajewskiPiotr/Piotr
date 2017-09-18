@@ -27,7 +27,7 @@ public class ProjectComparator {
     }
 
 
-    @Test
+    //@Test
     //Test weryfikuje zgodność IssueType Scheme pod względem zawartość
     //porównuje wszystkie jego parametry
     //!!!! po zwróceniu False zweryfikowac czy problemem nie jest kolejność IssuType-ów
@@ -41,7 +41,7 @@ public class ProjectComparator {
 
     }
 
-    @Test
+    //@Test
     public void checkWorkflowsScheme() throws IOException, SAXException, ParserConfigurationException {
         WorkFlowScheme source = WorkFlowScheme.
                 getWorkFlowSchemeFromXMLFILE(sourceFile, "JIRA Service Desk IT Support Workflow Scheme generated for Project DLSD");
@@ -50,7 +50,7 @@ public class ProjectComparator {
         Assert.assertEquals(source, destiny, "workflowy nie równe");
     }
 
-    @Test
+   // @Test
     public void checkScreensScheme() {
         IssueTypeScreenScheme source = IssueTypeScreenScheme.
                 getIssueTypeScreenScheme(sourceFile, "DLSD: JIRA Service Desk Issue Type Screen Scheme");
@@ -61,7 +61,7 @@ public class ProjectComparator {
         Assert.assertEquals(source, destiny, "Screen schemy nie równe");
     }
 
-    @Test
+   // @Test
     public void checkFieldConfiguration() {
         FieldConfiguration source = FieldConfiguration.
                 getFieldConfiguration(sourceFile, "JIRA Service Desk Field Configuration for Project DLSD");
@@ -72,7 +72,7 @@ public class ProjectComparator {
         Assert.assertEquals(source, destiny, "Field Configuration");
     }
 
-    @Test
+   // @Test
     public void checkComponents(){
         Components source = Components.getComponents(sourceFile,"component" );
         Components destiny = Components.getComponents(destinyFile,"component" );

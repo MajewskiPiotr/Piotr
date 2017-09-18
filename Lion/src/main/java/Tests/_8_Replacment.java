@@ -2,10 +2,12 @@ package Tests;
 
 import PageObjects.CustomerService.CustomerServiceLoginPage;
 import PageObjects.CustomerService.CustomerServicePage;
+import PageObjects.CustomerService.CustomerTaskPage;
 import PageObjects.ServiceDesk.MainPage.DashboardPage;
 import PageObjects.ServiceDesk.MainPage.Insightpage;
 import PageObjects.ServiceDesk.MainPage.ServiceDeskLoginPage;
 import core.ElementsOnPages.Task.TaskButton;
+import core.ElementsOnPages.Task.TaskStatus;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -27,14 +29,15 @@ public class _8_Replacment extends BaseTestClass {
      9. Sprawdzić w Insight czy odnotowano zamknięcie
      */
 
-    String nrZgloszeniaZastepstwa="SUBST-24";
+    String nrZgloszeniaZastepstwa;
+
     @Test(priority = 81)
     public void setSubstitution() {
         CustomerServiceLoginPage customerServiceLoginPage = new CustomerServiceLoginPage(driver);
         //a potrzeby testów zastępst zmieniam URL serviceDeska na URL serviceDeska przeznaczonego do Zastępst
         customerServiceLoginPage.setCustomerURL("http://vpn.evercode.com.pl/servicedesk/customer/portal/13");
         CustomerServicePage customerServicePage = customerServiceLoginPage.logInToCustomer();
-         nrZgloszeniaZastepstwa = customerServicePage.setSubstitution("adminEVC", "customer1");
+        nrZgloszeniaZastepstwa = customerServicePage.setSubstitution("adminEVC", "customer1");
     }
 
     @Test(priority = 82)
@@ -49,10 +52,25 @@ public class _8_Replacment extends BaseTestClass {
         Assert.assertEquals(subsState, "on", "zastępstwo jest w błędnym stanie");
     }
 
+    @Test(priority = 83)
     public void closeSubstitution() {
+        CustomerServiceLoginPage customerServiceLoginPage = new CustomerServiceLoginPage(driver);
+        CustomerServicePage customerServicePage = customerServiceLoginPage.logInToCustomer();
+        CustomerTaskPage customerTaskPage = customerServicePage.goToTask(nrZgloszeniaZastepstwa);
+        customerTaskPage.closeSubstitution();
+        Assert.assertEquals(customerTaskPage.getStatus(), TaskStatus.CLOSED_SUBSTIITUTON.getStatus(), "Zastępstwo nie zostało zamknięte");
+
     }
 
+    @Test(priority = 84)
     public void checkSustitutionIsClosed() {
+        ServiceDeskLoginPage serviceDeskLoginPage = new ServiceDeskLoginPage(driver);
+        DashboardPage dashboardPage = serviceDeskLoginPage.loginAsAdmin();
+        Insightpage insightpage = dashboardPage.goToInsightPage("Substitutions");
+        insightpage.clickOnButton(TaskButton.SUBSTITUTIONS);
+        insightpage.switchViewToList();
+        String subsState = insightpage.findSubstitution(nrZgloszeniaZastepstwa);
+        Assert.assertEquals(subsState, "off", "zastępstwo nie zostało zamknięte");
     }
 
 }

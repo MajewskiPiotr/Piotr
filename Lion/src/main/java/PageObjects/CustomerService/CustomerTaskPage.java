@@ -1,11 +1,13 @@
 package PageObjects.CustomerService;
 
+import core.ElementsOnPages.Task.TaskStatus;
 import core.Tools.Tools;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
 
@@ -22,6 +24,10 @@ public class CustomerTaskPage extends AbstractCustomerServicePage {
     protected WebElement status;
     @FindBy(xpath = "//*[@class='vp-activity-list']//*//div[contains(@class, 'comment')]")
     protected List<WebElement> listaKomentarzy;
+
+    @FindBy(xpath = "//*[@id='com.atlassian.servicedesk:workflow-transition-11']")
+    protected WebElement closeSubstButton;
+
 
     public CustomerTaskPage(WebDriver driver) {
         super(driver);
@@ -51,8 +57,19 @@ public class CustomerTaskPage extends AbstractCustomerServicePage {
     }
 
     public boolean isSlaExist() {
-        boolean is =  driver.findElement(By.xpath("//*[contains(@class,'sla-tag')]")).isDisplayed();
-        System.out.println("czy jest element " + is );
+        boolean is = driver.findElement(By.xpath("//*[contains(@class,'sla-tag')]")).isDisplayed();
+        System.out.println("czy jest element " + is);
         return is;
+    }
+
+    public void closeSubstitution() {
+        closeSubstButton.click();
+        Tools.waitForProcesing(1000);
+        //kliknięcie w potwierdzenie zamknięcia zastępstwa
+        driver.findElement(By.xpath("html/body/section/form/footer/div/button[1]")).click();
+        System.out.println(getStatus());
+        wait.until(ExpectedConditions.textToBePresentInElement(status, TaskStatus.CLOSED_SUBSTIITUTON.getStatus()));
+        System.out.println(getStatus());
+
     }
 }

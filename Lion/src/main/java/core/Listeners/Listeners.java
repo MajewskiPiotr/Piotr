@@ -1,12 +1,14 @@
 package core.Listeners;
 
 import Tests.BaseTestClass;
-
+import com.itextpdf.text.DocumentException;
+import core.Reports.RaporPDF;
 import core.Tools.Configuration.Property;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -71,9 +73,15 @@ public class Listeners implements ITestListener {
     @Override
     public void onFinish(ITestContext context) {
         System.out.println("Result : " + listabledow.toString());
-       // RaporPDF raporPDF = new RaporPDF();
+        RaporPDF raporPDF = new RaporPDF();
 
-       //     raporPDF.create(listabledow);
+        try {
+            raporPDF.create(listabledow);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (DocumentException e) {
+            e.printStackTrace();
+        }
 
 
     }

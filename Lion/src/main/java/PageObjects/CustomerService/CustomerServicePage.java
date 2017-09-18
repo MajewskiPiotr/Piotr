@@ -61,12 +61,12 @@ public class CustomerServicePage extends AbstractCustomerServicePage {
         substitutionButton.click();
         //Ustawiamy UserName - Osoba która będzie zastępowana
         new Actions(driver).click(userNameField).sendKeys(userNname).build().perform();
-        Tools.waitForProcesing(2000);
+        Tools.waitForProcesing(1000);
         new Actions(driver).sendKeys(Keys.TAB).build().perform();
 
         //Usatwiamy Replacement User Naem - Osoba która będzie zastępować
         new Actions(driver).click(replacementNameField).sendKeys(replacementUserName).build().perform();
-        Tools.waitForProcesing(2000);
+        Tools.waitForProcesing(1000);
         new Actions(driver).sendKeys(Keys.TAB).build().perform();
 
         createButton.click();
