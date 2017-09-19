@@ -41,6 +41,9 @@ public class CreateLinkedIssue extends PageObject {
     @FindBy(xpath = "//*[@id='issuetype-field']")
     protected WebElement issueTypeList;
 
+    @FindBy(xpath = "//*[@id='customfield_10702-suggestions']//*[@id='all-objects']/*")
+    protected List<WebElement> softwareTeamList;
+
 
     public void setProject() {
         driver.findElement(By.xpath("//*[@id='write_id_of_your_picker_field_here-single-select']/span")).click();
