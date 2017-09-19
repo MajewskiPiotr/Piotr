@@ -26,7 +26,7 @@ import org.testng.annotations.Test;
  */
 public class _1_FlowTest_closeIssue extends BaseTestClass {
 
-    private String issueNr = "";
+    private String issueNr = "DLSD-570";
     private String relatedIssue = "";
 
     @Test(priority = 1, groups = {"regresja"})

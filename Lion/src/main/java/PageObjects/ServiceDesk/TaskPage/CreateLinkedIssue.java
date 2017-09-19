@@ -63,12 +63,9 @@ public class CreateLinkedIssue extends PageObject {
 
     public void setSoftwareTeam() {
 
-        WebElement dropdown = driver.findElement(By.xpath("//*[@class='field-group']//label[text()='Software Team']/..//div/input"));
-        dropdown.click();
+        driver.findElement(By.xpath("//*[@id='customfield_10702-field']")).click();
         Random random = new Random();
-        Tools.waitForProcesing(2000);
-        List<WebElement> lista = driver.findElements(By.xpath("//*[@id='customfield_12719-suggestions']//*[@id='all-objects']/*"));
-        lista.get(random.nextInt(lista.size() - 1)).click();
+        softwareTeamList.get(random.nextInt(softwareTeamList.size() - 1)).click();
     }
 
     public void create() {
