@@ -75,7 +75,6 @@ public class TaskPage extends AbstractTaskPage {
         new Actions(driver).moveToElement(poleWprowadzaniaKomentarza).sendKeys(poleWprowadzaniaKomentarza, komentarz).click(sendToClientChecBox).perform();
         driver.findElement(By.id("issue-comment-add-submit")).click();
         wait.until(ExpectedConditions.invisibilityOf(driver.findElement(By.xpath("//*[@id='issue-comment-add-cancel']"))));
-
         //TODO wait na coś
         driver.navigate().refresh();
     }

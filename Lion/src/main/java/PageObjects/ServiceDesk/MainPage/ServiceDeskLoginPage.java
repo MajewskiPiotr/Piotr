@@ -57,7 +57,9 @@ public class ServiceDeskLoginPage extends PageObject {
         return new DashboardPage(driver);
     }
     public QueQuePage loginAsAgentAngGoToQueque() {
-        login("evercode_pmajewski", "q@!@e#U5");
+        //login("evercode_pmajewski", "q@!@e#U5");
+        login("admin2", "admin2");
+
         return new QueQuePage(driver);
     }
 
