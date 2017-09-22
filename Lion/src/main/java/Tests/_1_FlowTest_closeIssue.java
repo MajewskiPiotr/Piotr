@@ -6,7 +6,6 @@ import PageObjects.CustomerService.CustomerTaskPage;
 import PageObjects.ServiceDesk.MainPage.QueQuePage;
 import PageObjects.ServiceDesk.MainPage.ServiceDeskLoginPage;
 import PageObjects.ServiceDesk.TaskPage.TaskPage;
-import core.ElementsOnPages.Task.TaskButton;
 import core.ElementsOnPages.Task.TaskStatus;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -29,17 +28,19 @@ public class _1_FlowTest_closeIssue extends BaseTestClass {
     private String issueNr = "";
     private String relatedIssue = "";
 
+
+
     @Test(priority = 1, groups = {"regresja"})
     public void createIssue() {
         System.out.println("Selenium Test");
         CustomerServiceLoginPage customerServiceLoginPage = new CustomerServiceLoginPage(driver);
         CustomerServicePage customerServicePage = customerServiceLoginPage.logInToCustomer();
         issueNr = customerServicePage.zglosBlad("Blad zgloszony Automatem, Scenariusz _1_FlowTest_closeIssue", " blad zostal zgloszony automatem");
-        System.out.println("Issue number "+ issueNr);
+        System.out.println("Issue number " + issueNr);
 
     }
 
-   @Test(priority = 2, dependsOnMethods = {"createIssue"}, groups = {"regresja"})
+    @Test(priority = 2, dependsOnMethods = {"createIssue"}, groups = {"regresja"})
     public void obsluzenieIssue() {
         ServiceDeskLoginPage serviceDeskLoginPage = new ServiceDeskLoginPage(driver);
         QueQuePage queQuePage = serviceDeskLoginPage.loginAsAgentAngGoToQueque();
@@ -52,11 +53,11 @@ public class _1_FlowTest_closeIssue extends BaseTestClass {
         Assert.assertEquals(taskPage1.getStatus(), TaskStatus.RESOLVED.getStatus(), "Stan Issue w SD nie został ustawiony na Resolved");
     }
 
-   @Test(priority = 3, dependsOnMethods = {"obsluzenieIssue"}, groups = {"regresja"})
+    @Test(priority = 3, dependsOnMethods = {"obsluzenieIssue"}, groups = {"regresja"})
     public void verifyStatusInCustomer() {
         CustomerServiceLoginPage customerServiceLoginPage = new CustomerServiceLoginPage(driver);
         CustomerServicePage customerServicePage = customerServiceLoginPage.logInToCustomer();
         CustomerTaskPage customerTaskPage = customerServicePage.goToTask(issueNr);
-        Assert.assertEquals(customerTaskPage.getStatus(), TaskStatus.RESOLVED.getStatus(),"Stan Issue w Customer nie został zmienony na RESOLVED");
+        Assert.assertEquals(customerTaskPage.getStatus(), TaskStatus.RESOLVED.getStatus(), "Stan Issue w Customer nie został zmienony na RESOLVED");
     }
 }
