@@ -23,7 +23,7 @@ public class _5_MasterIncident extends BaseTestClass {
     3. rozwiązać Master Incident i zweryfikować czy podrzedne zostały zamknięte
      */
     //dane testowe
-    private String masterIncident;
+    private String masterIncident="";
     private List<String> relatedoIssue = new ArrayList<>();
 
 

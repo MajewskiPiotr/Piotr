@@ -10,6 +10,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by Piotr Majewski on 2017-06-20.
@@ -27,7 +28,17 @@ public class CustomerTaskPage extends AbstractCustomerServicePage {
 
     @FindBy(xpath = "//*[@id='com.atlassian.servicedesk:workflow-transition-11']")
     protected WebElement closeSubstButton;
+    @FindBy(xpath = "//*[@class[contains(.,'cv-approval-status')]]//ul[@class=\"cv-user-list\"]//span[@class='sd-user-value']")
+    protected List<WebElement> securityApprovalUserList;
+    @FindBy(xpath = "//*[@class[contains(.,'cv-approval-status')]]//h5[text()='Supervisor approval']//..//span[@class='sd-user-value']")
+    protected WebElement supervisorApprovalUser;
 
+    @FindBy(xpath = "//*[@class[contains(.,'cv-approval-status')]]//h5[text()='Specialists approval']//..//span[@class='sd-user-value']")
+    protected List<WebElement> specialistApprovalUserList;
+
+
+    @FindBy(xpath = "//*[@id='content']//button[contains(.,'Approve')]")
+    protected WebElement approveButton;
 
     public CustomerTaskPage(WebDriver driver) {
         super(driver);
@@ -72,4 +83,42 @@ public class CustomerTaskPage extends AbstractCustomerServicePage {
         System.out.println(getStatus());
 
     }
+
+    public String getSecurityApproval() {
+        Random random = new Random();
+        return securityApprovalUserList.get(random.nextInt(securityApprovalUserList.size() - 1)).getText();
+    }
+
+    //Akceptujemy RFA jako Security i zwracamy Supervisora
+    public String approveRFAasSecurity() {
+        String supervisor;
+        approvedRFA();
+        wait.until(ExpectedConditions.textToBePresentInElement(status, TaskStatus.SUPERVISOR_APPROVAL.getStatus()));
+        driver.navigate().refresh();
+        supervisor = supervisorApprovalUser.getText();
+        return supervisor;
+
+    }
+
+    //Akceptujemy RFA jako Supervisor i zwracamy Specialist
+    public String[] approveRFAasSupervisor() {
+        approvedRFA();
+        //ustalamy ile osob musi zaakceptować
+        String approvals = driver.findElement(By.xpath("//*[@class[contains(.,'cv-approval-status')]]//h5[text()='Specialists approval']/../p[@class='cv-final-decision']")).getText().substring(0, 1);
+        int approvalNeeded = Integer.parseInt(approvals);
+        String[] specialist = new String[approvalNeeded];
+        for (int i = 0; i < approvalNeeded; i++) {
+            int x = (int) (Math.random()* specialistApprovalUserList.size());
+            System.out.println("wylosowano : "+x);
+            specialist[i] = specialistApprovalUserList.get(x).getText();
+        }
+        return specialist;
+    }
+
+    public void approvedRFA() {
+        approveButton.click();
+        Tools.waitForProcesing(3000);
+    }
 }
+
+

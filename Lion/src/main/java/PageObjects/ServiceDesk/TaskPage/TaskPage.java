@@ -57,6 +57,8 @@ public class TaskPage extends AbstractTaskPage {
     public String wprowadzKomentarz(String komentarz) {
         new Actions(driver).moveToElement(poleWprowadzaniaKomentarza).sendKeys(poleWprowadzaniaKomentarza, komentarz).perform();
         driver.findElement(By.id("issue-comment-add-submit")).click();
+        wait.until(ExpectedConditions.invisibilityOf(driver.findElement(By.xpath("//*[@id='issue-comment-add-cancel']"))));
+
         Tools.waitForProcesing(3000);
         driver.navigate().refresh();
         return getLabel(komentarz);
@@ -91,8 +93,8 @@ public class TaskPage extends AbstractTaskPage {
     public void respondToCustomer(String komentarz) {
         respondToCustomerButton.click();
         new RespondToCustomerPage(driver).przekazDoCustomera(komentarz);
-        Tools.waitForProcesing(2000);
-        //TODO zweryfikować czy labelka sie ustawiła
+        Tools.waitForProcesing(4000);
+       // wait.until(ExpectedConditions.invisibilityOf(respondToCustomerButton));
         driver.navigate().refresh();
     }
 

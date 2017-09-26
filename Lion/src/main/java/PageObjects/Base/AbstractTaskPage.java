@@ -28,7 +28,7 @@ public abstract class AbstractTaskPage extends AbstractJiraPage {
 
 
     //Guziki
-    @FindBy(xpath = "//*[@id='action_id_2']")
+    @FindBy(xpath = "//*[@id='action_id_5']")
     protected WebElement closeIssueButton;
     @FindBy(id = "comment-issue")
     protected WebElement commentButton;
@@ -42,7 +42,8 @@ public abstract class AbstractTaskPage extends AbstractJiraPage {
     protected WebElement respondToCustomerButton;
     @FindBy(id = "action_id_31")
     protected WebElement doneButton;
-
+    @FindBy(id = "action_id_5")
+    protected WebElement resolveIssueButton;
     //Pola
     @FindBy(xpath = "//*[@id='rowForcustomfield_10615']//*[@class='tinylink']/*")
     protected List<WebElement> product;
@@ -178,13 +179,16 @@ public abstract class AbstractTaskPage extends AbstractJiraPage {
     }
 
     public void resolveIssue() {
-        closeIssueButton.click();
+        resolveIssueButton.click();
         //wait until system show new screen with close parameters
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='issue-workflow-transition']")));
-        Select select = new Select(driver.findElement(By.id("resolution")));
-        select.selectByVisibleText("Done");
+        //wypełniamy pole (Incident Duration)  w PopUpie DONE
+        WebElement incidentDurationInput = driver.findElement(By.xpath("//*[@id='customfield_11002']"));
+        incidentDurationInput.sendKeys("10");
+        incidentDurationInput.click();
+        //klikamy na guzik DONE na otwartym popUpie
         driver.findElement(By.xpath("//*[@id='issue-workflow-transition-submit']")).click();
-        wait.until(ExpectedConditions.textToBePresentInElement(status, TaskStatus.CLOSED.getStatus()));
+        wait.until(ExpectedConditions.textToBePresentInElement(status, TaskStatus.RESOLVED.getStatus()));
         driver.navigate().refresh();
     }
 

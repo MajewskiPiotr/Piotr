@@ -117,7 +117,7 @@ public class EditIssuePage extends AbstractJiraPage {
         List<WebElement> listOdProduct = driver.findElements(By.xpath("//*[@id='showing-first-25-objects']/*"));
         Random random = new Random();
        //listOdProduct.get(random.nextInt(listOdProduct.size() - 1)).click();
-        listOdProduct.get(1).click();
+        listOdProduct.get(0).click();
 
     }
 
@@ -126,7 +126,7 @@ public class EditIssuePage extends AbstractJiraPage {
         List<WebElement> listOfCategory = driver.findElements(By.xpath("//*[@id='all-objects']/*"));
         Random random = new Random();
         //listOfCategory.get(random.nextInt(listOfCategory.size() - 1)).click();
-        listOfCategory.get(1).click();
+        listOfCategory.get(0).click();
 
 
     }

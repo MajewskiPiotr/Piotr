@@ -1,6 +1,7 @@
 package PageObjects.ServiceDesk.MainPage;
 
 import PageObjects.Base.AbstractJiraPage;
+import PageObjects.CustomerService.CustomerServicePage;
 import PageObjects.ServiceDesk.zold.PackagePluginSettings;
 import PageObjects.ServiceDesk.zold.ProfilePage;
 import org.openqa.selenium.By;
@@ -44,5 +45,12 @@ public class DashboardPage extends AbstractJiraPage {
     }
     public Insightpage goToInsightPage(String insightObjectScheme){
         return new Insightpage(driver, insightObjectScheme);
+    }
+
+    public CustomerServicePage goToServiceDeskPortal(){
+
+
+        return new CustomerServicePage(driver);
+
     }
 }

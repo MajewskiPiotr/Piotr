@@ -1,6 +1,7 @@
 package PageObjects.CustomerService;
 
 import core.Tools.Tools;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -41,6 +42,20 @@ public class CustomerServicePage extends AbstractCustomerServicePage {
     protected WebElement replacementNameField;
 
 
+    //Elementy wprowadzania danych do RFA
+
+    //@FindBy(xpath = "//*[@id='select2-chosen-2']")
+    @FindBy(xpath = "//*[@class='field-group']/label[text()='User company']//..//span[contains(.,'Search for an object')]")
+    protected WebElement userCompanyField;
+
+    //@FindBy(xpath = "//*[@id='select2-chosen-1']")
+    @FindBy(xpath = "//*[@class='field-group']/label[text()='User name (login)']//..//span[contains(.,'Search for an object')]")
+    protected WebElement userNameInRFAField;
+
+    @FindBy(xpath = "//*[text()='Confluence space name']/../div[@class='field-container']/textarea")
+    protected WebElement confSpaceName;
+
+
     public CustomerServicePage(WebDriver driver) {
         super(driver);
     }
@@ -72,6 +87,48 @@ public class CustomerServicePage extends AbstractCustomerServicePage {
         createButton.click();
         String nrZgloszenia = zgloszenieNr.getText();
         System.out.println("zgłoszenie zastępstwa numer " + nrZgloszenia);
+        driver.navigate().to(CustomerURL);
+        return nrZgloszenia;
+    }
+
+    public String createRFA_1(String user) {
+        WebElement rfaLink = driver.findElement(By.xpath("//*[@id='cv-request-content']//strong[contains(.,'Access to Bizon')]"));
+        rfaLink.click();
+        new Actions(driver).click(userCompanyField).sendKeys("Evercode").build().perform();
+        Tools.waitForProcesing(1000);
+        new Actions(driver).sendKeys(Keys.TAB).build().perform();
+        //Usatwiamy  User Name - Osoba dla której tworzone jest RFA
+        new Actions(driver).click(userNameInRFAField).sendKeys(user).build().perform();
+        Tools.waitForProcesing(1000);
+        new Actions(driver).sendKeys(Keys.TAB).build().perform();
+        createButton.click();
+        String nrZgloszenia = zgloszenieNr.getText();
+        System.out.println("RFA numer " + nrZgloszenia);
+        driver.navigate().to(CustomerURL);
+        return nrZgloszenia;
+    }
+
+    public String createRFA_2(String user) {
+
+        WebElement rfaLink = driver.findElement(By.xpath("//*[@id='cv-request-content']//strong[contains(.,'Access to Confluence')]"));
+        rfaLink.click();
+        new Actions(driver).click(userCompanyField).sendKeys("Evercode").build().perform();
+        Tools.waitForProcesing(2000);
+        new Actions(driver).sendKeys(Keys.TAB).build().perform();
+
+        //Usatwiamy  User Name - Osoba dla której tworzone jest RFA
+        new Actions(driver).click(userNameInRFAField).sendKeys(user).build().perform();
+        Tools.waitForProcesing(2000);
+
+        new Actions(driver).sendKeys(Keys.TAB).build().perform();
+
+        confSpaceName.sendKeys("testowo");
+
+        createButton.click();
+
+
+        String nrZgloszenia = zgloszenieNr.getText();
+        System.out.println("RFA numer " + nrZgloszenia);
         driver.navigate().to(CustomerURL);
         return nrZgloszenia;
     }

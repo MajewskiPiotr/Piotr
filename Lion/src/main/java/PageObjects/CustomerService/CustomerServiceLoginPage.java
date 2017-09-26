@@ -1,7 +1,5 @@
 package PageObjects.CustomerService;
 
-import PageObjects.Base.PageObject;
-import core.Tools.Configuration.TestEnviroments;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
@@ -17,7 +15,7 @@ public class CustomerServiceLoginPage extends AbstractCustomerServicePage {
     private WebElement userName;
     @FindBy(id = "os_password")
     private WebElement password;
-    @FindBy(id="login-form")
+    @FindBy(id = "login-form")
     private WebElement logIn;
 
     public CustomerServiceLoginPage(WebDriver driver) {
@@ -49,12 +47,15 @@ public class CustomerServiceLoginPage extends AbstractCustomerServicePage {
         }
     }
 
+    public CustomerServicePage logInToCustomer(String user, String pass) {
+        login(user, pass);
+        return new CustomerServicePage(driver);
+    }
+
     public CustomerServicePage logInToCustomer() {
         login("ParkerCustomer", "12345678");
         return new CustomerServicePage(driver);
     }
-
-
 
 
 }

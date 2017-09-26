@@ -37,7 +37,10 @@ public class PageObject {
             driver.navigate().to(url);
 
         } else if (url.contains("project")) {
-            driver.navigate().to(baseUrl +  url);
+            driver.navigate().to(baseUrl + url);
+
+        } else if (url.contains("customer")) {
+            driver.navigate().to(baseUrl + url);
 
         } else {
             driver.navigate().to(baseUrl + "/browse/" + url);

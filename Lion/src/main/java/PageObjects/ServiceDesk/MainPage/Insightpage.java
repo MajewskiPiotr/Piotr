@@ -43,6 +43,10 @@ public class Insightpage extends AbstractJiraPage {
             case "Substitutions": {
                 driver.navigate().to(baseUrl + "/secure/ObjectSchema.jspa?id=7");
             }
+            case "Enova": {
+                driver.navigate().to(baseUrl + "/secure/ObjectSchema.jspa?id=7&typeId=31&view=list&objectId=1305");
+
+            }
 
         }
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='rlabs-actions-object-filter-button']")));
@@ -108,9 +112,7 @@ public class Insightpage extends AbstractJiraPage {
     }
 
     public String findSubstitution(String substTask) {
-        if (advancedButton.isEnabled()) {
-            advancedButton.click();
-        }
+        switchToAdvanced();
 
         jqlInput.sendKeys(" \"Name\" = " + substTask + Keys.ENTER);
         Tools.waitForProcesing(3000);
@@ -146,4 +148,41 @@ public class Insightpage extends AbstractJiraPage {
         return matrix;
     }
 
+    public String findSupervisor(String user) {
+        switchViewToList();
+        switchToAdvanced();
+        setColumnSupervisor();
+
+        jqlInput.sendKeys("\"Name\" =(\"" + user + "\")" + Keys.ENTER);
+        Tools.waitForProcesing(2000);
+        if (getMatrix().size() != 1) {
+            Assert.fail("Ilość userow wynosi :" + getMatrix().size());
+        }
+
+        WebElement supervisorID = driver.findElement(By.xpath("//*[@id[contains(.,'rlabs-object')]]/div[7]/div/span"));
+        jqlInput.clear();
+        jqlInput.sendKeys("\"NR_EW\" =(\"" + supervisorID.getText() + "\")" + Keys.ENTER);
+        if (getMatrix().size() != 1) {
+            Assert.fail("Ilość supervisorow wynosi :" + getMatrix().size());
+        }
+        Tools.waitForProcesing(1000);
+        WebElement supervisorName = driver.findElement(By.xpath("(//*[@id[contains(.,'object-name')]])[2]"));
+        Tools.waitForProcesing(2000);
+        return supervisorName.getText();
+    }
+
+    private void setColumnSupervisor() {
+        driver.findElement(By.xpath("//*[@id='rlabs-columns-button']")).click();
+
+        driver.findElement(By.xpath("//*[@id='rlabs-columns-label-SupervisorEnovaId']/span")).click();
+
+        driver.findElement(By.xpath("//*[@id='rlabs-columns-close']")).click();
+        Tools.waitForProcesing(2000);
+    }
+
+    private void switchToAdvanced() {
+        if (advancedButton.isEnabled()) {
+            advancedButton.click();
+        }
+    }
 }
