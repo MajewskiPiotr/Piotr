@@ -27,7 +27,7 @@ public class _4_PropagacjaKomentarzy extends BaseTestClass {
 
     private String nrTaska;
 
-    @Test(priority = 50)
+    @Test(priority = 40)
     public void propagacjaPomiedzyZaleznymiTaskami() {
         //Z poziomu Taska założyc nowe zgłoszenie do 3 linii
         ServiceDeskLoginPage serviceDeskLoginPage = new ServiceDeskLoginPage(driver);
@@ -54,7 +54,7 @@ public class _4_PropagacjaKomentarzy extends BaseTestClass {
         Assert.assertTrue(mainPage.verifyCommentExist(komentarzWidocznyDlaCustomera), "nie udała sie propagacja komentarzy");
     }
 
-    @Test(priority = 51, dependsOnMethods = {"propagacjaPomiedzyZaleznymiTaskami"})
+    @Test(priority = 41, dependsOnMethods = {"propagacjaPomiedzyZaleznymiTaskami"})
     public void weryfikacjaPropagacjiKomentarzyDoCustomera() {
         //Uruchamiamy aplikacje Customer i weryfikujemy czy komentarz został tam rozpropagowany
         CustomerServiceLoginPage customerServiceLoginPage = new CustomerServiceLoginPage(driver);

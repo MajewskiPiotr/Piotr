@@ -32,7 +32,9 @@ public class _6_WeryfikacjaPrzypisaniaCzasuSLA extends BaseTestClass {
         CustomerServiceLoginPage customerServiceLoginPage = new CustomerServiceLoginPage(driver);
         CustomerServicePage customerServicePage = customerServiceLoginPage.logInToCustomer();
         issue = customerServicePage.zglosBlad("Zgłoszenie błedu - Test Automatyczne - Weryfikacja Przypisania Czasu SLA", "Opis błedu dla automatu");
+        System.out.println("issue number : " + issue);
         Assert.assertTrue(!issue.equals(""), "nie udało sie poprawnie obsluzyc ISSUE");
+
     }
 
     @Test(priority = 61, dependsOnMethods = {"generowanieBledu"})

@@ -147,6 +147,7 @@ public class EditIssuePage extends AbstractJiraPage {
         updateButton.click();
         //czekam na zamknięcie sie okna z edycją Issue
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='descriptionmodule_heading']")));
+        Tools.waitForProcesing(2000);
     }
 
     private String create() {

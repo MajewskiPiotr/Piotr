@@ -27,7 +27,7 @@ public class _5_MasterIncident extends BaseTestClass {
     private List<String> relatedoIssue = new ArrayList<>();
 
 
-    @Test(priority = 40)
+    @Test(priority = 50)
     public void createIssue() {
         CustomerServiceLoginPage customerServiceLoginPage = new CustomerServiceLoginPage(driver);
         CustomerServicePage customerServicePage = customerServiceLoginPage.logInToCustomer();
@@ -37,7 +37,7 @@ public class _5_MasterIncident extends BaseTestClass {
         Tools.wypiszListe(relatedoIssue);
     }
 
-    @Test(priority = 41, dependsOnMethods = {"createIssue"})
+    @Test(priority = 51, dependsOnMethods = {"createIssue"})
     public void createMasterIncident() {
         ServiceDeskLoginPage serviceDeskLoginPage = new ServiceDeskLoginPage(driver);
         QueQuePage queQuePage = serviceDeskLoginPage.loginAsAgentAngGoToQueque();
@@ -46,7 +46,7 @@ public class _5_MasterIncident extends BaseTestClass {
         Assert.assertTrue(masterIncident != "", "nie udało się utworzyć Master Incidenta");
     }
 
-    @Test(priority = 42, dependsOnMethods = {"createMasterIncident"})
+    @Test(priority = 52, dependsOnMethods = {"createMasterIncident"})
     public void masterIncidentFlow() {
         ServiceDeskLoginPage serviceDeskLoginPage = new ServiceDeskLoginPage(driver);
         QueQuePage queQuePage = serviceDeskLoginPage.loginAsAgentAngGoToQueque();
