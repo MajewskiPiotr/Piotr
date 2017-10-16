@@ -89,6 +89,12 @@ public class CustomerTaskPage extends AbstractCustomerServicePage {
         return securityApprovalUserList.get(random.nextInt(securityApprovalUserList.size() - 1)).getText();
     }
 
+
+    public String getSupervisor(){
+        String supervisor;
+        supervisor = supervisorApprovalUser.getText();
+        return supervisor;
+    }
     //Akceptujemy RFA jako Security i zwracamy Supervisora
     public String approveRFAasSecurity() {
         String supervisor;

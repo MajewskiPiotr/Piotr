@@ -6,6 +6,7 @@ import PageObjects.ServiceDesk.MainPage.QueQuePage;
 import PageObjects.ServiceDesk.MainPage.ServiceDeskLoginPage;
 import PageObjects.ServiceDesk.TaskPage.EditIssuePage;
 import PageObjects.ServiceDesk.TaskPage.TaskPage;
+import core.BaseTestClass;
 import core.Tools.Tools;
 import org.testng.Assert;
 import org.testng.annotations.Test;

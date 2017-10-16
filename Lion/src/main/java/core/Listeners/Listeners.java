@@ -1,6 +1,6 @@
 package core.Listeners;
 
-import Tests.BaseTestClass;
+import core.BaseTestClass;
 import com.itextpdf.text.DocumentException;
 import core.Reports.RaporPDF;
 import core.Tools.Configuration.Property;

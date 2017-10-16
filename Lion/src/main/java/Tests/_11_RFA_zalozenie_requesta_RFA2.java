@@ -5,6 +5,7 @@ import PageObjects.CustomerService.CustomerServicePage;
 import PageObjects.CustomerService.CustomerTaskPage;
 import PageObjects.ServiceDesk.MainPage.DashboardPage;
 import PageObjects.ServiceDesk.MainPage.ServiceDeskLoginPage;
+import core.BaseTestClass;
 import core.JSscripts.JsScript;
 import org.testng.annotations.Test;
 

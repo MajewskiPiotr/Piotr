@@ -1,10 +1,11 @@
-package Tests;
+package Automation;
 
 
 import PageObjects.ServiceDesk.MainPage.AddLenguageMappingPage;
 import PageObjects.ServiceDesk.MainPage.DashboardPage;
 import PageObjects.ServiceDesk.MainPage.ProjectSettingsPage;
 import PageObjects.ServiceDesk.MainPage.ServiceDeskLoginPage;
+import core.BaseTestClass;
 import core.Tools.Tools;
 import core.Tools.TranslationSchem;
 

@@ -90,6 +90,21 @@ public class CustomerServicePage extends AbstractCustomerServicePage {
         driver.navigate().to(CustomerURL);
         return nrZgloszenia;
     }
+    public String setSubstitutionDefaultUser( String replacementUserName) {
+        substitutionButton.click();
+
+
+        //Usatwiamy Replacement User Naem - Osoba która będzie zastępować
+        new Actions(driver).click(replacementNameField).sendKeys(replacementUserName).build().perform();
+        Tools.waitForProcesing(1000);
+        new Actions(driver).sendKeys(Keys.TAB).build().perform();
+
+        createButton.click();
+        String nrZgloszenia = zgloszenieNr.getText();
+        System.out.println("zgłoszenie zastępstwa numer " + nrZgloszenia);
+        driver.navigate().to(CustomerURL);
+        return nrZgloszenia;
+    }
 
     public String createRFA_1(String user) {
         WebElement rfaLink = driver.findElement(By.xpath("//*[@id='cv-request-content']//strong[contains(.,'Access to Bizon')]"));

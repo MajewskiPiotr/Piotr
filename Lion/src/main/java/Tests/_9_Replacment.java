@@ -6,6 +6,7 @@ import PageObjects.CustomerService.CustomerTaskPage;
 import PageObjects.ServiceDesk.MainPage.DashboardPage;
 import PageObjects.ServiceDesk.MainPage.Insightpage;
 import PageObjects.ServiceDesk.MainPage.ServiceDeskLoginPage;
+import core.BaseTestClass;
 import core.ElementsOnPages.Task.TaskButton;
 import core.ElementsOnPages.Task.TaskStatus;
 import org.testng.Assert;
@@ -37,7 +38,7 @@ public class _9_Replacment extends BaseTestClass {
         //a potrzeby testów zastępst zmieniam URL serviceDeska na URL serviceDeska przeznaczonego do Zastępst
         customerServiceLoginPage.setCustomerURL("http://vpn.evercode.com.pl/servicedesk/customer/portal/13");
         CustomerServicePage customerServicePage = customerServiceLoginPage.logInToCustomer();
-        nrZgloszeniaZastepstwa = customerServicePage.setSubstitution("adminEVC", "customer1");
+        nrZgloszeniaZastepstwa = customerServicePage.setSubstitutionDefaultUser( "customer1");
     }
 
     @Test(priority = 92)

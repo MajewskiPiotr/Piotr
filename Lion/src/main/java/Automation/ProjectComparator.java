@@ -1,4 +1,4 @@
-package Tests;
+package Automation;
 /**
  * Created by Piotr Majewski on 2017-06-27.
  */

@@ -1,4 +1,4 @@
-package Tests;
+package core;
 
 import core.Tools.Configuration.EnviromentSettings;
 import core.Tools.Configuration.TestEnviroments;

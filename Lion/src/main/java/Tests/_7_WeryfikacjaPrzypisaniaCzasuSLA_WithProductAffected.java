@@ -8,6 +8,7 @@ import PageObjects.ServiceDesk.MainPage.QueQuePage;
 import PageObjects.ServiceDesk.MainPage.ServiceDeskLoginPage;
 import PageObjects.ServiceDesk.TaskPage.EditIssuePage;
 import PageObjects.ServiceDesk.TaskPage.TaskPage;
+import core.BaseTestClass;
 import core.ElementsOnPages.Task.TaskButton;
 import core.ElementsOnPages.Task.TaskField;
 import org.testng.Assert;
@@ -34,6 +35,7 @@ public class _7_WeryfikacjaPrzypisaniaCzasuSLA_WithProductAffected extends BaseT
         CustomerServicePage customerServicePage = customerServiceLoginPage.logInToCustomer();
         issue = customerServicePage.zglosBlad("Zgłoszenie błedu - Test Automatyczne - Weryfikacja Przypisania Czasu SLA_withProductAffected", "Opis błedu dla automatu");
         Assert.assertTrue(!issue.equals(""), "nie udało sie poprawnie obsluzyc ISSUE");
+        System.out.println("issue nr" + issue);
     }
 
     @Test(priority = 71, dependsOnMethods = {"generowanieBledu"})
@@ -61,12 +63,14 @@ public class _7_WeryfikacjaPrzypisaniaCzasuSLA_WithProductAffected extends BaseT
         insightpage.clickOnButton(TaskButton.SLA);
         insightpage.switchViewToList();
         solutionTimeFromInsight = insightpage.findSolutionTime(productClassList, category);
-        System.out.println("solutionTimeFromInsight: "+ solutionTimeFromInsight);
-        System.out.println("solutionTimeFromTask: "+ solutionTimeFromTask);
+        System.out.println("solutionTimeFromInsight: " + solutionTimeFromInsight);
+        System.out.println("solutionTimeFromTask: " + solutionTimeFromTask);
 
         //weryfikacja SLA z Taska i SLA z INSIGHTA
         //weryfikujemy czy udało sie ustawić slaTime
-        if(solutionTimeFromInsight==1000000){Assert.fail("Produkty przypisane do Issue nie posiadają ustawionych ProductClass w Insigth");}
+        if (solutionTimeFromInsight == 1000000) {
+            Assert.fail("Produkty przypisane do Issue nie posiadają ustawionych ProductClass w Insigth");
+        }
         //weryfikujmy czy został ustawiony prawidłowy SlA
         Assert.assertEquals(solutionTimeFromInsight, solutionTimeFromTask, "Czas SLA został wyliczony nie poprawnie");
     }

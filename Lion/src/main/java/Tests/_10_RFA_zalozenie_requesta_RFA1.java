@@ -5,6 +5,7 @@ import PageObjects.CustomerService.CustomerServicePage;
 import PageObjects.CustomerService.CustomerTaskPage;
 import PageObjects.ServiceDesk.MainPage.DashboardPage;
 import PageObjects.ServiceDesk.MainPage.ServiceDeskLoginPage;
+import core.BaseTestClass;
 import core.JSscripts.JsScript;
 import org.testng.annotations.Test;
 
@@ -29,20 +30,11 @@ public class _10_RFA_zalozenie_requesta_RFA1 extends BaseTestClass {
         customerServicePage.goToUrl("/servicedesk/customer/portal/2/group/23");
         rfaIssueNumber = customerServicePage.createRFA_1("u1");
         CustomerTaskPage rfaTask = customerServiceLoginPage.goToTask(rfaIssueNumber);
-        securityApproval = rfaTask.getSecurityApproval();
-        System.out.println(securityApproval);
-    }
-
-    @Test(priority = 101)
-    public void securityApproval() {
-        ServiceDeskLoginPage serviceDeskLoginPage = new ServiceDeskLoginPage(driver);
-        DashboardPage dashboardPage = serviceDeskLoginPage.loginAsAdmin();
-        JsScript.switchUserByLogin(driver, securityApproval);
-        CustomerServicePage customerServicePage = dashboardPage.goToServiceDeskPortal();
-        CustomerTaskPage customerTaskPage = customerServicePage.goToTask(rfaIssueNumber);
-        supervisor = customerTaskPage.approveRFAasSecurity();
+        supervisor = rfaTask.getSupervisor();
         System.out.println(supervisor);
     }
+
+
 
     @Test(priority = 102)
     public void supervisorApproval() {
