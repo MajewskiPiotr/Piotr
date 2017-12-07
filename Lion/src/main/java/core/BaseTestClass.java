@@ -7,6 +7,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
+import org.openqa.selenium.remote.BrowserType;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
@@ -29,11 +30,11 @@ public class BaseTestClass {
     public void setUp() throws MalformedURLException {
         EnviromentSettings enviromentSettings = new EnviromentSettings();
         enviromentSettings.SetTestEnviroment(TestEnviroments.VPN);
-        driver = enviromentSettings.setUpDriver(null, "chrome", false);
+        driver = enviromentSettings.setUpDriver(null, BrowserType.FIREFOX, false);
 
     }
 
-    @AfterMethod(alwaysRun = true)
+   // @AfterMethod(alwaysRun = true)
     public void tearDown() {
         driver.close();
     }

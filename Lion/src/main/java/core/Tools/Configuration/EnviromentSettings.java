@@ -69,6 +69,7 @@ public class EnviromentSettings {
     //Funckja ustawia parametry przeglądarki w zaleznosci od dokonanego wyboru.
     private WebDriver setUpLocalDriver(String browserType) {
         String basePath = Property.getProperty("basePath") + "/Lion/src/resources";
+        System.out.println("sciezka"+ basePath);
         WebDriver driver = null;
         switch (browserType) {
             case BrowserType.CHROME: {
@@ -77,6 +78,7 @@ public class EnviromentSettings {
                 break;
             }
             case BrowserType.FIREFOX: {
+                System.out.println("tutaj");
                 System.setProperty("webdriver.gecko.driver", basePath + "\\geckodriver.exe");
                 driver = new FirefoxDriver();
                 break;

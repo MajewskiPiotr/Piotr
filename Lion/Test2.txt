@@ -1,0 +1,25 @@
+487310-2017; Norwegia-BODØ: Pakiety oprogramowania statystycznego; NO; 06/12/2017; null
+487300-2017; Norwegia-Kleppe: Papeteria; NO; 06/12/2017; null
+487298-2017; Norwegia-Bergen: Sprzęt wideokonferencyjny; NO; 06/12/2017; null
+487244-2017; Hiszpania-Madryt: Urządzenia komputerowe; ES; 06/12/2017; null
+487218-2017; Zjednoczone Królestwo-Salisbury: Maszyny biurowe i liczące, sprzęt i materiały, z wyjątkiem mebli i pakietów oprogramowania; UK; 06/12/2017; null
+487210-2017; Grecja-Ateny: Usługi w zakresie oprogramowania; GR; 06/12/2017; null
+487199-2017; Litwa-Gargždų m., Klaipėdos r. sav.: Usługi informatyczne: konsultacyjne, opracowywania oprogramowania, internetowe i wsparcia; LT; 06/12/2017; null
+487196-2017; Litwa-Wilno: Usługi programowania pakietów oprogramowania; LT; 06/12/2017; null
+487140-2017; Polska-Warszawa: Serwery; PL; 06/12/2017; null
+487139-2017; Francja-Saint-Germain-en-Laye: Poduszki z tuszem; FR; 06/12/2017; null
+487138-2017; Francja-Challans: Paliwo diesla; FR; 06/12/2017; null
+487130-2017; Niemcy-Hanower: Papier fotokopiujący i kserograficzny; DE; 06/12/2017; null
+487125-2017; Grecja-Ateny: Komputery wysokowydajne; GR; 06/12/2017; null
+487123-2017; Hiszpania-Madryt: Urządzenia komputerowe; ES; 06/12/2017; null
+487111-2017; Niemcy-Brunszwik: Systemy informacji medycznej; DE; 06/12/2017; null
+487011-2017; Niemcy-Hamburg: Przemysłowe specyficzne pakiety oprogramowania; DE; 06/12/2017; null
+487007-2017; Chorwacja-Zagrzeb: Badania inżynieryjne; HR; 06/12/2017; null
+486762-2017; Niderlandy-Groningen: Usługi w zakresie projektowania stron WWW; NL; 06/12/2017; null
+486735-2017; Hiszpania-Castellón: Usługi zarządzania dokumentami; ES; 06/12/2017; null
+486707-2017; Niemcy-Bonn: Pakiety oprogramowania i systemy informatyczne; DE; 06/12/2017; null
+486700-2017; Niemcy-Monachium: Usługi w zakresie oceny i analizy gwarancji jakości systemu; DE; 06/12/2017; null
+486689-2017; Francja-Rillieux-la-Pape: Usługi telefoniczne i przesyłu danych; FR; 06/12/2017; null
+486684-2017; Polska-Warszawa: Usługi w zakresie wsparcia systemu; PL; 06/12/2017; null
+486673-2017; Francja-Saint-Mandé: Usługi dodatkowe w zakresie sprzętu komputerowego; FR; 06/12/2017; null
+486672-2017; Dania-København S: Usługi informatyczne: konsultacyjne, opracowywania oprogramowania, internetowe i wsparcia; DK; 06/12/2017; null
