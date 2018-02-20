@@ -28,10 +28,10 @@ public class Automat_Biznesowy_wprowadzenie_tlumaczenia_SD extends BaseTestClass
     @Test
     public void test() throws Exception {
         //załaduj plik i wczytaj mapowanie en/pl
-        List<TranslationSchem> listaMapowania = Tools.getTranslationSchemFromFile("C:\\Users\\Piotr Majewski\\Downloads\\DREAMLab\\translation.txt");
+        List<TranslationSchem> listaMapowania = Tools.getTranslationSchemFromFile("sciezka do pliku z tłumaczeniami");
 
         ServiceDeskLoginPage loginPage = new ServiceDeskLoginPage(driver);
-        DashboardPage dashboardPage = loginPage.loginAsAdminOnProd();
+        DashboardPage dashboardPage = loginPage.loginAsAdminOnProd("login", "haslo");
         //podać adres dostepu do ustawień wtyczki w projekcie
         dashboardPage.goToUrl(PROD);
 
