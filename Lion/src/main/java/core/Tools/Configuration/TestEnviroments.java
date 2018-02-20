@@ -6,6 +6,8 @@ package core.Tools.Configuration;
 public class TestEnviroments {
 
     public static final String VPN = "http://vpn.evercode.com.pl";
+    public static final String PROD = "http://jira.grupa.onet";
+
     public static final String JiraDev = "http://jira-dev.grupa.onet";
 
 

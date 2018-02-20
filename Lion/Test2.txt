@@ -1,25 +1,500 @@
-487310-2017; Norwegia-BODØ: Pakiety oprogramowania statystycznego; NO; 06/12/2017; null
-487300-2017; Norwegia-Kleppe: Papeteria; NO; 06/12/2017; null
-487298-2017; Norwegia-Bergen: Sprzęt wideokonferencyjny; NO; 06/12/2017; null
-487244-2017; Hiszpania-Madryt: Urządzenia komputerowe; ES; 06/12/2017; null
-487218-2017; Zjednoczone Królestwo-Salisbury: Maszyny biurowe i liczące, sprzęt i materiały, z wyjątkiem mebli i pakietów oprogramowania; UK; 06/12/2017; null
-487210-2017; Grecja-Ateny: Usługi w zakresie oprogramowania; GR; 06/12/2017; null
-487199-2017; Litwa-Gargždų m., Klaipėdos r. sav.: Usługi informatyczne: konsultacyjne, opracowywania oprogramowania, internetowe i wsparcia; LT; 06/12/2017; null
-487196-2017; Litwa-Wilno: Usługi programowania pakietów oprogramowania; LT; 06/12/2017; null
-487140-2017; Polska-Warszawa: Serwery; PL; 06/12/2017; null
-487139-2017; Francja-Saint-Germain-en-Laye: Poduszki z tuszem; FR; 06/12/2017; null
-487138-2017; Francja-Challans: Paliwo diesla; FR; 06/12/2017; null
-487130-2017; Niemcy-Hanower: Papier fotokopiujący i kserograficzny; DE; 06/12/2017; null
-487125-2017; Grecja-Ateny: Komputery wysokowydajne; GR; 06/12/2017; null
-487123-2017; Hiszpania-Madryt: Urządzenia komputerowe; ES; 06/12/2017; null
-487111-2017; Niemcy-Brunszwik: Systemy informacji medycznej; DE; 06/12/2017; null
-487011-2017; Niemcy-Hamburg: Przemysłowe specyficzne pakiety oprogramowania; DE; 06/12/2017; null
-487007-2017; Chorwacja-Zagrzeb: Badania inżynieryjne; HR; 06/12/2017; null
-486762-2017; Niderlandy-Groningen: Usługi w zakresie projektowania stron WWW; NL; 06/12/2017; null
-486735-2017; Hiszpania-Castellón: Usługi zarządzania dokumentami; ES; 06/12/2017; null
-486707-2017; Niemcy-Bonn: Pakiety oprogramowania i systemy informatyczne; DE; 06/12/2017; null
-486700-2017; Niemcy-Monachium: Usługi w zakresie oceny i analizy gwarancji jakości systemu; DE; 06/12/2017; null
-486689-2017; Francja-Rillieux-la-Pape: Usługi telefoniczne i przesyłu danych; FR; 06/12/2017; null
-486684-2017; Polska-Warszawa: Usługi w zakresie wsparcia systemu; PL; 06/12/2017; null
-486673-2017; Francja-Saint-Mandé: Usługi dodatkowe w zakresie sprzętu komputerowego; FR; 06/12/2017; null
-486672-2017; Dania-København S: Usługi informatyczne: konsultacyjne, opracowywania oprogramowania, internetowe i wsparcia; DK; 06/12/2017; null
+http://ted.europa.eu/udl?uri=TED:NOTICE:488952-2017:TEXT:PL:HTML&src=0; 488952-2017; Norwegia-Oslo: System pozyskiwania danych; NO; 07/12/2017; Wartosc bez VAT: 6 816 000.00 NOK
+http://ted.europa.eu/udl?uri=TED:NOTICE:488948-2017:TEXT:PL:HTML&src=0; 488948-2017; Norwegia-Oslo: Usługi bazy danych; NO; 07/12/2017; Wartosc bez VAT: 1.00 NOK
+http://ted.europa.eu/udl?uri=TED:NOTICE:488934-2017:TEXT:PL:HTML&src=0; 488934-2017; Norwegia-Gardemoen: Monitory ekranowe; NO; 07/12/2017; Wartosc bez VAT: 4 000 000.00 NOK
+http://ted.europa.eu/udl?uri=TED:NOTICE:488932-2017:TEXT:PL:HTML&src=0; 488932-2017; Norwegia-Stavanger: Pakiety oprogramowania i systemy informatyczne; NO; 07/12/2017; Najtansza oferta: 4 979 500.00 NOK / Najdrozsza oferta: 5 295 700.00 NOK brana pod uwage
+http://ted.europa.eu/udl?uri=TED:NOTICE:488895-2017:TEXT:PL:HTML&src=0; 488895-2017; Rumunia-Oradea: Paliwo diesla; RO; 07/12/2017; Wartosc: 3 450 000,00 RON
+
+http://ted.europa.eu/udl?uri=TED:NOTICE:488885-2017:TEXT:PL:HTML&src=0; 488885-2017; Finlandia-Tampere: Usługi informatyczne: konsultacyjne, opracowywania oprogramowania, internetowe i wsparcia; FI; 07/12/2017; Wartosc: 665 000 EUR
+
+http://ted.europa.eu/udl?uri=TED:NOTICE:488868-2017:TEXT:PL:HTML&src=0; 488868-2017; Litwa-Wilno: Usługi w zakresie konserwacji i napraw oprogramowania; LT; 07/12/2017; Wartosc: 8 276,40 EUR
+Łącznie z VAT. Stawka VAT (%) 21,00
+http://ted.europa.eu/udl?uri=TED:NOTICE:488865-2017:TEXT:PL:HTML&src=0; 488865-2017; Rumunia-Bukareszt: Usługi rozbudowy oprogramowania; RO; 07/12/2017; Wartosc: 3 216 353,45 RON
+
+http://ted.europa.eu/udl?uri=TED:NOTICE:488852-2017:TEXT:PL:HTML&src=0; 488852-2017; Francja-Paryż: Usługi w zakresie oprogramowania; FR; 07/12/2017; Wartosc: 1 069 959,42 EUR
+Łącznie z VAT. Stawka VAT (%) 20,00
+http://ted.europa.eu/udl?uri=TED:NOTICE:488788-2017:TEXT:PL:HTML&src=0; 488788-2017; Hiszpania-Barcelona: Urządzenia komputerowe; ES; 07/12/2017; Wartosc: 999 000,00 EUR
+
+http://ted.europa.eu/udl?uri=TED:NOTICE:488775-2017:TEXT:PL:HTML&src=0; 488775-2017; Rumunia-Bukareszt: Serwery; RO; 07/12/2017; Wartosc: 494 922,00 RON
+
+http://ted.europa.eu/udl?uri=TED:NOTICE:488773-2017:TEXT:PL:HTML&src=0; 488773-2017; Włochy-Mediolan: Maszyny do przetwarzania danych (sprzęt); IT; 07/12/2017; Wartosc: 268 041,31 EUR
+
+http://ted.europa.eu/udl?uri=TED:NOTICE:488704-2017:TEXT:PL:HTML&src=0; 488704-2017; Słowenia-Krško: Usługi informatyczne: konsultacyjne, opracowywania oprogramowania, internetowe i wsparcia; SI; 07/12/2017; Wartosc bez VAT: 281 232.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:488700-2017:TEXT:PL:HTML&src=0; 488700-2017; Francja-Paryż: Usługi w zakresie rozległej sieci komputerowej; FR; 07/12/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:488694-2017:TEXT:PL:HTML&src=0; 488694-2017; Zjednoczone Królestwo-Peterborough: Usługi modelowania projektu; UK; 07/12/2017; Wartosc bez VAT: 3 500 000.00 GBP
+http://ted.europa.eu/udl?uri=TED:NOTICE:488691-2017:TEXT:PL:HTML&src=0; 488691-2017; Francja-Lyon: Profesjonalne usługi komputerowe; FR; 07/12/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:488690-2017:TEXT:PL:HTML&src=0; 488690-2017; Francja-Paris La Defense: Komputerowe usługi pokrewne; FR; 07/12/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:488639-2017:TEXT:PL:HTML&src=0; 488639-2017; Niemcy-Kolonia: Maszyny do przetwarzania danych (sprzęt); DE; 07/12/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:488637-2017:TEXT:PL:HTML&src=0; 488637-2017; Zjednoczone Królestwo-Peterborough: Przemysłowe specyficzne pakiety oprogramowania; UK; 07/12/2017; Wartosc bez VAT: 1 680 000.00 GBP
+http://ted.europa.eu/udl?uri=TED:NOTICE:488634-2017:TEXT:PL:HTML&src=0; 488634-2017; Niemcy-Berlin: Sprzęt używany w urzędach pocztowych; DE; 07/12/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:488445-2017:TEXT:PL:HTML&src=0; 488445-2017; Dania-Kopenhaga: Usługi informatyczne: konsultacyjne, opracowywania oprogramowania, internetowe i wsparcia; DK; 07/12/2017; Wartosc bez VAT: 9 531 715.00 DKK
+http://ted.europa.eu/udl?uri=TED:NOTICE:488439-2017:TEXT:PL:HTML&src=0; 488439-2017; Republika Czeska-Praga: Usługi rozbudowy oprogramowania; CZ; 07/12/2017; Wartosc bez VAT: 95 931 000.00 CZK
+http://ted.europa.eu/udl?uri=TED:NOTICE:488436-2017:TEXT:PL:HTML&src=0; 488436-2017; Słowenia-Ljubljana: Pakiety oprogramowania i systemy informatyczne; SI; 07/12/2017; Wartosc bez VAT: 3 561 129.94 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:488432-2017:TEXT:PL:HTML&src=0; 488432-2017; Bułgaria-Sofia: Usługi opracowywania oprogramowania szkoleniowego; BG; 07/12/2017; Wartosc bez VAT: 19 780.00 BGN
+http://ted.europa.eu/udl?uri=TED:NOTICE:488431-2017:TEXT:PL:HTML&src=0; 488431-2017; Republika Czeska-Praga: Konserwacja oprogramowania technologii informacji; CZ; 07/12/2017; Wartosc bez VAT: 16 289 664.00 CZK
+http://ted.europa.eu/udl?uri=TED:NOTICE:488424-2017:TEXT:PL:HTML&src=0; 488424-2017; Portugalia-Porto Salvo: Usługi w zakresie wsparcia technicznego; PT; 07/12/2017; Wartosc bez VAT: 1 339 329.06 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:488409-2017:TEXT:PL:HTML&src=0; 488409-2017; Francja-Metz: Usługi w zakresie konserwacji i wsparcia systemów; FR; 07/12/2017; Wartosc bez VAT: 179 015.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:488407-2017:TEXT:PL:HTML&src=0; 488407-2017; Francja-Metz: Karty na zakup paliwa; FR; 07/12/2017; Wartosc bez VAT: 388 460.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:488404-2017:TEXT:PL:HTML&src=0; 488404-2017; Francja-Ivry-sur-Seine: Usługi zapewniania miejsc parkingowych; FR; 07/12/2017; Wartosc bez VAT: 1 079 849.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:488400-2017:TEXT:PL:HTML&src=0; 488400-2017; Francja-Créteil: Usługi informatyczne: konsultacyjne, opracowywania oprogramowania, internetowe i wsparcia; FR; 07/12/2017; Wartosc bez VAT: 3 000 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:488397-2017:TEXT:PL:HTML&src=0; 488397-2017; Francja-Draguignan: Platformy komputerowe; FR; 07/12/2017; Wartosc bez VAT: 120 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:488388-2017:TEXT:PL:HTML&src=0; 488388-2017; Francja-Orlean: Usługi dodatkowe w zakresie sprzętu komputerowego; FR; 07/12/2017; Wartosc bez VAT: 1 651 853.60 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:488365-2017:TEXT:PL:HTML&src=0; 488365-2017; Francja-Limoges: Usługi w zakresie konserwacji i napraw oprogramowania; FR; 07/12/2017; Wartosc bez VAT: 702 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:488348-2017:TEXT:PL:HTML&src=0; 488348-2017; Francja-Lyon: Pakiety oprogramowania i systemy informatyczne; FR; 07/12/2017; Wartosc bez VAT: 200 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:488336-2017:TEXT:PL:HTML&src=0; 488336-2017; Francja-Marsylia: Usługi informatyczne: konsultacyjne, opracowywania oprogramowania, internetowe i wsparcia; FR; 07/12/2017; Wartosc bez VAT: 111 872.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:488332-2017:TEXT:PL:HTML&src=0; 488332-2017; Francja-Paris-la-Défense: Pakiety oprogramowania do rozliczania czasu lub zarządzania zasobami ludzkimi; FR; 07/12/2017; Wartosc bez VAT: 147 360.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:488314-2017:TEXT:PL:HTML&src=0; 488314-2017; Słowacja-Bratysława: Studia wykonalności, usługi doradcze, analizy; SK; 07/12/2017; Wartosc bez VAT: 4 132 850.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:488302-2017:TEXT:PL:HTML&src=0; 488302-2017; Francja-Montreuil: Usługi w zakresie napraw i konserwacji sprzętu komputerowego; FR; 07/12/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:488297-2017:TEXT:PL:HTML&src=0; 488297-2017; Francja-Évry: Usługi bazy danych; FR; 07/12/2017; Wartosc bez VAT: 840 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:488295-2017:TEXT:PL:HTML&src=0; 488295-2017; Niderlandy-Haga: Usługi informatyczne: konsultacyjne, opracowywania oprogramowania, internetowe i wsparcia; NL; 07/12/2017; Wartosc bez VAT: 1.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:488273-2017:TEXT:PL:HTML&src=0; 488273-2017; Francja-Lyon: Usługi doradcze w zakresie działalności gospodarczej i zarządzania; FR; 07/12/2017; Wartosc bez VAT: 491 655.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:488267-2017:TEXT:PL:HTML&src=0; 488267-2017; Francja-Évreux: Dostawcy usług internetowych (ISP); FR; 07/12/2017; Wartosc bez VAT: 29 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:488265-2017:TEXT:PL:HTML&src=0; 488265-2017; Francja-Paryż: Usługi dodatkowe w zakresie sprzętu komputerowego; FR; 07/12/2017; Wartosc bez VAT: 32 820.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:488263-2017:TEXT:PL:HTML&src=0; 488263-2017; Francja-Nancy: Talony na posiłki; FR; 07/12/2017; Wartosc bez VAT: 1 280 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:488260-2017:TEXT:PL:HTML&src=0; 488260-2017; Francja-Paryż: Usługi dostawy oprogramowania; FR; 07/12/2017; Wartosc bez VAT: 62 338.50 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:488257-2017:TEXT:PL:HTML&src=0; 488257-2017; Francja-Paryż: Usługi programowania pakietów oprogramowania; FR; 07/12/2017; Wartosc bez VAT: 41 983.32 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:488252-2017:TEXT:PL:HTML&src=0; 488252-2017; Francja-Wersal: Pakiety oprogramowania i systemy informatyczne; FR; 07/12/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:488249-2017:TEXT:PL:HTML&src=0; 488249-2017; Francja-Lyon: Serwery; FR; 07/12/2017; Wartosc bez VAT: 600 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:488233-2017:TEXT:PL:HTML&src=0; 488233-2017; Republika Czeska-Praga: Usługi w zakresie oprogramowania; CZ; 07/12/2017; Wartosc bez VAT: 7 260 000.00 CZK
+http://ted.europa.eu/udl?uri=TED:NOTICE:488232-2017:TEXT:PL:HTML&src=0; 488232-2017; Republika Czeska-Praga: Usługi w zakresie oprogramowania; CZ; 07/12/2017; Wartosc bez VAT: 9 247 600.00 CZK
+http://ted.europa.eu/udl?uri=TED:NOTICE:487856-2017:TEXT:PL:HTML&src=0; 487856-2017; Republika Czeska-Praga: Komputery wysokowydajne; CZ; 07/12/2017; Wartosc bez VAT: 11 500 000.00 CZK
+http://ted.europa.eu/udl?uri=TED:NOTICE:487852-2017:TEXT:PL:HTML&src=0; 487852-2017; Chorwacja-Zagrzeb: Sprzęt związany z komputerami; HR; 07/12/2017; Wartosc bez VAT: 1 645 115.10 HRK
+http://ted.europa.eu/udl?uri=TED:NOTICE:487843-2017:TEXT:PL:HTML&src=0; 487843-2017; Francja-Pantin: Wyroby biurowe; FR; 07/12/2017; Wartosc bez VAT: 279 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:487831-2017:TEXT:PL:HTML&src=0; 487831-2017; Francja-Paryż: Papier do drukowania; FR; 07/12/2017; Wartosc bez VAT: 973 860.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:487811-2017:TEXT:PL:HTML&src=0; 487811-2017; Portugalia-Vila Franca de Xira: Pakiety oprogramowania dla baz danych; PT; 07/12/2017; Wartosc bez VAT: 197 800.18 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:487803-2017:TEXT:PL:HTML&src=0; 487803-2017; Francja-Chatillon: Superkomputery; FR; 07/12/2017; Wartosc bez VAT: 664 161.76 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:487799-2017:TEXT:PL:HTML&src=0; 487799-2017; Francja-Évry: Różne produkty spożywcze; FR; 07/12/2017; Wartosc bez VAT: 4 648 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:487790-2017:TEXT:PL:HTML&src=0; 487790-2017; Francja-Ajaccio: Urządzenia komputerowe; FR; 07/12/2017; Wartosc bez VAT: 1 877 662.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:487783-2017:TEXT:PL:HTML&src=0; 487783-2017; Niemcy-Lemgo: Pakiety oprogramowania i systemy informatyczne; DE; 07/12/2017; Wartosc bez VAT: 1.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:487767-2017:TEXT:PL:HTML&src=0; 487767-2017; Polska-Kraków: Urządzenia medyczne; PL; 07/12/2017; Wartosc bez VAT: 3 618 981.77 PLN
+http://ted.europa.eu/udl?uri=TED:NOTICE:487766-2017:TEXT:PL:HTML&src=0; 487766-2017; Zjednoczone Królestwo-Belfast: Urządzenia komputerowe; UK; 07/12/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:487745-2017:TEXT:PL:HTML&src=0; 487745-2017; Polska-Ostrołęka: Urządzenia komputerowe; PL; 07/12/2017; Wartosc bez VAT: 1 929 419.00 PLN
+http://ted.europa.eu/udl?uri=TED:NOTICE:487744-2017:TEXT:PL:HTML&src=0; 487744-2017; Francja-Metz: Koperty; FR; 07/12/2017; Wartosc bez VAT: 93 387.85 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:487735-2017:TEXT:PL:HTML&src=0; 487735-2017; Francja-Saint-Germain-en-Laye: Papier do drukowania; FR; 07/12/2017; Wartosc bez VAT: 703 500.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:487727-2017:TEXT:PL:HTML&src=0; 487727-2017; Francja-Créteil: Pakiety oprogramowania i systemy informatyczne; FR; 07/12/2017; Wartosc bez VAT: 165 984.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:487726-2017:TEXT:PL:HTML&src=0; 487726-2017; Francja-Evreux: Paliwo diesla; FR; 07/12/2017; Wartosc bez VAT: 420 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:487722-2017:TEXT:PL:HTML&src=0; 487722-2017; Francja-Le Puy-en-Velay: Talony na posiłki; FR; 07/12/2017; Wartosc bez VAT: 1 000 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:487717-2017:TEXT:PL:HTML&src=0; 487717-2017; Francja-Dijon: Komputery przenośne; FR; 07/12/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:487709-2017:TEXT:PL:HTML&src=0; 487709-2017; Litwa-Wilno: Sprzęt policyjny; LT; 07/12/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:487702-2017:TEXT:PL:HTML&src=0; 487702-2017; Bułgaria-Sofia: Wkłady barwiące; BG; 07/12/2017; Wartosc bez VAT: 35 413.40 BGN
+http://ted.europa.eu/udl?uri=TED:NOTICE:487689-2017:TEXT:PL:HTML&src=0; 487689-2017; Bułgaria-Sofia: Wkłady barwiące; BG; 07/12/2017; Wartosc bez VAT: 121 818.99 BGN
+http://ted.europa.eu/udl?uri=TED:NOTICE:487687-2017:TEXT:PL:HTML&src=0; 487687-2017; Bułgaria-Sofia: Wkłady barwiące; BG; 07/12/2017; Wartosc bez VAT: 78 895.36 BGN
+http://ted.europa.eu/udl?uri=TED:NOTICE:487685-2017:TEXT:PL:HTML&src=0; 487685-2017; Polska-Warszawa: Urządzenia do powielania; PL; 07/12/2017; Wartosc bez VAT: 61 456.00 PLN
+http://ted.europa.eu/udl?uri=TED:NOTICE:487678-2017:TEXT:PL:HTML&src=0; 487678-2017; Polska-Poznań: Komputery przenośne; PL; 07/12/2017; Wartosc bez VAT: 170 722.00 PLN
+http://ted.europa.eu/udl?uri=TED:NOTICE:487327-2017:TEXT:PL:HTML&src=0; 487327-2017; Włochy-Ispra: Copernicus — prognozowanie zagrożenia pożarowego; IT; 07/12/2017; Wartosc bez VAT: 1 800 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:487323-2017:TEXT:PL:HTML&src=0; 487323-2017; Irlandia-Dublin: Przygotowanie i realizacja 4. europejskiego badania przedsiębiorstw; IE; 07/12/2017; Wartosc bez VAT: 3 224 583.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:487310-2017:TEXT:PL:HTML&src=0; 487310-2017; Norwegia-BODØ: Pakiety oprogramowania statystycznego; NO; 06/12/2017; Wartosc bez VAT: 4 873 830.00 NOK
+http://ted.europa.eu/udl?uri=TED:NOTICE:487300-2017:TEXT:PL:HTML&src=0; 487300-2017; Norwegia-Kleppe: Papeteria; NO; 06/12/2017; Wartosc bez VAT: 8 000 000.00 NOK
+http://ted.europa.eu/udl?uri=TED:NOTICE:487298-2017:TEXT:PL:HTML&src=0; 487298-2017; Norwegia-Bergen: Sprzęt wideokonferencyjny; NO; 06/12/2017; Wartosc bez VAT: 1 738 128.00 NOK
+http://ted.europa.eu/udl?uri=TED:NOTICE:487244-2017:TEXT:PL:HTML&src=0; 487244-2017; Hiszpania-Madryt: Urządzenia komputerowe; ES; 06/12/2017; Wartosc: 593 995,77 EUR
+
+http://ted.europa.eu/udl?uri=TED:NOTICE:487218-2017:TEXT:PL:HTML&src=0; 487218-2017; Zjednoczone Królestwo-Salisbury: Maszyny biurowe i liczące, sprzęt i materiały, z wyjątkiem mebli i pakietów oprogramowania; UK; 06/12/2017; Wartosc: 3 500 000,00 GBP
+
+http://ted.europa.eu/udl?uri=TED:NOTICE:487210-2017:TEXT:PL:HTML&src=0; 487210-2017; Grecja-Ateny: Usługi w zakresie oprogramowania; GR; 06/12/2017; Wartosc: 366 540,00 EUR
+Łącznie z VAT. Stawka VAT (%) 23,00
+http://ted.europa.eu/udl?uri=TED:NOTICE:487199-2017:TEXT:PL:HTML&src=0; 487199-2017; Litwa-Gargždų m., Klaipėdos r. sav.: Usługi informatyczne: konsultacyjne, opracowywania oprogramowania, internetowe i wsparcia; LT; 06/12/2017; Wartosc: 31 247,10 EUR
+Łącznie z VAT. Stawka VAT (%) 21,00
+http://ted.europa.eu/udl?uri=TED:NOTICE:487196-2017:TEXT:PL:HTML&src=0; 487196-2017; Litwa-Wilno: Usługi programowania pakietów oprogramowania; LT; 06/12/2017; Wartosc: 1 405 536,00 EUR
+Łącznie z VAT. Stawka VAT (%) 21,00
+http://ted.europa.eu/udl?uri=TED:NOTICE:487140-2017:TEXT:PL:HTML&src=0; 487140-2017; Polska-Warszawa: Serwery; PL; 06/12/2017; Najnizsza oferta 963 472,53 i najwyzsza oferta 1 046 974,77 PLN
+Łącznie z VAT. Stawka VAT (%) 23,00
+http://ted.europa.eu/udl?uri=TED:NOTICE:487139-2017:TEXT:PL:HTML&src=0; 487139-2017; Francja-Saint-Germain-en-Laye: Poduszki z tuszem; FR; 06/12/2017; Całkowita koncowa opisWartosci zamówienia:
+Wartosc: 110 000,00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:487138-2017:TEXT:PL:HTML&src=0; 487138-2017; Francja-Challans: Paliwo diesla; FR; 06/12/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:487130-2017:TEXT:PL:HTML&src=0; 487130-2017; Niemcy-Hanower: Papier fotokopiujący i kserograficzny; DE; 06/12/2017; Wartosc: 691 155,99 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:487125-2017:TEXT:PL:HTML&src=0; 487125-2017; Grecja-Ateny: Komputery wysokowydajne; GR; 06/12/2017; Wartosc: 623 421,81 EUR
+Łącznie z VAT. Stawka VAT (%) 23,00
+http://ted.europa.eu/udl?uri=TED:NOTICE:487123-2017:TEXT:PL:HTML&src=0; 487123-2017; Hiszpania-Madryt: Urządzenia komputerowe; ES; 06/12/2017; Wartosc: 545 789,27 EUR
+
+http://ted.europa.eu/udl?uri=TED:NOTICE:487111-2017:TEXT:PL:HTML&src=0; 487111-2017; Niemcy-Brunszwik: Systemy informacji medycznej; DE; 06/12/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:487011-2017:TEXT:PL:HTML&src=0; 487011-2017; Niemcy-Hamburg: Przemysłowe specyficzne pakiety oprogramowania; DE; 06/12/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:487007-2017:TEXT:PL:HTML&src=0; 487007-2017; Chorwacja-Zagrzeb: Badania inżynieryjne; HR; 06/12/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:486762-2017:TEXT:PL:HTML&src=0; 486762-2017; Niderlandy-Groningen: Usługi w zakresie projektowania stron WWW; NL; 06/12/2017; Wartosc bez VAT: 500 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:486735-2017:TEXT:PL:HTML&src=0; 486735-2017; Hiszpania-Castellón: Usługi zarządzania dokumentami; ES; 06/12/2017; Wartosc bez VAT: 1 417 427.05 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:486707-2017:TEXT:PL:HTML&src=0; 486707-2017; Niemcy-Bonn: Pakiety oprogramowania i systemy informatyczne; DE; 06/12/2017; Wartosc bez VAT: 195 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:486700-2017:TEXT:PL:HTML&src=0; 486700-2017; Niemcy-Monachium: Usługi w zakresie oceny i analizy gwarancji jakości systemu; DE; 06/12/2017; Najtansza oferta: 1 350 000.00 EUR / Najdrozsza oferta: 1 800 000.00 EUR brana pod uwage
+http://ted.europa.eu/udl?uri=TED:NOTICE:486689-2017:TEXT:PL:HTML&src=0; 486689-2017; Francja-Rillieux-la-Pape: Usługi telefoniczne i przesyłu danych; FR; 06/12/2017; Wartosc bez VAT: 1.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:486684-2017:TEXT:PL:HTML&src=0; 486684-2017; Polska-Warszawa: Usługi w zakresie wsparcia systemu; PL; 06/12/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:486673-2017:TEXT:PL:HTML&src=0; 486673-2017; Francja-Saint-Mandé: Usługi dodatkowe w zakresie sprzętu komputerowego; FR; 06/12/2017; Wartosc bez VAT: 120 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:486672-2017:TEXT:PL:HTML&src=0; 486672-2017; Dania-København S: Usługi informatyczne: konsultacyjne, opracowywania oprogramowania, internetowe i wsparcia; DK; 06/12/2017; Wartosc bez VAT: 20 000 000.00 DKK
+http://ted.europa.eu/udl?uri=TED:NOTICE:486655-2017:TEXT:PL:HTML&src=0; 486655-2017; Litwa-Wilno: Usługi doradcze w zakresie programowania oprogramowania; LT; 06/12/2017; Wartosc bez VAT: 109 550.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:486652-2017:TEXT:PL:HTML&src=0; 486652-2017; Szwecja-Huddinge: Pakiety oprogramowania i systemy informatyczne; SE; 06/12/2017; Wartosc bez VAT: 13 000 000.00 SEK
+http://ted.europa.eu/udl?uri=TED:NOTICE:486595-2017:TEXT:PL:HTML&src=0; 486595-2017; Polska-Kraków: Pakiety oprogramowania i systemy informatyczne; PL; 06/12/2017; Wartosc bez VAT: 2 598 846.00 PLN
+http://ted.europa.eu/udl?uri=TED:NOTICE:486584-2017:TEXT:PL:HTML&src=0; 486584-2017; Irlandia-Dublin: Usługi w zakresie standaryzacji i klasyfikacji zawartości lub danych; IE; 06/12/2017; Najtansza oferta: 4 000 000.00 EUR / Najdrozsza oferta: 6 000 000.00 EUR brana pod uwage
+http://ted.europa.eu/udl?uri=TED:NOTICE:486583-2017:TEXT:PL:HTML&src=0; 486583-2017; Francja-Chaumont: Pakiety oprogramowania i systemy informatyczne; FR; 06/12/2017; Wartosc bez VAT: 16 275.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:486576-2017:TEXT:PL:HTML&src=0; 486576-2017; Republika Czeska-Praga: Usługi w zakresie wsparcia systemu; CZ; 06/12/2017; Wartosc bez VAT: 100 000 000.00 CZK
+http://ted.europa.eu/udl?uri=TED:NOTICE:486574-2017:TEXT:PL:HTML&src=0; 486574-2017; Francja-Paryż: Usługi w zakresie wsparcia technicznego; FR; 06/12/2017; Wartosc bez VAT: 1.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:486571-2017:TEXT:PL:HTML&src=0; 486571-2017; Republika Czeska-Praga: Systemy informacyjne; CZ; 06/12/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:486568-2017:TEXT:PL:HTML&src=0; 486568-2017; Hiszpania-Walencja: Usługi w zakresie wsparcia technicznego; ES; 06/12/2017; Wartosc bez VAT: 293 664.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:486565-2017:TEXT:PL:HTML&src=0; 486565-2017; Dania-Aalborg Ø: Pakiety oprogramowania do rozpoznawania głosu; DK; 06/12/2017; Wartosc bez VAT: 6 718 560.00 DKK
+http://ted.europa.eu/udl?uri=TED:NOTICE:486559-2017:TEXT:PL:HTML&src=0; 486559-2017; Polska-Warszawa: Usługi w zakresie konserwacji i wsparcia systemów; PL; 06/12/2017; Wartosc bez VAT: 150 894.63 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:486552-2017:TEXT:PL:HTML&src=0; 486552-2017; Hiszpania-Madryt: Usługi doradcze i dodatkowe w zakresie sprzętu komputerowego; ES; 06/12/2017; Wartosc bez VAT: 2 340 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:486544-2017:TEXT:PL:HTML&src=0; 486544-2017; Polska-Warszawa: Usługi w zakresie wsparcia systemu; PL; 06/12/2017; Najtansza oferta: 1 507 202.64 PLN / Najdrozsza oferta: 1 507 202.64 PLN brana pod uwage
+http://ted.europa.eu/udl?uri=TED:NOTICE:486489-2017:TEXT:PL:HTML&src=0; 486489-2017; Niderlandy-Haga: Usługi programowania oprogramowania aplikacyjnego; NL; 06/12/2017; Wartosc bez VAT: 1.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:486471-2017:TEXT:PL:HTML&src=0; 486471-2017; Niderlandy-Hengelo OV: Urządzenia sieciowe; NL; 06/12/2017; Wartosc bez VAT: 30 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:486469-2017:TEXT:PL:HTML&src=0; 486469-2017; Dania-Vejle: Urządzenia sterylizujące, dezynfekcyjne i higieniczne; DK; 06/12/2017; Wartosc bez VAT: 1 925 000.00 DKK
+http://ted.europa.eu/udl?uri=TED:NOTICE:486050-2017:TEXT:PL:HTML&src=0; 486050-2017; Polska-Zielona Góra: Stacje robocze; PL; 06/12/2017; Wartosc bez VAT: 247 263.94 PLN
+http://ted.europa.eu/udl?uri=TED:NOTICE:486041-2017:TEXT:PL:HTML&src=0; 486041-2017; Polska-Olsztyn: Komputery przenośne; PL; 06/12/2017; Wartosc bez VAT: 390 243.90 PLN
+http://ted.europa.eu/udl?uri=TED:NOTICE:486040-2017:TEXT:PL:HTML&src=0; 486040-2017; Polska-Warszawa: System pozyskiwania danych; PL; 06/12/2017; Najtansza oferta: 3 900 000.00 PLN / Najdrozsza oferta: 3 900 000.00 PLN brana pod uwage
+http://ted.europa.eu/udl?uri=TED:NOTICE:486037-2017:TEXT:PL:HTML&src=0; 486037-2017; Dania-Vejle: Pakiety oprogramowania i systemy informatyczne; DK; 06/12/2017; Wartosc bez VAT: 8 781 748.00 DKK
+http://ted.europa.eu/udl?uri=TED:NOTICE:486032-2017:TEXT:PL:HTML&src=0; 486032-2017; Francja-Privas: Komputer tablet; FR; 06/12/2017; Wartosc bez VAT: 183 701.02 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:486031-2017:TEXT:PL:HTML&src=0; 486031-2017; Niemcy-Chemnitz: Maszyny biurowe, sprzęt i materiały, z wyjątkiem komputerów, drukarek i mebli; DE; 06/12/2017; Wartosc bez VAT: 0.01 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:486021-2017:TEXT:PL:HTML&src=0; 486021-2017; Zjednoczone Królestwo-Aberdeen: Pakiety oprogramowania i systemy informatyczne; UK; 06/12/2017; Wartosc bez VAT: 590 637.00 GBP
+http://ted.europa.eu/udl?uri=TED:NOTICE:486008-2017:TEXT:PL:HTML&src=0; 486008-2017; Polska-Warszawa: Pakiety oprogramowania i systemy informatyczne; PL; 06/12/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:486007-2017:TEXT:PL:HTML&src=0; 486007-2017; Niderlandy-Utrecht: Usługi dostawy oprogramowania; NL; 06/12/2017; Wartosc bez VAT: 52 904.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:486005-2017:TEXT:PL:HTML&src=0; 486005-2017; Hiszpania-Arrecife: Komputery osobiste; ES; 06/12/2017; Wartosc bez VAT: 260 191.50 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:486004-2017:TEXT:PL:HTML&src=0; 486004-2017; Polska-Warszawa: Pakiety oprogramowania i systemy informatyczne; PL; 06/12/2017; Wartosc bez VAT: 1 349 558.54 PLN
+http://ted.europa.eu/udl?uri=TED:NOTICE:485995-2017:TEXT:PL:HTML&src=0; 485995-2017; Hiszpania-Sewilla: Karty "inteligentne"; ES; 06/12/2017; Wartosc bez VAT: 363 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:485976-2017:TEXT:PL:HTML&src=0; 485976-2017; Niemcy-Ratyzbona: Różny sprzęt komputerowy; DE; 06/12/2017; Wartosc bez VAT: 192 809.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:485974-2017:TEXT:PL:HTML&src=0; 485974-2017; Hiszpania-Valladolid: Usługi programowania oprogramowania aplikacyjnego; ES; 06/12/2017; Wartosc bez VAT: 228 030.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:485971-2017:TEXT:PL:HTML&src=0; 485971-2017; Francja-Beauvais: Wyroby biurowe; FR; 06/12/2017; Wartosc bez VAT: 1 800 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:485966-2017:TEXT:PL:HTML&src=0; 485966-2017; Zjednoczone Królestwo-Bournemouth: Pakiety oprogramowania i systemy informatyczne; UK; 06/12/2017; Wartosc bez VAT: 1 381 595.00 GBP
+http://ted.europa.eu/udl?uri=TED:NOTICE:485962-2017:TEXT:PL:HTML&src=0; 485962-2017; Francja-Perpignan: Urządzenia fotokopiujące i do druku offsetowego; FR; 06/12/2017; Wartosc bez VAT: 1 765 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:485959-2017:TEXT:PL:HTML&src=0; 485959-2017; Słowenia-Ljubljana: Urządzenia komputerowe; SI; 06/12/2017; Wartosc bez VAT: 22 968.36 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:485947-2017:TEXT:PL:HTML&src=0; 485947-2017; Chorwacja-Zagrzeb: Usługi informatyczne: konsultacyjne, opracowywania oprogramowania, internetowe i wsparcia; HR; 06/12/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:485938-2017:TEXT:PL:HTML&src=0; 485938-2017; Polska-Poznań: Drukarki i plotery; PL; 06/12/2017; Wartosc bez VAT: 401 560.00 PLN
+http://ted.europa.eu/udl?uri=TED:NOTICE:485936-2017:TEXT:PL:HTML&src=0; 485936-2017; Polska-Lublin: Drukarki laserowe; PL; 06/12/2017; Wartosc bez VAT: 170 765.00 PLN
+http://ted.europa.eu/udl?uri=TED:NOTICE:485935-2017:TEXT:PL:HTML&src=0; 485935-2017; Polska-Oława: Pakiety oprogramowania i systemy informatyczne; PL; 06/12/2017; Wartosc bez VAT: 819 697.00 PLN
+http://ted.europa.eu/udl?uri=TED:NOTICE:485930-2017:TEXT:PL:HTML&src=0; 485930-2017; Polska-Warszawa: Komputery osobiste; PL; 06/12/2017; Wartosc bez VAT: 354 471.54 PLN
+http://ted.europa.eu/udl?uri=TED:NOTICE:485929-2017:TEXT:PL:HTML&src=0; 485929-2017; Polska-Zamość: Drukarki i plotery; PL; 06/12/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:485924-2017:TEXT:PL:HTML&src=0; 485924-2017; Łotwa-Ventspils: Komputer biurkowy; LV; 06/12/2017; Wartosc bez VAT: 297 214.70 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:485920-2017:TEXT:PL:HTML&src=0; 485920-2017; Polska-Warszawa: Serwery plików; PL; 06/12/2017; Najtansza oferta: 82 734.33 PLN / Najdrozsza oferta: 98 160.00 PLN brana pod uwage
+http://ted.europa.eu/udl?uri=TED:NOTICE:485916-2017:TEXT:PL:HTML&src=0; 485916-2017; Francja-Annecy: Paliwa; FR; 06/12/2017; Wartosc bez VAT: 1 311 288.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:485899-2017:TEXT:PL:HTML&src=0; 485899-2017; Belgia-Liège: Sprzęt związany z komputerami; BE; 06/12/2017; Wartosc bez VAT: 254 617.83 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:485892-2017:TEXT:PL:HTML&src=0; 485892-2017; Polska-Warszawa: Pakiety oprogramowania do zarządzania systemem, przechowywaniem i zawartością; PL; 06/12/2017; Wartosc bez VAT: 441 129.47 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:485891-2017:TEXT:PL:HTML&src=0; 485891-2017; Łotwa-Ryga: Pakiety oprogramowania i systemy informatyczne; LV; 06/12/2017; Wartosc bez VAT: 220 554.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:485878-2017:TEXT:PL:HTML&src=0; 485878-2017; Niemcy-Fryburg Bryzgowisjki: Pakiety oprogramowania dla internetu i intranetu; DE; 06/12/2017; Wartosc bez VAT: 0.01 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:485871-2017:TEXT:PL:HTML&src=0; 485871-2017; Zjednoczone Królestwo-Salford: Artykuły elektroniczne; UK; 06/12/2017; Wartosc bez VAT: 5.00 GBP
+http://ted.europa.eu/udl?uri=TED:NOTICE:485867-2017:TEXT:PL:HTML&src=0; 485867-2017; Polska-Poznań: Serwery; PL; 06/12/2017; Wartosc bez VAT: 1 704 781.00 PLN
+http://ted.europa.eu/udl?uri=TED:NOTICE:485866-2017:TEXT:PL:HTML&src=0; 485866-2017; Niderlandy-alkmaar: Usługi informatyczne: konsultacyjne, opracowywania oprogramowania, internetowe i wsparcia; NL; 06/12/2017; Wartosc bez VAT: 0.01 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:485854-2017:TEXT:PL:HTML&src=0; 485854-2017; Polska-Warszawa: Urządzenia do przechowywania i odczytu danych; PL; 06/12/2017; Wartosc bez VAT: 900 000.00 PLN
+http://ted.europa.eu/udl?uri=TED:NOTICE:485846-2017:TEXT:PL:HTML&src=0; 485846-2017; Republika Czeska-Olomouc: Urządzenia audiowizualne; CZ; 06/12/2017; Wartosc bez VAT: 9 399 718.00 CZK
+http://ted.europa.eu/udl?uri=TED:NOTICE:485844-2017:TEXT:PL:HTML&src=0; 485844-2017; Irlandia-Cork: Pomoce naukowe; IE; 06/12/2017; Wartosc bez VAT: 445 568.46 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:485421-2017:TEXT:PL:HTML&src=0; 485421-2017; Belgia-Bruksela: EEAS-373-DIVB3-SER-FWC — CIDER — ochrona i środki techniczne systemów informacji niejawnych; BE; 06/12/2017; Wartosc bez VAT: 5 475 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:485414-2017:TEXT:PL:HTML&src=0; 485414-2017; Szwajcaria-Sitten: Pakiety oprogramowania dla sprzedaży lub marketingu; CH; 05/12/2017; Całkowita koncowa opisWartosci umowy/czesci: 640 000.00 CHF
+http://ted.europa.eu/udl?uri=TED:NOTICE:485403-2017:TEXT:PL:HTML&src=0; 485403-2017; Szwajcaria-Winterthur: Pakiety oprogramowania i systemy informatyczne; CH; 05/12/2017; Wartosc bez VAT: 460 900.00 CHF
+http://ted.europa.eu/udl?uri=TED:NOTICE:485361-2017:TEXT:PL:HTML&src=0; 485361-2017; Norwegia-Oslo: Pakiety oprogramowania zabezpieczającego; NO; 05/12/2017; Wartosc bez VAT: 1 600 000.00 NOK
+http://ted.europa.eu/udl?uri=TED:NOTICE:485358-2017:TEXT:PL:HTML&src=0; 485358-2017; Norwegia-Hamar: Systemy baz danych; NO; 05/12/2017; Wartosc bez VAT: 72 600 000.00 NOK
+http://ted.europa.eu/udl?uri=TED:NOTICE:485334-2017:TEXT:PL:HTML&src=0; 485334-2017; Niemcy-Fryburg Bryzgowisjki: Usługi doradcze w zakresie programowania oprogramowania; DE; 05/12/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:485312-2017:TEXT:PL:HTML&src=0; 485312-2017; Polska-Wieliczka: Urządzenia komputerowe; PL; 05/12/2017; Wartosc: 1 755 361,00 PLN
+Łącznie z VAT. Stawka VAT (%) 23,00
+http://ted.europa.eu/udl?uri=TED:NOTICE:485266-2017:TEXT:PL:HTML&src=0; 485266-2017; Bułgaria-Sofia: Pakiety oprogramowania dla baz danych i operacyjne; BG; 05/12/2017; Wartosc bez VAT: 4 494 295.60 BGN
+http://ted.europa.eu/udl?uri=TED:NOTICE:485242-2017:TEXT:PL:HTML&src=0; 485242-2017; Francja-Paryż: Maszyny do sortowania poczty; FR; 05/12/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:485239-2017:TEXT:PL:HTML&src=0; 485239-2017; Bułgaria-Varna: Elektryczne tablice rozdzielcze; BG; 05/12/2017; Wartosc bez VAT: 16 050 000.00 BGN
+http://ted.europa.eu/udl?uri=TED:NOTICE:485167-2017:TEXT:PL:HTML&src=0; 485167-2017; Austria-Wiedeń: Usługi zarządzania dokumentami; AT; 05/12/2017; Wartosc bez VAT: 391 168.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:485166-2017:TEXT:PL:HTML&src=0; 485166-2017; Niemcy-Dortmund: Usługi informatyczne: konsultacyjne, opracowywania oprogramowania, internetowe i wsparcia; DE; 05/12/2017; Wartosc bez VAT: 364 060.38 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:485165-2017:TEXT:PL:HTML&src=0; 485165-2017; Niemcy-Dortmund: Pakiety oprogramowania i systemy informatyczne; DE; 05/12/2017; Wartosc bez VAT: 210 850.16 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:485153-2017:TEXT:PL:HTML&src=0; 485153-2017; Hiszpania-Madryt: Usługi w zakresie konserwacji i napraw oprogramowania; ES; 05/12/2017; Wartosc bez VAT: 1 030 407.94 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:485133-2017:TEXT:PL:HTML&src=0; 485133-2017; Hiszpania-Madryt: Pakiety oprogramowania i systemy informatyczne; ES; 05/12/2017; Wartosc bez VAT: 337 395.25 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:485122-2017:TEXT:PL:HTML&src=0; 485122-2017; Niderlandy-Lejda: Pakiety oprogramowania i systemy informatyczne; NL; 05/12/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:485115-2017:TEXT:PL:HTML&src=0; 485115-2017; Francja-Tours: Usługi w zakresie przetwarzania i rozliczania; FR; 05/12/2017; Wartosc bez VAT: 999 999 999.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:485108-2017:TEXT:PL:HTML&src=0; 485108-2017; Francja-Ramonville-Saint-Agne: Usługi przesyłu danych; FR; 05/12/2017; Wartosc bez VAT: 3 363 280.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:485106-2017:TEXT:PL:HTML&src=0; 485106-2017; Dania-Kopenhaga: Usługi informatyczne: konsultacyjne, opracowywania oprogramowania, internetowe i wsparcia; DK; 05/12/2017; Wartosc bez VAT: 10 792 611.00 DKK
+http://ted.europa.eu/udl?uri=TED:NOTICE:485105-2017:TEXT:PL:HTML&src=0; 485105-2017; Niemcy-Berlin: Pakiety oprogramowania dla baz danych; DE; 05/12/2017; Wartosc bez VAT: 0.01 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:484969-2017:TEXT:PL:HTML&src=0; 484969-2017; Niemcy-Nauen: Usługi zarządzania dokumentami; DE; 05/12/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:484964-2017:TEXT:PL:HTML&src=0; 484964-2017; Niemcy-Moguncja: Pakiety oprogramowania i systemy informatyczne; DE; 05/12/2017; Najtansza oferta: 201 985.92 EUR / Najdrozsza oferta: 255 000.00 EUR brana pod uwage
+http://ted.europa.eu/udl?uri=TED:NOTICE:484944-2017:TEXT:PL:HTML&src=0; 484944-2017; Francja-Franconville-la-Garenne: Różny sprzęt komputerowy; FR; 05/12/2017; Wartosc bez VAT: 1 000 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:484938-2017:TEXT:PL:HTML&src=0; 484938-2017; Włochy-Rzym: Maszyny do przetwarzania danych (sprzęt); IT; 05/12/2017; Wartosc bez VAT: 1 008 100.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:484932-2017:TEXT:PL:HTML&src=0; 484932-2017; Francja-Tuluza: Skóra i tkaniny włókiennicze, tworzywa sztuczne i guma; FR; 05/12/2017; Wartosc bez VAT: 900 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:484928-2017:TEXT:PL:HTML&src=0; 484928-2017; Polska-Zielona Góra: Stacje robocze; PL; 05/12/2017; Wartosc bez VAT: 974 299.32 PLN
+http://ted.europa.eu/udl?uri=TED:NOTICE:484921-2017:TEXT:PL:HTML&src=0; 484921-2017; Hiszpania-Kordoba: Cyfrowe systemy offsetowe; ES; 05/12/2017; Wartosc bez VAT: 201 408.26 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:484698-2017:TEXT:PL:HTML&src=0; 484698-2017; Turcja-Ankara: Dostawa sprzętu w ramach projektu sieci wodociągowej i kanalizacyjnej w Erzincan – część 3; TR; 05/12/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:484697-2017:TEXT:PL:HTML&src=0; 484697-2017; Turcja-Ankara: Dostawa sprzętu w ramach projektu sieci wodociągowej i kanalizacyjnej w Erzincan — część 4; TR; 05/12/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:484696-2017:TEXT:PL:HTML&src=0; 484696-2017; Turcja-Ankara: Dostawa urządzeń pomocniczych do systemu wodociągowego i kanalizacyjnego dla gminy Akşehir — część 1; TR; 05/12/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:484667-2017:TEXT:PL:HTML&src=0; 484667-2017; Norwegia-Oslo: Pakiety oprogramowania i systemy informatyczne; NO; 02/12/2017; Wartosc bez VAT: 31 989 750.00 NOK
+http://ted.europa.eu/udl?uri=TED:NOTICE:484645-2017:TEXT:PL:HTML&src=0; 484645-2017; Szwecja-Göteborg: Elektroniczne usługi przekazywania wiadomości i informacji; SE; 02/12/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:484643-2017:TEXT:PL:HTML&src=0; 484643-2017; Niemcy-Drezno: Usługi programowania pakietów oprogramowania; DE; 02/12/2017; Wartosc: 15 840 EUR
+
+http://ted.europa.eu/udl?uri=TED:NOTICE:484630-2017:TEXT:PL:HTML&src=0; 484630-2017; Republika Czeska-Praga: Usługi zarządzania siecią danych; CZ; 02/12/2017; Wartosc: 78 404 106 CZK
+Łącznie z VAT. Stawka VAT (%) 21
+http://ted.europa.eu/udl?uri=TED:NOTICE:484601-2017:TEXT:PL:HTML&src=0; 484601-2017; Hiszpania-Ávila: Usługi opracowywania oprogramowania do zarządzania systemem, przechowywaniem i zawartością; ES; 02/12/2017; Wartosc: 456 000 EUR
+
+http://ted.europa.eu/udl?uri=TED:NOTICE:484419-2017:TEXT:PL:HTML&src=0; 484419-2017; Słowenia-Maribor: Usługi doradcze w zakresie integracji oprogramowania; SI; 02/12/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:484368-2017:TEXT:PL:HTML&src=0; 484368-2017; Włochy-Rzym: Koperty; IT; 02/12/2017; Wartosc bez VAT: 790 569.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:484187-2017:TEXT:PL:HTML&src=0; 484187-2017; Niderlandy-Haga: Usługi programowania oprogramowania aplikacyjnego; NL; 02/12/2017; Wartosc bez VAT: 1.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:484178-2017:TEXT:PL:HTML&src=0; 484178-2017; Niemcy-Norymberga: Usługi informatyczne: konsultacyjne, opracowywania oprogramowania, internetowe i wsparcia; DE; 02/12/2017; Wartosc bez VAT: 0.01 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:484145-2017:TEXT:PL:HTML&src=0; 484145-2017; Hiszpania-Salamanka: Usługi opracowywania oprogramowania dla wzajemnej współpracy platform; ES; 02/12/2017; Wartosc bez VAT: 290 600.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:484139-2017:TEXT:PL:HTML&src=0; 484139-2017; Słowenia-Ljubljana: Usługi w zakresie napraw i konserwacji komputerów głównych; SI; 02/12/2017; Wartosc bez VAT: 547 676.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:484129-2017:TEXT:PL:HTML&src=0; 484129-2017; Słowacja-Bratysława: Usługi w zakresie konserwacji systemów komputerowych; SK; 02/12/2017; Wartosc bez VAT: 697 790.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:484108-2017:TEXT:PL:HTML&src=0; 484108-2017; Bułgaria-Sofia: Usługi doradcze w zakresie programowania oprogramowania; BG; 02/12/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:484107-2017:TEXT:PL:HTML&src=0; 484107-2017; Bułgaria-Sofia: Usługi doradcze w zakresie programowania oprogramowania; BG; 02/12/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:484068-2017:TEXT:PL:HTML&src=0; 484068-2017; Francja-Belfort: Komputerowe usługi pokrewne; FR; 02/12/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:484064-2017:TEXT:PL:HTML&src=0; 484064-2017; Estonia-Tallinn: Usługi opracowywania oprogramowania dla programujących pracę w sieci; EE; 02/12/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:484056-2017:TEXT:PL:HTML&src=0; 484056-2017; Estonia-Tallinn: Usługi opracowywania oprogramowania dla programujących pracę w sieci; EE; 02/12/2017; Wartosc bez VAT: 64 248.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:484053-2017:TEXT:PL:HTML&src=0; 484053-2017; Hiszpania-Jaén: Usługi zarządzania dokumentami; ES; 02/12/2017; Wartosc bez VAT: 123 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:484046-2017:TEXT:PL:HTML&src=0; 484046-2017; Szwecja-Göteborg: Usługi szkolenia komputerowego; SE; 02/12/2017; Wartosc bez VAT: 10 000 000.00 SEK
+http://ted.europa.eu/udl?uri=TED:NOTICE:484029-2017:TEXT:PL:HTML&src=0; 484029-2017; Belgia-Brugia: Usługi informatyczne: konsultacyjne, opracowywania oprogramowania, internetowe i wsparcia; BE; 02/12/2017; Wartosc bez VAT: 477 400.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:484020-2017:TEXT:PL:HTML&src=0; 484020-2017; Francja-La Plaine-Saint-Denis: Usługi hostingowe dla stron WWW; FR; 02/12/2017; Wartosc bez VAT: 161 706.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:484016-2017:TEXT:PL:HTML&src=0; 484016-2017; Francja-Douai: Usługi doradcze i dodatkowe w zakresie sprzętu komputerowego; FR; 02/12/2017; Wartosc bez VAT: 366 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:484004-2017:TEXT:PL:HTML&src=0; 484004-2017; Belgia-Bruksela: Usługi informatyczne: konsultacyjne, opracowywania oprogramowania, internetowe i wsparcia; BE; 02/12/2017; Wartosc bez VAT: 218 120.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:483999-2017:TEXT:PL:HTML&src=0; 483999-2017; Belgia-Ruiselede: Elektroniczne zarządzanie danymi (EDM); BE; 02/12/2017; Wartosc bez VAT: 295 287.47 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:483995-2017:TEXT:PL:HTML&src=0; 483995-2017; Łotwa-Ryga: Konserwacja oprogramowania technologii informacji; LV; 02/12/2017; Wartosc bez VAT: 6 219 325.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:483991-2017:TEXT:PL:HTML&src=0; 483991-2017; Republika Czeska-Praga: Usługi dostawy oprogramowania; CZ; 02/12/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:483712-2017:TEXT:PL:HTML&src=0; 483712-2017; Republika Czeska-Praga: Pakiety oprogramowania antywirusowego; CZ; 02/12/2017; Wartosc bez VAT: 12 479 085.00 CZK
+http://ted.europa.eu/udl?uri=TED:NOTICE:483699-2017:TEXT:PL:HTML&src=0; 483699-2017; Niemcy-Wiesbaden: Urządzenia fotokopiujące; DE; 02/12/2017; Najtansza oferta: 293 197.92 EUR / Najdrozsza oferta: 448 494.72 EUR brana pod uwage
+http://ted.europa.eu/udl?uri=TED:NOTICE:483683-2017:TEXT:PL:HTML&src=0; 483683-2017; Republika Czeska-Praga: Pakiety oprogramowania statystycznego; CZ; 02/12/2017; Wartosc bez VAT: 5 867 760.00 CZK
+http://ted.europa.eu/udl?uri=TED:NOTICE:483679-2017:TEXT:PL:HTML&src=0; 483679-2017; Republika Czeska-Praga: Drukarki i plotery; CZ; 02/12/2017; Wartosc bez VAT: 12 465 486.81 CZK
+http://ted.europa.eu/udl?uri=TED:NOTICE:483675-2017:TEXT:PL:HTML&src=0; 483675-2017; Republika Czeska-Praga: Systemy i serwery informacyjne; CZ; 02/12/2017; Wartosc bez VAT: 3 966 911.00 CZK
+http://ted.europa.eu/udl?uri=TED:NOTICE:483674-2017:TEXT:PL:HTML&src=0; 483674-2017; Niemcy-Kolonia: Skanery komputerowe; DE; 02/12/2017; Wartosc bez VAT: 0.01 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:483650-2017:TEXT:PL:HTML&src=0; 483650-2017; Niemcy-Bad Homburg vor der Höhe: Maszyny do wydawania biletów; DE; 02/12/2017; Wartosc bez VAT: 226 486.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:483647-2017:TEXT:PL:HTML&src=0; 483647-2017; Słowenia-Ljubljana: Maszyny biurowe, sprzęt i materiały, z wyjątkiem komputerów, drukarek i mebli; SI; 02/12/2017; Wartosc bez VAT: 128 124.99 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:483646-2017:TEXT:PL:HTML&src=0; 483646-2017; Słowenia-Ljubljana: Toner do drukarek laserowych/faksów; SI; 02/12/2017; Wartosc bez VAT: 389 344.27 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:483644-2017:TEXT:PL:HTML&src=0; 483644-2017; Słowenia-Ljubljana: Urządzenia komputerowe; SI; 02/12/2017; Wartosc bez VAT: 328 090.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:483632-2017:TEXT:PL:HTML&src=0; 483632-2017; Niderlandy-Utrecht: Infrastruktura sieciowa; NL; 02/12/2017; Wartosc bez VAT: 20 000 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:483628-2017:TEXT:PL:HTML&src=0; 483628-2017; Bułgaria-Sofia: Urządzenia komputerowe; BG; 02/12/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:483622-2017:TEXT:PL:HTML&src=0; 483622-2017; Francja-Sens: Talony na posiłki; FR; 02/12/2017; Wartosc bez VAT: 2 000 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:483619-2017:TEXT:PL:HTML&src=0; 483619-2017; Francja-Paryż: Koperty; FR; 02/12/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:483618-2017:TEXT:PL:HTML&src=0; 483618-2017; Francja-Guéret: Benzyna; FR; 02/12/2017; Wartosc bez VAT: 480 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:483615-2017:TEXT:PL:HTML&src=0; 483615-2017; Francja-Saint-Quentin: Rejestratory czasu; FR; 02/12/2017; Wartosc bez VAT: 344 743.60 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:483613-2017:TEXT:PL:HTML&src=0; 483613-2017; Bułgaria-Sofia: Pakiety oprogramowania i systemy informatyczne; BG; 02/12/2017; Wartosc bez VAT: 119 470.00 BGN
+http://ted.europa.eu/udl?uri=TED:NOTICE:483609-2017:TEXT:PL:HTML&src=0; 483609-2017; Polska-Lublin: Komputer biurkowy; PL; 02/12/2017; Wartosc bez VAT: 987 003.60 PLN
+http://ted.europa.eu/udl?uri=TED:NOTICE:483606-2017:TEXT:PL:HTML&src=0; 483606-2017; Hiszpania-Madryt: Pakiety oprogramowania dla wywiadu gospodarczego; ES; 02/12/2017; Wartosc bez VAT: 413 040.46 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:483604-2017:TEXT:PL:HTML&src=0; 483604-2017; Bułgaria-Sofia: Maszyny biurowe i liczące, sprzęt i materiały, z wyjątkiem mebli i pakietów oprogramowania; BG; 02/12/2017; Wartosc bez VAT: 7 553.00 BGN
+http://ted.europa.eu/udl?uri=TED:NOTICE:483583-2017:TEXT:PL:HTML&src=0; 483583-2017; Polska-Poznań: Urządzenia komputerowe; PL; 02/12/2017; Wartosc bez VAT: 40 159.40 PLN
+http://ted.europa.eu/udl?uri=TED:NOTICE:483573-2017:TEXT:PL:HTML&src=0; 483573-2017; Niemcy-Kolonia: Urządzenia komputerowe; DE; 02/12/2017; Wartosc bez VAT: 2 521 008.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:483567-2017:TEXT:PL:HTML&src=0; 483567-2017; Polska-Poznań: Serwery; PL; 02/12/2017; Wartosc bez VAT: 419 386.00 PLN
+http://ted.europa.eu/udl?uri=TED:NOTICE:483558-2017:TEXT:PL:HTML&src=0; 483558-2017; Litwa-Wilno: Drukarki i plotery; LT; 02/12/2017; Wartosc bez VAT: 33 900.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:483552-2017:TEXT:PL:HTML&src=0; 483552-2017; Republika Czeska-Pardubice: Monitory ekranowe; CZ; 02/12/2017; Wartosc bez VAT: 1 329 490.00 CZK
+http://ted.europa.eu/udl?uri=TED:NOTICE:483551-2017:TEXT:PL:HTML&src=0; 483551-2017; Republika Czeska-Pardubice: Urządzenia komputerowe; CZ; 02/12/2017; Wartosc bez VAT: 2 310 649.00 CZK
+http://ted.europa.eu/udl?uri=TED:NOTICE:483548-2017:TEXT:PL:HTML&src=0; 483548-2017; Republika Czeska-Pardubice: Urządzenia komputerowe; CZ; 02/12/2017; Wartosc bez VAT: 1 654 428.40 CZK
+http://ted.europa.eu/udl?uri=TED:NOTICE:483177-2017:TEXT:PL:HTML&src=0; 483177-2017; Luksemburg-Luksemburg: Utrzymanie i rozwój bazy danych dotyczących parytetów siły nabywczej i powiązanych narzędzi; LU; 02/12/2017; Wartosc bez VAT: 360 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:483154-2017:TEXT:PL:HTML&src=0; 483154-2017; Szwajcaria-Lozanna: Przenośniki; CH; 01/12/2017; Wartosc bez VAT: 6 418 666.66 CHF
+http://ted.europa.eu/udl?uri=TED:NOTICE:483142-2017:TEXT:PL:HTML&src=0; 483142-2017; Norwegia-Sola: Usługi doradcze w zakresie zarządzania projektem; NO; 01/12/2017; Wartosc bez VAT: 15 000 000.00 NOK
+http://ted.europa.eu/udl?uri=TED:NOTICE:483127-2017:TEXT:PL:HTML&src=0; 483127-2017; Norwegia-Hønefoss: Pakiety oprogramowania do zamówień; NO; 01/12/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:483036-2017:TEXT:PL:HTML&src=0; 483036-2017; Rumunia-Bucuresti: Usługi przesyłu danych; RO; 01/12/2017; Wartosc: 71 208 RON
+
+http://ted.europa.eu/udl?uri=TED:NOTICE:482986-2017:TEXT:PL:HTML&src=0; 482986-2017; Hiszpania-Barcelona: Systemy baz danych; ES; 01/12/2017; Wartosc: 230 000 EUR
+
+http://ted.europa.eu/udl?uri=TED:NOTICE:482870-2017:TEXT:PL:HTML&src=0; 482870-2017; Polska-Warszawa: System zarządzania bazą danych; PL; 01/12/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:482868-2017:TEXT:PL:HTML&src=0; 482868-2017; Niemcy-Jülich: Usługi w zakresie sieci komputerowej; DE; 01/12/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:482866-2017:TEXT:PL:HTML&src=0; 482866-2017; Niemcy-Moguncja: Pakiety oprogramowania do tworzenia dokumentów; DE; 01/12/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:482853-2017:TEXT:PL:HTML&src=0; 482853-2017; Rumunia-Bucuresti: Monitory ekranowe; RO; 01/12/2017; Wartosc: 771 969 RON
+
+http://ted.europa.eu/udl?uri=TED:NOTICE:482820-2017:TEXT:PL:HTML&src=0; 482820-2017; Hiszpania-Madryt: Pakiety oprogramowania i systemy informatyczne; ES; 01/12/2017; Wartosc: 638 464,15 EUR
+
+http://ted.europa.eu/udl?uri=TED:NOTICE:482782-2017:TEXT:PL:HTML&src=0; 482782-2017; Niemcy-Freiberg: Usługi archiwizacji komputerowej; DE; 01/12/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:482605-2017:TEXT:PL:HTML&src=0; 482605-2017; Republika Czeska-Praga: Platformy komputerowe; CZ; 01/12/2017; Wartosc bez VAT: 631 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:482599-2017:TEXT:PL:HTML&src=0; 482599-2017; Niemcy-Berlin: Usługi wdrażania oprogramowania; DE; 01/12/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:482516-2017:TEXT:PL:HTML&src=0; 482516-2017; Niemcy-Norymberga: System automatyzacji; DE; 01/12/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:482506-2017:TEXT:PL:HTML&src=0; 482506-2017; Bułgaria-Plovdiv: Urządzenia do przetwarzania danych; BG; 01/12/2017; Wartosc bez VAT: 174 965.28 BGN
+http://ted.europa.eu/udl?uri=TED:NOTICE:482499-2017:TEXT:PL:HTML&src=0; 482499-2017; Austria-Innsbruck: Komputery osobiste; AT; 01/12/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:482497-2017:TEXT:PL:HTML&src=0; 482497-2017; Niderlandy-Utrecht: Pakiety oprogramowania i systemy informatyczne; NL; 01/12/2017; Najtansza oferta: 35 000 000.00 EUR / Najdrozsza oferta: 45 000 000.00 EUR brana pod uwage
+http://ted.europa.eu/udl?uri=TED:NOTICE:482374-2017:TEXT:PL:HTML&src=0; 482374-2017; Cypr-Nikozja: Usługi w zakresie wymogów technologii informacji; CY; 01/12/2017; Wartosc bez VAT: 42 790.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:482246-2017:TEXT:PL:HTML&src=0; 482246-2017; Belgia-Bruksela: Usługi w zakresie projektowania stron WWW; BE; 01/12/2017; Wartosc bez VAT: 240 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:482243-2017:TEXT:PL:HTML&src=0; 482243-2017; Niderlandy-Amsterdam: Usługi informatyczne: konsultacyjne, opracowywania oprogramowania, internetowe i wsparcia; NL; 01/12/2017; Wartosc bez VAT: 0.01 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:482242-2017:TEXT:PL:HTML&src=0; 482242-2017; Niderlandy-Zoetermeer: Pakiety oprogramowania i systemy informatyczne; NL; 01/12/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:482241-2017:TEXT:PL:HTML&src=0; 482241-2017; Niemcy-Kolonia: Usługi informatyczne: konsultacyjne, opracowywania oprogramowania, internetowe i wsparcia; DE; 01/12/2017; Wartosc bez VAT: 266 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:482238-2017:TEXT:PL:HTML&src=0; 482238-2017; Niderlandy-Amsterdam: Usługi informatyczne: konsultacyjne, opracowywania oprogramowania, internetowe i wsparcia; NL; 01/12/2017; Wartosc bez VAT: 0.01 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:482223-2017:TEXT:PL:HTML&src=0; 482223-2017; Dania-Sorø: Usługi ochrony zdrowia; DK; 01/12/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:482221-2017:TEXT:PL:HTML&src=0; 482221-2017; Francja-Carcassonne: Usługi telefonii międzymiastowej; FR; 01/12/2017; Wartosc bez VAT: 229 136.20 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:482220-2017:TEXT:PL:HTML&src=0; 482220-2017; Dania-Kopenhaga: Usługi informatyczne: konsultacyjne, opracowywania oprogramowania, internetowe i wsparcia; DK; 01/12/2017; Wartosc bez VAT: 5 136 278.00 DKK
+http://ted.europa.eu/udl?uri=TED:NOTICE:482206-2017:TEXT:PL:HTML&src=0; 482206-2017; Niemcy-Schwerin: Pakiety oprogramowania dla baz danych i operacyjne; DE; 01/12/2017; Wartosc bez VAT: 816 053.01 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:482202-2017:TEXT:PL:HTML&src=0; 482202-2017; Dania-Kopenhaga: Usługi informatyczne: konsultacyjne, opracowywania oprogramowania, internetowe i wsparcia; DK; 01/12/2017; Wartosc bez VAT: 255 000 000.00 DKK
+http://ted.europa.eu/udl?uri=TED:NOTICE:482192-2017:TEXT:PL:HTML&src=0; 482192-2017; Portugalia-Lizbona: Pakiety oprogramowania dla wywiadu gospodarczego; PT; 01/12/2017; Wartosc bez VAT: 406 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:482175-2017:TEXT:PL:HTML&src=0; 482175-2017; Dania-Kopenhaga: Usługi informatyczne: konsultacyjne, opracowywania oprogramowania, internetowe i wsparcia; DK; 01/12/2017; Wartosc bez VAT: 24 997 700.00 DKK
+http://ted.europa.eu/udl?uri=TED:NOTICE:482162-2017:TEXT:PL:HTML&src=0; 482162-2017; Litwa-Wilno: Usługi w zakresie wsparcia systemu; LT; 01/12/2017; Wartosc bez VAT: 74 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:482160-2017:TEXT:PL:HTML&src=0; 482160-2017; Republika Czeska-Praga: Usługi pomocnicze w zakresie oprogramowania; CZ; 01/12/2017; Wartosc bez VAT: 5 924 376.00 CZK
+http://ted.europa.eu/udl?uri=TED:NOTICE:482140-2017:TEXT:PL:HTML&src=0; 482140-2017; Niemcy-Berlin: Usługi doradcze w zakresie systemów i doradztwo techniczne; DE; 01/12/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:482139-2017:TEXT:PL:HTML&src=0; 482139-2017; Włochy-Rzym: Usługi w zakresie konserwacji i napraw oprogramowania; IT; 01/12/2017; Wartosc bez VAT: 945 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:482134-2017:TEXT:PL:HTML&src=0; 482134-2017; Zjednoczone Królestwo-Hereford: Roboty budowlane; UK; 01/12/2017; Wartosc bez VAT: 16 000 000.00 GBP
+http://ted.europa.eu/udl?uri=TED:NOTICE:482106-2017:TEXT:PL:HTML&src=0; 482106-2017; Zjednoczone Królestwo-Warrington: Komputerowe usługi pokrewne; UK; 01/12/2017; Najtansza oferta: 111 000.00 GBP / Najdrozsza oferta: 250 000.00 GBP brana pod uwage
+http://ted.europa.eu/udl?uri=TED:NOTICE:482101-2017:TEXT:PL:HTML&src=0; 482101-2017; Polska-Nadarzyn: Usługi w zakresie konserwacji i napraw oprogramowania; PL; 01/12/2017; Wartosc bez VAT: 1 100 000.00 PLN
+http://ted.europa.eu/udl?uri=TED:NOTICE:482079-2017:TEXT:PL:HTML&src=0; 482079-2017; Szwecja-Sundsvall: Pakiety oprogramowania i systemy informatyczne; SE; 01/12/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:482072-2017:TEXT:PL:HTML&src=0; 482072-2017; Węgry-Budapeszt: Usługi e-learning; HU; 01/12/2017; Wartosc bez VAT: 60 000 000.00 HUF
+http://ted.europa.eu/udl?uri=TED:NOTICE:482068-2017:TEXT:PL:HTML&src=0; 482068-2017; Szwecja-Östersund: System zarządzania dokumentacją; SE; 01/12/2017; Najtansza oferta: 1 895 996.00 SEK / Najdrozsza oferta: 2 484 169.00 SEK brana pod uwage
+http://ted.europa.eu/udl?uri=TED:NOTICE:482063-2017:TEXT:PL:HTML&src=0; 482063-2017; Dania-Kopenhaga: Usługi programowania; DK; 01/12/2017; Wartosc bez VAT: 3 200 000.00 DKK
+http://ted.europa.eu/udl?uri=TED:NOTICE:482058-2017:TEXT:PL:HTML&src=0; 482058-2017; Węgry-Budapeszt: Usługi opracowywania oprogramowania do zabezpieczania danych; HU; 01/12/2017; Wartosc bez VAT: 461 953 455.00 HUF
+http://ted.europa.eu/udl?uri=TED:NOTICE:482026-2017:TEXT:PL:HTML&src=0; 482026-2017; Polska-Warszawa: Usługi w zakresie oprogramowania; PL; 01/12/2017; Wartosc bez VAT: 741 674.80 PLN
+http://ted.europa.eu/udl?uri=TED:NOTICE:482025-2017:TEXT:PL:HTML&src=0; 482025-2017; Litwa-Wilno: Usługi programowania oprogramowania systemowego i dla użytkownika; LT; 01/12/2017; Wartosc bez VAT: 346 750.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:482015-2017:TEXT:PL:HTML&src=0; 482015-2017; Łotwa-Ryga: Usługi rozbudowy oprogramowania; LV; 01/12/2017; Wartosc bez VAT: 104 505.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:481999-2017:TEXT:PL:HTML&src=0; 481999-2017; Francja-La Rochelle: Systemy baz danych; FR; 01/12/2017; Wartosc bez VAT: 44 627.12 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:481989-2017:TEXT:PL:HTML&src=0; 481989-2017; Francja-Paryż: Usługi doradcze w zakresie systemów; FR; 01/12/2017; Wartosc bez VAT: 7 627 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:481980-2017:TEXT:PL:HTML&src=0; 481980-2017; Francja-Bordeaux: Komputerowe usługi pokrewne; FR; 01/12/2017; Wartosc bez VAT: 1 633 672.62 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:481967-2017:TEXT:PL:HTML&src=0; 481967-2017; Niderlandy-Amsterdam: Maszyny biurowe i liczące, sprzęt i materiały, z wyjątkiem mebli i pakietów oprogramowania; NL; 01/12/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:481962-2017:TEXT:PL:HTML&src=0; 481962-2017; Niderlandy-Bussum: Pakiety oprogramowania i systemy informatyczne; NL; 01/12/2017; Wartosc bez VAT: 1 300 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:481961-2017:TEXT:PL:HTML&src=0; 481961-2017; Niderlandy-Diemen: Usługi informatyczne: konsultacyjne, opracowywania oprogramowania, internetowe i wsparcia; NL; 01/12/2017; Wartosc bez VAT: 1.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:481944-2017:TEXT:PL:HTML&src=0; 481944-2017; Republika Czeska-Praga: Usługi opracowywania oprogramowania informatycznego; CZ; 01/12/2017; Wartosc bez VAT: 819 000.00 CZK
+http://ted.europa.eu/udl?uri=TED:NOTICE:481943-2017:TEXT:PL:HTML&src=0; 481943-2017; Słowacja-Bratysława: Usługi informatyczne: konsultacyjne, opracowywania oprogramowania, internetowe i wsparcia; SK; 01/12/2017; Wartosc bez VAT: 12 749 958.33 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:481941-2017:TEXT:PL:HTML&src=0; 481941-2017; Republika Czeska-Praga: Usługi w zakresie technologii informacji; CZ; 01/12/2017; Wartosc bez VAT: 404 900.00 CZK
+http://ted.europa.eu/udl?uri=TED:NOTICE:481931-2017:TEXT:PL:HTML&src=0; 481931-2017; Finlandia-Helsinki: Usługi informatyczne: konsultacyjne, opracowywania oprogramowania, internetowe i wsparcia; FI; 01/12/2017; Wartosc bez VAT: 2 000 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:481929-2017:TEXT:PL:HTML&src=0; 481929-2017; Hiszpania-Madryt: Usługi rozbudowy systemów komputerowych; ES; 01/12/2017; Wartosc bez VAT: 2 021 660.32 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:481525-2017:TEXT:PL:HTML&src=0; 481525-2017; Republika Czeska-Hradec Králové: Jednostki do przechowywania dysków magnetycznych; CZ; 01/12/2017; Wartosc bez VAT: 4 399 706.60 CZK
+http://ted.europa.eu/udl?uri=TED:NOTICE:481521-2017:TEXT:PL:HTML&src=0; 481521-2017; Węgry-Budapeszt: Systemy i serwery informacyjne; HU; 01/12/2017; Wartosc bez VAT: 1 792 202 849.00 HUF
+http://ted.europa.eu/udl?uri=TED:NOTICE:481518-2017:TEXT:PL:HTML&src=0; 481518-2017; Republika Czeska-Hradec Králové: Systemy informacji medycznej; CZ; 01/12/2017; Wartosc bez VAT: 8 174 000.00 CZK
+http://ted.europa.eu/udl?uri=TED:NOTICE:481490-2017:TEXT:PL:HTML&src=0; 481490-2017; Polska-Wrocław: Talony; PL; 01/12/2017; Wartosc bez VAT: 870 680.00 PLN
+http://ted.europa.eu/udl?uri=TED:NOTICE:481485-2017:TEXT:PL:HTML&src=0; 481485-2017; Polska-Gdańsk: Serwery; PL; 01/12/2017; Wartosc bez VAT: 30 434.00 PLN
+http://ted.europa.eu/udl?uri=TED:NOTICE:481484-2017:TEXT:PL:HTML&src=0; 481484-2017; Polska-Gdańsk: Komputery przenośne; PL; 01/12/2017; Wartosc bez VAT: 1 166 666.67 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:481464-2017:TEXT:PL:HTML&src=0; 481464-2017; Polska-Warszawa: Pakiety oprogramowania użytkowego ogólnego; PL; 01/12/2017; Wartosc bez VAT: 1 130 980.00 PLN
+http://ted.europa.eu/udl?uri=TED:NOTICE:481462-2017:TEXT:PL:HTML&src=0; 481462-2017; Polska-Warszawa: Części, akcesoria i wyroby do komputerów; PL; 01/12/2017; Wartosc bez VAT: 813 005.00 PLN
+http://ted.europa.eu/udl?uri=TED:NOTICE:481457-2017:TEXT:PL:HTML&src=0; 481457-2017; Francja-Talence: Pakiety oprogramowania i systemy informatyczne; FR; 01/12/2017; Wartosc bez VAT: 171 783.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:481451-2017:TEXT:PL:HTML&src=0; 481451-2017; Republika Czeska-Praga: Urządzenia komputerowe; CZ; 01/12/2017; Wartosc bez VAT: 6 724 685.00 CZK
+http://ted.europa.eu/udl?uri=TED:NOTICE:481449-2017:TEXT:PL:HTML&src=0; 481449-2017; Francja-Montpellier: Usługi dostarczania danych; FR; 01/12/2017; Wartosc bez VAT: 160 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:481441-2017:TEXT:PL:HTML&src=0; 481441-2017; Francja-Chambéry: Pakiety oprogramowania i systemy informatyczne; FR; 01/12/2017; Wartosc bez VAT: 1.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:481426-2017:TEXT:PL:HTML&src=0; 481426-2017; Niemcy-Koblencja: Papier do drukowania; DE; 01/12/2017; Wartosc bez VAT: 0.01 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:481425-2017:TEXT:PL:HTML&src=0; 481425-2017; Niemcy-Lüneburg: Fotokopiarki; DE; 01/12/2017; Wartosc bez VAT: 413 687.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:481420-2017:TEXT:PL:HTML&src=0; 481420-2017; Republika Czeska-Tichá: System nagłaśniający; CZ; 01/12/2017; Wartosc bez VAT: 6 311 186.00 CZK
+http://ted.europa.eu/udl?uri=TED:NOTICE:481415-2017:TEXT:PL:HTML&src=0; 481415-2017; Republika Czeska-Brno: Pakiety oprogramowania i systemy informatyczne; CZ; 01/12/2017; Wartosc bez VAT: 125 541 440.00 CZK
+http://ted.europa.eu/udl?uri=TED:NOTICE:481414-2017:TEXT:PL:HTML&src=0; 481414-2017; Niemcy-Böblingen: Pakiety oprogramowania i systemy informatyczne; DE; 01/12/2017; Wartosc bez VAT: 0.01 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:481407-2017:TEXT:PL:HTML&src=0; 481407-2017; Francja-Montpellier: Usługi dostarczania danych; FR; 01/12/2017; Wartosc bez VAT: 998 840.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:481390-2017:TEXT:PL:HTML&src=0; 481390-2017; Hiszpania-Vitoria-Gasteiz: Urządzenia komputerowe; ES; 01/12/2017; Wartosc bez VAT: 2 115 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:481388-2017:TEXT:PL:HTML&src=0; 481388-2017; Polska-Lublin: Papier samokopiujący lub inny papier powielający; PL; 01/12/2017; Wartosc bez VAT: 944 550.00 PLN
+http://ted.europa.eu/udl?uri=TED:NOTICE:481387-2017:TEXT:PL:HTML&src=0; 481387-2017; Francja-Créteil: Sprzęt związany z komputerami; FR; 01/12/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:481385-2017:TEXT:PL:HTML&src=0; 481385-2017; Hiszpania-Barcelona: Usługi dostawy oprogramowania; ES; 01/12/2017; Wartosc bez VAT: 1 558 649.65 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:481380-2017:TEXT:PL:HTML&src=0; 481380-2017; Polska-Warszawa: Urządzenia komputerowe; PL; 01/12/2017; Wartosc bez VAT: 4 300 000.00 PLN
+http://ted.europa.eu/udl?uri=TED:NOTICE:481366-2017:TEXT:PL:HTML&src=0; 481366-2017; Szwecja-Malmö: Komputery przenośne; SE; 01/12/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:481352-2017:TEXT:PL:HTML&src=0; 481352-2017; Hiszpania-Madryt: Toner do drukarek laserowych/faksów; ES; 01/12/2017; Wartosc bez VAT: 197 879.58 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:481348-2017:TEXT:PL:HTML&src=0; 481348-2017; Hiszpania-Madryt: Usługi dostawy oprogramowania; ES; 01/12/2017; Wartosc bez VAT: 449 406.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:481342-2017:TEXT:PL:HTML&src=0; 481342-2017; Niemcy-Monachium: Papier do drukowania; DE; 01/12/2017; Najtansza oferta: 283 453.72 EUR / Najdrozsza oferta: 310 424.40 EUR brana pod uwage
+http://ted.europa.eu/udl?uri=TED:NOTICE:481341-2017:TEXT:PL:HTML&src=0; 481341-2017; Polska-Świlcza: Pakiety oprogramowania i systemy informatyczne; PL; 01/12/2017; Wartosc bez VAT: 836 085.00 PLN
+http://ted.europa.eu/udl?uri=TED:NOTICE:481335-2017:TEXT:PL:HTML&src=0; 481335-2017; Polska-Legnica: Różne urządzenia i produkty medyczne; PL; 01/12/2017; Wartosc bez VAT: 123 575.76 PLN
+http://ted.europa.eu/udl?uri=TED:NOTICE:481331-2017:TEXT:PL:HTML&src=0; 481331-2017; Polska-Kraków: Drukarki i plotery; PL; 01/12/2017; Wartosc bez VAT: 14 179.30 PLN
+http://ted.europa.eu/udl?uri=TED:NOTICE:481315-2017:TEXT:PL:HTML&src=0; 481315-2017; Zjednoczone Królestwo-Belfast: Maszyny do frankowania; UK; 01/12/2017; Wartosc bez VAT: 150 000.00 GBP
+http://ted.europa.eu/udl?uri=TED:NOTICE:481314-2017:TEXT:PL:HTML&src=0; 481314-2017; Francja-Creil: Karty na zakup paliwa; FR; 01/12/2017; Wartosc bez VAT: 340 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:481307-2017:TEXT:PL:HTML&src=0; 481307-2017; Hiszpania-Sewilla: Usługi rozbudowy oprogramowania; ES; 01/12/2017; Wartosc bez VAT: 930 335.54 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:481302-2017:TEXT:PL:HTML&src=0; 481302-2017; Niderlandy-Hilversum: Elementy składowe sieci; NL; 01/12/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:481299-2017:TEXT:PL:HTML&src=0; 481299-2017; Niderlandy-IJsselstein: Sprzęt związany z komputerami; NL; 01/12/2017; Wartosc bez VAT: 1.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:481285-2017:TEXT:PL:HTML&src=0; 481285-2017; Republika Czeska-Ústí nad Labem: Serwery; CZ; 01/12/2017; Wartosc bez VAT: 619 500.00 CZK
+http://ted.europa.eu/udl?uri=TED:NOTICE:481279-2017:TEXT:PL:HTML&src=0; 481279-2017; Słowacja-Bratysława: Dozymetry promieniowania; SK; 01/12/2017; Wartosc bez VAT: 367 520.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:481270-2017:TEXT:PL:HTML&src=0; 481270-2017; Republika Czeska-Ústí nad Labem: Urządzenia komputerowe; CZ; 01/12/2017; Wartosc bez VAT: 81 302.00 CZK
+http://ted.europa.eu/udl?uri=TED:NOTICE:480830-2017:TEXT:PL:HTML&src=0; 480830-2017; Belgia-Bruksela: Usługi związane z przeprowadzkami, transportem wewnętrznym i logistyką oraz usługi powiązane; BE; 01/12/2017; Wartosc bez VAT: 26 661 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:480822-2017:TEXT:PL:HTML&src=0; 480822-2017; Republika Czeska-Praga: GSA/OP/12/16 — Integracja komponentów podstawowych; CZ; 01/12/2017; Wartosc bez VAT: 8 000 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:480780-2017:TEXT:PL:HTML&src=0; 480780-2017; Słowacja-Žilina: Usługi w zakresie konserwacji i wsparcia systemów; SK; 30/11/2017; Wartosc bez VAT: 436 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:480777-2017:TEXT:PL:HTML&src=0; 480777-2017; Szwecja-Umeå: Sieć internetowa; SE; 30/11/2017; Wartosc bez VAT: 4 000 000.00 SEK
+http://ted.europa.eu/udl?uri=TED:NOTICE:480736-2017:TEXT:PL:HTML&src=0; 480736-2017; Bułgaria-Sofia: Usługi programowania oprogramowania aplikacyjnego; BG; 30/11/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:480734-2017:TEXT:PL:HTML&src=0; 480734-2017; Węgry-Budapeszt: Systemy i serwery informacyjne; HU; 30/11/2017; Wartosc bez VAT: 69 142 700.00 HUF
+http://ted.europa.eu/udl?uri=TED:NOTICE:480691-2017:TEXT:PL:HTML&src=0; 480691-2017; Szwajcaria-Lozanna: Komputerowe usługi pokrewne; CH; 30/11/2017; Wartosc bez VAT: 1 143 375.00 CHF
+http://ted.europa.eu/udl?uri=TED:NOTICE:480647-2017:TEXT:PL:HTML&src=0; 480647-2017; Norwegia-Oslo: Sprzęt sportowy do uprawiania sportów na wolnym powietrzu; NO; 30/11/2017; Wartosc bez VAT: 5 600 000.00 NOK
+http://ted.europa.eu/udl?uri=TED:NOTICE:480614-2017:TEXT:PL:HTML&src=0; 480614-2017; Hiszpania-Barcelona: Pakiety oprogramowania i systemy informatyczne; ES; 30/11/2017; Wartosc: 502 000 EUR
+
+http://ted.europa.eu/udl?uri=TED:NOTICE:480613-2017:TEXT:PL:HTML&src=0; 480613-2017; Hiszpania-Barcelona: Pakiety oprogramowania i systemy informatyczne; ES; 30/11/2017; Wartosc: 888 500 EUR
+
+http://ted.europa.eu/udl?uri=TED:NOTICE:480605-2017:TEXT:PL:HTML&src=0; 480605-2017; Hiszpania-Walencja: Pakiety oprogramowania i systemy informatyczne; ES; 30/11/2017; Wartosc: 431 267,52 EUR
+
+http://ted.europa.eu/udl?uri=TED:NOTICE:480576-2017:TEXT:PL:HTML&src=0; 480576-2017; Hiszpania-Barcelona: Usługi bazy danych; ES; 30/11/2017; Wartosc: 250 012 USD
+http://ted.europa.eu/udl?uri=TED:NOTICE:480569-2017:TEXT:PL:HTML&src=0; 480569-2017; Portugalia-Lizbona: Usługi wdrażania oprogramowania; PT; 30/11/2017; Wartosc: 42 000 EUR
+
+http://ted.europa.eu/udl?uri=TED:NOTICE:480556-2017:TEXT:PL:HTML&src=0; 480556-2017; Litwa-Wilno: Usługi rozbudowy oprogramowania; LT; 30/11/2017; Wartosc: 792 793,33 EUR
+
+http://ted.europa.eu/udl?uri=TED:NOTICE:480555-2017:TEXT:PL:HTML&src=0; 480555-2017; Litwa-Wilno: Usługi w zakresie konserwacji i napraw oprogramowania; LT; 30/11/2017; Wartosc: 811 152 EUR
+Łącznie z VAT. Stawka VAT (%) 21
+http://ted.europa.eu/udl?uri=TED:NOTICE:480554-2017:TEXT:PL:HTML&src=0; 480554-2017; Litwa-Wilno: Usługi doradcze w zakresie programowania oprogramowania; LT; 30/11/2017; Wartosc: 699 387,26 EUR
+Łącznie z VAT. Stawka VAT (%) 21
+http://ted.europa.eu/udl?uri=TED:NOTICE:480487-2017:TEXT:PL:HTML&src=0; 480487-2017; Polska-Gdańsk: Pakiety oprogramowania do optycznego rozpoznawania znaków (OCR); PL; 30/11/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:480486-2017:TEXT:PL:HTML&src=0; 480486-2017; Litwa-Wilno: Komputery przenośne; LT; 30/11/2017; Wartosc: 320 893,21 EUR
+Łącznie z VAT. Stawka VAT (%) 21
+http://ted.europa.eu/udl?uri=TED:NOTICE:480479-2017:TEXT:PL:HTML&src=0; 480479-2017; Polska-Gdańsk: Pakiety oprogramowania i systemy informatyczne; PL; 30/11/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:480363-2017:TEXT:PL:HTML&src=0; 480363-2017; Francja-Paris La Défense: Usługi doradcze w zakresie systemów; FR; 30/11/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:480353-2017:TEXT:PL:HTML&src=0; 480353-2017; Polska-Warszawa: Usługi dostarczania danych; PL; 30/11/2017; Wartosc bez VAT: 4 310 280.00 PLN
+http://ted.europa.eu/udl?uri=TED:NOTICE:480336-2017:TEXT:PL:HTML&src=0; 480336-2017; Zjednoczone Królestwo-Perth: Usługi przechowywania danych; UK; 30/11/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:480272-2017:TEXT:PL:HTML&src=0; 480272-2017; Francja-Paryż: Pakiety oprogramowania i systemy informatyczne; FR; 30/11/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:480268-2017:TEXT:PL:HTML&src=0; 480268-2017; Bułgaria-Sofia: Maszyny biurowe i liczące, sprzęt i materiały, z wyjątkiem mebli i pakietów oprogramowania; BG; 30/11/2017; Wartosc bez VAT: 357 000.00 BGN
+http://ted.europa.eu/udl?uri=TED:NOTICE:480262-2017:TEXT:PL:HTML&src=0; 480262-2017; Francja-Metz: Serwery; FR; 30/11/2017; Całkowita koncowa opisWartosci umowy/czesci: 61 991.60 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:480260-2017:TEXT:PL:HTML&src=0; 480260-2017; Francja-Paryż: Sprzęt związany z komputerami; FR; 30/11/2017; Wartosc bez VAT: 800 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:480086-2017:TEXT:PL:HTML&src=0; 480086-2017; Niemcy-Ratyzbona: Pakiety oprogramowania i systemy informatyczne; DE; 30/11/2017; Wartosc bez VAT: 435 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:480080-2017:TEXT:PL:HTML&src=0; 480080-2017; Niemcy-Norymberga: Usługi doradcze w zakresie systemów i doradztwo techniczne; DE; 30/11/2017; Wartosc bez VAT: 0.01 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:480071-2017:TEXT:PL:HTML&src=0; 480071-2017; Niemcy-Berlin: Usługi zarządzania projektem inne niż w zakresie robot budowlanych; DE; 30/11/2017; Wartosc bez VAT: 1 400 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:480069-2017:TEXT:PL:HTML&src=0; 480069-2017; Niemcy-Norymberga: Usługi w zakresie oprogramowania; DE; 30/11/2017; Wartosc bez VAT: 0.01 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:480064-2017:TEXT:PL:HTML&src=0; 480064-2017; Niemcy-Offenbach am Main: Usługi opracowywania przemysłowego specyficznego oprogramowania; DE; 30/11/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:480060-2017:TEXT:PL:HTML&src=0; 480060-2017; Francja-Paryż: Usługi w zakresie konserwacji i napraw oprogramowania; FR; 30/11/2017; Wartosc bez VAT: 479 398.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:480037-2017:TEXT:PL:HTML&src=0; 480037-2017; Francja-Paryż: Usługi doradcze i dodatkowe w zakresie sprzętu komputerowego; FR; 30/11/2017; Wartosc bez VAT: 3 600 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:480017-2017:TEXT:PL:HTML&src=0; 480017-2017; Hiszpania-Madryt: Usługi doradcze w zakresie programowania oprogramowania; ES; 30/11/2017; Wartosc bez VAT: 147 473.55 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:479992-2017:TEXT:PL:HTML&src=0; 479992-2017; Finlandia-Maarianhamina: Usługi w zakresie technologii informacji; FI; 30/11/2017; Wartosc bez VAT: 200 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:479982-2017:TEXT:PL:HTML&src=0; 479982-2017; Francja-Gif-sur-Yvette: Komputerowe usługi pokrewne; FR; 30/11/2017; Wartosc bez VAT: 800 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:479977-2017:TEXT:PL:HTML&src=0; 479977-2017; Szwecja-Alafors: Pakiety oprogramowania do zarządzania urządzeniami i zestawy pakietów oprogramowania; SE; 30/11/2017; Wartosc bez VAT: 2 000 000.00 SEK
+http://ted.europa.eu/udl?uri=TED:NOTICE:479964-2017:TEXT:PL:HTML&src=0; 479964-2017; Francja-Tuluza: Usługi bazy danych; FR; 30/11/2017; Wartosc bez VAT: 15 350.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:479937-2017:TEXT:PL:HTML&src=0; 479937-2017; Hiszpania-Madryt: Różne usługi opracowywania oprogramowania i systemy komputerowe; ES; 30/11/2017; Wartosc bez VAT: 1 811 361.24 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:479928-2017:TEXT:PL:HTML&src=0; 479928-2017; Francja-Gif-sur-Yvette: Komputerowe usługi pokrewne; FR; 30/11/2017; Wartosc bez VAT: 300 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:479925-2017:TEXT:PL:HTML&src=0; 479925-2017; Węgry-Budapeszt: Usługi w zakresie oprogramowania; HU; 30/11/2017; Wartosc bez VAT: 8 000 000 000.00 HUF
+http://ted.europa.eu/udl?uri=TED:NOTICE:479922-2017:TEXT:PL:HTML&src=0; 479922-2017; Republika Czeska-Praga: Usługi informatyczne: konsultacyjne, opracowywania oprogramowania, internetowe i wsparcia; CZ; 30/11/2017; Wartosc bez VAT: 32 867.58 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:479911-2017:TEXT:PL:HTML&src=0; 479911-2017; Republika Czeska-Praga: Usługi rozbudowy oprogramowania; CZ; 30/11/2017; Wartosc bez VAT: 24 663 600.00 CZK
+http://ted.europa.eu/udl?uri=TED:NOTICE:479905-2017:TEXT:PL:HTML&src=0; 479905-2017; Belgia-Bruksela: Usługi internetowe; BE; 30/11/2017; Wartosc bez VAT: 5 162 090.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:479901-2017:TEXT:PL:HTML&src=0; 479901-2017; Zjednoczone Królestwo-Newtown St Boswells: Usługi doradcze w zakresie zarządzania projektem; UK; 30/11/2017; Wartosc bez VAT: 500 000.00 GBP
+http://ted.europa.eu/udl?uri=TED:NOTICE:479896-2017:TEXT:PL:HTML&src=0; 479896-2017; Zjednoczone Królestwo-Glasgow: Systemy baz danych; UK; 30/11/2017; Wartosc bez VAT: 420 000.00 GBP
+http://ted.europa.eu/udl?uri=TED:NOTICE:479879-2017:TEXT:PL:HTML&src=0; 479879-2017; Finlandia-Pieksämäki: Pakiety oprogramowania do serwera sieci WWW; FI; 30/11/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:479857-2017:TEXT:PL:HTML&src=0; 479857-2017; Francja-Gif-sur-Yvette: Komputerowe usługi pokrewne; FR; 30/11/2017; Wartosc bez VAT: 300 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:479845-2017:TEXT:PL:HTML&src=0; 479845-2017; Francja-Paryż: Usługi informatyczne: konsultacyjne, opracowywania oprogramowania, internetowe i wsparcia; FR; 30/11/2017; Wartosc bez VAT: 1 980 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:479831-2017:TEXT:PL:HTML&src=0; 479831-2017; Francja-Montauban: Usługi w zakresie wsparcia technicznego; FR; 30/11/2017; Wartosc bez VAT: 3 850 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:479799-2017:TEXT:PL:HTML&src=0; 479799-2017; Republika Czeska-Praga: Usługi w zakresie oprogramowania; CZ; 30/11/2017; Wartosc bez VAT: 9 495.00 CZK
+http://ted.europa.eu/udl?uri=TED:NOTICE:479793-2017:TEXT:PL:HTML&src=0; 479793-2017; Belgia-Aalst: Usługi modelowania projektu; BE; 30/11/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:479788-2017:TEXT:PL:HTML&src=0; 479788-2017; Niderlandy-Rotterdam: Systemy planowania; NL; 30/11/2017; Wartosc bez VAT: 0.01 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:479786-2017:TEXT:PL:HTML&src=0; 479786-2017; Bułgaria-Sofia: Pakiety oprogramowania i systemy informatyczne; BG; 30/11/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:479785-2017:TEXT:PL:HTML&src=0; 479785-2017; Hiszpania-Madryt: Usługi zarządzania udogodnieniami komputerowymi; ES; 30/11/2017; Wartosc bez VAT: 6 000 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:479783-2017:TEXT:PL:HTML&src=0; 479783-2017; Niderlandy-Haga: Usługi informatyczne: konsultacyjne, opracowywania oprogramowania, internetowe i wsparcia; NL; 30/11/2017; Wartosc bez VAT: 70.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:479774-2017:TEXT:PL:HTML&src=0; 479774-2017; Słowacja-Bratysława: Maszyny do przetwarzania danych (sprzęt); SK; 30/11/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:479404-2017:TEXT:PL:HTML&src=0; 479404-2017; Francja-Douai: Sprzęt dydaktyczny; FR; 30/11/2017; Wartosc bez VAT: 432 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:479395-2017:TEXT:PL:HTML&src=0; 479395-2017; Hiszpania-Barcelona: Pakiety oprogramowania i systemy informatyczne; ES; 30/11/2017; Wartosc bez VAT: 459 200.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:479393-2017:TEXT:PL:HTML&src=0; 479393-2017; Francja-Brest: Pakiety oprogramowania i systemy informatyczne; FR; 30/11/2017; Wartosc bez VAT: 158 979.90 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:479391-2017:TEXT:PL:HTML&src=0; 479391-2017; Republika Czeska-Ústí nad Labem: Serwery; CZ; 30/11/2017; Wartosc bez VAT: 122 052.91 CZK
+http://ted.europa.eu/udl?uri=TED:NOTICE:479384-2017:TEXT:PL:HTML&src=0; 479384-2017; Republika Czeska-Ústí nad Labem: Urządzenia komputerowe; CZ; 30/11/2017; Wartosc bez VAT: 114 245.00 CZK
+http://ted.europa.eu/udl?uri=TED:NOTICE:479378-2017:TEXT:PL:HTML&src=0; 479378-2017; Słowenia-Ljubljana: Urządzenia komputerowe; SI; 30/11/2017; Wartosc bez VAT: 750 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:479369-2017:TEXT:PL:HTML&src=0; 479369-2017; Francja-Pluzunet: Sieci; FR; 30/11/2017; Wartosc bez VAT: 442 790.10 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:479352-2017:TEXT:PL:HTML&src=0; 479352-2017; Niemcy-Düsseldorf: Usługi w zakresie oprogramowania; DE; 30/11/2017; Wartosc bez VAT: 26 278 632.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:479338-2017:TEXT:PL:HTML&src=0; 479338-2017; Polska-Kraków: Komputer biurkowy; PL; 30/11/2017; Wartosc bez VAT: 248 700.00 PLN
+http://ted.europa.eu/udl?uri=TED:NOTICE:479327-2017:TEXT:PL:HTML&src=0; 479327-2017; Polska-Warszawa: Maszyny biurowe i liczące, sprzęt i materiały, z wyjątkiem mebli i pakietów oprogramowania; PL; 30/11/2017; Wartosc bez VAT: 448 600.00 PLN
+http://ted.europa.eu/udl?uri=TED:NOTICE:479310-2017:TEXT:PL:HTML&src=0; 479310-2017; Polska-Warszawa: Urządzenia komputerowe; PL; 30/11/2017; Wartosc bez VAT: 34 680.00 PLN
+http://ted.europa.eu/udl?uri=TED:NOTICE:479303-2017:TEXT:PL:HTML&src=0; 479303-2017; Polska-Warszawa: Talony; PL; 30/11/2017; 1. Przedmiotem zamówienia jest dostawa bonów towarowych na artykuły spozywcze i przemysłowe w formie papierowej dla pracowników Teatru Wielkiego – Opery Narodowej w nastepującej ilosci:
+dla 18 pracowników o wartosci 1 250 PLN na kwote 22 500 PLNł,
+dla 534 pracowników o wartosci 1 050 PLN na kwote 560 700 PLN,
+dla 299 pracowników o wartosci 900 PLN na kwote 269 100 PLN,
+dla 189 pracowników o wartosci 700 PLN na kwote 132 300 PLN,
+razem opisWartosci zamówienia wynosi 984.600 PLN.
+2. Bony powinny byc w nominałach o wartosci 50 PLN, łączna ilosc bonów – 19.692 szt.
+3. Termin waznosci bonów- minimum 36 miesiecy od daty dostawy bonów.
+4. Realizacja bonów bedzie mozliwa na terenie całego kraju w maksymalnej ilosci punktów handlowych i usługowych.
+5. Zamawiający nie dopuszcza mozliwosci zaoferowania bonów towarowych w formie karty elektronicznej.
+http://ted.europa.eu/udl?uri=TED:NOTICE:479290-2017:TEXT:PL:HTML&src=0; 479290-2017; Węgry-Budapeszt: Serwery; HU; 30/11/2017; Wartosc bez VAT: 67 467 984.00 HUF
+http://ted.europa.eu/udl?uri=TED:NOTICE:479287-2017:TEXT:PL:HTML&src=0; 479287-2017; Francja-Marsylia: Pakiety oprogramowania i systemy informatyczne; FR; 30/11/2017; Wartosc bez VAT: 1 195 750.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:479284-2017:TEXT:PL:HTML&src=0; 479284-2017; Szwecja-Umeå: Drukarki i plotery; SE; 30/11/2017; Wartosc bez VAT: 40 000 000.00 SEK
+http://ted.europa.eu/udl?uri=TED:NOTICE:479274-2017:TEXT:PL:HTML&src=0; 479274-2017; Malta-Floriana: Meble (włącznie z biurowymi), wyposażenie, urządzenia domowe (z wyłączeniem oświetlenia) i środki czyszczące; MT; 30/11/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:479271-2017:TEXT:PL:HTML&src=0; 479271-2017; Polska-Gdańsk: Sprzęt laboratoryjny, optyczny i precyzyjny (z wyjątkiem szklanego); PL; 30/11/2017; Wartosc bez VAT: 163 146.89 PLN
+http://ted.europa.eu/udl?uri=TED:NOTICE:479243-2017:TEXT:PL:HTML&src=0; 479243-2017; Polska-Łódź: Regały; PL; 30/11/2017; Wartosc bez VAT: 510 900.00 PLN
+http://ted.europa.eu/udl?uri=TED:NOTICE:479234-2017:TEXT:PL:HTML&src=0; 479234-2017; Polska-Jelenia Góra: Materiały medyczne; PL; 30/11/2017; Wartosc bez VAT: 69 369.00 PLN
+http://ted.europa.eu/udl?uri=TED:NOTICE:479172-2017:TEXT:PL:HTML&src=0; 479172-2017; Niemcy-Stuttgart: Serwery; DE; 30/11/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:479170-2017:TEXT:PL:HTML&src=0; 479170-2017; Francja-Tourcoing: Pakiety oprogramowania i systemy informatyczne; FR; 30/11/2017; Wartosc bez VAT: 280 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:479132-2017:TEXT:PL:HTML&src=0; 479132-2017; Republika Czeska-Praga: Usługi pomocnicze w zakresie oprogramowania; CZ; 30/11/2017; Wartosc bez VAT: 5 213 184.00 CZK
+http://ted.europa.eu/udl?uri=TED:NOTICE:479116-2017:TEXT:PL:HTML&src=0; 479116-2017; Bułgaria-Sofia: Systemy i serwery informacyjne; BG; 30/11/2017; Wartosc bez VAT: 177 311.53 BGN
+http://ted.europa.eu/udl?uri=TED:NOTICE:479109-2017:TEXT:PL:HTML&src=0; 479109-2017; Słowacja-Bratysława: Urządzenia komputerowe; SK; 30/11/2017; Wartosc bez VAT: 7 000 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:479105-2017:TEXT:PL:HTML&src=0; 479105-2017; Francja-Sophia Antipolis: Pakiety oprogramowania i systemy informatyczne; FR; 30/11/2017; Najtansza oferta: 826 948.00 EUR / Najdrozsza oferta: 876 761.00 EUR brana pod uwage
+http://ted.europa.eu/udl?uri=TED:NOTICE:479102-2017:TEXT:PL:HTML&src=0; 479102-2017; Francja-Épinal: Komputerowe jednostki do przechowywania; FR; 30/11/2017; Wartosc bez VAT: 545 971.99 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:478655-2017:TEXT:PL:HTML&src=0; 478655-2017; Szwajcaria-Frick: Usługi informatyczne: konsultacyjne, opracowywania oprogramowania, internetowe i wsparcia; CH; 29/11/2017; Całkowita koncowa opisWartosci umowy/czesci: 2 658 500.00 CHF
+http://ted.europa.eu/udl?uri=TED:NOTICE:478653-2017:TEXT:PL:HTML&src=0; 478653-2017; Szwajcaria-Frick: Pakiety oprogramowania administracyjnego; CH; 29/11/2017; Całkowita koncowa opisWartosci umowy/czesci: 936 000.00 CHF
+http://ted.europa.eu/udl?uri=TED:NOTICE:478606-2017:TEXT:PL:HTML&src=0; 478606-2017; Norwegia-Moss: Maszyny biurowe i liczące, sprzęt i materiały, z wyjątkiem mebli i pakietów oprogramowania; NO; 29/11/2017; Wartosc bez VAT: 40 000 000.00 NOK
+http://ted.europa.eu/udl?uri=TED:NOTICE:478579-2017:TEXT:PL:HTML&src=0; 478579-2017; Francja-Strasburg: Systemy informacyjne; FR; 29/11/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:478556-2017:TEXT:PL:HTML&src=0; 478556-2017; Rumunia-Bucuresti: Bębny do maszyn biurowych; RO; 29/11/2017; Wartosc: 2 885 305 RON
+
+http://ted.europa.eu/udl?uri=TED:NOTICE:478473-2017:TEXT:PL:HTML&src=0; 478473-2017; Hiszpania-Palma na Majorce: Komputerowe usługi pokrewne; ES; 29/11/2017; Wartosc: 2 028 217,49 EUR
+Łącznie z VAT. Stawka VAT (%) 21
+http://ted.europa.eu/udl?uri=TED:NOTICE:478370-2017:TEXT:PL:HTML&src=0; 478370-2017; Rumunia-Bucuresti: Serwery sieciowe; RO; 29/11/2017; Wartosc: 1 800 000 RON
+
+http://ted.europa.eu/udl?uri=TED:NOTICE:478366-2017:TEXT:PL:HTML&src=0; 478366-2017; Niemcy-Herne: Usługi informatyczne: konsultacyjne, opracowywania oprogramowania, internetowe i wsparcia; DE; 29/11/2017; Wartosc: 408 794,17 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:478359-2017:TEXT:PL:HTML&src=0; 478359-2017; Polska-Wrocław: Pakiety oprogramowania i systemy informatyczne; PL; 29/11/2017; Wartosc: 1 087 027,26 PLN
+Łącznie z VAT. Stawka VAT (%) 23
+http://ted.europa.eu/udl?uri=TED:NOTICE:478355-2017:TEXT:PL:HTML&src=0; 478355-2017; Rumunia-Bucuresti: Komputery osobiste; RO; 29/11/2017; Wartosc: 845 000 RON
+
+http://ted.europa.eu/udl?uri=TED:NOTICE:478352-2017:TEXT:PL:HTML&src=0; 478352-2017; Polska-Opole: System automatyzacji; PL; 29/11/2017; Wartosc: 1 732 061,40 PLN
+Łącznie z VAT. Stawka VAT (%) 23
+http://ted.europa.eu/udl?uri=TED:NOTICE:478162-2017:TEXT:PL:HTML&src=0; 478162-2017; Polska-Jaworzno: Matematyczne lub prognozujące pakiety oprogramowania; PL; 29/11/2017; Wartosc bez VAT: 168 900.00 PLN
+http://ted.europa.eu/udl?uri=TED:NOTICE:478144-2017:TEXT:PL:HTML&src=0; 478144-2017; Polska-Warszawa: Usługi informatyczne: konsultacyjne, opracowywania oprogramowania, internetowe i wsparcia; PL; 29/11/2017; Wartosc bez VAT: 2 237 113.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:478102-2017:TEXT:PL:HTML&src=0; 478102-2017; Bułgaria-Sofia: Usługi dostawy oprogramowania; BG; 29/11/2017; Wartosc bez VAT: 1 247 718.57 BGN
+http://ted.europa.eu/udl?uri=TED:NOTICE:478095-2017:TEXT:PL:HTML&src=0; 478095-2017; Niemcy-Drezno: Elektroniczne tablice informacyjne; DE; 29/11/2017; Całkowita koncowa opisWartosci umowy/czesci: 703 050.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:478093-2017:TEXT:PL:HTML&src=0; 478093-2017; Niemcy-Frankfurt nad Menem: Wyroby biurowe; DE; 29/11/2017; Całkowita koncowa opisWartosci umowy/czesci: 1 434 300.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:477884-2017:TEXT:PL:HTML&src=0; 477884-2017; Francja-Quimper: Platformy komputerowe; FR; 29/11/2017; Wartosc bez VAT: 215 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:477878-2017:TEXT:PL:HTML&src=0; 477878-2017; Niderlandy-Lejda: Kolorowe drukarki atramentowe; NL; 29/11/2017; Wartosc bez VAT: 450 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:477876-2017:TEXT:PL:HTML&src=0; 477876-2017; Dania-Hinnerup: Usługi zarządzania siecią danych; DK; 29/11/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:477870-2017:TEXT:PL:HTML&src=0; 477870-2017; Francja-Paryż: Usługi w zakresie rozwijania internetowych lub intranetowych aplikacji klienckich; FR; 29/11/2017; Wartosc bez VAT: 479 700.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:477858-2017:TEXT:PL:HTML&src=0; 477858-2017; Niderlandy-Haga: Usługi informatyczne: konsultacyjne, opracowywania oprogramowania, internetowe i wsparcia; NL; 29/11/2017; Najtansza oferta: 1.00 EUR / Najdrozsza oferta: 2 800 000.00 EUR brana pod uwage
+http://ted.europa.eu/udl?uri=TED:NOTICE:477845-2017:TEXT:PL:HTML&src=0; 477845-2017; Francja-Paryż: Usługi dostawy oprogramowania; FR; 29/11/2017; Wartosc bez VAT: 94 600.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:477839-2017:TEXT:PL:HTML&src=0; 477839-2017; Francja-Paryż: Usługi w zakresie rozwijania internetu; FR; 29/11/2017; Wartosc bez VAT: 903 197.84 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:477836-2017:TEXT:PL:HTML&src=0; 477836-2017; Niemcy-Magdeburg: Usługi doradcze w zakresie działalności gospodarczej i zarządzania oraz podobne; DE; 29/11/2017; Wartosc bez VAT: 477 200.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:477834-2017:TEXT:PL:HTML&src=0; 477834-2017; Finlandia-Helsinki: Usługi w zakresie danych; FI; 29/11/2017; Wartosc bez VAT: 356 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:477828-2017:TEXT:PL:HTML&src=0; 477828-2017; Finlandia-Vaasa: Dodatkowe usługi biurowe; FI; 29/11/2017; Wartosc bez VAT: 227 961.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:477826-2017:TEXT:PL:HTML&src=0; 477826-2017; Francja-Paryż: Usługi w zakresie oprogramowania; FR; 29/11/2017; Wartosc bez VAT: 309 558.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:477823-2017:TEXT:PL:HTML&src=0; 477823-2017; Francja-Strasburg: Usługi dostawy oprogramowania; FR; 29/11/2017; Wartosc bez VAT: 3 500 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:477814-2017:TEXT:PL:HTML&src=0; 477814-2017; Zjednoczone Królestwo-Liverpool: Pakiety oprogramowania i systemy informatyczne; UK; 29/11/2017; Brak wartosci w ofercie
+http://ted.europa.eu/udl?uri=TED:NOTICE:477806-2017:TEXT:PL:HTML&src=0; 477806-2017; Szwecja-Sundbyberg: Usługi opracowywania oprogramowania bibliotecznego; SE; 29/11/2017; Wartosc bez VAT: 3 200 000.00 SEK
+http://ted.europa.eu/udl?uri=TED:NOTICE:477801-2017:TEXT:PL:HTML&src=0; 477801-2017; Niderlandy-Rotterdam: Usługi informatyczne: konsultacyjne, opracowywania oprogramowania, internetowe i wsparcia; NL; 29/11/2017; Wartosc bez VAT: 2 825 207.50 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:477795-2017:TEXT:PL:HTML&src=0; 477795-2017; Hiszpania-Madryt: Konserwacja oprogramowania technologii informacji; ES; 29/11/2017; Wartosc bez VAT: 75 305.63 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:477784-2017:TEXT:PL:HTML&src=0; 477784-2017; Francja-Bry-sur-Marne: Usługi informatyczne: konsultacyjne, opracowywania oprogramowania, internetowe i wsparcia; FR; 29/11/2017; Wartosc bez VAT: 9 000 000.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:477771-2017:TEXT:PL:HTML&src=0; 477771-2017; Francja-Paryż: Konserwacja oprogramowania technologii informacji; FR; 29/11/2017; Wartosc bez VAT: 615 700.00 EUR
+http://ted.europa.eu/udl?uri=TED:NOTICE:477759-2017:TEXT:PL:HTML&src=0; 477759-2017; Polska-Warszawa: Usługi w zakresie wsparcia technicznego; PL; 29/11/2017; Wartosc bez VAT: 622 914.72 PLN
+http://ted.europa.eu/udl?uri=TED:NOTICE:477753-2017:TEXT:PL:HTML&src=0; 477753-2017; Niemcy-Wiesbaden: Usługi informatyczne: konsultacyjne, opracowywania oprogramowania, internetowe i wsparcia; DE; 29/11/2017; Wartosc bez VAT: 1 900 000.00 EUR
+http://ted.europa.eu/udl

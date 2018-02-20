@@ -8,6 +8,7 @@ import PageObjects.ServiceDesk.MainPage.ServiceDeskLoginPage;
 import core.BaseTestClass;
 import core.Tools.Tools;
 import core.Tools.TranslationSchem;
+import org.testng.annotations.Test;
 
 import java.util.List;
 
@@ -22,12 +23,12 @@ public class Automat_Biznesowy_wprowadzenie_tlumaczenia_SD extends BaseTestClass
 
     //adres do ustawień wtyczki translator w modyfikowanym projekcie
     private static final String VPN = "/secure/project/TranslationPortal.jspa?pid=10101";
-    private static final String PROD = "/secure/project/TranslationPortal.jspa?pid=19207";
+    private static final String PROD = "/secure/project/TranslationPortal.jspa?pid=20242";
 
-    //@Test
+    @Test
     public void test() throws Exception {
         //załaduj plik i wczytaj mapowanie en/pl
-        List<TranslationSchem> listaMapowania = Tools.getTranslationSchemFromFile("C:\\Users\\Piotr Majewski\\Desktop\\tlumaczeniaFinal.txt");
+        List<TranslationSchem> listaMapowania = Tools.getTranslationSchemFromFile("C:\\Users\\Piotr Majewski\\Downloads\\DREAMLab\\translation.txt");
 
         ServiceDeskLoginPage loginPage = new ServiceDeskLoginPage(driver);
         DashboardPage dashboardPage = loginPage.loginAsAdminOnProd();

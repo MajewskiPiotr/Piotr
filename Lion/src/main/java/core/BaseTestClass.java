@@ -29,7 +29,7 @@ public class BaseTestClass {
     @BeforeMethod(alwaysRun = true)
     public void setUp() throws MalformedURLException {
         EnviromentSettings enviromentSettings = new EnviromentSettings();
-        enviromentSettings.SetTestEnviroment(TestEnviroments.VPN);
+        enviromentSettings.SetTestEnviroment(TestEnviroments.PROD);
         driver = enviromentSettings.setUpDriver(null, BrowserType.FIREFOX, false);
 
     }

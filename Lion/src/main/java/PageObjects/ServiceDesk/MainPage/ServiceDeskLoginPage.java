@@ -48,8 +48,8 @@ public class ServiceDeskLoginPage extends PageObject {
         return new DashboardPage(driver);
     }
 
-    public DashboardPage loginAsAdminOnProd() {
-        login("evercode_pmajewski", "DW2Ar53@");
+    public DashboardPage loginAsAdminOnProd(String login, String haslo) {
+        login(login, haslo);
         return new DashboardPage(driver);
     }
 

@@ -33,13 +33,12 @@ public class AddLenguageMappingPage extends AbstractJiraPage {
 
     public void setLanguage(String lan) throws Exception {
         Select select = new Select(language);
-
+        System.out.println("ustawiam jezyk, wybrałem : "+lan );
         switch (lan) {
             case "pl":
                 select.selectByValue("pl");
             case "en":
                 select.selectByValue("pl");
-            default: throw new Exception("Nie wybrano języka na jaki nalezy dokonać tłumaczenia");
         }
     }
 
